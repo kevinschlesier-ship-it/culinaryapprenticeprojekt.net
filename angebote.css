@@ -1,0 +1,589 @@
+/* angebote.css — Angebote-Seite Styles für cAp */
+
+/* ========== HERO ========== */
+.angebote-hero {
+  min-height: 80vh;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.angebote-hero__gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232, 168, 56, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 100%, rgba(232, 168, 56, 0.06) 0%, transparent 60%);
+}
+
+.angebote-hero .hero__content {
+  padding-top: var(--space-8);
+}
+
+.angebote-hero .hero__title {
+  font-size: clamp(1.8rem, 1rem + 3vw, 3.5rem);
+}
+
+.angebote-hero__hint {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: rgba(232, 168, 56, 0.07);
+  border: 1px solid rgba(232, 168, 56, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-8) auto 0;
+  max-width: 640px;
+  text-align: left;
+}
+
+.angebote-hero__hint svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.angebote-hero__hint p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: none;
+}
+
+/* ========== FEATURED CARD (Aufklärungstage) ========== */
+.angebote-featured-card {
+  background: linear-gradient(160deg, var(--color-surface-2) 0%, rgba(232, 168, 56, 0.04) 100%);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-10);
+  position: relative;
+  box-shadow: 0 0 60px rgba(232, 168, 56, 0.08), 0 4px 40px rgba(0,0,0,0.4);
+  transition: box-shadow var(--transition-smooth), transform var(--transition-smooth);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.angebote-featured-card:hover {
+  box-shadow: 0 0 80px rgba(232, 168, 56, 0.14), 0 8px 48px rgba(0,0,0,0.5);
+  transform: translateY(-2px);
+}
+
+.angebote-featured-card__badge {
+  position: absolute;
+  top: calc(-1 * var(--space-4));
+  left: var(--space-10);
+  background: var(--color-accent);
+  color: #0d0d0d;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: var(--space-1) var(--space-5);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.angebote-featured-card__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .angebote-featured-card__inner {
+    grid-template-columns: 1fr 280px;
+    align-items: start;
+  }
+}
+
+.angebote-featured-card__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-glow);
+  border-radius: var(--radius-md);
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+
+.angebote-featured-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+  line-height: 1.15;
+}
+
+.angebote-featured-card__desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+  max-width: 56ch;
+}
+
+.angebote-featured-card__list-wrap {
+  margin-bottom: var(--space-6);
+}
+
+.angebote-featured-card__list-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.angebote-featured-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.angebote-featured-card__list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding-left: var(--space-6);
+  position: relative;
+  line-height: 1.5;
+}
+
+.angebote-featured-card__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.8;
+}
+
+.angebote-featured-card__meta {
+  margin-top: var(--space-4);
+}
+
+.angebote-featured-card__durchfuehrung {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.angebote-featured-card__durchfuehrung svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Aside */
+.angebote-featured-card__aside {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.angebote-featured-card__price-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.angebote-featured-card__price-from {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.angebote-featured-card__price {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.angebote-featured-card__price-unit {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.angebote-featured-card__price-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  line-height: 1.5;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-3);
+}
+
+.angebote-featured-card__tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.angebote-tag {
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  background: rgba(232, 168, 56, 0.1);
+  border: 1px solid rgba(232, 168, 56, 0.2);
+  border-radius: var(--radius-full);
+  padding: 2px 10px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 767px) {
+  .angebote-featured-card {
+    padding: var(--space-8) var(--space-6);
+  }
+  .angebote-featured-card__badge {
+    left: var(--space-6);
+  }
+}
+
+/* ========== MODULE GRID (2x2) ========== */
+.angebote-module-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 600px) {
+  .angebote-module-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.angebote-module-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: relative;
+  transition: border-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+
+.angebote-module-card:hover {
+  border-color: rgba(232, 168, 56, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.angebote-module-card__num {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  color: var(--color-text-faint);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.angebote-module-card__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-glow);
+  border-radius: var(--radius-md);
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.angebote-module-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.angebote-module-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.angebote-module-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.angebote-module-card__price {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+}
+
+/* ========== PREISHINWEIS ========== */
+.angebote-preishinweis {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  background: rgba(232, 168, 56, 0.1);
+  border: 1px solid rgba(232, 168, 56, 0.3);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-10);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.angebote-preishinweis__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(232, 168, 56, 0.15);
+  border-radius: var(--radius-md);
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.angebote-preishinweis__text {
+  font-size: var(--text-base);
+  color: #0d0d0d;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: none;
+}
+
+/* Override text color for amber bg hint – dark text on amber for readability */
+.angebote-preishinweis {
+  background: rgba(232, 168, 56, 0.13);
+}
+
+.angebote-preishinweis__text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 767px) {
+  .angebote-preishinweis {
+    padding: var(--space-6);
+    flex-direction: column;
+  }
+}
+
+/* ========== ZIELGRUPPEN ========== */
+.angebote-zielgruppen-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .angebote-zielgruppen-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.angebote-zielgruppe-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+}
+
+.angebote-zielgruppe-card:hover {
+  border-color: rgba(232, 168, 56, 0.35);
+  transform: translateY(-2px);
+}
+
+.angebote-zielgruppe-card__icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-glow);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+
+.angebote-zielgruppe-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-3);
+}
+
+.angebote-zielgruppe-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-5);
+}
+
+.angebote-zielgruppe-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.angebote-zielgruppe-card__list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  padding-left: var(--space-5);
+  position: relative;
+  line-height: 1.4;
+}
+
+.angebote-zielgruppe-card__list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+  opacity: 0.7;
+}
+
+/* ========== MITMACHEN GRID ========== */
+.angebote-mitmachen-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .angebote-mitmachen-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.angebote-mitmachen-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+}
+
+.angebote-mitmachen-card:hover {
+  border-color: rgba(232, 168, 56, 0.3);
+  transform: translateY(-2px);
+}
+
+.angebote-mitmachen-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-glow);
+  border-radius: var(--radius-md);
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+
+.angebote-mitmachen-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-3);
+}
+
+.angebote-mitmachen-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-5);
+}
+
+.angebote-mitmachen-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.angebote-mitmachen-card__list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  padding-left: var(--space-5);
+  position: relative;
+  line-height: 1.4;
+}
+
+.angebote-mitmachen-card__list li::before {
+  content: '·';
+  position: absolute;
+  left: var(--space-1);
+  color: var(--color-accent);
+  font-size: 1.2em;
+}
+
+/* ========== KONTAKTFORMULAR ========== */
+.angebote-kontakt-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .angebote-kontakt-wrap {
+    grid-template-columns: 1fr 1.4fr;
+    align-items: start;
+  }
+}
+
+.angebote-kontakt-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.angebote-form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 480px) {
+  .angebote-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .angebote-kontakt-wrap {
+    padding: var(--space-7) var(--space-6);
+  }
+}
