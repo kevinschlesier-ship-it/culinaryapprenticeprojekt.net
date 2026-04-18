@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unterstützung für Gastro-Azubis – Struktur, Mentoring & Mental Health</title>
+<meta name="description" content="Das Culinary Apprentice Project begleitet Azubis in Küche, Service und Hotellerie mit klaren Strukturen, Mentoring und Hilfen bei Stress, Sucht, Sexismus und psychischer Belastung.">
+<meta property="og:title" content="Für Azubis – cAp">
+<meta property="og:description" content="Ausbildung kann stark machen – sie kann aber auch überfordern. cAp bietet praktische Unterstützung für Azubis in Küche, Service und Hotellerie.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.culinaryapprenticeprojekt.net/azubi-hilfe">
+
+<!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+
+<style>
+  .page-hero {
+    padding: calc(var(--space-32) + var(--space-8)) var(--space-6) var(--space-16);
+    text-align: center;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-hero__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-bottom: var(--space-8);
+    transition: color var(--transition-interactive);
+  }
+
+  .page-hero__back:hover { color: var(--color-accent); }
+  .page-hero__back:hover svg { transform: translateX(-3px); }
+  .page-hero__back svg { transition: transform var(--transition-interactive); }
+
+  /* Topics grid */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-5);
+    margin-top: var(--space-10);
+  }
+
+  .topic-card {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-7);
+    transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+  }
+
+  .topic-card:hover {
+    border-color: var(--color-border-light);
+    transform: translateY(-2px);
+  }
+
+  .topic-card__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent-glow);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-5);
+    color: var(--color-accent);
+  }
+
+  .topic-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.01em;
+  }
+
+  .topic-card__text {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  /* Steps / 90-Tage */
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .step-item {
+    display: flex;
+    gap: var(--space-5);
+    align-items: flex-start;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: border-color var(--transition-interactive);
+  }
+
+  .step-item:hover {
+    border-color: var(--color-border-light);
+  }
+
+  .step-item__num {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-accent);
+    opacity: 0.4;
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 2.5rem;
+  }
+
+  .step-item__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: var(--space-2);
+  }
+
+  .step-item__text {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  /* CTA box */
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-surface-2) 0%, rgba(232, 168, 56, 0.05) 100%);
+    border: 1px solid rgba(232, 168, 56, 0.3);
+    border-radius: var(--radius-xl);
+    padding: var(--space-10) var(--space-8);
+    text-align: center;
+  }
+
+  .cta-box__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-box__text {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .cta-box__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav__inner">
+    <a href="./index.html" class="nav__logo" aria-label="cAp — Culinary Apprentice Projekt">
+      <img class="nav__logo-img" src="./assets/cap-logo.png" alt="cAp Logo" width="40" height="40">
+      <span class="nav__logo-text">Culinary Apprentice Projekt</span>
+    </a>
+
+    <ul class="nav__links" role="list">
+      <li><a href="./index.html#leistungen">Leistungen</a></li>
+      <li><a href="./index.html#preise">Preise</a></li>
+      <li><a href="./downloads.html">Downloads</a></li>
+      <li><a href="./soforthilfe.html">Soforthilfe</a></li>
+      <li><a href="./index.html#kontakt">Kontakt</a></li>
+    </ul>
+
+    <a href="./index.html#kontakt" class="nav__cta">Erstgespräch buchen</a>
+
+    <button class="nav__toggle" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="nav__mobile" role="dialog" aria-label="Mobile Navigation">
+  <a href="./index.html#leistungen">Leistungen</a>
+  <a href="./index.html#preise">Preise</a>
+  <a href="./downloads.html">Downloads</a>
+  <a href="./soforthilfe.html">Soforthilfe</a>
+  <a href="./index.html#kontakt">Kontakt</a>
+  <a href="./index.html#kontakt" class="btn btn--primary btn--small">Erstgespräch buchen</a>
+</div>
+
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero">
+  <div class="reveal">
+    <a href="./index.html" class="page-hero__back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Zurück zur Startseite
+    </a>
+    <p style="font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-4); font-weight: 500;">Für dich, als Azubi</p>
+    <h1 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; color: #ffffff; letter-spacing: -0.03em; margin-bottom: var(--space-4); max-width: 780px; margin-left: auto; margin-right: auto;">Für Azubis in Gastronomie und Hotellerie</h1>
+    <p style="font-size: var(--text-lg); color: var(--color-text-muted); max-width: 640px; margin: 0 auto var(--space-8); line-height: 1.7;">Ausbildung kann stark machen – sie kann aber auch überfordern. Das Culinary Apprentice Projekt bietet dir praktische Unterstützung: klare Strukturen, Mentoring, Hilfe bei Problemen im Betrieb und Materialien zu mentaler Gesundheit.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center;">
+      <a href="./soforthilfe.html" class="btn btn--primary">Soforthilfe</a>
+      <a href="./downloads.html" class="btn btn--outline">Downloads für Azubis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THEMEN ==================== -->
+<section class="section" id="themen">
+  <div class="section__inner">
+    <div class="reveal" style="text-align: center; max-width: 680px; margin: 0 auto var(--space-10);">
+      <p class="section__label">Was dich erwartet</p>
+      <h2 class="section__title" style="margin: 0 auto var(--space-4);">Themen, die wirklich zählen</h2>
+      <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">cAp spricht die Dinge an, über die in der Ausbildung oft geschwiegen wird – und bietet dir Wege, damit umzugehen.</p>
+    </div>
+
+    <div class="topics-grid reveal-stagger">
+      <div class="topic-card">
+        <div class="topic-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h3 class="topic-card__title">Mentale Gesundheit</h3>
+        <p class="topic-card__text">Stress, Schlafmangel, Erschöpfung und das Gefühl, nicht mehr zu können – wir helfen dir, Warnsignale zu erkennen und dir früh Unterstützung zu holen.</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <h3 class="topic-card__title">Sucht &amp; Abhängigkeit</h3>
+        <p class="topic-card__text">Alkohol, Energy-Drinks, Medikamente – in der Gastro sind Substanzen oft nah. Wir bieten ehrliche Infos und zeigen dir, wo du Hilfe findest, ohne Verurteilung.</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="topic-card__title">Belästigung &amp; Grenzüberschreitungen</h3>
+        <p class="topic-card__text">Sexistische Sprüche, körperliche Übergriffe oder Mobbing gehören nicht „dazu". Du hast das Recht, Grenzen zu setzen – und wir sagen dir, was du tun kannst.</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="topic-card__title">Struktur &amp; Orientierung</h3>
+        <p class="topic-card__text">Mit unserem 90-Tage-System weißt du, was dich erwartet und wo du stehst. Klare Ziele, Feedback-Gespräche und ein Mentor – kein Durchrutschen mehr.</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="topic-card__title">Diskriminierung</h3>
+        <p class="topic-card__text">Egal ob wegen Herkunft, Aussehen oder Geschlecht – Diskriminierung im Betrieb ist kein Schicksal. Wir zeigen dir deine Rechte und Anlaufstellen.</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3 class="topic-card__title">Sorgentelefon</h3>
+        <p class="topic-card__text">Direkte, niedrigschwellige Anlaufstelle bei Problemen im Betrieb – vertraulich, kostenlos. Mo–Fr 14:00–20:00 Uhr. <strong style="color: var(--color-accent);">0152 04488587</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 90-TAGE-STRUKTUR ==================== -->
+<section class="section section--alt" id="struktur">
+  <div class="section__inner">
+    <div class="reveal" style="max-width: 680px; margin-bottom: var(--space-10);">
+      <p class="section__label">Deine ersten 90 Tage</p>
+      <h2 class="section__title">So sieht gute Ausbildung aus</h2>
+      <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">Ein guter Start entscheidet oft alles. Unser 90-Tage-Modell gibt dir Struktur, Orientierung und das Wissen: Du wirst nicht alleingelassen.</p>
+    </div>
+
+    <div class="steps-list reveal">
+      <div class="step-item">
+        <span class="step-item__num">01</span>
+        <div>
+          <h3 class="step-item__title">Tag 1–14: Ankommen</h3>
+          <p class="step-item__text">Betrieb kennenlernen, Team vorstellen, erste Aufgaben klären. Dein Mentor steht dir von Anfang an zur Seite. Keine Überforderung, kein Schmiß ins kalte Wasser.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-item__num">02</span>
+        <div>
+          <h3 class="step-item__title">Tag 15–45: Einstieg</h3>
+          <p class="step-item__text">Du übernimmst erste Verantwortung, machst Fehler und lernst daraus. Erstes Feedback-Gespräch nach 4–6 Wochen – strukturiert, respektvoll, auf Augenhöhe.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-item__num">03</span>
+        <div>
+          <h3 class="step-item__title">Tag 46–90: Einsatzfähigkeit</h3>
+          <p class="step-item__text">Du kannst eigenständig arbeiten, weißt wo du stehst und hast klare Ziele für die nächste Phase. Kein Rätselraten mehr.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SOFORTHILFE CTA ==================== -->
+<section class="section" id="hilfe">
+  <div class="section__inner">
+    <div class="reveal" style="max-width: 800px; margin: 0 auto;">
+      <div class="cta-box">
+        <h2 class="cta-box__title">Brauchst du gerade Hilfe?</h2>
+        <p class="cta-box__text">Wenn es dir nicht gut geht, der Stress überhandnimmt oder du nicht mehr weiter weißt – du musst das nicht alleine durchstehen. Hol dir jetzt Unterstützung.</p>
+        <div class="cta-box__buttons">
+          <a href="./soforthilfe.html" class="btn btn--primary">Soforthilfe ansehen</a>
+          <a href="./downloads.html" class="btn btn--outline">Downloads für Azubis</a>
+          <a href="./index.html#kontakt" class="btn btn--outline">cAp kontaktieren</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <a href="./index.html" class="footer__logo" aria-label="cAp">
+      <img src="./assets/cap-logo.png" alt="cAp Logo" width="48" height="48" style="border-radius: 50%;">
+    </a>
+
+    <div class="footer__socials">
+      <a href="https://www.facebook.com/share/1DcP7cQSTD/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/kitchenkev6?igsh=MmNvZGZuZGRhdnRs" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/kevin-schlesier-b54a902b3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+
+    <div class="footer__links">
+      <a href="./impressum.html">Impressum</a>
+      <a href="./datenschutz.html">Datenschutz</a>
+      <a href="./downloads.html">Downloads</a>
+      <a href="./soforthilfe.html">Soforthilfe</a>
+    </div>
+
+    <p class="footer__copy">
+      © 2026 Culinary Apprentice Projekt. Alle Rechte vorbehalten.<br>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/4915204488587?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20Culinary%20Apprentice%20Projekt." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Über WhatsApp kontaktieren">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- App JS -->
+<script src="./app.js" defer></script>
+
+</body>
+</html>
