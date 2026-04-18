@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soforthilfe bei Stress & Depression in der Gastro-Ausbildung – CAP</title>
+<meta name="description" content="Erste Hilfe, Warnzeichen und Notfallkontakte für Azubis in Gastronomie und Hotellerie. Was du tun kannst, wenn dir alles zu viel wird – und wie Betriebe unterstützen können.">
+<meta property="og:title" content="Soforthilfe – cAp">
+<meta property="og:description" content="Du kannst nicht mehr? Hier findest du sofortige Hilfe. Telefonseelsorge 0800 111 0 111 – kostenlos, 24/7.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.culinaryapprenticeprojekt.net/soforthilfe">
+
+<!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+
+<style>
+  /* Page-specific styles for soforthilfe.html */
+  .page-hero {
+    padding: calc(var(--space-32) + var(--space-8)) var(--space-6) var(--space-16);
+    text-align: center;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-hero__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-bottom: var(--space-8);
+    transition: color var(--transition-interactive);
+  }
+
+  .page-hero__back:hover {
+    color: var(--color-accent);
+  }
+
+  .page-hero__back svg {
+    transition: transform var(--transition-interactive);
+  }
+
+  .page-hero__back:hover svg {
+    transform: translateX(-3px);
+  }
+
+  /* Emergency banner */
+  .emergency-banner {
+    background: linear-gradient(135deg, rgba(232, 168, 56, 0.12) 0%, rgba(232, 168, 56, 0.05) 100%);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8) var(--space-8);
+    max-width: 800px;
+    margin: 0 auto var(--space-12);
+    text-align: center;
+  }
+
+  .emergency-banner__label {
+    font-size: var(--text-xs);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+  }
+
+  .emergency-banner__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+  }
+
+  .emergency-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .emergency-number {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-6);
+    text-align: center;
+    text-decoration: none;
+    transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+    min-width: 200px;
+  }
+
+  .emergency-number:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+  }
+
+  .emergency-number__label {
+    font-size: var(--text-xs);
+    color: var(--color-text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: var(--space-1);
+  }
+
+  .emergency-number__num {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: -0.02em;
+    display: block;
+    margin-bottom: var(--space-1);
+  }
+
+  .emergency-number__info {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    display: block;
+  }
+
+  .emergency-banner__note {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
+    max-width: 100%;
+  }
+
+  /* Content sections */
+  .sh-section {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .sh-section--alt {
+    background: var(--color-surface);
+  }
+
+  .sh-inner {
+    max-width: var(--content-default);
+    margin: 0 auto;
+  }
+
+  .sh-block {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    margin-bottom: var(--space-6);
+    transition: border-color var(--transition-interactive);
+  }
+
+  .sh-block:hover {
+    border-color: var(--color-border-light);
+  }
+
+  .sh-block__icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent-glow);
+    border-radius: var(--radius-lg);
+    color: var(--color-accent);
+    margin-bottom: var(--space-5);
+  }
+
+  .sh-block__title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+  }
+
+  .sh-block__text {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-5);
+    max-width: 100%;
+  }
+
+  .sh-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .sh-list li {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    padding-left: var(--space-6);
+    position: relative;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .sh-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  /* Crisis block — special styling */
+  .sh-block--crisis {
+    border-color: rgba(232, 168, 56, 0.4);
+    background: linear-gradient(135deg, var(--color-surface-2) 0%, rgba(232, 168, 56, 0.04) 100%);
+  }
+
+  .sh-block--crisis .sh-block__title {
+    color: var(--color-accent);
+  }
+
+  /* What is not normal */
+  .not-normal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+  }
+
+  .not-normal-item {
+    background: var(--color-surface-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .not-normal-item__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .not-normal-item__text {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav__inner">
+    <a href="./index.html" class="nav__logo" aria-label="cAp — Culinary Apprentice Projekt">
+      <img class="nav__logo-img" src="./assets/cap-logo.png" alt="cAp Logo" width="40" height="40">
+      <span class="nav__logo-text">Culinary Apprentice Projekt</span>
+    </a>
+
+    <ul class="nav__links" role="list">
+      <li><a href="./index.html#leistungen">Leistungen</a></li>
+      <li><a href="./index.html#preise">Preise</a></li>
+      <li><a href="./downloads.html">Downloads</a></li>
+      <li><a href="./soforthilfe.html" style="color: var(--color-accent);">Soforthilfe</a></li>
+      <li><a href="./index.html#kontakt">Kontakt</a></li>
+    </ul>
+
+    <a href="./index.html#kontakt" class="nav__cta">Erstgespräch buchen</a>
+
+    <!-- Mobile Toggle -->
+    <button class="nav__toggle" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="nav__mobile" role="dialog" aria-label="Mobile Navigation">
+  <a href="./index.html#leistungen">Leistungen</a>
+  <a href="./index.html#preise">Preise</a>
+  <a href="./downloads.html">Downloads</a>
+  <a href="./soforthilfe.html">Soforthilfe</a>
+  <a href="./index.html#kontakt">Kontakt</a>
+  <a href="./index.html#kontakt" class="btn btn--primary btn--small">Erstgespräch buchen</a>
+</div>
+
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero">
+  <div class="reveal">
+    <a href="./index.html" class="page-hero__back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Zurück zur Startseite
+    </a>
+    <p style="font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-4); font-weight: 500;">Hilfe jetzt</p>
+    <h1 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; color: #ffffff; letter-spacing: -0.03em; margin-bottom: var(--space-4); max-width: 780px; margin-left: auto; margin-right: auto;">Soforthilfe – wenn es dir gerade nicht gut geht</h1>
+    <p style="font-size: var(--text-lg); color: var(--color-text-muted); max-width: 640px; margin: 0 auto; line-height: 1.7;">Diese Seite ist für dich, wenn du das Gefühl hast: „Ich kann nicht mehr." Du findest hier keine Diagnose, aber klare Hinweise, was du jetzt tun kannst – und an wen du dich wenden kannst. <strong style="color: var(--color-text);">Du bist nicht allein.</strong></p>
+  </div>
+</section>
+
+<!-- ==================== NOTRUF-BANNER ==================== -->
+<section style="padding: var(--space-12) var(--space-6); background: var(--color-surface);">
+  <div style="max-width: var(--content-default); margin: 0 auto;">
+    <div class="emergency-banner reveal">
+      <p class="emergency-banner__label">&#9888; Notruf &amp; Krisentelefon</p>
+      <h2 class="emergency-banner__title">Bitte ruf an – sofort, jetzt, heute.</h2>
+
+      <div class="emergency-numbers">
+        <a href="tel:112" class="emergency-number">
+          <span class="emergency-number__label">Notruf</span>
+          <span class="emergency-number__num">112</span>
+          <span class="emergency-number__info">Akute Notfälle · kostenlos</span>
+        </a>
+        <a href="tel:08001110111" class="emergency-number">
+          <span class="emergency-number__label">Telefonseelsorge</span>
+          <span class="emergency-number__num">0800 111 0 111</span>
+          <span class="emergency-number__info">Kostenlos · 24/7 · anonym</span>
+        </a>
+        <a href="tel:08001110222" class="emergency-number">
+          <span class="emergency-number__label">Telefonseelsorge alternativ</span>
+          <span class="emergency-number__num">0800 111 0 222</span>
+          <span class="emergency-number__info">Kostenlos · 24/7 · anonym</span>
+        </a>
+      </div>
+
+      <p class="emergency-banner__note">Beide Nummern der Telefonseelsorge sind kostenlos, auch vom Handy erreichbar und rund um die Uhr besetzt – egal ob du in der Nacht nach der Spätschicht anrufst oder am frühen Morgen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WENN ES DIR SELBST SCHLECHT GEHT ==================== -->
+<section class="sh-section" id="selbst">
+  <div class="sh-inner">
+    <div class="sh-block reveal">
+      <div class="sh-block__icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <h2 class="sh-block__title">Wenn es dir selbst schlecht geht</h2>
+      <p class="sh-block__text">Vielleicht schläfst du schlecht, bist dauernd müde, hast keinen Spaß mehr an Dingen, die dir früher wichtig waren oder gehst ungern zur Arbeit. Vielleicht denkst du auch: „Ohne mich wäre es leichter" oder „Das hört nie mehr auf." Das sind Warnsignale, die du ernst nehmen darfst. Du musst sie nicht wegdrücken.</p>
+      <ul class="sh-list">
+        <li>Sprich mit einer Person, der du vertraust – Ausbilder*in, Kolleg*in, Freund*in oder Familie.</li>
+        <li>Hole dir ärztliche Hilfe, wenn es schon länger anhält oder dein Alltag kaum noch funktioniert.</li>
+        <li>Nimm deine Gefühle ernst – sie sind ein Signal, kein Zeichen von Schwäche.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AKUTE KRISE ==================== -->
+<section class="sh-section sh-section--alt" id="krise">
+  <div class="sh-inner">
+    <div class="sh-block sh-block--crisis reveal">
+      <div class="sh-block__icon" style="background: rgba(232, 168, 56, 0.2);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h2 class="sh-block__title">Wenn du an Suizid denkst oder Angst hast, dir etwas anzutun</h2>
+      <p class="sh-block__text">Wenn du konkrete Gedanken daran hast, dir etwas anzutun, oder keine Perspektive mehr siehst – das ist ein Notfall. Warte nicht ab. Versuche nicht, alles alleine auszuhalten. Du verdienst Unterstützung.</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-6);">
+        <a href="tel:112" class="btn btn--primary" style="gap: var(--space-2);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          112 Notruf anrufen
+        </a>
+        <a href="tel:08001110111" class="btn btn--outline" style="gap: var(--space-2);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0800 111 0 111 · Telefonseelsorge
+        </a>
+      </div>
+
+      <ul class="sh-list">
+        <li>Ruf den Notruf <strong style="color: var(--color-accent);">112</strong> an oder geh in die nächste Notaufnahme.</li>
+        <li>Wende dich an die Telefonseelsorge: <strong style="color: var(--color-accent);">0800 111 0 111</strong> – kostenlos, anonym, 24/7.</li>
+        <li>Lass möglichst niemanden allein, der so spricht – bleib dran und hilf, Hilfe zu holen.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SORGEN UM JEMANDEN ==================== -->
+<section class="sh-section" id="jemand-anderes">
+  <div class="sh-inner">
+    <div class="sh-block reveal">
+      <div class="sh-block__icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h2 class="sh-block__title">Wenn du dir Sorgen um einen Azubi oder eine Kollegin machst</h2>
+      <p class="sh-block__text">Vielleicht fällt dir auf, dass jemand sich stark verändert hat: stiller wird, häufiger krank ist, Fehler häufen sich, Alkohol oder Medikamente zunehmen – oder jemand über „kein Bock mehr aufs Leben" scherzt. Nimm das ernst, auch wenn es „nur Spaß" klingt.</p>
+      <ul class="sh-list">
+        <li>Sprich die Person ruhig und respektvoll an, wenn ihr einigermaßen ungestört seid.</li>
+        <li>Sag, was dir aufgefallen ist – ohne Vorwürfe.</li>
+        <li>Biete an, gemeinsam Hilfe zu holen: Ausbilder*in, Vertrauensperson, ärztliche Hilfe oder Beratungsstelle.</li>
+        <li>Hol dir selbst Unterstützung, wenn du dir unsicher bist, wie du damit umgehen sollst.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WAS NICHT NORMAL IST ==================== -->
+<section class="sh-section sh-section--alt" id="nicht-normal">
+  <div class="sh-inner">
+    <div class="reveal" style="margin-bottom: var(--space-8);">
+      <p class="section__label">Deine Rechte</p>
+      <h2 class="section__title">Was nicht „normal" ist</h2>
+      <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7; max-width: 680px;">Auch in der Gastronomie darfst du Grenzen haben. Azubis haben ein Recht auf Schutz, Begleitung und eine Ausbildung, die nicht krank macht. Folgendes ist <strong style="color: var(--color-text);">nicht Teil des Berufs</strong>, sondern ein Problem:</p>
+    </div>
+
+    <div class="not-normal-grid reveal-stagger">
+      <div class="not-normal-item">
+        <div class="not-normal-item__dot"></div>
+        <p class="not-normal-item__text">Dauerhaft zu viele Stunden ohne Ausgleich</p>
+      </div>
+      <div class="not-normal-item">
+        <div class="not-normal-item__dot"></div>
+        <p class="not-normal-item__text">Keine oder kaum Pausen</p>
+      </div>
+      <div class="not-normal-item">
+        <div class="not-normal-item__dot"></div>
+        <p class="not-normal-item__text">Ständiges Anschreien und Demütigung</p>
+      </div>
+      <div class="not-normal-item">
+        <div class="not-normal-item__dot"></div>
+        <p class="not-normal-item__text">Beleidigungen im Arbeitsalltag</p>
+      </div>
+      <div class="not-normal-item">
+        <div class="not-normal-item__dot"></div>
+        <p class="not-normal-item__text">Sexuelle Sprüche oder Übergriffe</p>
+      </div>
+      <div class="not-normal-item">
+        <div class="not-normal-item__dot"></div>
+        <p class="not-normal-item__text">Körperliche Übergriffe jeglicher Art</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WIE WIR HELFEN KÖNNEN ==================== -->
+<section class="sh-section" id="hilfe">
+  <div class="sh-inner">
+    <div class="sh-block reveal" style="text-align: center; max-width: 720px; margin: 0 auto;">
+      <div style="display: flex; justify-content: center; margin-bottom: var(--space-5);">
+        <div class="sh-block__icon" style="margin-bottom: 0;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+      </div>
+      <h2 class="sh-block__title">Wie wir dir helfen können</h2>
+      <p class="sh-block__text" style="max-width: 100%;">Mit dem Culinary Apprentice Project unterstützen wir Azubis, junge Menschen und Betriebe dabei, anders über mentale Gesundheit zu sprechen und früh Hilfe zu holen. Wir bieten Materialien, Workshops und – je nach Region – persönliche Beratung oder Kontakte zu passenden Stellen.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-top: var(--space-6);">
+        <a href="./index.html#kontakt" class="btn btn--primary">Kontakt zum cAp-Team</a>
+        <a href="./downloads.html" class="btn btn--outline">Downloads ansehen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <a href="./index.html" class="footer__logo" aria-label="cAp">
+      <img src="./assets/cap-logo.png" alt="cAp Logo" width="48" height="48" style="border-radius: 50%;">
+    </a>
+
+    <div class="footer__socials">
+      <a href="https://www.facebook.com/share/1DcP7cQSTD/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/kitchenkev6?igsh=MmNvZGZuZGRhdnRs" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/kevin-schlesier-b54a902b3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+
+    <div class="footer__links">
+      <a href="./impressum.html">Impressum</a>
+      <a href="./datenschutz.html">Datenschutz</a>
+      <a href="./downloads.html">Downloads</a>
+      <a href="./soforthilfe.html">Soforthilfe</a>
+    </div>
+
+    <p class="footer__copy">
+      © 2026 Culinary Apprentice Projekt. Alle Rechte vorbehalten.<br>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/4915204488587?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20Culinary%20Apprentice%20Projekt." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Über WhatsApp kontaktieren">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- App JS -->
+<script src="./app.js" defer></script>
+
+</body>
+</html>
