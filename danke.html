@@ -1,404 +1,226 @@
 <!DOCTYPE html>
-<!-- Built with Perplexity Computer — https://www.perplexity.ai/computer -->
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Danke für deinen Kauf – lade jetzt das 72-Stunden-Krisenprotokoll herunter." />
-  <title>Danke – 72-Stunden-Krisenprotokoll – cAp</title>
-
-  <!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
-  <link rel="preconnect" href="https://api.fontshare.com" />
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* =========================================================
-       DANKE.HTML – Page-specific styles
-       ========================================================= */
-
-    /* Full-height centered layout */
-    .danke-page {
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .danke-main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(8rem, 14vw, 12rem) var(--space-6) var(--space-16);
-      background: var(--color-bg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Ambient glow */
-    .danke-main::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(ellipse at center, rgba(232,168,56,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .danke-box {
-      max-width: 560px;
-      width: 100%;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Checkmark icon */
-    .danke-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(232,168,56,0.12);
-      border: 2px solid rgba(232,168,56,0.3);
-      margin: 0 auto var(--space-8);
-    }
-
-    .danke-icon svg {
-      color: var(--color-accent);
-    }
-
-    .danke-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 1.2rem + 4vw, 3.2rem);
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: var(--space-5);
-    }
-
-    .danke-text {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.75;
-      max-width: 460px;
-      margin: 0 auto var(--space-10);
-    }
-
-    .danke-download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-3);
-      padding: var(--space-5) var(--space-10);
-      background: var(--color-accent);
-      color: #0d0d0d;
-      border-radius: var(--radius-full);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: background var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
-      margin-bottom: var(--space-6);
-    }
-
-    .danke-download-btn:hover {
-      background: var(--color-accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(232,168,56,0.35);
-    }
-
-    .danke-note {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.65;
-      max-width: 420px;
-      margin: 0 auto var(--space-8);
-    }
-
-    .danke-note a {
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-
-    .danke-note a:hover {
-      text-decoration: underline;
-    }
-
-    .danke-back {
-      font-size: var(--text-sm);
-      color: var(--color-text-faint);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      transition: color var(--transition-interactive);
-    }
-
-    .danke-back:hover {
-      color: var(--color-text-muted);
-    }
-
-    /* Footer-new */
-    .footer-new {
-      background: var(--color-bg);
-      border-top: 1px solid var(--color-border);
-      padding: var(--space-10) var(--space-6) var(--space-8);
-    }
-
-    .footer-new__inner {
-      max-width: var(--content-wide);
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-6);
-      text-align: center;
-    }
-
-    .footer-new__brand {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      text-decoration: none;
-    }
-
-    .footer-new__brand-logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .footer-new__brand-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: var(--color-accent);
-      letter-spacing: -0.02em;
-    }
-
-    .footer-new__tagline {
-      font-size: var(--text-sm);
-      color: var(--color-text-faint);
-      max-width: 520px;
-      line-height: 1.6;
-    }
-
-    .footer-new__links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--space-2) var(--space-6);
-    }
-
-    .footer-new__links a {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      text-decoration: none;
-    }
-
-    .footer-new__links a:hover {
-      color: var(--color-text);
-    }
-
-    .footer-new__bottom {
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-    }
-
-    .footer-new__bottom a {
-      color: var(--color-text-faint);
-      text-decoration: none;
-    }
-
-    .footer-new__bottom a:hover {
-      color: var(--color-accent);
-    }
-
-    @media (min-width: 1024px) {
-      .nav__links { gap: var(--space-6); }
-    }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .nav__links { gap: var(--space-4); }
-    }
-  </style>
+<!--
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danke für deinen Kauf – cAp</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .danke {
+    min-height: 100vh;
+    padding: var(--space-16) var(--space-6) var(--space-10);
+  }
+  .danke__inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .danke__check {
+    width: 80px;
+    height: 80px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-8);
+  }
+  .danke__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+  }
+  .danke__text {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--space-10);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .products__label {
+    font-family: var(--font-heading);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+  .products__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-6);
+  }
+  .products-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-10);
+    text-align: left;
+  }
+  .product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-4) var(--space-5);
+    flex-wrap: wrap;
+  }
+  .product-item__info {}
+  .product-item__tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .product-item__name {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .product-item__desc {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-faint);
+    margin-top: 2px;
+  }
+  .product-item__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-accent);
+    color: #0d0d0d;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+  }
+  .product-item__btn:hover { opacity: 0.85; }
+  .danke__note {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-faint);
+    line-height: 1.7;
+  }
+  .danke__note a { color: var(--color-accent); text-decoration: none; }
+  .danke__back {
+    display: inline-block;
+    margin-top: var(--space-6);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .danke__back:hover { color: var(--color-accent); }
+</style>
 </head>
-<body class="danke-page">
+<body>
 
-  <!-- ===================== NAVIGATION ===================== -->
-  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
-    <div class="nav__inner">
+<div class="danke">
+  <div class="danke__inner">
 
-      <a href="/" class="nav__logo" aria-label="cAp Startseite">
-        <img src="assets/cap-logo.png" alt="cAp Logo" class="nav__logo-img" width="44" height="44" style="width:44px;height:44px;" />
-        <span class="nav__logo-mark">cAp</span>
-      </a>
-
-      <ul class="nav__links" role="list">
-        <li><a href="/">Start</a></li>
-        <li><a href="/soforthilfe.html">Hilfe holen</a></li>
-        <li><a href="/angebote.html">Angebote</a></li>
-        <li><a href="/downloads.html">Downloads</a></li>
-        <li><a href="/#ueber-uns">Über uns</a></li>
-        <li><a href="/#kontakt">Kontakt</a></li>
-      </ul>
-
-      <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+    <!-- Checkmark -->
+    <div class="danke__check">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0d0d0d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
     </div>
-  </nav>
 
-  <!-- Mobile Menu -->
-  <div class="nav__mobile" id="mobileMenu" role="dialog" aria-label="Mobilnavigation">
-    <a href="/">Start</a>
-    <a href="/soforthilfe.html">Hilfe holen</a>
-    <a href="/angebote.html">Angebote</a>
-    <a href="/downloads.html">Downloads</a>
-    <a href="/#ueber-uns">Über uns</a>
-    <a href="/#kontakt">Kontakt</a>
-  </div>
+    <!-- Headline -->
+    <h1 class="danke__title">Danke für deinen Kauf.</h1>
 
+    <p class="danke__text">Deine Zahlung war erfolgreich. Du kannst dein digitales Produkt jetzt direkt herunterladen. Falls du mehrere Produkte gekauft hast oder den richtigen Download nicht sofort findest, nutze bitte die Übersicht unten.</p>
 
-  <!-- ===================== DANKE MAIN ===================== -->
-  <main class="danke-main" aria-labelledby="dankeTitle">
-    <div class="danke-box reveal">
+    <!-- Download List -->
+    <p class="products__label">Deine Downloads</p>
+    <h2 class="products__title">Alle verfügbaren Produkte</h2>
 
-      <!-- Checkmark Icon -->
-      <div class="danke-icon" aria-hidden="true">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
+    <div class="products-list">
+
+      <!-- Produkt 1: 72h Krisenprotokoll -->
+      <div class="product-item">
+        <div class="product-item__info">
+          <div class="product-item__tag">PDF · 5 Seiten · 25 €</div>
+          <div class="product-item__name">72-Stunden-Krisenprotokoll</div>
+          <div class="product-item__desc">Klare Struktur für den Ernstfall mit Azubis</div>
+        </div>
+        <a href="https://culinaryapprenticeprojekt.net/assets/pdfs/72h-krisenprotokoll-ausbilder.pdf"
+           class="product-item__btn"
+           download="72h-krisenprotokoll-ausbilder.pdf">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          PDF herunterladen
+        </a>
       </div>
 
-      <h1 class="danke-title" id="dankeTitle">Danke für deinen Kauf.</h1>
+      <!-- Produkt 2: Leitfaden -->
+      <div class="product-item">
+        <div class="product-item__info">
+          <div class="product-item__tag">PDF · 2 Seiten · 9 €</div>
+          <div class="product-item__name">Leitfaden "Warnzeichen erkennen"</div>
+          <div class="product-item__desc">Für Ausbilder, Küchenchefs und Abteilungsleiter</div>
+        </div>
+        <a href="https://culinaryapprenticeprojekt.net/assets/pdfs/leitfaden-ausbilder-warnzeichen.pdf"
+           class="product-item__btn"
+           download="leitfaden-ausbilder-warnzeichen.pdf">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          PDF herunterladen
+        </a>
+      </div>
 
-      <p class="danke-text">
-        Deine Zahlung war erfolgreich. Du kannst das 72-Stunden-Krisenprotokoll jetzt direkt herunterladen.
-      </p>
-
-      <a
-        href="./assets/pdfs/72h-krisenprotokoll-ausbilder.pdf"
-        class="danke-download-btn"
-        download
-        aria-label="72-Stunden-Krisenprotokoll PDF herunterladen"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Jetzt PDF herunterladen
-      </a>
-
-      <p class="danke-note">
-        Falls der Download nicht funktioniert, melde dich bitte direkt per E-Mail:<br />
-        <a href="mailto:kevin.schlesier@culinaryapprenticeprojekt.net">kevin.schlesier@culinaryapprenticeprojekt.net</a>
-      </p>
-
-      <a href="/" class="danke-back">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
-        Zurück zur Startseite
-      </a>
+      <!-- Produkt 3: Check-in Bogen -->
+      <div class="product-item">
+        <div class="product-item__info">
+          <div class="product-item__tag">PDF · 1 Seite · 5 €</div>
+          <div class="product-item__name">Check-in-Bogen für Azubi-Gespräche</div>
+          <div class="product-item__desc">Strukturierter Gesprächsbogen für regelmäßige Check-ins</div>
+        </div>
+        <a href="https://culinaryapprenticeprojekt.net/assets/pdfs/check-in-gespraech-azubi.pdf"
+           class="product-item__btn"
+           download="check-in-gespraech-azubi.pdf">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          PDF herunterladen
+        </a>
+      </div>
 
     </div>
-  </main>
+    <!-- NEUE PRODUKTE HIER EINFÜGEN – gleiches Format wie oben -->
 
+    <!-- Hinweis -->
+    <p class="danke__note">
+      Hast du ein Produkt nicht gefunden oder gibt es Probleme beim Download?<br>
+      Schreib uns direkt: <a href="mailto:kevin.schlesier@culinaryapprenticeprojekt.net">kevin.schlesier@culinaryapprenticeprojekt.net</a>
+    </p>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer-new" role="contentinfo">
-    <div class="footer-new__inner">
+    <a href="./index.html" class="danke__back">← Zurück zur Startseite</a>
 
-      <a href="/" class="footer-new__brand" aria-label="cAp Startseite">
-        <img src="assets/cap-logo.png" alt="cAp Logo" class="footer-new__brand-logo" width="36" height="36" />
-        <span class="footer-new__brand-name">cAp</span>
-      </a>
-
-      <p class="footer-new__tagline">
-        Culinary Apprentice Project – für gesündere, klarere und stärkere Ausbildung in Gastronomie und Hotellerie.
-      </p>
-
-      <nav class="footer-new__links" aria-label="Footer-Navigation">
-        <a href="/downloads.html">Downloads</a>
-        <a href="/soforthilfe.html">Soforthilfe</a>
-        <a href="/soforthilfe.html">Für Azubis</a>
-        <a href="/angebote.html">Für Betriebe</a>
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
-      </nav>
-
-      <p class="footer-new__bottom">
-        &copy; 2025 Culinary Apprentice Project &nbsp;·&nbsp;
-        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener">Created with Perplexity Computer</a>
-      </p>
-
-    </div>
-  </footer>
-
-
-  <!-- ===================== WHATSAPP FLOATING BUTTON ===================== -->
-  <a
-    href="https://wa.me/4915204488587"
-    class="whatsapp-btn"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp – jetzt kontaktieren"
-    title="WhatsApp"
-  >
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
-
-
-  <script>
-    // Nav scroll behavior
-    const nav = document.querySelector('.nav');
-    const toggle = document.querySelector('.nav__toggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-    }, { passive: true });
-
-    toggle?.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', !expanded);
-      toggle.classList.toggle('active');
-      mobileMenu?.classList.toggle('active');
-    });
-
-    mobileMenu?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    // Reveal
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealEls.forEach(el => observer.observe(el));
-  </script>
+  </div>
+</div>
 
 </body>
 </html>
