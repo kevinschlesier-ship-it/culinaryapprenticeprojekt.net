@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cAp Team – Gemeinsam für Ausbildung ohne Angst.</title>
+<meta name="description" content="Werde Teil des cAp Teams. Mach Ausbildung sichtbar – lade Poster und Logo herunter, teile sie auf Instagram und Facebook.">
+
+<!-- Open Graph für Social Media Preview -->
+<meta property="og:title" content="cAp Team – Gemeinsam für Ausbildung ohne Angst.">
+<meta property="og:description" content="Werde Teil des cAp Teams. Kostenlose Poster & Logos zum Download.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/cap-logo.png">
+
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F5F0E8;
+    --surface: #FFFFFF;
+    --border: #E0D8CC;
+    --text: #1C1C1A;
+    --text-muted: #5A5752;
+    --text-faint: #9A9590;
+    --accent: #2B7A6F;
+    --accent-hover: #1F5E55;
+    --accent-light: #E8F4F2;
+    --amber: #E8A838;
+    --font-head: 'Cabinet Grotesk', sans-serif;
+    --font-body: 'Satoshi', sans-serif;
+    --radius: 14px;
+    --shadow: 0 2px 16px rgba(0,0,0,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; }
+
+  /* HEADER */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+  }
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .header__logo img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .header__name {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .header__name span { color: var(--accent); }
+  .header__btn {
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .header__btn:hover { background: var(--accent-hover); }
+
+  /* HERO */
+  .hero {
+    padding: 60px 24px 50px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .hero__tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+  .hero__logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 24px;
+    display: block;
+    box-shadow: var(--shadow);
+  }
+  .hero__title {
+    font-family: var(--font-head);
+    font-size: clamp(32px, 8vw, 52px);
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .hero__title span { color: var(--accent); }
+  .hero__text {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .hero__btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn--primary { background: var(--accent); color: white; }
+  .btn--primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .btn--outline { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+  .btn--outline:hover { background: var(--accent-light); }
+
+  /* SECTIONS */
+  .section {
+    padding: 60px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .section--alt { background: var(--surface); }
+  .section--alt .section { margin: 0 auto; }
+  .section__label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .section__title {
+    font-family: var(--font-head);
+    font-size: clamp(24px, 6vw, 36px);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .section__text {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  /* FORM */
+  .form { display: flex; flex-direction: column; gap: 16px; }
+  .form__group { display: flex; flex-direction: column; gap: 6px; }
+  .form__label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .form__label span { color: var(--text-faint); font-weight: 400; }
+  .form__input, .form__select, .form__textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--text);
+    transition: border-color 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .form__input:focus, .form__select:focus, .form__textarea:focus {
+    border-color: var(--accent);
+  }
+  .form__textarea { resize: vertical; min-height: 100px; }
+  .form__select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A5752' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 44px; cursor: pointer; }
+  .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 480px) { .form__row { grid-template-columns: 1fr; } }
+  .form__check { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+  .form__check input[type="checkbox"] { width: 20px; height: 20px; min-width: 20px; accent-color: var(--accent); cursor: pointer; margin-top: 2px; }
+  .form__check-label { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+  .form__submit {
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 17px;
+    padding: 17px 32px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+  }
+  .form__submit:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .form__success {
+    display: none;
+    background: var(--accent-light);
+    border: 1.5px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+  }
+  .form__success.visible { display: block; }
+  .form__success h3 {
+    font-family: var(--font-head);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .form__success p { font-size: 15px; color: var(--text-muted); }
+
+  /* DOWNLOADS */
+  .downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .download-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .download-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+  .download-card__img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    background: #eee;
+  }
+  .download-card__body { padding: 16px; }
+  .download-card__tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .download-card__title {
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .download-card__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 11px 16px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .download-card__btn:hover { background: var(--accent-hover); }
+
+  /* LOGO DOWNLOAD */
+  .logo-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .logo-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 16px;
+  }
+
+  /* SOCIAL */
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 480px) { .social-grid { grid-template-columns: 1fr; } }
+  .social-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .social-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .social-card__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .social-card__icon--ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+  .social-card__icon--fb { background: #1877F2; }
+  .social-card__handle {
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .social-card__label { font-size: 12px; color: var(--text-faint); }
+  .hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hashtag {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    user-select: all;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 14px;
+  }
+  .footer strong { color: white; }
+  .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .footer a:hover { color: white; }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="#" class="header__logo">
+    <img src="./assets/cap-logo.png" alt="cAp Logo">
+    <span class="header__name">c<span>A</span>p Team</span>
+  </a>
+  <a href="#anmeldung" class="header__btn">Jetzt mitmachen</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__tag">Community · Prävention · Gastro</div>
+  <img src="./assets/cap-logo.png" alt="cAp Logo" class="hero__logo">
+  <h1 class="hero__title">Werde Teil des <span>cAp Teams.</span></h1>
+  <p class="hero__text">Mach Ausbildung sichtbar. Lade dir unser cAp Team Material herunter, nutze Poster und Logo in deinen Beiträgen und markiere uns auf Instagram oder Facebook.</p>
+  <div class="hero__btns">
+    <a href="#anmeldung" class="btn btn--primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Zum Team anmelden
+    </a>
+    <a href="#downloads" class="btn btn--outline">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Poster & Logo herunterladen
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ANMELDUNG -->
+<div class="section--alt" id="anmeldung">
+<div class="section">
+  <p class="section__label">Team-Anmeldung</p>
+  <h2 class="section__title">Mach mit. Werde sichtbar.</h2>
+  <p class="section__text">Trag dich ein und wir melden uns bei dir. Als Teil des cAp Teams kannst du Poster teilen, andere aufmerksam machen und gemeinsam Ausbildung verändern.</p>
+
+  <div class="form__success" id="formSuccess">
+    <h3>Danke für deine Anmeldung! 🎉</h3>
+    <p>Du bist jetzt Teil des cAp Teams. Lade dir unten Poster und Team-Logo herunter und teile sie auf Social Media.</p>
+    <a href="#downloads" class="btn btn--primary" style="margin-top:16px; display:inline-flex;">Zu den Downloads ↓</a>
+  </div>
+
+  <form class="form" id="teamForm">
+    <div class="form__row">
+      <div class="form__group">
+        <label class="form__label" for="name">Name *</label>
+        <input class="form__input" type="text" id="name" name="name" placeholder="Dein Name" required>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="email">E-Mail *</label>
+        <input class="form__input" type="email" id="email" name="email" placeholder="deine@mail.de" required>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__group">
+        <label class="form__label" for="ort">Ort / Region *</label>
+        <input class="form__input" type="text" id="ort" name="ort" placeholder="z.B. Zwickau, Berlin..." required>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="rolle">Rolle *</label>
+        <select class="form__select" id="rolle" name="rolle" required>
+          <option value="">Bitte auswählen</option>
+          <option value="azubi">Azubi</option>
+          <option value="koch">Koch / Köchin</option>
+          <option value="service">Service</option>
+          <option value="ausbilder">Ausbilder/in</option>
+          <option value="unterstuetzer">Unterstützer/in</option>
+          <option value="sonstiges">Sonstiges</option>
+        </select>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__group">
+        <label class="form__label" for="instagram">Instagram-Name <span>(optional)</span></label>
+        <input class="form__input" type="text" id="instagram" name="instagram" placeholder="@deinname">
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="facebook">Facebook-Name <span>(optional)</span></label>
+        <input class="form__input" type="text" id="facebook" name="facebook" placeholder="Dein Name auf Facebook">
+      </div>
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="nachricht">Warum möchtest du Teil des cAp Teams werden? <span>(optional)</span></label>
+      <textarea class="form__textarea" id="nachricht" name="nachricht" placeholder="Erzähl uns kurz von dir..."></textarea>
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="foto">Foto von dir <span>(optional – nur wenn du möchtest)</span></label>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.6; background:var(--accent-light); border-radius:10px; padding:14px 16px;">Schick dein Foto direkt per E-Mail an <a href="mailto:kevinschlesier@culinaryapprenticeprojekt.net" style="color:var(--accent); font-weight:700;">kevinschlesier@culinaryapprenticeprojekt.net</a> oder als DM auf Instagram <strong>@culinaryapprenticeprojekt</strong> – wir kümmern uns darum.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px; margin-top:4px;">
+      <label class="form__check">
+        <input type="checkbox" name="datenschutz" required>
+        <span class="form__check-label">Ich bin einverstanden, dass cAp meine Angaben zur Kontaktaufnahme und Team-Anmeldung verarbeitet. *</span>
+      </label>
+      <label class="form__check">
+        <input type="checkbox" name="newsletter">
+        <span class="form__check-label">Ich möchte über cAp Aktionen und Community-News informiert werden.</span>
+      </label>
+      <label class="form__check">
+        <input type="checkbox" name="erwaehnung">
+        <span class="form__check-label">Ich bin einverstanden, dass cAp mich optional mit Bild/Name auf Instagram oder Facebook erwähnen darf.</span>
+      </label>
+    </div>
+    <button type="submit" class="form__submit">Jetzt dem cAp Team beitreten →</button>
+  </form>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- DOWNLOADS -->
+<div id="downloads">
+<div class="section">
+  <p class="section__label">Kostenlos für alle</p>
+  <h2 class="section__title">cAp Team Material herunterladen</h2>
+  <p class="section__text">Speichere die Dateien auf deinem Handy oder Computer. Du kannst sie für Beiträge, Stories, Ausdrucke oder Sticker nutzen.</p>
+
+  <div class="downloads-grid">
+    <!-- Poster 1 -->
+    <div class="download-card">
+      <img src="./assets/poster-team.png" alt="cAp Team Poster" class="download-card__img">
+      <div class="download-card__body">
+        <div class="download-card__tag">Poster · A4</div>
+        <div class="download-card__title">cAp Team Poster</div>
+        <a href="./assets/poster-team.png" class="download-card__btn" download="cap-team-poster.png">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Herunterladen
+        </a>
+      </div>
+    </div>
+
+    <!-- Poster 2 -->
+    <div class="download-card">
+      <img src="./assets/poster-story.png" alt="cAp Story Poster" class="download-card__img">
+      <div class="download-card__body">
+        <div class="download-card__tag">Story · A4</div>
+        <div class="download-card__title">cAp Story-Poster</div>
+        <a href="./assets/poster-story.png" class="download-card__btn" download="cap-story-poster.png">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Herunterladen
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo Download -->
+  <div class="logo-card" style="margin-top:20px;">
+    <img src="./assets/cap-logo.png" alt="cAp Logo">
+    <div class="download-card__tag">Logo · PNG</div>
+    <div class="download-card__title" style="margin-bottom:16px;">cAp Team Logo / Sticker</div>
+    <a href="./assets/cap-logo.png" class="btn btn--primary" download="cap-team-logo.png" style="display:inline-flex;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Logo herunterladen
+    </a>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SOCIAL MEDIA -->
+<div class="section--alt">
+<div class="section">
+  <p class="section__label">Community</p>
+  <h2 class="section__title">So erwähnst du cAp</h2>
+  <p class="section__text">Wenn du cAp in Videos, Stories oder Beiträgen erwähnst, können wir dich und dein Engagement leichter finden und ebenfalls sichtbar machen.</p>
+
+  <div class="social-grid">
+    <a href="https://www.instagram.com/culinaryapprenticeprojekt" target="_blank" rel="noopener noreferrer" class="social-card">
+      <div class="social-card__icon social-card__icon--ig">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </div>
+      <div>
+        <div class="social-card__handle">@culinaryapprenticeprojekt</div>
+        <div class="social-card__label">Instagram · Folgen & markieren</div>
+      </div>
+    </a>
+    <a href="https://www.facebook.com/share/1DcP7cQSTD/" target="_blank" rel="noopener noreferrer" class="social-card">
+      <div class="social-card__icon social-card__icon--fb">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </div>
+      <div>
+        <div class="social-card__handle">Kevin Schlesier</div>
+        <div class="social-card__label">Facebook · Folgen & markieren</div>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size:15px; font-weight:700; color:var(--text); margin-bottom:12px;">Hashtags kopieren und nutzen:</p>
+  <div class="hashtags">
+    <span class="hashtag">#capteam</span>
+    <span class="hashtag">#culinaryapprentice</span>
+    <span class="hashtag">#azubikompass</span>
+    <span class="hashtag">#gastroliebe</span>
+    <span class="hashtag">#ausbildung</span>
+    <span class="hashtag">#gastroazubi</span>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- KONTAKT -->
+<div class="section" style="text-align:center;">
+  <p class="section__label">Kontakt</p>
+  <h2 class="section__title">Fragen zum cAp Team?</h2>
+  <p class="section__text" style="margin-bottom:20px;">Wir freuen uns über jede Nachricht.</p>
+  <a href="mailto:kevinschlesier@culinaryapprenticeprojekt.net" class="btn btn--primary" style="display:inline-flex;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    kevinschlesier@culinaryapprenticeprojekt.net
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p><strong>cAp Team</strong> · Gemeinsam für Ausbildung ohne Angst.</p>
+  <p style="margin-top:8px;"><a href="https://culinaryapprenticeprojekt.net">culinaryapprenticeprojekt.net</a> · <a href="./impressum.html">Impressum</a> · <a href="./datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<script>
+document.getElementById('teamForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const f = e.target;
+  const name = f.querySelector('#name').value;
+  const email = f.querySelector('#email').value;
+  const ort = f.querySelector('#ort').value;
+  const rolle = f.querySelector('#rolle').value;
+  const instagram = f.querySelector('#instagram').value;
+  const facebook = f.querySelector('#facebook').value;
+  const nachricht = f.querySelector('#nachricht').value;
+  const newsletter = f.querySelector('[name="newsletter"]').checked ? 'Ja' : 'Nein';
+  const erwaehnung = f.querySelector('[name="erwaehnung"]').checked ? 'Ja' : 'Nein';
+
+  let body = `Neue cAp Team-Anmeldung\n\n`;
+  body += `Name: ${name}\n`;
+  body += `E-Mail: ${email}\n`;
+  body += `Ort/Region: ${ort}\n`;
+  body += `Rolle: ${rolle}\n`;
+  if (instagram) body += `Instagram: ${instagram}\n`;
+  if (facebook) body += `Facebook: ${facebook}\n`;
+  body += `Newsletter: ${newsletter}\n`;
+  body += `Erwähnung erlaubt: ${erwaehnung}\n`;
+  if (nachricht) body += `\nNachricht:\n${nachricht}`;
+
+  const subject = encodeURIComponent(`cAp Team-Anmeldung: ${name}`);
+  window.location.href = `mailto:kevinschlesier@culinaryapprenticeprojekt.net?subject=${subject}&body=${encodeURIComponent(body)}`;
+
+  // Show success
+  f.style.display = 'none';
+  document.getElementById('formSuccess').classList.add('visible');
+  document.getElementById('formSuccess').scrollIntoView({behavior:'smooth', block:'center'});
+});
+</script>
+
+</body>
+</html>
