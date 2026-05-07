@@ -1,4 +1,6 @@
-/* base.css — Resets & Design Tokens for cAp */
+/* base.css — Resets & Design Tokens for Stay Human Shift / cAp */
+/* Built with Perplexity Computer — https://www.perplexity.ai/computer */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -86,31 +88,42 @@ a, button, [role="button"], [role="link"], input, textarea, select {
   --space-8:  2rem;
   --space-10: 2.5rem;
   --space-12: 3rem;
+  --space-14: 3.5rem;
   --space-16: 4rem;
   --space-20: 5rem;
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Dark Theme Colors — cAp Brand */
-  --color-bg:           #0d0d0d;
-  --color-surface:      #141414;
-  --color-surface-2:    #1a1a1a;
-  --color-surface-3:    #222222;
-  --color-border:       #2a2a2a;
-  --color-border-light: #333333;
-  --color-text:         #e8e6e3;
-  --color-text-muted:   #8a8a8a;
-  --color-text-faint:   #555555;
-  --color-accent:       #E8A838;
-  --color-accent-hover: #F0B84D;
-  --color-accent-dark:  #C48A20;
-  --color-accent-glow:  rgba(232, 168, 56, 0.15);
+  /* NEW Dark Theme Colors — warmer, lighter than before */
+  --color-bg:            #1a1a1a;   /* was #0d0d0d */
+  --color-surface:       #1f1f1f;   /* was #141414 */
+  --color-surface-2:     #222222;   /* was #1a1a1a — cards */
+  --color-surface-3:     #2a2a2a;   /* was #222222 */
+  --color-surface-deep:  #161616;   /* slightly deeper for cAp section */
+  --color-border:        #333333;   /* was #2a2a2a */
+  --color-border-light:  #3d3d3d;   /* was #333333 */
+  --color-text:          #e8e6e3;
+  --color-text-muted:    #8a8a8a;
+  --color-text-faint:    #555555;
+
+  /* Amber — Stay Human Shift primary CTA / cAp brand accent */
+  --color-accent:        #E8A838;
+  --color-accent-hover:  #F0B84D;
+  --color-accent-dark:   #C48A20;
+  --color-accent-glow:   rgba(232, 168, 56, 0.15);
+
+  /* Copper/Bronze — Stay Human Shift section accent */
+  --color-copper:        #C4813A;
+  --color-copper-hover:  #D4914A;
+  --color-copper-dark:   #A86A28;
+  --color-copper-glow:   rgba(196, 129, 58, 0.15);
 
   /* Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
   --radius-full: 9999px;
 
   /* Transitions */
@@ -122,6 +135,7 @@ a, button, [role="button"], [role="link"], input, textarea, select {
   --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
   --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
   --shadow-glow: 0 0 40px rgba(232, 168, 56, 0.1);
+  --shadow-copper-glow: 0 0 40px rgba(196, 129, 58, 0.12);
 
   /* Content Widths */
   --content-narrow: 640px;
