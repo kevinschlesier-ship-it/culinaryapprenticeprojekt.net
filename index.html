@@ -25,7 +25,7 @@
     .nav__logo { height: 44px; width: auto; }
     .nav__brand-text { display: flex; flex-direction: column; line-height: 1.15; }
     .nav__brand-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--color-text); }
-    .nav__brand-sub { font-size: 0.6rem; font-weight: 600; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.1em; }
+    .nav__brand-sub { font-size: 0.6rem; font-weight: 600; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
     .nav__links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
     .nav__links a { text-decoration: none; color: var(--color-text-muted); font-size: 0.88rem; font-weight: 500; transition: color 180ms; }
     .nav__links a:hover { color: var(--color-text); }
@@ -260,8 +260,7 @@
     .team { padding: 5rem 2rem; background: var(--color-surface); border-top: 1px solid var(--color-border); }
     .team__inner { max-width: var(--content-wide); margin: 0 auto; }
     .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; align-items: start; }
-    @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 560px) { .team-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr; } }
     .team-card {
       background: var(--color-bg); border: 1px solid var(--color-border);
       border-radius: var(--radius-xl); overflow: hidden;
