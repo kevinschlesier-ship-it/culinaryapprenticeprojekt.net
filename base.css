@@ -95,16 +95,16 @@ a, button, [role="button"], [role="link"], input, textarea, select {
   --space-32: 8rem;
 
   /* NEW Dark Theme Colors — warmer, lighter than before */
-  --color-bg:            #1a1a1a;   /* was #0d0d0d */
-  --color-surface:       #1f1f1f;   /* was #141414 */
-  --color-surface-2:     #222222;   /* was #1a1a1a — cards */
-  --color-surface-3:     #2a2a2a;   /* was #222222 */
-  --color-surface-deep:  #161616;   /* slightly deeper for cAp section */
-  --color-border:        #333333;   /* was #2a2a2a */
-  --color-border-light:  #3d3d3d;   /* was #333333 */
+  --color-bg:            #252525;   /* was #0d0d0d */
+  --color-surface:       #2a2a2a;   /* was #141414 */
+  --color-surface-2:     #2e2e2e;   /* was #1a1a1a — cards */
+  --color-surface-3:     #323232;   /* was #222222 */
+  --color-surface-deep:  #1e1e1e;   /* slightly deeper for cAp section */
+  --color-border:        #3a3a3a;   /* was #2a2a2a */
+  --color-border-light:  #484848;   /* was #333333 */
   --color-text:          #e8e6e3;
-  --color-text-muted:    #8a8a8a;
-  --color-text-faint:    #555555;
+  --color-text-muted:    #9a9a9a;
+  --color-text-faint:    #666666;
 
   /* Amber — Stay Human Shift primary CTA / cAp brand accent */
   --color-accent:        #E8A838;
