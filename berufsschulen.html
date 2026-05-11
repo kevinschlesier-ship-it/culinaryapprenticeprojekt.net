@@ -4,1425 +4,1648 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Stay Human Shift – Aufklärungstage für Berufsschulen, Oberschulen und Bildungseinrichtungen. Mentale Gesundheit, Sucht, Diabetes, Sexismus, Rassismus. Online oder vor Ort, 2–3 Stunden." />
-  <title>Für Berufsschulen & Schulen – Stay Human Shift</title>
+  <meta name="description" content="Stay Human Shift – Aufklärungstage für Berufsschulen, Oberschulen und BVJ. Themen: Alkohol & Drogen, Psychische Belastungen, Gewalt, Sexismus, Rassismus, Diabetes. Online oder vor Ort." />
+  <title>Aufklärungstage für Schulen – Stay Human Shift</title>
 
-  <!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* =========================================================
-       BERUFSSCHULEN PAGE — Grün-Akzent Override #6BBF8A
-       ========================================================= */
+    /* ============================================================
+       BERUFSSCHULEN.HTML — Grün #6BBF8A Akzent, Dark Theme
+       ============================================================ */
 
-    /* Green accent overrides for this page */
     :root {
-      --color-green:        #6BBF8A;
-      --color-green-hover:  #7ED4A0;
-      --color-green-dark:   #4F9E6E;
-      --color-green-glow:   rgba(107, 191, 138, 0.15);
+      --green:         #6BBF8A;
+      --green-hover:   #7ED4A0;
+      --green-dark:    #4F9E6E;
+      --green-subtle:  rgba(107, 191, 138, 0.10);
+      --green-border:  rgba(107, 191, 138, 0.25);
+      --green-glow:    rgba(107, 191, 138, 0.18);
     }
 
-    /* Override selection color */
+    /* Grundlayout */
+    body {
+      background: #2e2e2e;
+      color: #e8e6e3;
+      font-family: 'Satoshi', 'Helvetica Neue', sans-serif;
+    }
+
     ::selection {
-      background: rgba(107, 191, 138, 0.3);
+      background: rgba(107, 191, 138, 0.28);
       color: #fff;
     }
 
-    /* ─── NAV ─────────────────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ── UTIL ──────────────────────────────────────────────────── */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding-inline: clamp(1.25rem, 5vw, 3rem);
+    }
+
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+    }
+
+    /* ── NAV ───────────────────────────────────────────────────── */
     .bs-nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: var(--space-4) var(--space-6);
-      background: rgba(46, 46, 46, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--color-border);
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 0.85rem 0;
+      background: rgba(46, 46, 46, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(107, 191, 138, 0.12);
     }
 
     .bs-nav__inner {
-      max-width: var(--content-wide);
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1.5rem;
     }
 
     .bs-nav__brand {
       display: flex;
       align-items: center;
-      gap: var(--space-3);
+      gap: 0.65rem;
       text-decoration: none;
+      color: #e8e6e3;
+      flex-shrink: 0;
+    }
+
+    /* Logo-Icon SVG */
+    .bs-nav__logo-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .bs-nav__brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
     }
 
     .bs-nav__brand-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-      color: var(--color-green);
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #e8e6e3;
+    }
+
+    .bs-nav__brand-sub {
+      font-size: 0.58rem;
+      font-weight: 600;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
     .bs-nav__back {
       display: inline-flex;
       align-items: center;
-      gap: var(--space-2);
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-text-muted);
+      gap: 0.4rem;
+      color: #a8a8a8;
       text-decoration: none;
-      transition: color var(--transition-interactive);
+      font-size: 0.84rem;
+      font-weight: 500;
+      transition: color 180ms;
     }
 
     .bs-nav__back:hover {
-      color: var(--color-green);
+      color: var(--green);
     }
 
     .bs-nav__back svg {
-      flex-shrink: 0;
-      transition: transform var(--transition-interactive);
+      display: inline-block;
+      transition: transform 180ms;
     }
 
     .bs-nav__back:hover svg {
       transform: translateX(-3px);
     }
 
-    /* ─── HERO ──────────────────────────────────────────────── */
-    .bs-hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      padding: calc(var(--space-32) + var(--space-10)) var(--space-6) var(--space-20);
+    /* ── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      padding: clamp(6rem, 14vw, 10rem) 0 clamp(4rem, 8vw, 7rem);
       position: relative;
       overflow: hidden;
-      background: var(--color-bg);
     }
 
-    .bs-hero::before {
+    .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 70% at 80% 20%, rgba(107, 191, 138, 0.07) 0%, transparent 60%);
+      background:
+        radial-gradient(ellipse 60% 50% at 95% 10%, rgba(107, 191, 138, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 60% at 5% 90%, rgba(107, 191, 138, 0.04) 0%, transparent 50%);
       pointer-events: none;
     }
 
-    .bs-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-green), transparent);
-      opacity: 0.3;
-    }
-
-    .bs-hero__inner {
+    .hero__content {
       position: relative;
-      z-index: 1;
-      max-width: var(--content-wide);
-      margin: 0 auto;
-      width: 100%;
+      z-index: 2;
+      max-width: 780px;
     }
 
-    .bs-hero__eyebrow {
+    .hero__badge {
       display: inline-flex;
       align-items: center;
-      gap: var(--space-2);
-      font-size: var(--text-xs);
+      gap: 0.45rem;
+      background: var(--green-subtle);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--color-green);
-      margin-bottom: var(--space-6);
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
     }
 
-    .bs-hero__eyebrow::before {
+    .hero__badge-dot {
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero__h1 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.2rem, 1rem + 5vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      color: #f0efed;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero__h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .hero__subtitle {
+      font-size: clamp(1rem, 0.85rem + 0.6vw, 1.2rem);
+      color: #a8a8a8;
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero__ctas {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ── BUTTONS ───────────────────────────────────────────────── */
+    .btn-green {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--green);
+      color: #1a2e22;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 180ms, transform 180ms, box-shadow 180ms;
+    }
+
+    .btn-green:hover {
+      background: var(--green-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px var(--green-glow);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: transparent;
+      color: #a8a8a8;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      cursor: pointer;
+      transition: all 180ms;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--green-border);
+      color: var(--green);
+      background: var(--green-subtle);
+    }
+
+    /* ── SECTION CHROME ─────────────────────────────────────────── */
+    .section {
+      padding-block: clamp(3.5rem, 7vw, 6rem);
+    }
+
+    .section--alt {
+      background: #2a2a2a;
+    }
+
+    .section__label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section__label::before {
       content: '';
-      width: 18px;
-      height: 2px;
-      background: var(--color-green);
+      display: block;
+      width: 18px; height: 2px;
+      background: var(--green);
       border-radius: 2px;
       flex-shrink: 0;
     }
 
-    .bs-hero__title {
-      font-family: var(--font-display);
+    .section__title {
+      font-family: 'Cabinet Grotesk', sans-serif;
       font-weight: 800;
-      font-size: clamp(2.4rem, 1rem + 5.5vw, 5.5rem);
-      line-height: 1.02;
-      letter-spacing: -0.035em;
-      color: #fff;
-      margin-bottom: var(--space-6);
-      max-width: 820px;
-    }
-
-    .bs-hero__desc {
-      font-size: clamp(1rem, 0.9rem + 0.4vw, 1.2rem);
-      color: rgba(232, 230, 227, 0.7);
-      max-width: 580px;
-      line-height: 1.75;
-      margin-bottom: var(--space-10);
-    }
-
-    .bs-hero__badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-    }
-
-    .bs-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      color: var(--color-green);
-      background: var(--color-green-glow);
-      border: 1px solid rgba(107, 191, 138, 0.25);
-      border-radius: var(--radius-full);
-      padding: var(--space-2) var(--space-4);
-      letter-spacing: 0.02em;
-    }
-
-    /* ─── ABLAUF (3 Steps) ────────────────────────────────── */
-    .bs-ablauf {
-      padding: clamp(var(--space-16), 7vw, var(--space-24)) var(--space-6);
-      background: var(--color-surface);
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .bs-ablauf__inner {
-      max-width: var(--content-wide);
-      margin: 0 auto;
-    }
-
-    .bs-ablauf__head {
-      margin-bottom: var(--space-12);
-    }
-
-    .bs-ablauf__label {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--color-green);
-      margin-bottom: var(--space-3);
-    }
-
-    .bs-ablauf__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 1rem + 2vw, 2.5rem);
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.03em;
+      font-size: clamp(1.6rem, 1rem + 2.5vw, 2.8rem);
       line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: #f0efed;
+      margin-bottom: 1rem;
     }
 
-    .bs-steps {
+    .section__intro {
+      font-size: clamp(0.96rem, 0.88rem + 0.3vw, 1.08rem);
+      color: #a0a0a0;
+      line-height: 1.75;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── EINLEITUNG / ABLAUF ────────────────────────────────────── */
+    .ablauf {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .ablauf { grid-template-columns: 1fr; }
+    }
+
+    .ablauf__step {
+      background: #343434;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 1.5rem;
       position: relative;
     }
 
-    @media (min-width: 768px) {
-      .bs-steps {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-      }
-    }
-
-    .bs-step {
-      position: relative;
-      background: var(--color-surface-2);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8) var(--space-7);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
-      transition: border-color var(--transition-interactive), transform var(--transition-interactive);
-    }
-
-    .bs-step:hover {
-      border-color: var(--color-green);
-      transform: translateY(-3px);
-    }
-
-    @media (min-width: 768px) {
-      .bs-step {
-        border-radius: 0;
-        border-right: none;
-      }
-
-      .bs-step:first-child {
-        border-radius: var(--radius-xl) 0 0 var(--radius-xl);
-      }
-
-      .bs-step:last-child {
-        border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
-        border-right: 1px solid var(--color-border);
-      }
-
-      .bs-step:hover {
-        border-color: var(--color-green);
-        transform: none;
-        background: rgba(107, 191, 138, 0.04);
-      }
-    }
-
-    .bs-step__number {
-      font-family: var(--font-display);
-      font-size: 3rem;
+    .ablauf__number {
+      font-family: 'Cabinet Grotesk', sans-serif;
       font-weight: 800;
+      font-size: 2.2rem;
+      color: var(--green);
       line-height: 1;
-      color: rgba(107, 191, 138, 0.2);
-      letter-spacing: -0.04em;
+      margin-bottom: 0.6rem;
+      opacity: 0.35;
     }
 
-    .bs-step__title {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
+    .ablauf__title {
+      font-family: 'Cabinet Grotesk', sans-serif;
       font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      font-size: 1rem;
+      color: #f0efed;
+      margin-bottom: 0.3rem;
     }
 
-    .bs-step__desc {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.6;
+    .ablauf__desc {
+      font-size: 0.88rem;
+      color: #a0a0a0;
+      line-height: 1.5;
     }
 
-    .bs-step__connector {
+    .ablauf__arrow {
       display: none;
     }
 
-    @media (min-width: 768px) {
-      .bs-step__connector {
-        display: block;
+    @media (min-width: 701px) {
+      .ablauf { position: relative; }
+      .ablauf__step:not(:last-child)::after {
+        content: '';
         position: absolute;
-        right: -1px;
+        right: -0.85rem;
         top: 50%;
         transform: translateY(-50%);
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 10px solid var(--color-green);
-        opacity: 0.4;
-        z-index: 2;
+        width: 12px; height: 12px;
+        border-top: 2px solid var(--green-border);
+        border-right: 2px solid var(--green-border);
+        transform: translateY(-50%) rotate(45deg);
+        border-radius: 1px;
       }
-
-      .bs-step:last-child .bs-step__connector { display: none; }
     }
 
-    /* ─── THEMEN SECTION ─────────────────────────────────── */
-    .bs-themen {
-      padding: clamp(var(--space-16), 7vw, var(--space-24)) var(--space-6);
-      background: var(--color-bg);
-    }
-
-    .bs-themen__inner {
-      max-width: var(--content-wide);
-      margin: 0 auto;
-    }
-
-    .bs-themen__head {
-      margin-bottom: var(--space-12);
-    }
-
-    .bs-themen__label {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--color-green);
-      margin-bottom: var(--space-3);
-    }
-
-    .bs-themen__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 1rem + 2vw, 2.5rem);
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: var(--space-4);
-    }
-
-    .bs-themen__subtitle {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      max-width: 600px;
-      line-height: 1.7;
-    }
-
-    .bs-themen__grid {
+    /* ── THEMEN-GRID ─────────────────────────────────────────────── */
+    .themen-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-5);
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
     }
 
-    @media (min-width: 900px) {
-      .bs-themen__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    @media (max-width: 480px) {
+      .themen-grid { grid-template-columns: 1fr; }
     }
 
-    /* THEMEN CARD */
-    .bs-thema-card {
-      background: var(--color-surface-2);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: clamp(var(--space-7), 3vw, var(--space-10));
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-5);
-      transition: border-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
+    .thema-card {
+      background: #393939;
+      border: 1px solid #484848;
+      border-radius: 12px;
+      padding: 1.6rem;
+      transition: border-color 200ms, transform 200ms, box-shadow 200ms;
       scroll-margin-top: 5rem;
     }
 
-    .bs-thema-card:hover {
-      border-color: var(--color-green);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(107, 191, 138, 0.1);
+    .thema-card:hover {
+      border-color: var(--green-border);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
     }
 
-    .bs-thema-card__header {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-4);
+    .thema-card__icon {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--green-subtle);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      color: var(--green);
     }
 
-    .bs-thema-card__icon {
-      font-size: 2rem;
-      line-height: 1;
-      flex-shrink: 0;
-      width: 52px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--color-green-glow);
-      border: 1px solid rgba(107, 191, 138, 0.2);
-      border-radius: var(--radius-lg);
-    }
-
-    .bs-thema-card__title-wrap {
-      flex: 1;
-    }
-
-    .bs-thema-card__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem);
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: var(--space-2);
-    }
-
-    .bs-thema-card__audience {
-      font-size: var(--text-xs);
-      color: var(--color-green);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-    }
-
-    .bs-thema-card__divider {
-      height: 1px;
-      background: var(--color-border);
-      border: none;
-    }
-
-    .bs-thema-card__body {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
-      flex: 1;
-    }
-
-    .bs-thema-card__content-label {
-      font-size: var(--text-xs);
+    .thema-card__title {
+      font-family: 'Cabinet Grotesk', sans-serif;
       font-weight: 700;
+      font-size: 1.05rem;
+      color: #f0efed;
+      margin-bottom: 0.35rem;
+    }
+
+    .thema-card__zielgruppe {
+      font-size: 0.76rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--color-text-faint);
-      margin-bottom: var(--space-2);
+      letter-spacing: 0.09em;
+      color: var(--green);
+      margin-bottom: 0.75rem;
     }
 
-    .bs-thema-card__list {
-      list-style: none;
+    .thema-card__content {
+      font-size: 0.9rem;
+      color: #a0a0a0;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .thema-card__meta {
       display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
+      gap: 0.65rem;
+      flex-wrap: wrap;
     }
 
-    .bs-thema-card__list li {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      padding-left: var(--space-5);
+    .thema-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: #787878;
+      background: #2e2e2e;
+      border: 1px solid #444;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .thema-tag svg {
+      flex-shrink: 0;
+    }
+
+    /* ── DIABETES SONDERFORMAT ───────────────────────────────────── */
+    .diabetes-section {
+      padding-block: clamp(3.5rem, 7vw, 6rem);
+      background: linear-gradient(135deg, #2a2e2a 0%, #2b302b 50%, #2a2e2a 100%);
       position: relative;
-      line-height: 1.55;
-      max-width: none;
+      overflow: hidden;
     }
 
-    .bs-thema-card__list li::before {
+    .diabetes-section::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 8px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--color-green);
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 100% 0%, rgba(107, 191, 138, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 35% 40% at 0% 100%, rgba(107, 191, 138, 0.05) 0%, transparent 50%);
+      pointer-events: none;
     }
 
-    .bs-thema-card__footer {
-      display: flex;
-      gap: var(--space-3);
-      flex-wrap: wrap;
-      margin-top: auto;
+    .diabetes-card {
+      position: relative;
+      background: #2e3a2e;
+      border: 2px solid rgba(107, 191, 138, 0.35);
+      border-radius: 16px;
+      padding: clamp(2rem, 4vw, 3rem);
+      max-width: 900px;
+      box-shadow: 0 0 60px rgba(107, 191, 138, 0.06), 0 16px 48px rgba(0,0,0,0.45);
     }
 
-    .bs-thema-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      color: var(--color-text-muted);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-full);
-      padding: var(--space-2) var(--space-3);
-    }
-
-    .bs-thema-pill svg {
-      flex-shrink: 0;
-      color: var(--color-green);
-    }
-
-    /* ─── PREISE & BUCHUNG ──────────────────────────────── */
-    .bs-preise {
-      padding: clamp(var(--space-16), 7vw, var(--space-24)) var(--space-6);
-      background: var(--color-surface);
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .bs-preise__inner {
-      max-width: var(--content-narrow);
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .bs-preise__label {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--color-green);
-      margin-bottom: var(--space-3);
-    }
-
-    .bs-preise__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 1rem + 2vw, 2.5rem);
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: var(--space-6);
-    }
-
-    .bs-preise__card {
-      background: var(--color-surface-2);
-      border: 1.5px solid rgba(107, 191, 138, 0.35);
-      border-radius: var(--radius-xl);
-      padding: clamp(var(--space-8), 4vw, var(--space-12));
-      box-shadow: 0 0 60px rgba(107, 191, 138, 0.06);
-      margin-bottom: var(--space-8);
-    }
-
-    .bs-preise__text {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.8;
-      max-width: 480px;
-      margin: 0 auto var(--space-8);
-    }
-
-    .bs-preise__checklist {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-      text-align: left;
-      max-width: 400px;
-      margin: 0 auto var(--space-8);
-    }
-
-    .bs-preise__checklist li {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      max-width: none;
-    }
-
-    .bs-preise__checklist li::before {
-      content: '';
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      background: var(--color-green-glow);
-      border: 1.5px solid var(--color-green);
-      border-radius: 50%;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%236BBF8A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .bs-btn-green {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-4) var(--space-10);
-      border-radius: var(--radius-full);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      background: var(--color-green);
-      color: #1a2e22;
-      transition: background var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
-      cursor: pointer;
-      border: none;
-    }
-
-    .bs-btn-green:hover {
-      background: var(--color-green-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 28px rgba(107, 191, 138, 0.35);
-    }
-
-    .bs-btn-outline-green {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-4) var(--space-8);
-      border-radius: var(--radius-full);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      background: transparent;
-      color: var(--color-green);
-      border: 1.5px solid var(--color-green);
-      transition: all var(--transition-interactive);
-      cursor: pointer;
-    }
-
-    .bs-btn-outline-green:hover {
-      background: var(--color-green);
-      color: #1a2e22;
-      transform: translateY(-1px);
-    }
-
-    /* ─── PARTNER ──────────────────────────────────────── */
-    .bs-partner {
-      padding: clamp(var(--space-12), 5vw, var(--space-20)) var(--space-6);
-      background: var(--color-bg);
-    }
-
-    .bs-partner__inner {
-      max-width: var(--content-default);
-      margin: 0 auto;
-    }
-
-    .bs-partner__card {
-      background: var(--color-surface-2);
-      border: 1px solid var(--color-border);
-      border-left: 3px solid var(--color-green);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8) var(--space-8);
+    .diabetes-card__header {
       display: flex;
       align-items: flex-start;
-      gap: var(--space-5);
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .bs-partner__icon {
-      width: 48px;
-      height: 48px;
+    .diabetes-card__icon-wrap {
+      width: 52px; height: 52px;
+      background: rgba(107, 191, 138, 0.15);
+      border: 1px solid rgba(107, 191, 138, 0.3);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green);
       flex-shrink: 0;
-      background: var(--color-green-glow);
-      border: 1px solid rgba(107, 191, 138, 0.25);
-      border-radius: var(--radius-lg);
-      display: flex;
+    }
+
+    .diabetes-card__titles {
+      flex: 1;
+    }
+
+    .diabetes-card__badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-    }
-
-    .bs-partner__label {
-      font-size: var(--text-xs);
+      gap: 0.4rem;
+      background: rgba(107, 191, 138, 0.15);
+      border: 1px solid rgba(107, 191, 138, 0.3);
+      color: var(--green);
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-green);
-      margin-bottom: var(--space-2);
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
     }
 
-    .bs-partner__text {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
-      line-height: 1.7;
-      max-width: 560px;
-    }
-
-    .bs-partner__text strong {
-      color: var(--color-text);
-      font-weight: 600;
-    }
-
-    /* ─── KONTAKT ──────────────────────────────────────── */
-    .bs-kontakt {
-      padding: clamp(var(--space-16), 7vw, var(--space-24)) var(--space-6);
-      background: var(--color-surface);
-      border-top: 1px solid var(--color-border);
-    }
-
-    .bs-kontakt__inner {
-      max-width: var(--content-wide);
-      margin: 0 auto;
-    }
-
-    .bs-kontakt__head {
-      margin-bottom: var(--space-12);
-    }
-
-    .bs-kontakt__label {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--color-green);
-      margin-bottom: var(--space-3);
-    }
-
-    .bs-kontakt__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 1rem + 2vw, 2.5rem);
+    .diabetes-card__title {
+      font-family: 'Cabinet Grotesk', sans-serif;
       font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.03em;
+      font-size: clamp(1.3rem, 1rem + 1.5vw, 1.9rem);
+      color: #f0efed;
       line-height: 1.1;
     }
 
-    .bs-kontakt__layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-12);
-    }
-
-    @media (min-width: 840px) {
-      .bs-kontakt__layout {
-        grid-template-columns: 380px 1fr;
-        align-items: start;
-      }
-    }
-
-    .bs-kontakt__info-text {
-      font-size: var(--text-base);
-      color: var(--color-text-muted);
+    .diabetes-card__body {
+      font-size: 0.95rem;
+      color: #b0b8b0;
       line-height: 1.75;
-      margin-bottom: var(--space-8);
+      margin-bottom: 1.75rem;
+      max-width: 65ch;
     }
 
-    .bs-kontakt__channels {
+    .diabetes-inhalte {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .diabetes-inhalt {
       display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: #a8b8a8;
+      line-height: 1.45;
     }
 
-    .bs-channel {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-    }
-
-    .bs-channel__icon {
-      width: 44px;
-      height: 44px;
+    .diabetes-inhalt__check {
+      width: 16px; height: 16px;
+      color: var(--green);
       flex-shrink: 0;
-      background: var(--color-green-glow);
+      margin-top: 2px;
+    }
+
+    /* Diabetes Preise */
+    .diabetes-preise {
+      background: rgba(0,0,0,0.2);
       border: 1px solid rgba(107, 191, 138, 0.2);
-      border-radius: var(--radius-lg);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1.75rem;
+    }
+
+    .diabetes-preise__title {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid rgba(107, 191, 138, 0.15);
+      background: rgba(107, 191, 138, 0.05);
+    }
+
+    .diabetes-preise__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      gap: 1rem;
+    }
+
+    .diabetes-preise__row:last-child {
+      border-bottom: none;
+    }
+
+    .diabetes-preise__row:hover {
+      background: rgba(107, 191, 138, 0.04);
+    }
+
+    .diabetes-preise__label {
+      font-size: 0.9rem;
+      color: #c0c0c0;
+      flex: 1;
+    }
+
+    .diabetes-preise__label span {
+      display: block;
+      font-size: 0.76rem;
+      color: #787878;
+      margin-top: 1px;
+    }
+
+    .diabetes-preise__price {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .diabetes-preise__note {
+      font-size: 0.72rem;
+      color: #787878;
+      padding: 0.5rem 1.25rem;
+      font-style: italic;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    /* ── STANDARD-PREISE ─────────────────────────────────────────── */
+    .preise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      .preise-grid { grid-template-columns: 1fr; }
+    }
+
+    .preis-card {
+      background: #393939;
+      border: 1px solid #484848;
+      border-radius: 10px;
+      padding: 1.35rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: border-color 180ms;
+    }
+
+    .preis-card:hover {
+      border-color: var(--green-border);
+    }
+
+    .preis-card--special {
+      border-color: rgba(107, 191, 138, 0.25);
+      background: rgba(107, 191, 138, 0.04);
+    }
+
+    .preis-card__label {
+      font-size: 0.9rem;
+      color: #c0c0c0;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .preis-card__sub {
+      font-size: 0.76rem;
+      color: #787878;
+      margin-top: 0.25rem;
+    }
+
+    .preis-card__amount {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--green);
+      white-space: nowrap;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .preis-card__amount--free {
+      color: #6BBF8A;
+    }
+
+    .preise-hinweis {
+      background: #343434;
+      border: 1px solid #444;
+      border-left: 3px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      color: #a0a0a0;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    /* ── PARTNER ─────────────────────────────────────────────────── */
+    .partner-section {
+      background: #2a2a2a;
+    }
+
+    .partner-content {
+      max-width: 780px;
+    }
+
+    .partner-highlight {
+      background: #343434;
+      border: 1px solid #484848;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .partner-highlight__icon {
+      width: 40px; height: 40px;
+      background: var(--green-subtle);
+      border: 1px solid var(--green-border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .partner-highlight__body {}
+
+    .partner-highlight__name {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #f0efed;
+      margin-bottom: 0.3rem;
+    }
+
+    .partner-highlight__desc {
+      font-size: 0.88rem;
+      color: #a0a0a0;
+      line-height: 1.55;
+    }
+
+    .partner-netzwerk {
+      font-size: 0.9rem;
+      color: #a0a0a0;
+      line-height: 1.7;
+    }
+
+    .partner-netzwerk strong {
+      color: #c8c6c3;
+    }
+
+    /* ── KONTAKT / FORMULAR ──────────────────────────────────────── */
+    .kontakt-section {
+      scroll-margin-top: 5rem;
+    }
+
+    .kontakt-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    @media (max-width: 800px) {
+      .kontakt-inner { grid-template-columns: 1fr; }
+    }
+
+    .kontakt-info {}
+
+    .kontakt-info__title {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.3rem, 1rem + 1.5vw, 1.9rem);
+      color: #f0efed;
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .kontakt-info__desc {
+      font-size: 0.92rem;
+      color: #a0a0a0;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 45ch;
+    }
+
+    .kontakt-direct {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .kontakt-direct__item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: var(--color-green);
-    }
-
-    .bs-channel__meta-label {
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 2px;
-    }
-
-    .bs-channel__meta-value {
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--color-text);
+      gap: 0.6rem;
       text-decoration: none;
-      transition: color var(--transition-interactive);
+      color: #c0c0c0;
+      font-size: 0.9rem;
+      transition: color 180ms;
     }
 
-    .bs-channel__meta-value:hover {
-      color: var(--color-green);
+    .kontakt-direct__item:hover {
+      color: var(--green);
     }
 
-    /* Form styles */
-    .bs-form {
-      background: var(--color-surface-2);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: clamp(var(--space-7), 3vw, var(--space-10));
+    .kontakt-direct__icon {
+      width: 32px; height: 32px;
+      background: var(--green-subtle);
+      border: 1px solid var(--green-border);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* Formular */
+    .kontakt-form {
+      background: #343434;
+      border: 1px solid #484848;
+      border-radius: 14px;
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 520px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
       display: flex;
       flex-direction: column;
-      gap: var(--space-5);
+      gap: 0.35rem;
     }
 
-    .bs-form-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
+    .form-group--full {
+      grid-column: 1 / -1;
     }
 
-    .bs-form-group label {
-      font-size: var(--text-sm);
+    .form-label {
+      font-size: 0.8rem;
       font-weight: 600;
-      color: var(--color-text);
-      letter-spacing: 0.02em;
+      color: #c0c0c0;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
     }
 
-    .bs-form-group input,
-    .bs-form-group select,
-    .bs-form-group textarea {
-      background: var(--color-surface);
-      border: 1.5px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-3) var(--space-4);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      outline: none;
-      transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: #2e2e2e;
+      border: 1px solid #555;
+      border-radius: 7px;
+      padding: 0.65rem 0.9rem;
+      color: #e0dedd;
+      font-size: 0.9rem;
+      font-family: 'Satoshi', sans-serif;
+      transition: border-color 180ms, box-shadow 180ms;
       width: 100%;
     }
 
-    .bs-form-group input::placeholder,
-    .bs-form-group textarea::placeholder {
-      color: var(--color-text-faint);
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(107, 191, 138, 0.15);
     }
 
-    .bs-form-group input:focus,
-    .bs-form-group select:focus,
-    .bs-form-group textarea:focus {
-      border-color: var(--color-green);
-      box-shadow: 0 0 0 3px rgba(107, 191, 138, 0.12);
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #666;
     }
 
-    .bs-form-group select option {
-      background: var(--color-surface-2);
-      color: var(--color-text);
+    .form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 7L11 1' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.9rem center;
+      padding-right: 2.2rem;
+      cursor: pointer;
     }
 
-    .bs-form-group textarea {
+    .form-select option {
+      background: #2e2e2e;
+    }
+
+    .form-textarea {
       resize: vertical;
       min-height: 110px;
     }
 
-    .bs-form-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-5);
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green);
+      color: #1a2e22;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 180ms, transform 180ms, box-shadow 180ms;
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.5rem;
     }
 
-    @media (min-width: 560px) {
-      .bs-form-row {
-        grid-template-columns: 1fr 1fr;
-      }
+    .form-submit:hover {
+      background: var(--green-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px var(--green-glow);
     }
 
-    .bs-form__privacy {
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-      line-height: 1.65;
+    /* ── DIVIDER ─────────────────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid #404040;
+      margin: 0;
     }
 
-    .bs-form__privacy a {
-      color: var(--color-green);
-      text-decoration: none;
-    }
-
-    .bs-form__privacy a:hover {
-      text-decoration: underline;
-    }
-
-    /* ─── FOOTER ──────────────────────────────────────── */
+    /* ── FOOTER ──────────────────────────────────────────────────── */
     .bs-footer {
-      background: var(--color-bg);
-      border-top: 1px solid var(--color-border);
-      padding: var(--space-10) var(--space-6) var(--space-8);
+      background: #262626;
+      border-top: 1px solid #3a3a3a;
+      padding: 2rem 0;
     }
 
     .bs-footer__inner {
-      max-width: var(--content-wide);
-      margin: 0 auto;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: var(--space-6);
-      text-align: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .bs-footer__brand {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-      color: var(--color-green);
-      text-decoration: none;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #a0a0a0;
     }
 
-    .bs-footer__tagline {
-      font-size: var(--text-sm);
-      color: var(--color-text-faint);
-      max-width: 480px;
-      line-height: 1.65;
+    .bs-footer__brand span {
+      color: var(--green);
     }
 
     .bs-footer__links {
       display: flex;
+      gap: 1.25rem;
+      list-style: none;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--space-2) var(--space-6);
     }
 
     .bs-footer__links a {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
+      font-size: 0.82rem;
+      color: #787878;
       text-decoration: none;
-      transition: color var(--transition-interactive);
+      transition: color 180ms;
     }
 
     .bs-footer__links a:hover {
-      color: var(--color-green);
+      color: var(--green);
     }
 
     .bs-footer__copy {
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
+      font-size: 0.78rem;
+      color: #606060;
+      width: 100%;
+      margin-top: 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #383838;
     }
 
-    /* ─── WHATSAPP FLOATING BUTTON ─────────────────────── */
-    .bs-whatsapp {
-      position: fixed;
-      bottom: var(--space-6);
-      right: var(--space-6);
-      z-index: 50;
-      width: 52px;
-      height: 52px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
+    /* ── RESPONSIVE NAV ─────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      .bs-nav__brand-text { display: none; }
+    }
+
+    /* ── SCROLL ANIMATIONS (subtle) ─────────────────────────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.55s ease, transform 0.55s ease;
+      }
+      .fade-up.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; }
+    }
+
+    /* ── BACK TO TOP HINT ────────────────────────────────────────── */
+    .top-link {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      gap: 0.4rem;
+      color: #787878;
       text-decoration: none;
-      transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
+      font-size: 0.82rem;
+      transition: color 180ms;
     }
+    .top-link:hover { color: var(--green); }
 
-    .bs-whatsapp:hover {
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 8px 24px rgba(37,211,102,0.4);
-    }
-
-    /* ─── SCROLL REVEAL ───────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    .reveal-stagger .bs-thema-card,
-    .reveal-stagger .bs-step {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .reveal-stagger.is-visible .bs-thema-card,
-    .reveal-stagger.is-visible .bs-step {
-      opacity: 1;
-      transform: none;
-    }
-
-    .reveal-stagger.is-visible .bs-thema-card:nth-child(1),
-    .reveal-stagger.is-visible .bs-step:nth-child(1) { transition-delay: 0ms; }
-    .reveal-stagger.is-visible .bs-thema-card:nth-child(2),
-    .reveal-stagger.is-visible .bs-step:nth-child(2) { transition-delay: 80ms; }
-    .reveal-stagger.is-visible .bs-thema-card:nth-child(3),
-    .reveal-stagger.is-visible .bs-step:nth-child(3) { transition-delay: 160ms; }
-    .reveal-stagger.is-visible .bs-thema-card:nth-child(4) { transition-delay: 240ms; }
-    .reveal-stagger.is-visible .bs-thema-card:nth-child(5) { transition-delay: 320ms; }
   </style>
 </head>
 <body>
 
-  <!-- ===================== NAVIGATION ===================== -->
-  <nav class="bs-nav" role="navigation" aria-label="Seitennavigation">
-    <div class="bs-nav__inner">
+  <!-- ═══════════════════════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════════════════════ -->
+  <nav class="bs-nav" aria-label="Seitennavigation">
+    <div class="container bs-nav__inner">
 
-      <a href="index.html" class="bs-nav__brand" aria-label="Stay Human Shift Startseite">
-        <span class="bs-nav__brand-name">Stay Human Shift</span>
+      <a href="index.html" class="bs-nav__brand" aria-label="Stay Human Shift — Startseite">
+        <!-- Logo-Icon -->
+        <svg class="bs-nav__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="36" height="36" rx="8" fill="#6BBF8A" fill-opacity="0.15"/>
+          <rect width="36" height="36" rx="8" fill="none" stroke="#6BBF8A" stroke-width="1.2" stroke-opacity="0.35"/>
+          <!-- SHS monogram -->
+          <text x="18" y="24" font-family="Cabinet Grotesk, sans-serif" font-weight="800" font-size="14" fill="#6BBF8A" text-anchor="middle">SHS</text>
+        </svg>
+        <div class="bs-nav__brand-text">
+          <span class="bs-nav__brand-name">Stay Human Shift</span>
+          <span class="bs-nav__brand-sub">Aufklärung · Prävention</span>
+        </div>
       </a>
 
       <a href="index.html" class="bs-nav__back" aria-label="Zurück zur Startseite">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="15 18 9 12 15 6"/>
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
         </svg>
-        Zurück zur Startseite
+        Startseite
       </a>
 
     </div>
   </nav>
 
 
-  <!-- ===================== HERO ===================== -->
-  <section class="bs-hero" aria-label="Einleitung">
-    <div class="bs-hero__inner">
-      <p class="bs-hero__eyebrow">Stay Human Shift · Für Berufsschulen, Oberschulen &amp; Bildungseinrichtungen</p>
-      <h1 class="bs-hero__title">Aufklärungstage,<br>die wirklich ankommen.</h1>
-      <p class="bs-hero__desc">Kompakte, ehrliche Aufklärungstage zu den Themen, über die selten gesprochen wird – aber gesprochen werden muss. 2–3 Stunden. Online oder vor Ort. Individuell buchbar.</p>
-      <div class="bs-hero__badges">
-        <span class="bs-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          2–3 Stunden
-        </span>
-        <span class="bs-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          Online möglich
-        </span>
-        <span class="bs-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Ab 10 Personen
-        </span>
-        <span class="bs-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Wir kommen zu Ihnen
-        </span>
-      </div>
-    </div>
-  </section>
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
 
-
-  <!-- ===================== ABLAUF ===================== -->
-  <section class="bs-ablauf" aria-labelledby="ablaufTitle">
-    <div class="bs-ablauf__inner">
-      <div class="bs-ablauf__head reveal">
-        <p class="bs-ablauf__label">Ablauf</p>
-        <h2 class="bs-ablauf__title" id="ablaufTitle">Wie läuft es ab?</h2>
-      </div>
-      <div class="bs-steps reveal-stagger">
-
-        <div class="bs-step">
-          <div class="bs-step__number" aria-hidden="true">01</div>
-          <h3 class="bs-step__title">Thema auswählen</h3>
-          <p class="bs-step__desc">Wählen Sie eines oder mehrere der fünf Themen – ganz nach Bedarf Ihrer Klasse oder Einrichtung.</p>
-          <div class="bs-step__connector" aria-hidden="true"></div>
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Stay Human Shift · Alle Branchen
         </div>
 
-        <div class="bs-step">
-          <div class="bs-step__number" aria-hidden="true">02</div>
-          <h3 class="bs-step__title">Termin vereinbaren</h3>
-          <p class="bs-step__desc">Wir stimmen einen Termin ab – online oder direkt vor Ort bei Ihnen in der Schule.</p>
-          <div class="bs-step__connector" aria-hidden="true"></div>
-        </div>
+        <h1 class="hero__h1">
+          Aufklärungstage für<br>
+          <em>Schulen &amp; Bildungseinrichtungen</em>
+        </h1>
 
-        <div class="bs-step">
-          <div class="bs-step__number" aria-hidden="true">03</div>
-          <h3 class="bs-step__title">Durchführung (2–3 h)</h3>
-          <p class="bs-step__desc">Kompakter Aufklärungstag – direkt, ehrlich und auf die Lebenswelt der Schülerinnen und Schüler zugeschnitten.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== DIE 5 THEMEN ===================== -->
-  <section class="bs-themen" aria-labelledby="themenTitle">
-    <div class="bs-themen__inner">
-      <div class="bs-themen__head reveal">
-        <p class="bs-themen__label">Themen</p>
-        <h2 class="bs-themen__title" id="themenTitle">Die 5 Themen</h2>
-        <p class="bs-themen__subtitle">Jeder Aufklärungstag kann einzeln oder in Kombination gebucht werden – individuell angepasst an Ihre Einrichtung.</p>
-      </div>
-
-      <div class="bs-themen__grid reveal-stagger">
-
-        <!-- THEMA 1: Mentale Gesundheit -->
-        <article class="bs-thema-card" id="mentale-gesundheit">
-          <div class="bs-thema-card__header">
-            <div class="bs-thema-card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.27"/></svg></div>
-            <div class="bs-thema-card__title-wrap">
-              <h3 class="bs-thema-card__title">Mentale Gesundheit &amp; Depression</h3>
-              <p class="bs-thema-card__audience">Für: Berufsschüler, Azubis, Schüler ab 14</p>
-            </div>
-          </div>
-          <hr class="bs-thema-card__divider" />
-          <div class="bs-thema-card__body">
-            <div>
-              <p class="bs-thema-card__content-label">Inhalte</p>
-              <ul class="bs-thema-card__list">
-                <li>Burnout-Warnsignale frühzeitig erkennen</li>
-                <li>Stress im Schichtbetrieb verstehen und begegnen</li>
-                <li>Depression erkennen – bei sich und bei anderen</li>
-                <li>Hilfe holen ohne Scham</li>
-                <li>Notfallnummern und Anlaufstellen</li>
-              </ul>
-            </div>
-          </div>
-          <div class="bs-thema-card__footer">
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              2–3 Stunden
-            </span>
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Online oder vor Ort
-            </span>
-          </div>
-        </article>
-
-        <!-- THEMA 2: Sucht -->
-        <article class="bs-thema-card" id="sucht">
-          <div class="bs-thema-card__header">
-            <div class="bs-thema-card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.27"/></svg></div>
-            <div class="bs-thema-card__title-wrap">
-              <h3 class="bs-thema-card__title">Sucht &amp; Prävention</h3>
-              <p class="bs-thema-card__audience">Für: Alle Altersgruppen in Berufsschule</p>
-            </div>
-          </div>
-          <hr class="bs-thema-card__divider" />
-          <div class="bs-thema-card__body">
-            <div>
-              <p class="bs-thema-card__content-label">Inhalte</p>
-              <ul class="bs-thema-card__list">
-                <li>Alkohol und Drogen im Gastro-Alltag – ehrlich gesprochen</li>
-                <li>Wie Sucht entsteht und sich entwickelt</li>
-                <li>Frühzeichen rechtzeitig erkennen</li>
-                <li>Hilfsangebote und Ausstiegswege</li>
-              </ul>
-            </div>
-          </div>
-          <div class="bs-thema-card__footer">
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              2–3 Stunden
-            </span>
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Online oder vor Ort
-            </span>
-          </div>
-        </article>
-
-        <!-- THEMA 3: Diabetes -->
-        <article class="bs-thema-card" id="diabetes">
-          <div class="bs-thema-card__header">
-            <div class="bs-thema-card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.27"/></svg></div>
-            <div class="bs-thema-card__title-wrap">
-              <h3 class="bs-thema-card__title">Diabetes &amp; chronische Erkrankungen</h3>
-              <p class="bs-thema-card__audience">Für: Azubis, Ausbilder, Schüler</p>
-            </div>
-          </div>
-          <hr class="bs-thema-card__divider" />
-          <div class="bs-thema-card__body">
-            <div>
-              <p class="bs-thema-card__content-label">Inhalte</p>
-              <ul class="bs-thema-card__list">
-                <li>Leben und Arbeiten mit Diabetes Typ 1 &amp; Typ 2</li>
-                <li>Rechte als Azubi mit chronischer Erkrankung</li>
-                <li>Umgang im Betrieb und in der Schule</li>
-                <li>Was Ausbilder und Lehrkräfte wissen müssen</li>
-              </ul>
-            </div>
-          </div>
-          <div class="bs-thema-card__footer">
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              2–3 Stunden
-            </span>
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Online oder vor Ort
-            </span>
-          </div>
-        </article>
-
-        <!-- THEMA 4: Frauen & Sexismus -->
-        <article class="bs-thema-card" id="frauen">
-          <div class="bs-thema-card__header">
-            <div class="bs-thema-card__icon" aria-hidden="true" style="color:#6BBF8A;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V14M9 17h6"/><circle cx="12" cy="8" r="5"/><path d="M19 3l-3 3M5 3l3 3"/></svg></div>
-            <div class="bs-thema-card__title-wrap">
-              <h3 class="bs-thema-card__title">Frauen, Sexismus &amp; Schutz</h3>
-              <p class="bs-thema-card__audience">Für: Alle, besonders Frauen in der Gastronomie</p>
-            </div>
-          </div>
-          <hr class="bs-thema-card__divider" />
-          <div class="bs-thema-card__body">
-            <div>
-              <p class="bs-thema-card__content-label">Inhalte</p>
-              <ul class="bs-thema-card__list">
-                <li>Sexuelle Belästigung erkennen und melden</li>
-                <li>Mobbing am Arbeitsplatz</li>
-                <li>Rechte am Arbeitsplatz kennen</li>
-                <li>Wie man sich wirksam wehrt</li>
-                <li>Anlaufstellen und Unterstützungsangebote</li>
-              </ul>
-            </div>
-          </div>
-          <div class="bs-thema-card__footer">
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              2–3 Stunden
-            </span>
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Online oder vor Ort
-            </span>
-          </div>
-        </article>
-
-        <!-- THEMA 5: Rassismus -->
-        <article class="bs-thema-card" id="rassismus" style="grid-column: 1 / -1; max-width: 600px;">
-          <div class="bs-thema-card__header">
-            <div class="bs-thema-card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.27"/></svg></div>
-            <div class="bs-thema-card__title-wrap">
-              <h3 class="bs-thema-card__title">Rassismus &amp; Diskriminierung</h3>
-              <p class="bs-thema-card__audience">Für: Alle</p>
-            </div>
-          </div>
-          <hr class="bs-thema-card__divider" />
-          <div class="bs-thema-card__body">
-            <div>
-              <p class="bs-thema-card__content-label">Inhalte</p>
-              <ul class="bs-thema-card__list">
-                <li>Was ist Rassismus im Alltag?</li>
-                <li>Mikroaggressionen erkennen und benennen</li>
-                <li>Wie man als Zeuge handelt und Haltung zeigt</li>
-                <li>Rechte und Anlaufstellen bei Diskriminierung</li>
-              </ul>
-            </div>
-          </div>
-          <div class="bs-thema-card__footer">
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              2–3 Stunden
-            </span>
-            <span class="bs-thema-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Online oder vor Ort
-            </span>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== PREISE & BUCHUNG ===================== -->
-  <section class="bs-preise" aria-labelledby="preiseTitle">
-    <div class="bs-preise__inner">
-      <div class="reveal">
-        <p class="bs-preise__label">Preise &amp; Buchung</p>
-        <h2 class="bs-preise__title" id="preiseTitle">So einfach buchen</h2>
-      </div>
-      <div class="bs-preise__card reveal">
-        <p class="bs-preise__text">
-          Preise auf Anfrage – je nach Thema, Format und Anzahl der Teilnehmer.<br>
-          Gruppen ab 10 Personen. Online oder vor Ort buchbar.<br>
-          Wir kommen auch direkt zu Ihnen in die Schule.
+        <p class="hero__subtitle">
+          Für Berufsschulen, Oberschulen und BVJ — online oder vor Ort. Klar, ehrlich, direkt.
         </p>
-        <ul class="bs-preise__checklist">
-          <li>Gruppen ab 10 Personen</li>
-          <li>Online oder vor Ort – beides möglich</li>
-          <li>Wir kommen zu Ihnen in die Schule</li>
-          <li>Alle 5 Themen einzeln oder kombiniert buchbar</li>
-          <li>Individuelle Anpassung an Ihre Einrichtung</li>
-        </ul>
-        <a href="#kontakt" class="bs-btn-green">Jetzt anfragen</a>
+
+        <div class="hero__ctas">
+          <a href="#kontakt" class="btn-green">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 11.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91A16 16 0 0 0 15.1 15.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 17z"/></svg>
+            Anfragen
+          </a>
+          <a href="#themen" class="btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            Alle Themen
+          </a>
+          <a href="#preise" class="btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Preise
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
 
 
-  <!-- ===================== PARTNER HINWEIS ===================== -->
-  <section class="bs-partner" aria-label="Partnerschaft">
-    <div class="bs-partner__inner">
-      <div class="bs-partner__card reveal">
-        <div class="bs-partner__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.27"/></svg></div>
-        <div>
-          <p class="bs-partner__label">Partner &amp; Kooperationen</p>
-          <p class="bs-partner__text">
-            Bei relevanten Themen arbeiten wir mit dem
-            <strong>Kinderschutzbund Kreisverband Zwickau</strong> zusammen –
-            für eine fundierte, verantwortungsvolle Durchführung, die über das reine Informieren hinausgeht.
-          </p>
+  <!-- ═══════════════════════════════════════════════════════════
+       EINLEITUNG + ABLAUF
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section section--alt">
+    <div class="container">
+
+      <span class="section__label">Über das Format</span>
+      <h2 class="section__title">Was sind Aufklärungstage?</h2>
+
+      <p class="section__intro">
+        Unsere Aufklärungstage greifen Themen auf, über die im Schulalltag oft zu wenig gesprochen wird — aber gesprochen werden muss. Kompakt, professionell und auf Augenhöhe mit jungen Menschen.
+      </p>
+
+      <div class="ablauf fade-up">
+        <div class="ablauf__step">
+          <div class="ablauf__number">01</div>
+          <div class="ablauf__title">Thema wählen</div>
+          <p class="ablauf__desc">Wählen Sie ein Thema aus unseren sieben Standardformaten oder dem Sonderformat Diabetes.</p>
+        </div>
+        <div class="ablauf__step">
+          <div class="ablauf__number">02</div>
+          <div class="ablauf__title">Termin vereinbaren</div>
+          <p class="ablauf__desc">Kontaktaufnahme per Formular oder Telefon. Wir finden gemeinsam den passenden Termin.</p>
+        </div>
+        <div class="ablauf__step">
+          <div class="ablauf__number">03</div>
+          <div class="ablauf__title">Durchführung</div>
+          <p class="ablauf__desc">Online oder vor Ort — flexibel, klar strukturiert und auf die Zielgruppe abgestimmt.</p>
         </div>
       </div>
+
     </div>
   </section>
 
 
-  <!-- ===================== KONTAKT ===================== -->
-  <section class="bs-kontakt" id="kontakt" aria-labelledby="kontaktTitle">
-    <div class="bs-kontakt__inner">
-      <div class="bs-kontakt__head reveal">
-        <p class="bs-kontakt__label">Kontakt</p>
-        <h2 class="bs-kontakt__title" id="kontaktTitle">Anfrage stellen</h2>
-      </div>
+  <!-- ═══════════════════════════════════════════════════════════
+       STANDARD-THEMEN
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section" id="themen">
+    <div class="container">
 
-      <div class="bs-kontakt__layout">
+      <span class="section__label">Standardformate</span>
+      <h2 class="section__title">Unsere Themen</h2>
+      <p class="section__intro">
+        Alle Standardformate dauern 2–3 Stunden und sind online oder vor Ort durchführbar. Mehrere Themen können zu einem Projekttag kombiniert werden.
+      </p>
 
-        <!-- Info & Direktkontakt -->
-        <div class="reveal">
-          <p class="bs-kontakt__info-text">
-            Schreiben Sie uns direkt – wir melden uns schnellstmöglich und erstellen ein individuelles Angebot für Ihre Einrichtung.
+      <div class="themen-grid">
+
+        <!-- Alkohol & Drogen -->
+        <article class="thema-card fade-up" id="alkohol-drogen">
+          <div class="thema-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l1 7H7L8 2z"/><path d="M7 9c0 5 2 9 5 9s5-4 5-9"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+          </div>
+          <div class="thema-card__zielgruppe">Berufsschüler, Azubis ab 14</div>
+          <h3 class="thema-card__title">Alkohol &amp; Drogen</h3>
+          <p class="thema-card__content">
+            Wie Sucht entsteht, Warnzeichen frühzeitig erkennen, Hilfe holen ohne Scham — offen und ohne Moralisieren.
           </p>
-          <div class="bs-kontakt__channels">
+          <div class="thema-card__meta">
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2–3 Stunden
+            </span>
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Online oder vor Ort
+            </span>
+          </div>
+        </article>
 
-            <div class="bs-channel">
-              <div class="bs-channel__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div>
-                <div class="bs-channel__meta-label">E-Mail</div>
-                <a href="mailto:kevinschlesier@culinaryapprenticeprojekt.net" class="bs-channel__meta-value">kevinschlesier@culinaryapprenticeprojekt.net</a>
-              </div>
+        <!-- Psychische Belastungen -->
+        <article class="thema-card fade-up" id="psychische-belastung">
+          <div class="thema-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="thema-card__zielgruppe">Alle Altersgruppen</div>
+          <h3 class="thema-card__title">Psychische Belastungen &amp; Depression</h3>
+          <p class="thema-card__content">
+            Burnout-Warnsignale erkennen, Depression verstehen, Hilfe annehmen — ohne Stigma und auf Augenhöhe.
+          </p>
+          <div class="thema-card__meta">
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2–3 Stunden
+            </span>
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Online oder vor Ort
+            </span>
+          </div>
+        </article>
+
+        <!-- Gewalt & Ausgrenzung -->
+        <article class="thema-card fade-up" id="gewalt-ausgrenzung">
+          <div class="thema-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="thema-card__zielgruppe">Alle Schulformen</div>
+          <h3 class="thema-card__title">Gewalt &amp; Ausgrenzung</h3>
+          <p class="thema-card__content">
+            Mobbing erkennen, klare Haltung zeigen, Handlungswege kennen — praktisch und konkret.
+          </p>
+          <div class="thema-card__meta">
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2–3 Stunden
+            </span>
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Online oder vor Ort
+            </span>
+          </div>
+        </article>
+
+        <!-- Frauen, Sexismus & Schutz -->
+        <article class="thema-card fade-up" id="frauen-sexismus">
+          <div class="thema-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/><path d="M9 18h6"/></svg>
+          </div>
+          <div class="thema-card__zielgruppe">Alle — besonders Frauen in Ausbildung</div>
+          <h3 class="thema-card__title">Frauen, Sexismus &amp; Schutz</h3>
+          <p class="thema-card__content">
+            Belästigung erkennen und melden, eigene Rechte kennen, Anlaufstellen wissen — direkt und ohne Beschönigung.
+          </p>
+          <div class="thema-card__meta">
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2–3 Stunden
+            </span>
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Online oder vor Ort
+            </span>
+          </div>
+        </article>
+
+        <!-- Rassismus & Diskriminierung -->
+        <article class="thema-card fade-up" id="rassismus">
+          <div class="thema-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="thema-card__zielgruppe">Alle</div>
+          <h3 class="thema-card__title">Rassismus &amp; Diskriminierung</h3>
+          <p class="thema-card__content">
+            Alltagsrassismus und Mikroaggressionen benennen, klare Haltung entwickeln — sachlich, fundiert, handlungsorientiert.
+          </p>
+          <div class="thema-card__meta">
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2–3 Stunden
+            </span>
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Online oder vor Ort
+            </span>
+          </div>
+        </article>
+
+        <!-- Selbstfürsorge & Gesundheit -->
+        <article class="thema-card fade-up" id="selbstfuersorge">
+          <div class="thema-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="thema-card__zielgruppe">Azubis, Schüler, BVJ</div>
+          <h3 class="thema-card__title">Selbstfürsorge &amp; Gesundheit</h3>
+          <p class="thema-card__content">
+            Pausen, Schlaf, Ernährung, Grenzen setzen — wie Selbstfürsorge im Alltag wirklich funktioniert.
+          </p>
+          <div class="thema-card__meta">
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2–3 Stunden
+            </span>
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Online oder vor Ort
+            </span>
+          </div>
+        </article>
+
+        <!-- Gesundheit im Berufsalltag -->
+        <article class="thema-card fade-up" id="gesundheit-beruf">
+          <div class="thema-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="thema-card__zielgruppe">Azubis vor Ausbildungsstart</div>
+          <h3 class="thema-card__title">Gesundheit im Berufsalltag</h3>
+          <p class="thema-card__content">
+            Körper und Geist im Schichtbetrieb, Stressmanagement von Anfang an — ein starker Start in die Ausbildung.
+          </p>
+          <div class="thema-card__meta">
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2–3 Stunden
+            </span>
+            <span class="thema-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Online oder vor Ort
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SONDERFORMAT DIABETES
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="diabetes-section" id="diabetes">
+    <div class="container">
+
+      <span class="section__label">Sonderformat</span>
+      <h2 class="section__title" style="margin-bottom: 2rem;">Diabetes &amp; chronische Erkrankungen</h2>
+
+      <div class="diabetes-card fade-up">
+
+        <div class="diabetes-card__header">
+          <div class="diabetes-card__icon-wrap" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="diabetes-card__titles">
+            <div class="diabetes-card__badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Mit staatlich geprüfter Diabetes-Assistentin
             </div>
-
-            <div class="bs-channel">
-              <div class="bs-channel__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.82a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="bs-channel__meta-label">Telefon</div>
-                <a href="tel:+4915204488587" class="bs-channel__meta-value">0152 04488587</a>
-              </div>
-            </div>
-
-            <div class="bs-channel">
-              <div class="bs-channel__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="bs-channel__meta-label">WhatsApp</div>
-                <a href="https://wa.me/4915204488587" target="_blank" rel="noopener noreferrer" class="bs-channel__meta-value">Nachricht senden</a>
-              </div>
-            </div>
-
+            <h3 class="diabetes-card__title">Sonderformat: Diabetes &amp; chronische Erkrankungen</h3>
           </div>
         </div>
 
-        <!-- Kontaktformular -->
-        <div class="reveal">
-          <form class="bs-form" id="berufsschulenForm" novalidate>
+        <p class="diabetes-card__body">
+          Dieses Format wird von einer staatlich geprüften Diabetes-Assistentin durchgeführt, die eigens für diese Veranstaltungen von ihrer regulären Arbeit freigestellt wird. Deshalb ist dieses Format höher bepreist als die Standardthemen.
+        </p>
 
-            <div class="bs-form-row">
-              <div class="bs-form-group">
-                <label for="bs-name">Name</label>
-                <input type="text" id="bs-name" name="name" placeholder="Ihr Name" required autocomplete="name" />
-              </div>
-              <div class="bs-form-group">
-                <label for="bs-email">E-Mail</label>
-                <input type="email" id="bs-email" name="email" placeholder="ihre@email.de" required autocomplete="email" />
-              </div>
+        <div class="diabetes-inhalte">
+          <div class="diabetes-inhalt">
+            <svg class="diabetes-inhalt__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Leben und Arbeiten mit Diabetes
+          </div>
+          <div class="diabetes-inhalt">
+            <svg class="diabetes-inhalt__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Rechte als Azubi mit chronischer Erkrankung
+          </div>
+          <div class="diabetes-inhalt">
+            <svg class="diabetes-inhalt__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Umgang im Betrieb — offen kommunizieren
+          </div>
+          <div class="diabetes-inhalt">
+            <svg class="diabetes-inhalt__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Was Ausbilder wissen müssen
+          </div>
+        </div>
+
+        <!-- Preise Diabetes -->
+        <div class="diabetes-preise">
+          <div class="diabetes-preise__title">Preisübersicht — Sonderformat Diabetes</div>
+
+          <div class="diabetes-preise__row">
+            <div class="diabetes-preise__label">
+              Online-Seminar 90 Minuten
+              <span>Live-Session mit Fachexpertin</span>
             </div>
+            <div class="diabetes-preise__price">249 € netto</div>
+          </div>
 
-            <div class="bs-form-group">
-              <label for="bs-einrichtung">Schule / Einrichtung</label>
-              <input type="text" id="bs-einrichtung" name="einrichtung" placeholder="Name der Schule oder Einrichtung" required />
+          <div class="diabetes-preise__row">
+            <div class="diabetes-preise__label">
+              Online-Seminar 120 Minuten
+              <span>Erweitertes Format mit Fragerunde</span>
             </div>
+            <div class="diabetes-preise__price">299 € netto</div>
+          </div>
 
-            <div class="bs-form-row">
-              <div class="bs-form-group">
-                <label for="bs-thema">Gewünschtes Thema</label>
-                <select id="bs-thema" name="thema">
-                  <option value="">Bitte auswählen</option>
-                  <option value="mentale-gesundheit">Mentale Gesundheit &amp; Depression</option>
-                  <option value="sucht">Sucht &amp; Prävention</option>
-                  <option value="diabetes">Diabetes &amp; chronische Erkrankungen</option>
-                  <option value="frauen">Frauen, Sexismus &amp; Schutz</option>
-                  <option value="rassismus">Rassismus &amp; Diskriminierung</option>
-                  <option value="mehrere">Mehrere Themen</option>
-                </select>
-              </div>
-              <div class="bs-form-group">
-                <label for="bs-format">Format</label>
-                <select id="bs-format" name="format">
-                  <option value="">Bitte auswählen</option>
-                  <option value="online">Online</option>
-                  <option value="vor-ort">Vor Ort</option>
-                  <option value="beides">Beides möglich</option>
-                </select>
-              </div>
+          <div class="diabetes-preise__row">
+            <div class="diabetes-preise__label">
+              Vor-Ort-Termin bis 2 Stunden
+              <span>Persönliche Durchführung</span>
             </div>
+            <div class="diabetes-preise__price">420 € netto</div>
+          </div>
 
-            <div class="bs-form-group">
-              <label for="bs-nachricht">Nachricht</label>
-              <textarea id="bs-nachricht" name="nachricht" placeholder="Beschreiben Sie kurz Ihr Anliegen – z.B. Klassengröße, gewünschte Themen, mögliche Termine." rows="4"></textarea>
+          <div class="diabetes-preise__row">
+            <div class="diabetes-preise__label">
+              Vor-Ort-Termin bis 3 Stunden
+              <span>Inkl. Pausen &amp; Fragerunden</span>
             </div>
+            <div class="diabetes-preise__price">520 € netto</div>
+          </div>
 
-            <p class="bs-form__privacy">
-              Mit dem Absenden stimmen Sie zu, dass Ihre Angaben zur Bearbeitung Ihrer Anfrage verwendet werden.
-              Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+          <div class="diabetes-preise__row">
+            <div class="diabetes-preise__label">
+              Individuelles Format
+              <span>Maßgeschneidert für Ihre Einrichtung</span>
+            </div>
+            <div class="diabetes-preise__price">ab 550 € netto</div>
+          </div>
+
+          <div class="diabetes-preise__note">Alle Preise netto, zzgl. gesetzlicher Mehrwertsteuer.</div>
+        </div>
+
+        <a href="#kontakt" class="btn-green" style="display: inline-flex; width: auto;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 11.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91A16 16 0 0 0 15.1 15.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 17z"/></svg>
+          Diabetes-Format anfragen
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STANDARD-PREISE
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section" id="preise">
+    <div class="container">
+
+      <span class="section__label">Preise Standardformate</span>
+      <h2 class="section__title">Preisübersicht</h2>
+      <p class="section__intro">
+        Unsere Standardthemen sind für Schulen und Bildungseinrichtungen aller Art zugänglich. Kostenlose Projekttage sind punktuell möglich.
+      </p>
+
+      <div class="preise-grid fade-up">
+
+        <div class="preis-card">
+          <div class="preis-card__label">
+            Online-Seminar 60–90 Min.
+            <div class="preis-card__sub">Kompaktformat, live</div>
+          </div>
+          <div class="preis-card__amount">ab 180 € netto</div>
+        </div>
+
+        <div class="preis-card">
+          <div class="preis-card__label">
+            Online-Seminar 120 Min.
+            <div class="preis-card__sub">Erweitertes Format mit Interaktion</div>
+          </div>
+          <div class="preis-card__amount">ab 250 € netto</div>
+        </div>
+
+        <div class="preis-card">
+          <div class="preis-card__label">
+            Vor-Ort-Aufklärungstag 2h
+            <div class="preis-card__sub">Persönlich, inkl. Anreise</div>
+          </div>
+          <div class="preis-card__amount">ab 350 € netto</div>
+        </div>
+
+        <div class="preis-card">
+          <div class="preis-card__label">
+            Vor-Ort-Aufklärungstag 3h
+            <div class="preis-card__sub">Intensiv, inkl. Pausen</div>
+          </div>
+          <div class="preis-card__amount">ab 450 € netto</div>
+        </div>
+
+        <div class="preis-card preis-card--special">
+          <div class="preis-card__label">
+            Projekttag / Aktionstag
+            <div class="preis-card__sub">Je nach Umfang und Vereinbarung</div>
+          </div>
+          <div class="preis-card__amount preis-card__amount--free">kostenlos bis 300 € netto</div>
+        </div>
+
+        <div class="preis-card">
+          <div class="preis-card__label">
+            Themenvormittag BVJ
+            <div class="preis-card__sub">Berufsvorbereitungsjahr</div>
+          </div>
+          <div class="preis-card__amount">ab 280 € netto</div>
+        </div>
+
+        <div class="preis-card">
+          <div class="preis-card__label">
+            Oberschul-Workshop vor Berufsstart
+            <div class="preis-card__sub">Transition in die Ausbildung</div>
+          </div>
+          <div class="preis-card__amount">ab 320 € netto</div>
+        </div>
+
+      </div>
+
+      <div class="preise-hinweis" style="margin-top: 1.5rem;">
+        <strong style="color: #c8c6c3;">Alle Preise netto, zzgl. MwSt.</strong> · Kostenlose Projekttage sind punktuell möglich — jetzt anfragen.
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PARTNER
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section partner-section">
+    <div class="container">
+
+      <span class="section__label">Netzwerk &amp; Partner</span>
+      <h2 class="section__title">Unsere Partner</h2>
+
+      <div class="partner-content fade-up">
+
+        <div class="partner-highlight">
+          <div class="partner-highlight__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="partner-highlight__body">
+            <div class="partner-highlight__name">Kinderschutzbund Kreisverband Zwickau</div>
+            <p class="partner-highlight__desc">
+              Kooperationspartner für unsere schulischen Aufklärungsformate. Gemeinsam stärken wir den Schutz und die Resilienz junger Menschen in der Region.
             </p>
+          </div>
+        </div>
 
-            <button type="submit" class="bs-btn-green">Anfrage senden</button>
+        <p class="partner-netzwerk">
+          Darüber hinaus arbeiten wir in einem Netzwerk mit anerkannten Fachstellen zusammen: <strong>Caritas</strong>, <strong>Diakonie</strong> und dem <strong>Bundesverband Mobile Beratung</strong> — für Themen, die spezialisierte Expertise erfordern oder regionale Nachsorge benötigen.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       KONTAKT
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section kontakt-section" id="kontakt">
+    <div class="container">
+
+      <span class="section__label">Jetzt anfragen</span>
+      <h2 class="section__title">Kontakt &amp; Anfrage</h2>
+
+      <div class="kontakt-inner" style="margin-top: 2.5rem;">
+
+        <!-- Info-Spalte -->
+        <div class="kontakt-info">
+          <h3 class="kontakt-info__title">Wir melden uns schnell zurück.</h3>
+          <p class="kontakt-info__desc">
+            Schreiben Sie uns oder rufen Sie direkt an — wir besprechen Format, Termin und Preise unkompliziert.
+          </p>
+
+          <div class="kontakt-direct">
+            <a href="mailto:kevinschlesier@culinaryapprenticeprojekt.net" class="kontakt-direct__item">
+              <div class="kontakt-direct__icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              kevinschlesier@culinaryapprenticeprojekt.net
+            </a>
+            <a href="tel:+4915204488587" class="kontakt-direct__item">
+              <div class="kontakt-direct__icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 11.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91A16 16 0 0 0 15.1 15.9l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 17z"/></svg>
+              </div>
+              0152 04488587
+            </a>
+          </div>
+        </div>
+
+        <!-- Formular -->
+        <div class="kontakt-form">
+          <form
+            action="mailto:kevinschlesier@culinaryapprenticeprojekt.net"
+            method="get"
+            enctype="text/plain"
+            novalidate
+            aria-label="Anfrage-Formular"
+          >
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label class="form-label" for="f-name">Name</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="f-name"
+                  name="Name"
+                  placeholder="Max Mustermann"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="f-email">E-Mail</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="f-email"
+                  name="E-Mail"
+                  placeholder="schule@beispiel.de"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group form-group--full">
+                <label class="form-label" for="f-einrichtung">Schule / Einrichtung</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="f-einrichtung"
+                  name="Einrichtung"
+                  placeholder="Berufsschule, Oberschule, BVJ …"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="f-thema">Thema</label>
+                <select class="form-select" id="f-thema" name="Thema" required>
+                  <option value="" disabled selected>Bitte wählen</option>
+                  <option value="Alkohol &amp; Drogen">Alkohol &amp; Drogen</option>
+                  <option value="Psychische Belastungen &amp; Depression">Psychische Belastungen &amp; Depression</option>
+                  <option value="Gewalt &amp; Ausgrenzung">Gewalt &amp; Ausgrenzung</option>
+                  <option value="Frauen, Sexismus &amp; Schutz">Frauen, Sexismus &amp; Schutz</option>
+                  <option value="Rassismus &amp; Diskriminierung">Rassismus &amp; Diskriminierung</option>
+                  <option value="Selbstfürsorge &amp; Gesundheit">Selbstfürsorge &amp; Gesundheit</option>
+                  <option value="Gesundheit im Berufsalltag">Gesundheit im Berufsalltag</option>
+                  <option value="Sonderformat: Diabetes &amp; chronische Erkrankungen">Sonderformat: Diabetes &amp; chronische Erkrankungen</option>
+                  <option value="Mehrere Themen / Projekttag">Mehrere Themen / Projekttag</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="f-format">Format</label>
+                <select class="form-select" id="f-format" name="Format" required>
+                  <option value="" disabled selected>Bitte wählen</option>
+                  <option value="Online">Online</option>
+                  <option value="Vor Ort">Vor Ort</option>
+                  <option value="Noch offen">Noch offen</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group--full">
+                <label class="form-label" for="f-nachricht">Nachricht</label>
+                <textarea
+                  class="form-textarea"
+                  id="f-nachricht"
+                  name="Nachricht"
+                  placeholder="Klasse, Schülerzahl, Wunschtermin, besondere Wünsche …"
+                ></textarea>
+              </div>
+
+            </div>
+
+            <button type="submit" class="form-submit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Anfrage absenden
+            </button>
 
           </form>
         </div>
@@ -1432,118 +1655,46 @@
   </section>
 
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="bs-footer" role="contentinfo">
-    <div class="bs-footer__inner">
-
-      <a href="index.html" class="bs-footer__brand">Stay Human Shift</a>
-
-      <p class="bs-footer__tagline">
-        Aufklärungstage für Berufsschulen, Oberschulen und Bildungseinrichtungen – ehrlich, kompakt, wirkungsvoll.
-      </p>
-
-      <nav class="bs-footer__links" aria-label="Footer-Navigation">
-        <a href="index.html">Startseite</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
-
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="bs-footer">
+    <div class="container">
+      <div class="bs-footer__inner">
+        <div class="bs-footer__brand">
+          Stay Human Shift <span>/</span> Aufklärungstage für Schulen
+        </div>
+        <ul class="bs-footer__links" role="list">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="mailto:kevinschlesier@culinaryapprenticeprojekt.net">Kontakt</a></li>
+        </ul>
+      </div>
       <p class="bs-footer__copy">
-        &copy; Stay Human Shift
+        &copy; 2025 Stay Human Shift · Kevin Schlesier · Alle Preise netto zzgl. MwSt.
       </p>
-
     </div>
   </footer>
 
 
-  <!-- ===================== WHATSAPP FLOATING ===================== -->
-  <a
-    href="https://wa.me/4915204488587"
-    class="bs-whatsapp"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp – Nachricht senden"
-    title="WhatsApp"
-  >
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
-
-
+  <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════════════════════ -->
   <script>
-    // ─── SCROLL REVEAL ──────────────────────────────────────────
+    // ── Fade-up scroll observer ──────────────────────────────
     (function() {
-      const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
-      if (!reveals.length) return;
-
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+      if (!window.IntersectionObserver) return;
+      const els = document.querySelectorAll('.fade-up');
+      const obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            obs.unobserve(e.target);
           }
         });
-      }, { threshold: 0.08 });
-
-      reveals.forEach(function(el) { observer.observe(el); });
-    })();
-
-    // ─── KONTAKT FORMULAR ──────────────────────────────────────
-    (function() {
-      const form = document.getElementById('berufsschulenForm');
-      if (!form) return;
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const name       = form.querySelector('#bs-name').value.trim();
-        const email      = form.querySelector('#bs-email').value.trim();
-        const einrichtung = form.querySelector('#bs-einrichtung').value.trim();
-        const thema      = form.querySelector('#bs-thema').value;
-        const format     = form.querySelector('#bs-format').value;
-        const nachricht  = form.querySelector('#bs-nachricht').value.trim();
-
-        const themaLabels = {
-          'mentale-gesundheit': 'Mentale Gesundheit & Depression',
-          'sucht':              'Sucht & Prävention',
-          'diabetes':           'Diabetes & chronische Erkrankungen',
-          'frauen':             'Frauen, Sexismus & Schutz',
-          'rassismus':          'Rassismus & Diskriminierung',
-          'mehrere':            'Mehrere Themen'
-        };
-
-        const formatLabels = {
-          'online':    'Online',
-          'vor-ort':   'Vor Ort',
-          'beides':    'Beides möglich'
-        };
-
-        const subject = encodeURIComponent('Anfrage Aufklärungstag Berufsschule – ' + name);
-        let body = '';
-        if (name)        body += 'Name: ' + name + '\n';
-        if (email)       body += 'E-Mail: ' + email + '\n';
-        if (einrichtung) body += 'Schule / Einrichtung: ' + einrichtung + '\n';
-        if (thema)       body += 'Gewünschtes Thema: ' + (themaLabels[thema] || thema) + '\n';
-        if (format)      body += 'Format: ' + (formatLabels[format] || format) + '\n';
-        if (nachricht)   body += '\nNachricht:\n' + nachricht;
-
-        const mailtoLink = 'mailto:kevinschlesier@culinaryapprenticeprojekt.net'
-          + '?subject=' + subject
-          + '&body=' + encodeURIComponent(body);
-
-        window.location.href = mailtoLink;
-
-        const btn = form.querySelector('button[type="submit"]');
-        if (btn) {
-          btn.textContent = 'E-Mail-Programm wird geöffnet …';
-          btn.disabled = true;
-          setTimeout(function() {
-            btn.textContent = 'Anfrage senden';
-            btn.disabled = false;
-          }, 3000);
-        }
-      });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function(el) { obs.observe(el); });
     })();
   </script>
 
