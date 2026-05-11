@@ -4,345 +4,308 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Stay Human Shift – Menschlichkeit, Veränderung, Zukunft. Mentale Gesundheit, Aufklärung & Prävention für alle Branchen. cAp – The Culinary Apprentice Project für Gastronomie & Hotellerie." />
+  <meta name="description" content="Stay Human Shift – Menschlichkeit, Veränderung, Zukunft. Mentale Gesundheit, Aufklärung & Prävention. cAp – The Culinary Apprentice Project für Gastronomie & Hotellerie." />
   <title>Stay Human Shift – Menschlichkeit | Veränderung | Zukunft</title>
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── NAV ─────────────────────────────────────────────────── */
+    /* ── NAV ─────────────────────────────────────────────── */
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0.85rem 2rem;
-      background: rgba(37,37,37,0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(46,46,46,0.95);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--color-border);
     }
     .nav__brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
-    .nav__logo { height: 44px; width: auto; }
+    .nav__logo { height: 42px; width: auto; }
     .nav__brand-text { display: flex; flex-direction: column; line-height: 1.15; }
-    .nav__brand-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--color-text); }
-    .nav__brand-sub { font-size: 0.6rem; font-weight: 600; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
-    .nav__links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
-    .nav__links a { text-decoration: none; color: var(--color-text-muted); font-size: 0.88rem; font-weight: 500; transition: color 180ms; }
+    .nav__brand-name { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; color: var(--color-text); }
+    .nav__brand-sub { font-size: 0.58rem; font-weight: 600; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
+    .nav__links { display: flex; align-items: center; gap: 1.6rem; list-style: none; }
+    .nav__links a { text-decoration: none; color: var(--color-text-muted); font-size: 0.86rem; font-weight: 500; transition: color 180ms; }
     .nav__links a:hover { color: var(--color-text); }
-    .nav__links a.nav-cap { color: var(--color-accent); }
-    .nav__links a.nav-cap:hover { color: var(--color-accent-hover); }
-    .nav__cta { flex-shrink: 0; }
+    .btn-copper {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--color-copper); color: #fff;
+      font-family: var(--font-display); font-weight: 700; font-size: 0.84rem;
+      padding: 0.65rem 1.3rem; border-radius: var(--radius-lg); text-decoration: none;
+      transition: all 180ms;
+    }
+    .btn-copper:hover { background: var(--color-copper-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(196,129,58,0.28); }
     .nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .nav__hamburger span { width: 22px; height: 2px; background: var(--color-text); border-radius: 2px; transition: all 0.3s; }
-    .mobile-menu { display: none; position: fixed; top: 67px; left: 0; right: 0; bottom: 0; background: rgba(30,30,30,0.98); backdrop-filter: blur(16px); z-index: 99; flex-direction: column; padding: 2rem; gap: 0.5rem; overflow-y: auto; }
+    .mobile-menu { display: none; position: fixed; top: 67px; left: 0; right: 0; bottom: 0; background: rgba(40,40,40,0.98); backdrop-filter: blur(16px); z-index: 99; flex-direction: column; padding: 1.5rem 2rem; gap: 0; overflow-y: auto; }
     .mobile-menu.is-open { display: flex; }
-    .mobile-menu a { text-decoration: none; color: var(--color-text); font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; padding: 0.75rem 0; border-bottom: 1px solid var(--color-border); }
+    .mobile-menu a { text-decoration: none; color: var(--color-text); font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--color-border); }
     .mobile-menu a:last-child { border-bottom: none; }
-    @media (max-width: 800px) { .nav__links, .nav__cta { display: none; } .nav__hamburger { display: flex; } }
+    @media (max-width: 820px) { .nav__links, .nav__cta { display: none; } .nav__hamburger { display: flex; } }
 
-    /* ── BUTTONS ─────────────────────────────────────────────── */
-    .btn-copper {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      background: var(--color-copper); color: #fff;
-      font-family: var(--font-display); font-weight: 700; font-size: 0.9rem;
-      padding: 0.8rem 1.6rem; border-radius: var(--radius-lg); text-decoration: none;
-      transition: all 180ms; letter-spacing: -0.01em;
-    }
-    .btn-copper:hover { background: var(--color-copper-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(196,129,58,0.3); }
-    .btn-amber {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
-      background: var(--color-accent); color: #000;
-      font-family: var(--font-display); font-weight: 700; font-size: 0.9rem;
-      padding: 0.8rem 1.6rem; border-radius: var(--radius-lg); text-decoration: none;
-      transition: all 180ms; width: 100%;
-    }
-    .btn-amber:hover { background: var(--color-accent-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,168,56,0.3); }
-    .btn-amber-outline {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
-      background: transparent; color: var(--color-accent);
-      font-family: var(--font-display); font-weight: 700; font-size: 0.9rem;
-      padding: 0.8rem 1.6rem; border: 1px solid rgba(232,168,56,0.4);
-      border-radius: var(--radius-lg); text-decoration: none; transition: all 180ms; width: 100%;
-    }
-    .btn-amber-outline:hover { background: var(--color-accent-glow); border-color: var(--color-accent); }
-    .btn-outline-light {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      background: transparent; color: rgba(232,230,227,0.75);
-      font-family: var(--font-display); font-weight: 600; font-size: 0.9rem;
-      padding: 0.8rem 1.6rem; border: 1px solid rgba(255,255,255,0.18);
-      border-radius: var(--radius-lg); text-decoration: none; transition: all 180ms;
-    }
-    .btn-outline-light:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.35); color: #fff; }
-
-    /* ── SECTION LABELS ──────────────────────────────────────── */
-    .slabel {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
-      margin-bottom: 0.6rem;
-    }
-    .slabel::before { content: ''; width: 18px; height: 2px; border-radius: 2px; }
-    .slabel--copper { color: var(--color-copper); }
-    .slabel--copper::before { background: var(--color-copper); }
-    .slabel--amber { color: var(--color-accent); }
-    .slabel--amber::before { background: var(--color-accent); }
-    .section-h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.75rem, 1rem + 2.5vw, 2.8rem); color: var(--color-text); letter-spacing: -0.025em; margin-bottom: 0.6rem; }
-    .section-sub { color: var(--color-text-muted); font-size: 0.98rem; line-height: 1.65; margin-bottom: 2.75rem; max-width: 600px; }
-    .preise-note { text-align: center; font-size: 0.78rem; color: var(--color-text-faint); margin-top: 1.75rem; }
-
-    /* ── HERO ────────────────────────────────────────────────── */
+    /* ── HERO ────────────────────────────────────────────── */
     .hero {
-      min-height: 100vh; display: flex; align-items: flex-end; padding: 6rem 2rem 5rem;
-      position: relative; overflow: hidden;
-      background: linear-gradient(160deg, rgba(37,37,37,0.55) 0%, rgba(37,37,37,0.88) 55%, rgba(37,37,37,0.98) 100%),
+      min-height: 92vh; display: flex; align-items: center;
+      padding: 7rem 2rem 5rem; position: relative; overflow: hidden;
+      background:
+        linear-gradient(160deg, rgba(46,46,46,0.45) 0%, rgba(46,46,46,0.82) 50%, rgba(46,46,46,0.98) 100%),
         url('assets/kitchen-1.png') center/cover no-repeat;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 55% 45% at 78% 20%, rgba(196,129,58,0.09) 0%, transparent 60%);
+      background: radial-gradient(ellipse 55% 45% at 78% 20%, rgba(196,129,58,0.08) 0%, transparent 60%);
       pointer-events: none;
     }
     .hero__content { position: relative; z-index: 2; max-width: 780px; }
     .hero__eyebrow {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
-      color: var(--color-copper); margin-bottom: 1.1rem;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; color: var(--color-copper); margin-bottom: 1rem;
     }
-    .hero__eyebrow::before { content: ''; width: 22px; height: 2px; background: var(--color-copper); border-radius: 2px; }
+    .hero__eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--color-copper); border-radius: 2px; }
     .hero__title {
       font-family: var(--font-display); font-weight: 800;
-      font-size: clamp(2.8rem, 1rem + 6.5vw, 7rem);
+      font-size: clamp(2.8rem, 1rem + 6vw, 6.5rem);
       line-height: 0.95; letter-spacing: -0.035em; color: var(--color-text); margin-bottom: 0.5rem;
     }
-    .hero__tagline { font-family: var(--font-display); font-weight: 500; font-size: clamp(1rem, 0.6rem + 1.5vw, 1.5rem); color: var(--color-copper); letter-spacing: 0.04em; margin-bottom: 1.5rem; }
-    .hero__desc { font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem); color: rgba(232,230,227,0.68); max-width: 540px; line-height: 1.7; margin-bottom: 2.25rem; }
-    .hero__ctas { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+    .hero__tagline { font-family: var(--font-display); font-weight: 500; font-size: clamp(0.95rem, 0.5rem + 1.5vw, 1.45rem); color: var(--color-copper); letter-spacing: 0.04em; margin-bottom: 1.4rem; }
+    .hero__desc { font-size: clamp(0.92rem, 0.8rem + 0.4vw, 1.1rem); color: rgba(232,230,227,0.65); max-width: 520px; line-height: 1.75; margin-bottom: 2rem; }
+    .hero__ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn-outline-light {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: transparent; color: rgba(232,230,227,0.75);
+      font-family: var(--font-display); font-weight: 600; font-size: 0.84rem;
+      padding: 0.65rem 1.3rem; border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius-lg); text-decoration: none; transition: all 180ms;
+    }
+    .btn-outline-light:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.35); color: #fff; }
 
-    /* ── LOGO STRIP (SHS) ────────────────────────────────────── */
+    /* ── LOGO STRIP ──────────────────────────────────────── */
     .logo-strip {
-      background: var(--color-surface); border-bottom: 1px solid var(--color-border);
-      padding: 3rem 2rem; text-align: center;
+      background: var(--color-surface-deep);
+      border-bottom: 1px solid var(--color-border);
+      padding: 2.5rem 2rem; text-align: center;
     }
-    .logo-strip__inner { max-width: var(--content-wide); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
-    .logo-strip__img { height: 110px; width: auto; }
-    .logo-strip__tagline { font-family: var(--font-display); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-text-muted); }
+    .logo-strip__img { height: 90px; width: auto; }
+    .logo-strip__tagline { font-family: var(--font-display); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--color-text-muted); margin-top: 0.9rem; }
 
-    /* ── PILLARS ─────────────────────────────────────────────── */
-    .pillars { padding: 5rem 2rem; background: var(--color-bg); }
-    .pillars__inner { max-width: var(--content-wide); margin: 0 auto; }
-    .pillars__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    @media (max-width: 900px) { .pillars__grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 540px) { .pillars__grid { grid-template-columns: 1fr; } }
-    .pillar-card {
-      background: var(--color-surface); border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl); padding: 1.6rem;
+    /* ── SECTION LABELS ──────────────────────────────────── */
+    .slabel {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.66rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; margin-bottom: 0.55rem;
+    }
+    .slabel::before { content: ''; width: 16px; height: 2px; border-radius: 2px; }
+    .slabel--copper { color: var(--color-copper); }
+    .slabel--copper::before { background: var(--color-copper); }
+    .slabel--amber { color: var(--color-accent); }
+    .slabel--amber::before { background: var(--color-accent); }
+    .section-h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.7rem, 1rem + 2.2vw, 2.6rem); color: var(--color-text); letter-spacing: -0.025em; margin-bottom: 0.55rem; }
+    .section-sub { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px; }
+
+    /* ══════════════════════════════════════════════════════
+       4 PFADE — HERZSTÜCK DER STARTSEITE
+    ══════════════════════════════════════════════════════ */
+    .pfade {
+      padding: 5rem 2rem;
+      background: var(--color-bg);
+    }
+    .pfade__inner { max-width: var(--content-wide); margin: 0 auto; }
+    .pfade__intro { text-align: center; margin-bottom: 3rem; }
+    .pfade__intro .section-sub { margin: 0 auto; }
+
+    .pfade__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 1000px) { .pfade__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px)  { .pfade__grid { grid-template-columns: 1fr; } }
+
+    .pfad-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 2rem 1.75rem 1.75rem;
+      display: flex; flex-direction: column; gap: 0;
+      text-decoration: none;
+      transition: border-color 180ms, transform 180ms, box-shadow 180ms;
+      position: relative; overflow: hidden;
+    }
+    .pfad-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--pfad-color, var(--color-copper));
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    }
+    .pfad-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+      border-color: var(--pfad-color, var(--color-copper));
+    }
+
+    .pfad-card__icon {
+      font-size: 2.2rem; margin-bottom: 1rem; line-height: 1;
+    }
+    .pfad-card__label {
+      font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--color-text-faint); margin-bottom: 0.35rem;
+    }
+    .pfad-card__who {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 1.4rem; color: var(--color-text); letter-spacing: -0.02em;
+      margin-bottom: 0.75rem; line-height: 1.1;
+    }
+    .pfad-card__desc {
+      font-size: 0.88rem; color: var(--color-text-muted);
+      line-height: 1.6; flex: 1; max-width: none; margin-bottom: 1.25rem;
+    }
+    .pfad-card__what {
+      list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .pfad-card__what li {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--color-text-muted); max-width: none;
+    }
+    .pfad-card__what li::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--pfad-color, var(--color-copper)); flex-shrink: 0;
+    }
+    .pfad-card__cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      font-family: var(--font-display); font-weight: 700; font-size: 0.88rem;
+      padding: 0.75rem 1.25rem; border-radius: var(--radius-lg);
+      border: 1.5px solid var(--pfad-color, var(--color-copper));
+      color: var(--pfad-color, var(--color-copper));
+      background: transparent; transition: all 180ms;
+      text-align: center;
+    }
+    .pfad-card:hover .pfad-card__cta {
+      background: var(--pfad-color, var(--color-copper));
+      color: #000;
+    }
+
+    .pfad-card--azubi    { --pfad-color: #4A9FD4; }   /* Blau */
+    .pfad-card--ausbilder { --pfad-color: var(--color-copper); }
+    .pfad-card--betrieb  { --pfad-color: var(--color-accent); }
+    .pfad-card--schule   { --pfad-color: #6BBF8A; }   /* Grün */
+
+    /* Kostenlos-Badge */
+    .pfad-badge {
+      display: inline-flex; align-items: center;
+      font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full); margin-bottom: 0.6rem;
+    }
+    .pfad-badge--free { background: rgba(74,159,212,0.15); color: #4A9FD4; border: 1px solid rgba(74,159,212,0.3); }
+    .pfad-badge--paid { background: var(--color-accent-glow); color: var(--color-accent); border: 1px solid rgba(232,168,56,0.3); }
+
+    /* ── SHS AUFKLÄRUNG ──────────────────────────────────── */
+    .shs-aufklaerung {
+      padding: 5rem 2rem;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+    }
+    .shs-aufklaerung__inner { max-width: var(--content-wide); margin: 0 auto; }
+
+    .themen-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 1000px) { .themen-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px)  { .themen-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .thema-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.4rem 1.2rem;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: 0.6rem;
+      text-decoration: none;
       transition: border-color 180ms, transform 180ms;
     }
-    .pillar-card:hover { border-color: var(--color-copper); transform: translateY(-2px); }
-    .pillar-card__icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
-    .pillar-card__title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--color-text); margin-bottom: 0.4rem; }
-    .pillar-card__desc { font-size: 0.87rem; color: var(--color-text-muted); line-height: 1.55; max-width: none; }
+    .thema-card:hover { border-color: var(--color-copper); transform: translateY(-2px); }
+    .thema-card__icon { font-size: 1.8rem; }
+    .thema-card__title { font-family: var(--font-display); font-weight: 700; font-size: 0.88rem; color: var(--color-text); line-height: 1.3; }
+    .thema-card__duration { font-size: 0.72rem; color: var(--color-copper); font-weight: 600; }
 
-    /* ── SHS ANGEBOTE ────────────────────────────────────────── */
-    .shs-angebote { padding: 5rem 2rem; background: var(--color-surface); border-top: 1px solid var(--color-border); }
-    .shs-angebote__inner { max-width: var(--content-wide); margin: 0 auto; }
-    .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    @media (max-width: 900px) { .angebote-grid { grid-template-columns: 1fr; } }
-    .angebot-card {
-      background: var(--color-bg); border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl); padding: 1.75rem;
-      display: flex; flex-direction: column; gap: 0.85rem;
-    }
-    .angebot-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
-    .angebot-card__name { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--color-text); line-height: 1.25; }
-    .angebot-card__price { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--color-copper); white-space: nowrap; flex-shrink: 0; }
-    .angebot-card__price-note { font-size: 0.65rem; color: var(--color-text-faint); display: block; text-align: right; margin-top: 0.1rem; }
-    .angebot-card__desc { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.55; max-width: none; }
-    .angebot-card__list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
-    .angebot-card__list li { display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.85rem; color: var(--color-text-muted); max-width: none; }
-    .angebot-card__list li::before { content: '✓'; color: var(--color-copper); font-weight: 700; flex-shrink: 0; }
-
-    /* ── QUOTE STRIPE ────────────────────────────────────────── */
-    .quote-stripe {
-      background: linear-gradient(135deg, rgba(196,129,58,0.1) 0%, rgba(232,168,56,0.05) 100%);
-      border-top: 1px solid rgba(196,129,58,0.18); border-bottom: 1px solid rgba(196,129,58,0.18);
-      padding: 2.75rem 2rem; text-align: center;
-    }
-    .quote-stripe p { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.1rem, 0.7rem + 1.5vw, 1.55rem); color: var(--color-text); max-width: 680px; margin: 0 auto; line-height: 1.4; }
-    .quote-stripe span { color: var(--color-copper); }
-
-    /* ── cAp DIVIDER ─────────────────────────────────────────── */
-    .cap-divider { padding: 4rem 2rem; background: var(--color-surface-deep); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
-    .cap-divider__inner { max-width: var(--content-wide); margin: 0 auto; display: flex; align-items: center; gap: 3rem; }
-    @media (max-width: 768px) { .cap-divider__inner { flex-direction: column; gap: 1.5rem; text-align: center; } }
-    .cap-divider__logo { height: 80px; width: auto; flex-shrink: 0; }
-    .cap-divider__badge { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.67rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); border: 1px solid rgba(232,168,56,0.3); border-radius: var(--radius-full); padding: 0.28rem 0.7rem; margin-bottom: 0.65rem; }
-    .cap-divider__text h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.4rem, 1rem + 2vw, 2.4rem); color: var(--color-text); letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-    .cap-divider__text p { color: var(--color-text-muted); font-size: 0.95rem; max-width: 540px; line-height: 1.65; }
-
-    /* ── cAp ZIELGRUPPEN ─────────────────────────────────────── */
-    .cap-targets { padding: 5rem 2rem; background: var(--color-bg); }
-    .cap-targets__inner { max-width: var(--content-wide); margin: 0 auto; }
-    .target-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    @media (max-width: 900px) { .target-grid { grid-template-columns: 1fr; } }
-    .target-card {
-      background: var(--color-surface); border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl); padding: 1.75rem;
-      display: flex; flex-direction: column; gap: 0.8rem;
-    }
-    .target-card__icon { font-size: 1.9rem; }
-    .target-card__label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-faint); }
-    .target-card__title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--color-text); }
-    .target-card__desc { font-size: 0.87rem; color: var(--color-text-muted); line-height: 1.6; flex: 1; max-width: none; }
-    .target-card__price { font-size: 0.83rem; font-weight: 600; color: var(--color-accent); border-top: 1px solid var(--color-border); padding-top: 0.9rem; }
-    .target-card__link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--color-accent); text-decoration: none; transition: gap 180ms; }
-    .target-card__link:hover { gap: 0.65rem; }
-
-    /* ── PRICING ─────────────────────────────────────────────── */
-    .cap-pricing { padding: 5rem 2rem; background: var(--color-surface); border-top: 1px solid var(--color-border); }
-    .cap-pricing__inner { max-width: var(--content-wide); margin: 0 auto; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: start; }
-    @media (max-width: 860px) { .pricing-grid { grid-template-columns: 1fr; max-width: 460px; } }
-    .pricing-card {
-      background: var(--color-bg); border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl); padding: 1.75rem;
-      display: flex; flex-direction: column; position: relative;
-    }
-    .pricing-card--featured { background: var(--color-surface-2); border-color: var(--color-accent); box-shadow: 0 0 0 1px var(--color-accent), var(--shadow-glow); }
-    .pricing-badge {
-      position: absolute; top: -0.7rem; left: 50%; transform: translateX(-50%);
-      background: var(--color-accent); color: #000;
-      font-family: var(--font-display); font-weight: 700; font-size: 0.68rem;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      padding: 0.22rem 0.9rem; border-radius: var(--radius-full); white-space: nowrap;
-    }
-    .pricing-card__tier { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-text-muted); margin-bottom: 0.4rem; }
-    .pricing-card__name { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; color: var(--color-text); letter-spacing: -0.02em; margin-bottom: 1.25rem; }
-    .pricing-card__price { font-family: var(--font-display); font-weight: 800; font-size: 2.6rem; color: var(--color-accent); letter-spacing: -0.03em; line-height: 1; }
-    .pricing-card--featured .pricing-card__price { font-size: 2.9rem; }
-    .pricing-card__suffix { font-size: 0.85rem; color: var(--color-text-muted); font-weight: 400; display: block; margin-top: 0.2rem; margin-bottom: 1.5rem; }
-    .pricing-card__features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.75rem; flex: 1; }
-    .pricing-card__features li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: var(--color-text-muted); max-width: none; }
-    .pricing-card__features li::before { content: '✓'; color: var(--color-accent); font-weight: 700; flex-shrink: 0; }
-
-    /* ── DOWNLOADS ───────────────────────────────────────────── */
-    .downloads { padding: 5rem 2rem; background: var(--color-bg); border-top: 1px solid var(--color-border); }
-    .downloads__inner { max-width: var(--content-wide); margin: 0 auto; }
-    .dl-section { margin-bottom: 3rem; }
-    .dl-section:last-child { margin-bottom: 0; }
-    .dl-section__title { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.6rem; }
-    .dl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
-    .dl-card {
-      background: var(--color-surface); border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl); padding: 1.4rem;
-      display: flex; flex-direction: column; gap: 0.75rem;
-      transition: border-color 180ms, transform 180ms;
-    }
-    .dl-card:hover { border-color: var(--color-border-light); transform: translateY(-2px); }
-    .dl-card__icon {
-      width: 40px; height: 40px; background: var(--color-accent-glow);
-      border-radius: var(--radius-md); display: flex; align-items: center;
-      justify-content: center; color: var(--color-accent); font-size: 1.1rem;
-    }
-    .dl-card__tag { font-size: 0.65rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.1em; }
-    .dl-card__title { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--color-text); line-height: 1.3; flex: 1; }
-    .dl-card__desc { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5; max-width: none; }
-    .dl-card__btn {
-      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
-      background: transparent; color: var(--color-accent);
-      font-family: var(--font-display); font-weight: 700; font-size: 0.82rem;
-      padding: 0.6rem 1rem; border: 1px solid rgba(232,168,56,0.35);
-      border-radius: var(--radius-md); text-decoration: none; transition: all 180ms;
-    }
-    .dl-card__btn:hover { background: var(--color-accent-glow); border-color: var(--color-accent); }
-    .dl-card__btn svg { flex-shrink: 0; }
-
-    /* ── TEAM ────────────────────────────────────────────────── */
-    .team { padding: 5rem 2rem; background: var(--color-surface); border-top: 1px solid var(--color-border); }
+    /* ── TEAM ────────────────────────────────────────────── */
+    .team { padding: 5rem 2rem; background: var(--color-bg); border-top: 1px solid var(--color-border); }
     .team__inner { max-width: var(--content-wide); margin: 0 auto; }
     .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; align-items: start; }
-    @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr; } }
-    .team-card {
-      background: var(--color-bg); border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl); overflow: hidden;
-    }
+    @media (max-width: 820px) { .team-grid { grid-template-columns: 1fr; } }
+    .team-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); overflow: hidden; }
     .team-card__img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: grayscale(100%); }
     .team-card__body { padding: 1.4rem; }
     .team-card__name { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--color-text); margin-bottom: 0.2rem; }
-    .team-card__role { font-size: 0.78rem; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
-    .team-card__desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.55; max-width: none; }
-    .team-card__placeholder { width: 100%; aspect-ratio: 3/4; background: var(--color-surface-2); display: flex; align-items: center; justify-content: center; }
-    .team-card__placeholder-icon { font-size: 3.5rem; opacity: 0.3; }
+    .team-card__role { font-size: 0.74rem; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+    .team-card__desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; max-width: none; }
 
-    /* ── PARTNER ─────────────────────────────────────────────── */
-    .partner { padding: 3.5rem 2rem; background: var(--color-bg); border-top: 1px solid var(--color-border); text-align: center; }
-    .partner__label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-text-faint); margin-bottom: 1.75rem; }
-    .partner__logos { display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-    .partner__logos img { height: 55px; width: auto; opacity: 0.45; filter: grayscale(100%); transition: opacity 180ms; }
+    /* ── PARTNER ─────────────────────────────────────────── */
+    .partner { padding: 3rem 2rem; background: var(--color-surface); border-top: 1px solid var(--color-border); text-align: center; }
+    .partner__label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-text-faint); margin-bottom: 1.5rem; }
+    .partner__logos { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .partner__logos img { height: 52px; width: auto; opacity: 0.45; filter: grayscale(100%); transition: opacity 180ms; }
     .partner__logos img:hover { opacity: 0.75; }
 
-    /* ── TESTIMONIALS ────────────────────────────────────────── */
-    .testimonials { padding: 5rem 2rem; background: var(--color-surface); border-top: 1px solid var(--color-border); }
+    /* ── TESTIMONIALS ────────────────────────────────────── */
+    .testimonials { padding: 5rem 2rem; background: var(--color-bg); border-top: 1px solid var(--color-border); }
     .testimonials__inner { max-width: var(--content-wide); margin: 0 auto; }
     .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    @media (max-width: 860px) { .testi-grid { grid-template-columns: 1fr; } }
-    .testi-card {
-      background: var(--color-bg); border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl); padding: 1.6rem;
-      display: flex; flex-direction: column; gap: 1rem;
-    }
-    .testi-card__stars { color: var(--color-accent); font-size: 0.85rem; letter-spacing: 0.1em; }
+    @media (max-width: 820px) { .testi-grid { grid-template-columns: 1fr; } }
+    .testi-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; }
+    .testi-card__stars { color: var(--color-accent); font-size: 0.82rem; letter-spacing: 0.1em; }
     .testi-card__quote { font-size: 0.9rem; color: var(--color-text); line-height: 1.65; flex: 1; max-width: none; font-style: italic; }
-    .testi-card__author { display: flex; flex-direction: column; gap: 0.15rem; border-top: 1px solid var(--color-border); padding-top: 0.9rem; }
-    .testi-card__name { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--color-text); }
-    .testi-card__meta { font-size: 0.78rem; color: var(--color-text-muted); }
+    .testi-card__author { border-top: 1px solid var(--color-border); padding-top: 0.85rem; }
+    .testi-card__name { font-family: var(--font-display); font-weight: 700; font-size: 0.88rem; color: var(--color-text); }
+    .testi-card__meta { font-size: 0.75rem; color: var(--color-text-muted); }
 
-    /* ── KONTAKT ─────────────────────────────────────────────── */
-    .kontakt { padding: 5rem 2rem; background: var(--color-bg); border-top: 1px solid var(--color-border); }
-    .kontakt__inner { max-width: 700px; margin: 0 auto; text-align: center; }
-    .kontakt__form { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 2.25rem; text-align: left; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
-    @media (max-width: 580px) { .form-row { grid-template-columns: 1fr; } }
-    .form-field { display: flex; flex-direction: column; gap: 0.35rem; }
-    .form-field label { font-size: 0.78rem; font-weight: 600; color: var(--color-text-muted); }
+    /* ── KONTAKT ─────────────────────────────────────────── */
+    .kontakt { padding: 5rem 2rem; background: var(--color-surface); border-top: 1px solid var(--color-border); }
+    .kontakt__inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .kontakt__form { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 2rem; text-align: left; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .form-field { display: flex; flex-direction: column; gap: 0.32rem; }
+    .form-field label { font-size: 0.76rem; font-weight: 600; color: var(--color-text-muted); }
     .form-field input, .form-field select, .form-field textarea {
-      background: var(--color-surface); border: 1px solid var(--color-border);
-      border-radius: var(--radius-md); padding: 0.7rem 0.9rem;
-      color: var(--color-text); font-size: 0.92rem;
-      transition: border-color 180ms; width: 100%;
+      background: var(--color-bg); border: 1px solid var(--color-border);
+      border-radius: var(--radius-md); padding: 0.68rem 0.9rem;
+      color: var(--color-text); font-size: 0.9rem; transition: border-color 180ms; width: 100%;
     }
     .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--color-accent); }
-    .form-field textarea { resize: vertical; min-height: 110px; }
-    .form-field select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8a8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 0.9rem center;
-    }
+    .form-field textarea { resize: vertical; min-height: 100px; }
+    .form-field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8a8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.9rem center; }
     .form-submit {
       display: flex; align-items: center; justify-content: center; gap: 0.5rem;
       background: var(--color-accent); color: #000;
       font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
-      padding: 0.95rem 1.5rem; border-radius: var(--radius-lg); border: none;
+      padding: 0.9rem; border-radius: var(--radius-lg); border: none;
       cursor: pointer; width: 100%; transition: all 180ms;
     }
-    .form-submit:hover { background: var(--color-accent-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,168,56,0.3); }
-    .form-note { font-size: 0.76rem; color: var(--color-text-faint); text-align: center; }
+    .form-submit:hover { background: var(--color-accent-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,168,56,0.28); }
+    .form-note { font-size: 0.74rem; color: var(--color-text-faint); text-align: center; }
     .form-note a { color: var(--color-accent); text-decoration: none; }
 
-    /* ── FOOTER ──────────────────────────────────────────────── */
-    .footer { background: var(--color-surface-deep); border-top: 1px solid var(--color-border); padding: 3rem 2rem; }
-    .footer__inner { max-width: var(--content-wide); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.25rem; }
-    @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; gap: 1.75rem; } }
+    /* ── FOOTER ──────────────────────────────────────────── */
+    .footer { background: var(--color-surface-deep); border-top: 1px solid var(--color-border); padding: 2.75rem 2rem; }
+    .footer__inner { max-width: var(--content-wide); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
     @media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } }
-    .footer__brand img { height: 36px; width: auto; margin-bottom: 0.7rem; }
-    .footer__brand p { font-size: 0.82rem; color: var(--color-text-faint); max-width: 220px; line-height: 1.6; }
-    .footer__col h4 { font-family: var(--font-display); font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); margin-bottom: 0.85rem; }
-    .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
-    .footer__col a { font-size: 0.85rem; color: var(--color-text-faint); text-decoration: none; transition: color 180ms; }
+    .footer__brand img { height: 34px; width: auto; margin-bottom: 0.65rem; }
+    .footer__brand p { font-size: 0.8rem; color: var(--color-text-faint); max-width: 210px; line-height: 1.6; }
+    .footer__col h4 { font-family: var(--font-display); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); margin-bottom: 0.8rem; }
+    .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 0.42rem; }
+    .footer__col a { font-size: 0.82rem; color: var(--color-text-faint); text-decoration: none; transition: color 180ms; }
     .footer__col a:hover { color: var(--color-text); }
-    .footer__bottom { max-width: var(--content-wide); margin: 2rem auto 0; padding-top: 1.4rem; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .footer__bottom p { font-size: 0.76rem; color: var(--color-text-faint); max-width: none; }
-    .footer__social { display: flex; gap: 0.6rem; }
-    .footer__social a { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: all 180ms; }
+    .footer__bottom { max-width: var(--content-wide); margin: 1.75rem auto 0; padding-top: 1.25rem; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer__bottom p { font-size: 0.74rem; color: var(--color-text-faint); }
+    .footer__social { display: flex; gap: 0.55rem; }
+    .footer__social a { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: all 180ms; }
     .footer__social a:hover { border-color: var(--color-accent); background: var(--color-accent-glow); }
 
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
@@ -350,7 +313,7 @@
 </head>
 <body>
 
-<!-- ════════════════════ NAV ════════════════════ -->
+<!-- ════ NAV ════════════════════════════════════════════════ -->
 <nav class="nav" role="navigation" aria-label="Hauptnavigation">
   <a href="index.html" class="nav__brand">
     <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift Logo" class="nav__logo" />
@@ -360,14 +323,13 @@
     </div>
   </a>
   <ul class="nav__links">
-    <li><a href="#angebote-shs">Workshops</a></li>
-    <li><a href="#cap" class="nav-cap">cAp Gastronomie</a></li>
-    <li><a href="#downloads">Downloads</a></li>
+    <li><a href="#pfade">Für wen?</a></li>
+    <li><a href="#aufklaerung">Aufklärung</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <div class="nav__cta">
-    <a href="#kontakt" class="btn-copper" style="padding:0.6rem 1.2rem;font-size:0.82rem;">Anfrage stellen</a>
+    <a href="#kontakt" class="btn-copper" style="padding:0.58rem 1.1rem;font-size:0.8rem;">Anfrage stellen</a>
   </div>
   <div class="nav__hamburger" id="hamburger" aria-label="Menü" role="button" tabindex="0">
     <span></span><span></span><span></span>
@@ -375,418 +337,167 @@
 </nav>
 
 <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile Navigation">
-  <a href="#angebote-shs" onclick="closeMobile()">Workshops & Schulungen</a>
-  <a href="#cap" onclick="closeMobile()">cAp – Gastronomie</a>
-  <a href="#cap-pricing" onclick="closeMobile()">90-Tage-Pakete</a>
-  <a href="#downloads" onclick="closeMobile()">Downloads (kostenlos)</a>
+  <a href="#pfade" onclick="closeMobile()">Für wen? – Alle Pfade</a>
+  <a href="azubis.html" onclick="closeMobile()">Ich bin Azubi</a>
+  <a href="ausbilder.html" onclick="closeMobile()">Ich bin Ausbilder/in</a>
+  <a href="betriebe.html" onclick="closeMobile()">Ich bin Betrieb</a>
+  <a href="berufsschulen.html" onclick="closeMobile()">Ich bin Berufsschule</a>
+  <a href="#aufklaerung" onclick="closeMobile()">Aufklärungstage</a>
   <a href="#team" onclick="closeMobile()">Team</a>
-  <a href="#kontakt" onclick="closeMobile()">Anfrage stellen</a>
-  <a href="azubi-hilfe.html" onclick="closeMobile()">Hilfe für Azubis</a>
-  <a href="berufsschulen.html" onclick="closeMobile()">Für Berufsschulen</a>
+  <a href="#kontakt" onclick="closeMobile()">Kontakt</a>
 </nav>
 
 
-<!-- ════════════════════ HERO ════════════════════ -->
+<!-- ════ HERO ════════════════════════════════════════════════ -->
 <section class="hero" aria-label="Stay Human Shift">
   <div class="hero__content">
-    <p class="hero__eyebrow">Für alle Branchen</p>
+    <p class="hero__eyebrow">Gastronomie · Hotellerie · Bildung · Betriebe</p>
     <h1 class="hero__title">Stay Human<br>Shift.</h1>
     <p class="hero__tagline">Menschlichkeit · Veränderung · Zukunft</p>
-    <p class="hero__desc">Mentale Gesundheit, Aufklärung und Prävention – für Berufsschulen, Unternehmen und Oberschulen. Wir verändern Arbeitskultur, bevor Menschen daran zerbrechen.</p>
+    <p class="hero__desc">Mentale Gesundheit, Aufklärung und Prävention – für alle, die in der Branche ausbilden, führen oder lernen.</p>
     <div class="hero__ctas">
-      <a href="#angebote-shs" class="btn-copper">Angebote ansehen</a>
-      <a href="#cap" class="btn-outline-light">cAp – Gastronomie →</a>
+      <a href="#pfade" class="btn-copper">Wo gehörst du hin? →</a>
+      <a href="#kontakt" class="btn-outline-light">Anfrage stellen</a>
     </div>
   </div>
 </section>
 
 
-<!-- ════════════════════ LOGO STRIP ════════════════════ -->
+<!-- ════ LOGO STRIP ══════════════════════════════════════════ -->
 <div class="logo-strip">
-  <div class="logo-strip__inner">
-    <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift" class="logo-strip__img" />
-    <p class="logo-strip__tagline">Menschlichkeit &nbsp;|&nbsp; Veränderung &nbsp;|&nbsp; Zukunft</p>
-  </div>
+  <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift" class="logo-strip__img" />
+  <p class="logo-strip__tagline">Menschlichkeit &nbsp;|&nbsp; Veränderung &nbsp;|&nbsp; Zukunft</p>
 </div>
 
 
-<!-- ════════════════════ 6 SÄULEN ════════════════════ -->
-<section class="pillars" aria-labelledby="pillars-h2">
-  <div class="pillars__inner">
-    <p class="slabel slabel--copper">Unsere Themen</p>
-    <h2 class="section-h2" id="pillars-h2">6 Säulen. Eine Mission.</h2>
-    <p class="section-sub">Stay Human Shift steht für ganzheitliche Veränderung – branchenübergreifend, menschlich, nachhaltig.</p>
-    <div class="pillars__grid">
-      <div class="pillar-card">
-        <div class="pillar-card__icon">🧠</div>
-        <h3 class="pillar-card__title">Mentale Gesundheit</h3>
-        <p class="pillar-card__desc">Burnout-Prävention, psychische Stabilität und nachhaltige Resilienz im Berufsalltag.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-card__icon">🎓</div>
-        <h3 class="pillar-card__title">Ausbildung</h3>
-        <p class="pillar-card__desc">Moderne Ausbildungsbegleitung, die Menschen befähigt statt überfordert.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-card__icon">💡</div>
-        <h3 class="pillar-card__title">Aufklärung</h3>
-        <p class="pillar-card__desc">Aufklärungstage für Schulen und Betriebe – offen, ehrlich, ohne Tabus.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-card__icon">🛡️</div>
-        <h3 class="pillar-card__title">Prävention</h3>
-        <p class="pillar-card__desc">Früherkennung von Belastungen – Systeme, die greifen, bevor es zu spät ist.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-card__icon">🤝</div>
-        <h3 class="pillar-card__title">Support</h3>
-        <p class="pillar-card__desc">Krisenbegleitung und Netzwerke für Azubis, Teams und Führungskräfte.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-card__icon">💪</div>
-        <h3 class="pillar-card__title">Gesundheit</h3>
-        <p class="pillar-card__desc">Körper, Geist, Umfeld. Ganzheitliche Konzepte für nachhaltige Leistungsfähigkeit – inkl. chronische Erkrankungen wie Diabetes im Berufsalltag.</p>
-      </div>
+<!-- ════ 4 PFADE ═════════════════════════════════════════════ -->
+<section class="pfade" id="pfade" aria-labelledby="pfade-h2">
+  <div class="pfade__inner">
+    <div class="pfade__intro">
+      <p class="slabel slabel--copper" style="justify-content:center;">Dein Bereich</p>
+      <h2 class="section-h2" id="pfade-h2">Wo gehörst du hin?</h2>
+      <p class="section-sub">Wähle deinen Pfad — jeder Bereich hat genau das, was du brauchst. Klar strukturiert, direkt auf den Punkt.</p>
+    </div>
+
+    <div class="pfade__grid">
+
+      <!-- AZUBI -->
+      <a href="azubis.html" class="pfad-card pfad-card--azubi" aria-label="Bereich für Azubis">
+        <div class="pfad-card__icon">🧑‍🍳</div>
+        <div class="pfad-card__label">Zielgruppe</div>
+        <div class="pfad-card__who">Ich bin<br>Azubi</div>
+        <span class="pfad-badge pfad-badge--free">100 % kostenlos</span>
+        <p class="pfad-card__desc">Alles, was du in der Ausbildung brauchst – ohne dass du dafür bezahlen musst.</p>
+        <ul class="pfad-card__what">
+          <li>Mental Health Guide</li>
+          <li>Poster zum Mitnehmen</li>
+          <li>Soforthilfe & Notfallnummern</li>
+          <li>Rechte & Schutz erklärt</li>
+        </ul>
+        <div class="pfad-card__cta">Zu meinen Materialien →</div>
+      </a>
+
+      <!-- AUSBILDER -->
+      <a href="ausbilder.html" class="pfad-card pfad-card--ausbilder" aria-label="Bereich für Ausbilder">
+        <div class="pfad-card__icon">👨‍🏫</div>
+        <div class="pfad-card__label">Zielgruppe</div>
+        <div class="pfad-card__who">Ich bin<br>Ausbilder/in</div>
+        <span class="pfad-badge pfad-badge--paid">Workshops & PDFs</span>
+        <p class="pfad-card__desc">Online-Workshops und praktische PDF-Pakete für die tägliche Ausbildungsarbeit.</p>
+        <ul class="pfad-card__what">
+          <li>Online-Workshop (1–2h) buchbar</li>
+          <li>Krisenprotokoll-Schulung</li>
+          <li>PDF-Paket: Gesprächs­leitfäden</li>
+          <li>Checklisten & Mental-Health-Tools</li>
+        </ul>
+        <div class="pfad-card__cta">Zu den Workshops →</div>
+      </a>
+
+      <!-- BETRIEB -->
+      <a href="betriebe.html" class="pfad-card pfad-card--betrieb" aria-label="Bereich für Betriebe">
+        <div class="pfad-card__icon">🏨</div>
+        <div class="pfad-card__label">Zielgruppe · cAp</div>
+        <div class="pfad-card__who">Ich bin<br>Betrieb</div>
+        <span class="pfad-badge pfad-badge--paid">90-Tage-Pakete</span>
+        <p class="pfad-card__desc">Strukturierte 90-Tage-Programme für Gastronomiebetriebe – von digital bis Vor-Ort.</p>
+        <ul class="pfad-card__what">
+          <li>Starter ab 500 €</li>
+          <li>Standard 1.200 €</li>
+          <li>Premium 2.000 €</li>
+          <li>Speziell für Gastro & Hotellerie</li>
+        </ul>
+        <div class="pfad-card__cta">Zu den Paketen →</div>
+      </a>
+
+      <!-- BERUFSSCHULE -->
+      <a href="berufsschulen.html" class="pfad-card pfad-card--schule" aria-label="Bereich für Berufsschulen">
+        <div class="pfad-card__icon">🏫</div>
+        <div class="pfad-card__label">Zielgruppe</div>
+        <div class="pfad-card__who">Ich bin<br>Berufsschule</div>
+        <span class="pfad-badge" style="background:rgba(107,191,138,0.12);color:#6BBF8A;border:1px solid rgba(107,191,138,0.3);">Aufklärungstage</span>
+        <p class="pfad-card__desc">Kompakte Aufklärungstage zu 5 Themen – 2–3 Stunden, online oder vor Ort buchbar.</p>
+        <ul class="pfad-card__what">
+          <li>Mentale Gesundheit</li>
+          <li>Sucht & Prävention</li>
+          <li>Diabetes & Gesundheit</li>
+          <li>Frauen & Schutz · Rassismus</li>
+        </ul>
+        <div class="pfad-card__cta">Zu den Angeboten →</div>
+      </a>
+
     </div>
   </div>
 </section>
 
 
-<!-- ════════════════════ SHS ANGEBOTE ════════════════════ -->
-<section class="shs-angebote" id="angebote-shs" aria-labelledby="shs-h2">
-  <div class="shs-angebote__inner">
+<!-- ════ AUFKLÄRUNGSTAGE (5 THEMEN) ═════════════════════════ -->
+<section class="shs-aufklaerung" id="aufklaerung" aria-labelledby="aufklaerung-h2">
+  <div class="shs-aufklaerung__inner">
     <p class="slabel slabel--copper">Stay Human Shift · Alle Branchen</p>
-    <h2 class="section-h2" id="shs-h2">Workshops & Schulungen</h2>
-    <p class="section-sub">Für Berufsschulen, Oberschulen und Unternehmen aller Branchen. Alle Preise netto, zzgl. MwSt.</p>
-    <div class="angebote-grid">
-      <div class="angebot-card">
-        <div class="angebot-card__head">
-          <div class="angebot-card__name">Aufklärungstag</div>
-          <div>
-            <div class="angebot-card__price">ab 590 €</div>
-            <span class="angebot-card__price-note">netto zzgl. MwSt.</span>
-          </div>
-        </div>
-        <p class="angebot-card__desc">Ganztägige Veranstaltung für Schulklassen oder Teams. Offene Gespräche über mentale Gesundheit, Stress und Selbstfürsorge.</p>
-        <ul class="angebot-card__list">
-          <li>Für Klassen / Teams ab 15 Personen</li>
-          <li>Modulares Format (4–8 Stunden)</li>
-          <li>Interaktiv, kein Frontalvortrag</li>
-          <li>Alle Materialien inklusive</li>
-        </ul>
-        <a href="#kontakt" class="btn-amber-outline" style="margin-top:auto;">Anfrage stellen</a>
-      </div>
-      <div class="angebot-card">
-        <div class="angebot-card__head">
-          <div class="angebot-card__name">Modul: Mentale Stärke</div>
-          <div>
-            <div class="angebot-card__price">390 €</div>
-            <span class="angebot-card__price-note">netto zzgl. MwSt.</span>
-          </div>
-        </div>
-        <p class="angebot-card__desc">Kompakt-Workshop für Berufseinsteiger und Auszubildende. Burnout erkennen, Grenzen setzen, Resilienz aufbauen.</p>
-        <ul class="angebot-card__list">
-          <li>3–4 Stunden, flexibel buchbar</li>
-          <li>Einzeln oder als Modul-Paket</li>
-          <li>Online oder vor Ort</li>
-          <li>Ab 10 Teilnehmer</li>
-        </ul>
-        <a href="#kontakt" class="btn-amber-outline" style="margin-top:auto;">Anfrage stellen</a>
-      </div>
-      <div class="angebot-card">
-        <div class="angebot-card__head">
-          <div class="angebot-card__name">Modul: Team & Führung</div>
-          <div>
-            <div class="angebot-card__price">490 €</div>
-            <span class="angebot-card__price-note">netto zzgl. MwSt.</span>
-          </div>
-        </div>
-        <p class="angebot-card__desc">Für Führungskräfte und Ausbilder. Empathische Führung, Früherkennung von Überlastung, wertschätzende Kommunikation.</p>
-        <ul class="angebot-card__list">
-          <li>4–5 Stunden intensiv</li>
-          <li>Kleine Gruppen (max. 15 Pers.)</li>
-          <li>Inkl. Praxis-Toolkit</li>
-          <li>Zertifikat auf Anfrage</li>
-        </ul>
-        <a href="#kontakt" class="btn-amber-outline" style="margin-top:auto;">Anfrage stellen</a>
-      </div>
+    <h2 class="section-h2" id="aufklaerung-h2">Aufklärungstage – 5 Themen</h2>
+    <p class="section-sub">Für Berufsschulen, Oberschulen und Betriebe. Jeweils 2–3 Stunden – online oder vor Ort. Preis auf Anfrage.</p>
+
+    <div class="themen-grid">
+      <a href="berufsschulen.html#mentale-gesundheit" class="thema-card">
+        <div class="thema-card__icon">🧠</div>
+        <div class="thema-card__title">Mentale Gesundheit & Depression</div>
+        <div class="thema-card__duration">2–3 Stunden</div>
+      </a>
+      <a href="berufsschulen.html#sucht" class="thema-card">
+        <div class="thema-card__icon">🚫</div>
+        <div class="thema-card__title">Sucht & Prävention</div>
+        <div class="thema-card__duration">2–3 Stunden</div>
+      </a>
+      <a href="berufsschulen.html#diabetes" class="thema-card">
+        <div class="thema-card__icon">🩺</div>
+        <div class="thema-card__title">Diabetes & chronische Erkrankungen</div>
+        <div class="thema-card__duration">2–3 Stunden</div>
+      </a>
+      <a href="berufsschulen.html#frauen" class="thema-card">
+        <div class="thema-card__icon">🛡️</div>
+        <div class="thema-card__title">Frauen, Sexismus & Schutz</div>
+        <div class="thema-card__duration">2–3 Stunden</div>
+      </a>
+      <a href="berufsschulen.html#rassismus" class="thema-card">
+        <div class="thema-card__icon">✊</div>
+        <div class="thema-card__title">Rassismus & Diskriminierung</div>
+        <div class="thema-card__duration">2–3 Stunden</div>
+      </a>
     </div>
-    <div class="preise-note">Alle Preise netto, zzgl. 19 % MwSt. · Individuelle Angebote auf Anfrage · Fördermöglichkeiten vorhanden</div>
-  </div>
-</section>
 
-
-<!-- ════════════════════ QUOTE STRIPE ════════════════════ -->
-<div class="quote-stripe">
-  <p>"Wer Menschen ausbildet, trägt Verantwortung. <span>Stay Human Shift</span> macht daraus ein System."</p>
-</div>
-
-
-<!-- ════════════════════ cAp DIVIDER ════════════════════ -->
-<section id="cap">
-  <div class="cap-divider">
-    <div class="cap-divider__inner">
-      <img src="assets/cap-logo.png" alt="cAp – The Culinary Apprentice Project" class="cap-divider__logo" />
-      <div class="cap-divider__text">
-        <div class="cap-divider__badge">Teil von Stay Human Shift · Speziell für Gastronomie</div>
-        <h2>The Culinary Apprentice Project</h2>
-        <p>cAp ist die Gastronomie-Sparte von Stay Human Shift – speziell entwickelt für Küche, Service und Hotellerie. Von jemandem, der selbst seit 1996 in der Branche steht.</p>
-      </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="berufsschulen.html" class="btn-copper">Alle Aufklärungstage ansehen</a>
     </div>
   </div>
 </section>
 
 
-<!-- ════════════════════ cAp ZIELGRUPPEN ════════════════════ -->
-<section class="cap-targets" aria-labelledby="cap-zg-h2">
-  <div class="cap-targets__inner">
-    <p class="slabel slabel--amber">cAp · Gastronomie & Hotellerie</p>
-    <h2 class="section-h2" id="cap-zg-h2">Für wen ist cAp?</h2>
-    <p class="section-sub">Drei Zielgruppen. Klare Angebote. Direkte Wirkung.</p>
-    <div class="target-grid">
-      <div class="target-card">
-        <div class="target-card__icon">🧑‍🍳</div>
-        <div class="target-card__label">Zielgruppe</div>
-        <h3 class="target-card__title">Azubis & Auszubildende</h3>
-        <p class="target-card__desc">Kostenlose PDFs, Leitfäden und Mental-Health-Guides speziell für Azubis in Küche, Service und Hotellerie. Weil Ausbildung nicht alleine gemeistert werden sollte.</p>
-        <div class="target-card__price">100 % kostenlos · Gemeinnützig</div>
-        <a href="azubi-hilfe.html" class="target-card__link">Zu den kostenlosen Materialien →</a>
-      </div>
-      <div class="target-card">
-        <div class="target-card__icon">🏨</div>
-        <div class="target-card__label">Zielgruppe</div>
-        <h3 class="target-card__title">Betriebe & Ausbilder</h3>
-        <p class="target-card__desc">90-Tage-Pakete für Gastrobetriebe, die ihre Ausbildungsqualität messbar verbessern wollen – von digitalen Tools bis zur Vor-Ort-Begleitung.</p>
-        <div class="target-card__price">Ab 500 € netto · 3 Pakete verfügbar</div>
-        <a href="#cap-pricing" class="target-card__link">Zu den Paketen →</a>
-      </div>
-      <div class="target-card">
-        <div class="target-card__icon">🏫</div>
-        <div class="target-card__label">Zielgruppe</div>
-        <h3 class="target-card__title">Berufsschulen</h3>
-        <p class="target-card__desc">Workshops, Unterrichtsmaterial und Aufklärungstage für Berufsschulen mit Gastro-Ausbildung. Individuell abgestimmt, direkt einsetzbar.</p>
-        <div class="target-card__price">Auf Anfrage · Individuell</div>
-        <a href="berufsschulen.html" class="target-card__link">Mehr erfahren →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════ cAp PRICING ════════════════════ -->
-<section class="cap-pricing" id="cap-pricing" aria-labelledby="cap-pricing-h2">
-  <div class="cap-pricing__inner">
-    <p class="slabel slabel--amber">cAp · 90-Tage-Programme für Betriebe</p>
-    <h2 class="section-h2" id="cap-pricing-h2">Klare Pakete. Direkte Wirkung.</h2>
-    <p class="section-sub">Drei Pakete für Gastronomiebetriebe – online-orientiert, praxiserprobt, sofort einsetzbar. Alle Preise netto, zzgl. MwSt.</p>
-    <div class="pricing-grid">
-
-      <div class="pricing-card">
-        <div class="pricing-card__tier">Paket 01</div>
-        <div class="pricing-card__name">Starter</div>
-        <div class="pricing-card__price">500 €</div>
-        <span class="pricing-card__suffix">netto · einmalig</span>
-        <ul class="pricing-card__features">
-          <li>Digitale Checklisten (sofort nutzbar)</li>
-          <li>90-Tage-Ausbildungsplan als PDF</li>
-          <li>Onboarding-Leitfaden für neue Azubis</li>
-          <li>Feedbackbögen für Ausbilder</li>
-          <li>Mental-Health-Guide für das Team</li>
-        </ul>
-        <a href="#kontakt" class="btn-amber-outline">Starter anfragen</a>
-      </div>
-
-      <div class="pricing-card pricing-card--featured">
-        <div class="pricing-badge">Empfohlen</div>
-        <div class="pricing-card__tier">Paket 02</div>
-        <div class="pricing-card__name">Standard</div>
-        <div class="pricing-card__price">1.200 €</div>
-        <span class="pricing-card__suffix">netto · 90 Tage</span>
-        <ul class="pricing-card__features">
-          <li>Alles aus Starter</li>
-          <li>2× Online-Beratung (je 60 Min.)</li>
-          <li>Individueller Ausbildungsplan</li>
-          <li>Mentor-System aufsetzen</li>
-          <li>72h-Krisenprotokoll integriert</li>
-          <li>3 Monate Support per E-Mail</li>
-        </ul>
-        <a href="#kontakt" class="btn-amber">Standard anfragen</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-card__tier">Paket 03</div>
-        <div class="pricing-card__name">Premium</div>
-        <div class="pricing-card__price">2.000 €</div>
-        <span class="pricing-card__suffix">netto · 90 Tage + 6 Mon.</span>
-        <ul class="pricing-card__features">
-          <li>Alles aus Standard</li>
-          <li>1 Tag Vor-Ort-Begleitung</li>
-          <li>Ausbilder-Coaching (2 Sessions)</li>
-          <li>Team-Workshop im Betrieb</li>
-          <li>Individuelle Konzeptentwicklung</li>
-          <li>6 Monate Support</li>
-        </ul>
-        <a href="#kontakt" class="btn-amber-outline">Premium anfragen</a>
-      </div>
-
-    </div>
-    <div class="preise-note">Alle Preise netto, zzgl. 19 % MwSt. · Ratenzahlung möglich · PDFs für Azubis bleiben immer kostenlos</div>
-  </div>
-</section>
-
-
-<!-- ════════════════════ DOWNLOADS ════════════════════ -->
-<section class="downloads" id="downloads" aria-labelledby="dl-h2">
-  <div class="downloads__inner">
-    <p class="slabel slabel--amber">Kostenlose Materialien · Gemeinnützig</p>
-    <h2 class="section-h2" id="dl-h2">Alles kostenlos. Sofort nutzbar.</h2>
-    <p class="section-sub">Alle PDFs und Poster sind kostenlos – für Azubis, Ausbilder und alle, die es brauchen. Einfach herunterladen.</p>
-
-    <!-- FÜR AZUBIS -->
-    <div class="dl-section">
-      <div class="dl-section__title">🧑‍🍳 Für Azubis</div>
-      <div class="dl-grid">
-        <div class="dl-card">
-          <div class="dl-card__icon">📄</div>
-          <div class="dl-card__tag">PDF · Guide</div>
-          <div class="dl-card__title">Mental Health Guide für Azubis</div>
-          <div class="dl-card__desc">Was tun, wenn alles zu viel wird? Praktische Hilfe für Azubis in Küche, Service und Hotellerie.</div>
-          <a href="./assets/pdfs/mental-health-guide-azubis.pdf" class="dl-card__btn" download>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Kostenlos herunterladen
-          </a>
-        </div>
-        <div class="dl-card">
-          <div class="dl-card__icon">🖼️</div>
-          <div class="dl-card__tag">PDF · Poster</div>
-          <div class="dl-card__title">Poster "Du bist nicht allein"</div>
-          <div class="dl-card__desc">Für den Pausenraum, die Umkleide oder das Schwarze Brett – sichtbare Unterstützung für Azubis.</div>
-          <a href="./assets/pdfs/poster-azubi-hilfe-kueche.pdf" class="dl-card__btn" download>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Kostenlos herunterladen
-          </a>
-        </div>
-        <div class="dl-card">
-          <div class="dl-card__icon">🖼️</div>
-          <div class="dl-card__tag">PDF · Poster</div>
-          <div class="dl-card__title">Poster "Kein Platz für Sexismus"</div>
-          <div class="dl-card__desc">Klare Haltung gegen Belästigung – für Küche, Service und Hotellerie.</div>
-          <a href="./assets/pdfs/poster-sexismus-kueche.pdf" class="dl-card__btn" download>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Kostenlos herunterladen
-          </a>
-        </div>
-        <div class="dl-card">
-          <div class="dl-card__icon">🖼️</div>
-          <div class="dl-card__tag">PDF · Poster</div>
-          <div class="dl-card__title">Poster "Frauen in der Gastro"</div>
-          <div class="dl-card__desc">Sichtbarkeit und Stärke – für Frauen in der Gastronomie.</div>
-          <a href="./assets/pdfs/poster-frauen-gastro.pdf" class="dl-card__btn" download>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Kostenlos herunterladen
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- FÜR AUSBILDER & BETRIEBE -->
-    <div class="dl-section">
-      <div class="dl-section__title">🏨 Für Ausbilder & Betriebe</div>
-      <div class="dl-grid">
-        <div class="dl-card">
-          <div class="dl-card__icon">📄</div>
-          <div class="dl-card__tag">PDF · 5 Seiten</div>
-          <div class="dl-card__title">72h-Krisenprotokoll für Ausbilder</div>
-          <div class="dl-card__desc">Was tun, wenn ein Azubi in der Krise ist? Strukturierter Leitfaden für die ersten 72 Stunden – klar, sofort einsetzbar.</div>
-          <a href="./assets/pdfs/72h-krisenprotokoll-ausbilder.pdf" class="dl-card__btn" download>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Kostenlos herunterladen
-          </a>
-        </div>
-        <div class="dl-card">
-          <div class="dl-card__icon">📄</div>
-          <div class="dl-card__tag">PDF · 2 Seiten</div>
-          <div class="dl-card__title">Leitfaden "Warnzeichen erkennen"</div>
-          <div class="dl-card__desc">Früherkennung von Überlastung, Burnout und psychischen Belastungen bei Azubis – für Ausbilder und Führungskräfte.</div>
-          <a href="./assets/pdfs/leitfaden-ausbilder-warnzeichen.pdf" class="dl-card__btn" download>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Kostenlos herunterladen
-          </a>
-        </div>
-        <div class="dl-card">
-          <div class="dl-card__icon">📄</div>
-          <div class="dl-card__tag">PDF · 1 Seite</div>
-          <div class="dl-card__title">Check-in-Bogen für Azubi-Gespräche</div>
-          <div class="dl-card__desc">Strukturierter Gesprächsleitfaden für regelmäßige Check-in-Gespräche zwischen Ausbilder und Azubi.</div>
-          <a href="./assets/pdfs/check-in-gespraech-azubi.pdf" class="dl-card__btn" download>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Kostenlos herunterladen
-          </a>
-        </div>
-
-        <div class="dl-card" style="border-color: rgba(232,168,56,0.35);">
-          <div class="dl-card__icon">✅</div>
-          <div class="dl-card__tag" style="color:var(--color-accent);">NEU · PDF · 1 Seite</div>
-          <div class="dl-card__title">Checkliste: Mentale Gesundheit in Gastronomie & Hotellerie</div>
-          <div class="dl-card__desc">Warnsignale erkennen, Risikofaktoren prüfen, erste Schritte für Führungskräfte und Ausbildende. Sofort nutzbar.</div>
-          <a href="checkliste-mentale-gesundheit.html" class="dl-card__btn" style="border-color:var(--color-accent); color:var(--color-accent);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Zur Checkliste
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ALLE MATERIALIEN LINK -->
-    <div style="text-align:center;margin-top:2rem;">
-      <a href="azubi-hilfe.html" class="btn-amber-outline" style="width:auto;display:inline-flex;">Alle Azubi-Materialien ansehen →</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════ TESTIMONIALS ════════════════════ -->
-<section class="testimonials" aria-labelledby="testi-h2">
-  <div class="testimonials__inner">
-    <p class="slabel slabel--amber">Stimmen aus der Praxis</p>
-    <h2 class="section-h2" id="testi-h2">Was andere sagen.</h2>
-    <p class="section-sub" style="margin-bottom:2.25rem;">Echte Menschen. Echte Erfahrungen. Kein Marketing-Sprech.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-card__stars">★★★★★</div>
-        <p class="testi-card__quote">"Die Materialien haben mir wirklich geholfen, meinen Azubis besser zuzuhören. Ich hatte vorher keine Struktur – jetzt habe ich eine."</p>
-        <div class="testi-card__author">
-          <span class="testi-card__name">Maike</span>
-          <span class="testi-card__meta">Hotelfachfrau, Sachsen</span>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-card__stars">★★★★★</div>
-        <p class="testi-card__quote">"Endlich jemand, der die Realität in der Küche kennt. Der Mental Health Guide trifft genau, was man als Azubi erlebt – aber nie ausspricht."</p>
-        <div class="testi-card__author">
-          <span class="testi-card__name">Finn W.</span>
-          <span class="testi-card__meta">Koch, Sternerestaurant</span>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-card__stars">★★★★★</div>
-        <p class="testi-card__quote">"Das 72h-Krisenprotokoll hat mir in einem echten Notfall geholfen. Klar, strukturiert, sofort einsetzbar. Genau das, was man braucht."</p>
-        <div class="testi-card__author">
-          <span class="testi-card__name">Johannes M.</span>
-          <span class="testi-card__meta">Koch, 3 Jahre Erfahrung</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════ TEAM ════════════════════ -->
+<!-- ════ TEAM ════════════════════════════════════════════════ -->
 <section class="team" id="team" aria-labelledby="team-h2">
   <div class="team__inner">
     <p class="slabel slabel--copper">Das Team</p>
     <h2 class="section-h2" id="team-h2">Menschen hinter Stay Human Shift.</h2>
-    <p class="section-sub" style="margin-bottom:2.5rem;">Keine Konzepte aus dem Seminarraum – echte Erfahrungen aus der Praxis.</p>
+    <p class="section-sub" style="margin-bottom:2.25rem;">Keine Konzepte aus dem Seminarraum – echte Erfahrungen aus der Praxis.</p>
     <div class="team-grid">
 
       <div class="team-card">
@@ -803,7 +514,7 @@
         <div class="team-card__body">
           <div class="team-card__name">Susanne G. Meier</div>
           <div class="team-card__role">Business- & Management-Coach · cAp Team</div>
-          <p class="team-card__desc">Seit 2014 in der Gastronomie – gelernte Fachkraft für Systemgastronomie. Seit 2024 begleitet sie als Business- & Management-Coach gezielt Frauen in der Gastronomie dabei, ihre Rolle klar, selbstbewusst und wirksam auszufüllen. Gemeinsame Mission mit Kevin: die Gastronomie in Deutschland nachhaltig zu verändern – von der Ausbildung bis zur Führung.</p>
+          <p class="team-card__desc">Seit 2014 in der Gastronomie – gelernte Fachkraft für Systemgastronomie. Seit 2024 begleitet sie als Business- & Management-Coach gezielt Frauen in der Gastronomie dabei, ihre Rolle klar, selbstbewusst und wirksam auszufüllen.</p>
         </div>
       </div>
 
@@ -820,7 +531,7 @@
 </section>
 
 
-<!-- ════════════════════ PARTNER ════════════════════ -->
+<!-- ════ PARTNER ═════════════════════════════════════════════ -->
 <section class="partner" aria-label="Unsere Partner">
   <div class="partner__label">Offizieller Partner</div>
   <div class="partner__logos">
@@ -831,13 +542,49 @@
 </section>
 
 
-<!-- ════════════════════ KONTAKT ════════════════════ -->
+<!-- ════ TESTIMONIALS ════════════════════════════════════════ -->
+<section class="testimonials" aria-labelledby="testi-h2">
+  <div class="testimonials__inner">
+    <p class="slabel slabel--amber">Stimmen aus der Praxis</p>
+    <h2 class="section-h2" id="testi-h2">Was andere sagen.</h2>
+    <p class="section-sub" style="margin-bottom:2rem;">Echte Menschen. Echte Erfahrungen.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-card__stars">★★★★★</div>
+        <p class="testi-card__quote">"Die Materialien haben mir wirklich geholfen, meinen Azubis besser zuzuhören. Ich hatte vorher keine Struktur – jetzt habe ich eine."</p>
+        <div class="testi-card__author">
+          <div class="testi-card__name">Maike</div>
+          <div class="testi-card__meta">Hotelfachfrau, Sachsen</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-card__stars">★★★★★</div>
+        <p class="testi-card__quote">"Endlich jemand, der die Realität in der Küche kennt. Der Mental Health Guide trifft genau, was man als Azubi erlebt – aber nie ausspricht."</p>
+        <div class="testi-card__author">
+          <div class="testi-card__name">Finn W.</div>
+          <div class="testi-card__meta">Koch, Sternerestaurant</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-card__stars">★★★★★</div>
+        <p class="testi-card__quote">"Das 72h-Krisenprotokoll hat mir in einem echten Notfall geholfen. Klar, strukturiert, sofort einsetzbar. Genau das, was man braucht."</p>
+        <div class="testi-card__author">
+          <div class="testi-card__name">Johannes M.</div>
+          <div class="testi-card__meta">Koch, 3 Jahre Erfahrung</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ KONTAKT ═════════════════════════════════════════════ -->
 <section class="kontakt" id="kontakt" aria-labelledby="kontakt-h2">
   <div class="kontakt__inner">
     <p class="slabel slabel--amber" style="justify-content:center;">Kontakt</p>
     <h2 class="section-h2" id="kontakt-h2" style="text-align:center;">Anfrage stellen</h2>
-    <p style="text-align:center;color:var(--color-text-muted);max-width:440px;margin:0 auto;font-size:0.95rem;">
-      Einfach ausfüllen – wir melden uns innerhalb von 48 Stunden mit einem konkreten Angebot.
+    <p style="text-align:center;color:var(--color-text-muted);max-width:420px;margin:0 auto;font-size:0.92rem;">
+      Wir melden uns innerhalb von 48 Stunden mit einem konkreten Angebot.
     </p>
     <form class="kontakt__form" id="contactForm" novalidate>
       <div class="form-row">
@@ -856,26 +603,31 @@
           <input type="text" id="betrieb" name="betrieb" placeholder="Ihr Betrieb oder Ihre Schule" />
         </div>
         <div class="form-field">
-          <label for="interesse">Ich interessiere mich für *</label>
+          <label for="interesse">Ich bin … *</label>
           <select id="interesse" name="interesse" required>
             <option value="">Bitte wählen …</option>
-            <optgroup label="Stay Human Shift">
-              <option value="shs-aufklaerungstag">Aufklärungstag (ab 590 €)</option>
-              <option value="shs-mental">Modul: Mentale Stärke (390 €)</option>
-              <option value="shs-fuehrung">Modul: Team & Führung (490 €)</option>
+            <optgroup label="Azubi">
+              <option value="azubi">Azubi – suche kostenlose Materialien</option>
             </optgroup>
-            <optgroup label="cAp – Gastronomie">
-              <option value="cap-starter">cAp Starter (500 €)</option>
-              <option value="cap-standard">cAp Standard (1.200 €)</option>
-              <option value="cap-premium">cAp Premium (2.000 €)</option>
-              <option value="cap-berufsschule">cAp Berufsschule (Anfrage)</option>
+            <optgroup label="Ausbilder/in">
+              <option value="ausbilder-workshop">Ausbilder – Interesse an Online-Workshop</option>
+              <option value="ausbilder-pdf">Ausbilder – Interesse an PDF-Paket</option>
+            </optgroup>
+            <optgroup label="Betrieb (cAp)">
+              <option value="betrieb-starter">Betrieb – cAp Starter (500 €)</option>
+              <option value="betrieb-standard">Betrieb – cAp Standard (1.200 €)</option>
+              <option value="betrieb-premium">Betrieb – cAp Premium (2.000 €)</option>
+            </optgroup>
+            <optgroup label="Berufsschule / Schule">
+              <option value="schule-aufklaerung">Schule – Aufklärungstag buchen</option>
+              <option value="schule-info">Schule – allgemeine Anfrage</option>
             </optgroup>
           </select>
         </div>
       </div>
       <div class="form-field">
         <label for="nachricht">Nachricht</label>
-        <textarea id="nachricht" name="nachricht" placeholder="Erzählen Sie uns kurz, was Sie beschäftigt …"></textarea>
+        <textarea id="nachricht" name="nachricht" placeholder="Was beschäftigt Sie? Was brauchen Sie?"></textarea>
       </div>
       <button type="submit" class="form-submit">
         Anfrage senden
@@ -891,29 +643,30 @@
 </section>
 
 
-<!-- ════════════════════ FOOTER ════════════════════ -->
+<!-- ════ FOOTER ══════════════════════════════════════════════ -->
 <footer class="footer" role="contentinfo">
   <div class="footer__inner">
     <div class="footer__brand">
       <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift" />
-      <p>Menschlichkeit, Veränderung, Zukunft. Für alle Branchen – und speziell für Gastronomie durch cAp.</p>
+      <p>Menschlichkeit, Veränderung, Zukunft. Für alle Branchen – speziell für Gastronomie durch cAp.</p>
     </div>
     <div class="footer__col">
-      <h4>Stay Human Shift</h4>
+      <h4>Dein Bereich</h4>
       <ul>
-        <li><a href="#angebote-shs">Aufklärungstage</a></li>
-        <li><a href="#angebote-shs">Workshops</a></li>
-        <li><a href="berufsschulen.html">Für Schulen</a></li>
+        <li><a href="azubis.html">Für Azubis (kostenlos)</a></li>
+        <li><a href="ausbilder.html">Für Ausbilder/innen</a></li>
+        <li><a href="betriebe.html">Für Betriebe (cAp)</a></li>
+        <li><a href="berufsschulen.html">Für Berufsschulen</a></li>
       </ul>
     </div>
     <div class="footer__col">
-      <h4>cAp – Gastronomie</h4>
+      <h4>Aufklärung</h4>
       <ul>
-        <li><a href="#cap-pricing">90-Tage-Pakete</a></li>
-        <li><a href="azubi-hilfe.html">Für Azubis (kostenlos)</a></li>
-        <li><a href="berufsschulen.html">Berufsschulen</a></li>
-        <li><a href="#downloads">Downloads</a></li>
-        <li><a href="team.html">cAp Team</a></li>
+        <li><a href="berufsschulen.html#mentale-gesundheit">Mentale Gesundheit</a></li>
+        <li><a href="berufsschulen.html#sucht">Sucht & Prävention</a></li>
+        <li><a href="berufsschulen.html#diabetes">Diabetes & Gesundheit</a></li>
+        <li><a href="berufsschulen.html#frauen">Frauen & Schutz</a></li>
+        <li><a href="berufsschulen.html#rassismus">Rassismus</a></li>
       </ul>
     </div>
     <div class="footer__col">
@@ -921,6 +674,7 @@
       <ul>
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="team.html">cAp Team Community</a></li>
       </ul>
     </div>
   </div>
@@ -928,23 +682,22 @@
     <p>© 2025 Stay Human Shift · The Culinary Apprentice Project · Sachsen, Deutschland</p>
     <div class="footer__social">
       <a href="https://www.instagram.com/culinaryapprenticeprojekt/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </a>
       <a href="https://www.facebook.com/share/1DcP7cQSTD/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/kevin-schlesier-b54a902b3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
       <a href="https://wa.me/4915204488587" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
       </a>
     </div>
   </div>
 </footer>
 
 <script>
-  // ── FORM ────────────────────────────────────────────────────
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const name      = document.getElementById('name').value.trim();
@@ -958,13 +711,11 @@
     const body = encodeURIComponent(
       'Name: ' + name + '\nE-Mail: ' + email + '\n' +
       (betrieb ? 'Betrieb/Schule: ' + betrieb + '\n' : '') +
-      'Interesse: ' + interesse + '\n\n' +
-      (nachricht || '(keine Nachricht)')
+      'Interesse: ' + interesse + '\n\n' + (nachricht || '(keine Nachricht)')
     );
     window.location.href = 'mailto:kevin.schlesier@culinaryapprenticeprojekt.net?subject=' + subject + '&body=' + body;
   });
 
-  // ── MOBILE MENU ─────────────────────────────────────────────
   const hamburger  = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => {
@@ -979,6 +730,5 @@
     hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
   }
 </script>
-
 </body>
 </html>
