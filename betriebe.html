@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Für Betriebe – cAp · The Culinary Apprentice Project</title>
+<meta name="description" content="90-Tage-Programme für Gastronomiebetriebe. Strukturierte Begleitung für Küche, Service und Hotellerie. Entwickelt von jemandem, der seit 1996 selbst in der Branche steht.">
+<meta property="og:title" content="Für Betriebe – cAp · The Culinary Apprentice Project">
+<meta property="og:description" content="90-Tage-Programme für Gastronomiebetriebe in Küche, Service und Hotellerie. Starter ab 500 €, Standard ab 1.200 €, Premium ab 2.000 € – alles netto zzgl. MwSt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.culinaryapprenticeprojekt.net/betriebe.html">
+
+<!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+
+<style>
+/* ===== BETRIEBE PAGE — PAGE-SPECIFIC STYLES ===== */
+
+/* === NAV DUAL LOGO === */
+.nav__dual-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  text-decoration: none;
+}
+
+.nav__dual-logo .nav__logo-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+.nav__dual-logo .shs-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.nav__dual-logo .cap-logo {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav__dual-logo .nav__brand-text {
+  display: none;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.nav__dual-logo .nav__brand-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.nav__dual-logo .nav__brand-sub {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--color-text-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .nav__dual-logo .nav__brand-text { display: flex; }
+}
+
+/* Back link in nav */
+.nav__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color var(--transition-interactive);
+}
+
+.nav__back:hover {
+  color: var(--color-accent);
+}
+
+/* === BETRIEBE HERO === */
+.betriebe-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: calc(var(--space-32) + var(--space-8)) var(--space-6) var(--space-20);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232, 168, 56, 0.08) 0%, transparent 70%),
+    var(--color-bg);
+}
+
+.betriebe-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E8A838' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.betriebe-hero__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 860px;
+  width: 100%;
+}
+
+.betriebe-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(232, 168, 56, 0.1);
+  border: 1px solid rgba(232, 168, 56, 0.25);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: var(--space-8);
+}
+
+.betriebe-hero__badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.betriebe-hero__logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--space-8);
+  border: 2px solid rgba(232, 168, 56, 0.3);
+  box-shadow: 0 0 40px rgba(232, 168, 56, 0.15), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.betriebe-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: var(--space-4);
+}
+
+.betriebe-hero__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.01em;
+}
+
+.betriebe-hero__desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 560px;
+  margin: 0 auto var(--space-10);
+  line-height: 1.75;
+}
+
+.betriebe-hero__actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* === PRICING === */
+.betriebe-pricing {
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) var(--space-6);
+  background: var(--color-surface);
+}
+
+.betriebe-pricing__inner {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+}
+
+.betriebe-pricing__header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--space-16);
+}
+
+.betriebe-pricing__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .betriebe-pricing__grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+}
+
+.betriebe-pricing-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+
+.betriebe-pricing-card:hover {
+  transform: translateY(-4px);
+}
+
+.betriebe-pricing-card--featured {
+  border-color: var(--color-accent);
+  background: linear-gradient(165deg, var(--color-surface-2) 0%, rgba(232, 168, 56, 0.06) 100%);
+  box-shadow: 0 0 0 1px rgba(232, 168, 56, 0.2), var(--shadow-glow);
+}
+
+.betriebe-pricing-card--featured:hover {
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 1px rgba(232, 168, 56, 0.3), 0 0 60px rgba(232, 168, 56, 0.15);
+}
+
+@media (min-width: 768px) {
+  .betriebe-pricing-card--featured {
+    transform: translateY(-8px);
+  }
+  .betriebe-pricing-card--featured:hover {
+    transform: translateY(-12px);
+  }
+}
+
+.betriebe-pricing-card__badge {
+  position: absolute;
+  top: calc(-1 * var(--space-3));
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: #1a1a1a;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.betriebe-pricing-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.betriebe-pricing-card__price {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-1);
+  line-height: 1;
+}
+
+.betriebe-pricing-card__price-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-6);
+}
+
+.betriebe-pricing-card__divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin-bottom: var(--space-6);
+}
+
+.betriebe-pricing-card__features {
+  list-style: none;
+  flex: 1;
+  margin-bottom: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.betriebe-pricing-card__features li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-2) 0;
+  padding-left: var(--space-7);
+  position: relative;
+  line-height: 1.5;
+}
+
+.betriebe-pricing-card__features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 18px;
+  height: 18px;
+  background: rgba(232, 168, 56, 0.15);
+  border-radius: 50%;
+}
+
+.betriebe-pricing-card__features li::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.betriebe-pricing-card .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.betriebe-pricing__note {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* === WAS IST cAp === */
+.betriebe-about {
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) var(--space-6);
+}
+
+.betriebe-about__inner {
+  max-width: var(--content-default);
+  margin: 0 auto;
+}
+
+.betriebe-about__card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12) var(--space-10);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .betriebe-about__card {
+    grid-template-columns: 1fr 1fr;
+    padding: var(--space-16) var(--space-12);
+  }
+}
+
+.betriebe-about__text .section__label {
+  margin-bottom: var(--space-4);
+}
+
+.betriebe-about__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-5);
+  line-height: 1.15;
+}
+
+.betriebe-about__desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: var(--space-6);
+  max-width: 100%;
+}
+
+.betriebe-about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.betriebe-about__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(232, 168, 56, 0.1);
+  border: 1px solid rgba(232, 168, 56, 0.2);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+}
+
+.betriebe-about__tag::before {
+  content: '·';
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.betriebe-about__visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.betriebe-about__stat {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  transition: border-color var(--transition-interactive);
+}
+
+.betriebe-about__stat:hover {
+  border-color: rgba(232, 168, 56, 0.4);
+}
+
+.betriebe-about__stat-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(232, 168, 56, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.betriebe-about__stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.betriebe-about__stat-value {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.betriebe-about__stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* === KONTAKT === */
+.betriebe-kontakt {
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) var(--space-6);
+  background: var(--color-surface);
+}
+
+.betriebe-kontakt__inner {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+}
+
+.betriebe-kontakt__header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--space-16);
+}
+
+.betriebe-kontakt__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .betriebe-kontakt__layout {
+    grid-template-columns: 1fr 400px;
+  }
+}
+
+.betriebe-kontakt__form {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.betriebe-form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 600px) {
+  .betriebe-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.betriebe-kontakt__direct {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.betriebe-kontakt__direct-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-2);
+}
+
+.betriebe-kontakt__direct-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 100%;
+}
+
+.betriebe-contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-5);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+}
+
+.betriebe-contact-item:hover {
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+.betriebe-contact-item__icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(232, 168, 56, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.betriebe-contact-item--whatsapp .betriebe-contact-item__icon {
+  background: rgba(37, 211, 102, 0.1);
+  color: #25D366;
+}
+
+.betriebe-contact-item--whatsapp:hover {
+  border-color: #25D366;
+}
+
+.betriebe-contact-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.betriebe-contact-item__label {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.betriebe-contact-item__value {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.3;
+}
+</style>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "cAp – The Culinary Apprentice Project",
+  "description": "90-Tage-Programme für Gastronomiebetriebe. Strukturierte Begleitung für Betriebe in Küche, Service und Hotellerie.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Stay Human Shift · cAp",
+    "url": "https://www.culinaryapprenticeprojekt.net",
+    "email": "kevin.schlesier@culinaryapprenticeprojekt.net",
+    "telephone": "+4915204488587"
+  },
+  "url": "https://www.culinaryapprenticeprojekt.net/betriebe.html",
+  "creator": {
+    "@type": "SoftwareApplication",
+    "name": "Perplexity Computer",
+    "url": "https://www.perplexity.ai/computer"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav__inner">
+
+    <!-- Dual Logo: Stay Human Shift + cAp -->
+    <a href="./index.html" class="nav__dual-logo" aria-label="Stay Human Shift / cAp – Startseite">
+      <img class="shs-logo" src="./assets/stay-human-shift-logo.png" alt="Stay Human Shift Logo">
+      <span class="nav__logo-divider" aria-hidden="true"></span>
+      <img class="cap-logo" src="./assets/cap-logo.png" alt="cAp Logo">
+      <span class="nav__brand-text">
+        <span class="nav__brand-name">cAp</span>
+        <span class="nav__brand-sub">Culinary Apprentice Project</span>
+      </span>
+    </a>
+
+    <!-- Back Link (desktop) -->
+    <a href="./index.html" class="nav__back" aria-label="Zurück zur Startseite">
+      ← Zurück zur Startseite
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="nav__toggle" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="nav__mobile" role="dialog" aria-label="Mobile Navigation">
+  <a href="./index.html">Startseite</a>
+  <a href="#pakete" style="color: var(--color-accent);">Pakete & Preise</a>
+  <a href="#was-ist-cap">Was ist cAp?</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="./downloads.html">Downloads</a>
+  <a href="./soforthilfe.html">Soforthilfe</a>
+  <a href="#kontakt" class="btn btn--primary btn--small">Paket anfragen</a>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section class="betriebe-hero" id="hero">
+  <div class="betriebe-hero__inner reveal">
+
+    <span class="betriebe-hero__badge">Teil von Stay Human Shift · Speziell für Gastronomie</span>
+
+    <img
+      class="betriebe-hero__logo"
+      src="./assets/cap-logo.png"
+      alt="cAp – The Culinary Apprentice Project Logo"
+      width="96"
+      height="96"
+    >
+
+    <h1 class="betriebe-hero__title">The Culinary Apprentice Project</h1>
+
+    <p class="betriebe-hero__subtitle">90-Tage-Programme für Gastronomiebetriebe</p>
+
+    <p class="betriebe-hero__desc">
+      Strukturierte Begleitung für Betriebe in Küche, Service und Hotellerie.
+      Entwickelt von jemandem, der seit 1996 selbst in der Branche steht.
+    </p>
+
+    <div class="betriebe-hero__actions">
+      <a href="#pakete" class="btn btn--primary">
+        Pakete entdecken
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#kontakt" class="btn btn--outline">Direkt anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRICING — 3 PAKETE ==================== -->
+<section class="betriebe-pricing" id="pakete">
+  <div class="betriebe-pricing__inner">
+
+    <div class="betriebe-pricing__header reveal">
+      <p class="section__label">90-Tage-Programme</p>
+      <h2 class="section__title" style="margin: 0 auto var(--space-4);">Drei Pakete. Klare Strukturen.</h2>
+      <p class="section__subtitle" style="margin: 0 auto;">Wähle das Paket, das zu deinem Betrieb passt. Alle Pakete bauen aufeinander auf – Starter ist sofort einsatzbereit, Standard und Premium individuell zugeschnitten.</p>
+    </div>
+
+    <div class="betriebe-pricing__grid reveal-stagger">
+
+      <!-- STARTER -->
+      <div class="betriebe-pricing-card">
+        <p class="betriebe-pricing-card__name">Starter</p>
+        <p class="betriebe-pricing-card__price">500 €</p>
+        <p class="betriebe-pricing-card__price-note">netto · zzgl. MwSt.</p>
+        <div class="betriebe-pricing-card__divider"></div>
+        <ul class="betriebe-pricing-card__features">
+          <li>Digitale Checklisten (sofort nutzbar)</li>
+          <li>90-Tage-Ausbildungsplan als PDF</li>
+          <li>Onboarding-Leitfaden für neue Azubis</li>
+          <li>Feedbackbögen für Ausbilder</li>
+          <li>Mental-Health-Guide für das Team</li>
+        </ul>
+        <a href="#kontakt" class="btn btn--outline">Starter anfragen</a>
+      </div>
+
+      <!-- STANDARD — EMPFOHLEN -->
+      <div class="betriebe-pricing-card betriebe-pricing-card--featured">
+        <span class="betriebe-pricing-card__badge">Empfohlen</span>
+        <p class="betriebe-pricing-card__name">Standard</p>
+        <p class="betriebe-pricing-card__price">1.200 €</p>
+        <p class="betriebe-pricing-card__price-note">netto · zzgl. MwSt.</p>
+        <div class="betriebe-pricing-card__divider"></div>
+        <ul class="betriebe-pricing-card__features">
+          <li>Alles aus Starter</li>
+          <li>2× Online-Beratung (je 60 Min.)</li>
+          <li>Individueller Ausbildungsplan</li>
+          <li>Mentor-System aufsetzen</li>
+          <li>72h-Krisenprotokoll integriert</li>
+          <li>3 Monate Support per E-Mail</li>
+        </ul>
+        <a href="#kontakt" class="btn btn--primary">Standard anfragen</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="betriebe-pricing-card">
+        <p class="betriebe-pricing-card__name">Premium</p>
+        <p class="betriebe-pricing-card__price">2.000 €</p>
+        <p class="betriebe-pricing-card__price-note">netto · zzgl. MwSt.</p>
+        <div class="betriebe-pricing-card__divider"></div>
+        <ul class="betriebe-pricing-card__features">
+          <li>Alles aus Standard</li>
+          <li>1 Tag Vor-Ort-Begleitung</li>
+          <li>Ausbilder-Coaching (2 Sessions)</li>
+          <li>Team-Workshop im Betrieb</li>
+          <li>Individuelle Konzeptentwicklung</li>
+          <li>6 Monate Support</li>
+        </ul>
+        <a href="#kontakt" class="btn btn--outline">Premium anfragen</a>
+      </div>
+
+    </div><!-- /grid -->
+
+    <div class="betriebe-pricing__note reveal">
+      Alle Preise netto, zzgl. 19&nbsp;% MwSt. · Ratenzahlung möglich
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== WAS IST cAp ==================== -->
+<section class="betriebe-about" id="was-ist-cap">
+  <div class="betriebe-about__inner">
+
+    <div class="betriebe-about__card reveal">
+
+      <div class="betriebe-about__text">
+        <p class="section__label">Was ist cAp?</p>
+        <h2 class="betriebe-about__title">Die Gastronomie-Sparte von Stay Human Shift</h2>
+        <p class="betriebe-about__desc">
+          cAp – The Culinary Apprentice Project ist die Gastronomie-Sparte von Stay Human Shift.
+          Speziell entwickelt für Betriebe in Küche, Service und Hotellerie,
+          die ihre Ausbildungsqualität messbar verbessern wollen.
+        </p>
+        <p class="betriebe-about__desc">
+          Kein Theorieprojekt aus dem Elfenbeinturm – sondern Praxis aus über 30 Jahren
+          eigener Erfahrung im Gastgewerbe. Was hier entsteht, funktioniert in der Realität.
+        </p>
+        <div class="betriebe-about__tags">
+          <span class="betriebe-about__tag">30+ Jahre Gastronomie</span>
+          <span class="betriebe-about__tag">2 Azubi-Kompass eBooks</span>
+          <span class="betriebe-about__tag">Praxis. Kein Bullshit.</span>
+        </div>
+      </div>
+
+      <div class="betriebe-about__visual reveal-stagger">
+
+        <div class="betriebe-about__stat">
+          <div class="betriebe-about__stat-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="betriebe-about__stat-content">
+            <span class="betriebe-about__stat-value">Seit 1996</span>
+            <span class="betriebe-about__stat-label">Selbst in der Branche – Küche, Service, Hotellerie</span>
+          </div>
+        </div>
+
+        <div class="betriebe-about__stat">
+          <div class="betriebe-about__stat-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="betriebe-about__stat-content">
+            <span class="betriebe-about__stat-value">2 eBooks</span>
+            <span class="betriebe-about__stat-label">Azubi-Kompass – praxisnah, direkt nutzbar</span>
+          </div>
+        </div>
+
+        <div class="betriebe-about__stat">
+          <div class="betriebe-about__stat-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="betriebe-about__stat-content">
+            <span class="betriebe-about__stat-value">90 Tage</span>
+            <span class="betriebe-about__stat-label">Strukturierte Begleitung mit messbaren Ergebnissen</span>
+          </div>
+        </div>
+
+        <div class="betriebe-about__stat">
+          <div class="betriebe-about__stat-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="betriebe-about__stat-content">
+            <span class="betriebe-about__stat-value">Stay Human</span>
+            <span class="betriebe-about__stat-label">Ausbildungskultur, in der Menschen bleiben können</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KONTAKT ==================== -->
+<section class="betriebe-kontakt" id="kontakt">
+  <div class="betriebe-kontakt__inner">
+
+    <div class="betriebe-kontakt__header reveal">
+      <p class="section__label">Jetzt anfragen</p>
+      <h2 class="section__title" style="margin: 0 auto var(--space-4);">Paket anfragen</h2>
+      <p class="section__subtitle" style="margin: 0 auto;">Schreib uns kurz, was du brauchst – wir melden uns innerhalb von 48 Stunden zurück.</p>
+    </div>
+
+    <div class="betriebe-kontakt__layout reveal">
+
+      <!-- Formular -->
+      <form class="betriebe-kontakt__form" id="betriebe-form" onsubmit="handleBetriebeForm(event)">
+
+        <div class="betriebe-form-row">
+          <div class="form-group">
+            <label for="b-name">Name *</label>
+            <input type="text" id="b-name" name="name" placeholder="Dein Name" required>
+          </div>
+          <div class="form-group">
+            <label for="b-email">E-Mail *</label>
+            <input type="email" id="b-email" name="email" placeholder="deine@email.de" required>
+          </div>
+        </div>
+
+        <div class="betriebe-form-row">
+          <div class="form-group">
+            <label for="b-betrieb">Betrieb *</label>
+            <input type="text" id="b-betrieb" name="betrieb" placeholder="Name deines Betriebs" required>
+          </div>
+          <div class="form-group">
+            <label for="b-azubis">Anzahl Azubis *</label>
+            <select id="b-azubis" name="azubis" required>
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option value="1-3">1–3 Azubis</option>
+              <option value="4-10">4–10 Azubis</option>
+              <option value="11+">11 oder mehr</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="b-paket">Gewünschtes Paket *</label>
+          <select id="b-paket" name="paket" required>
+            <option value="" disabled selected>Paket wählen …</option>
+            <option value="Starter">Starter (500 € netto)</option>
+            <option value="Standard">Standard (1.200 € netto) – Empfohlen</option>
+            <option value="Premium">Premium (2.000 € netto)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="b-nachricht">Nachricht <span style="color: var(--color-text-faint); font-weight: 400;">(optional)</span></label>
+          <textarea id="b-nachricht" name="nachricht" placeholder="Was beschäftigt dich? Was erhoffst du dir von cAp?" style="min-height: 120px;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary" style="align-self: flex-start; min-width: 200px; justify-content: center;">
+          Anfrage senden
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+
+      </form>
+
+      <!-- Direktkontakt -->
+      <div class="betriebe-kontakt__direct">
+        <div>
+          <h3 class="betriebe-kontakt__direct-title">Direkter Kontakt</h3>
+          <p class="betriebe-kontakt__direct-desc">
+            Lieber direkt reden? Kein Problem.
+            Kevin ist meistens schnell erreichbar – per Telefon oder WhatsApp.
+          </p>
+        </div>
+
+        <a href="tel:+4915204488587" class="betriebe-contact-item">
+          <div class="betriebe-contact-item__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="betriebe-contact-item__content">
+            <span class="betriebe-contact-item__label">Telefon</span>
+            <span class="betriebe-contact-item__value">0152 04488587</span>
+          </div>
+        </a>
+
+        <a href="https://wa.me/4915204488587?text=Hallo%20Kevin%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20cAp-Paket%20f%C3%BCr%20meinen%20Betrieb." target="_blank" rel="noopener noreferrer" class="betriebe-contact-item betriebe-contact-item--whatsapp">
+          <div class="betriebe-contact-item__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="betriebe-contact-item__content">
+            <span class="betriebe-contact-item__label">WhatsApp</span>
+            <span class="betriebe-contact-item__value">0152 04488587</span>
+          </div>
+        </a>
+
+        <a href="mailto:kevin.schlesier@culinaryapprenticeprojekt.net?subject=Anfrage%20cAp-Paket" class="betriebe-contact-item">
+          <div class="betriebe-contact-item__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="betriebe-contact-item__content">
+            <span class="betriebe-contact-item__label">E-Mail</span>
+            <span class="betriebe-contact-item__value" style="word-break: break-word;">kevin.schlesier@<br>culinaryapprenticeprojekt.net</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer__inner">
+
+    <a href="./index.html" class="footer__logo" aria-label="Stay Human Shift · cAp – Startseite">
+      <img src="./assets/cap-logo.png" alt="cAp Logo" width="48" height="48" style="border-radius: 50%;">
+    </a>
+
+    <p style="color: var(--color-text-muted); font-size: var(--text-sm); max-width: 400px; line-height: 1.65; text-align: center; margin-bottom: var(--space-2);">
+      © Stay Human Shift · cAp – The Culinary Apprentice Project<br>
+      Für bessere Ausbildung in Küche, Service und Hotellerie.
+    </p>
+
+    <div style="display: flex; gap: var(--space-8); flex-wrap: wrap; justify-content: center; margin-bottom: var(--space-4);">
+      <div style="text-align: center;">
+        <p style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-3);">Navigation</p>
+        <div style="display: flex; flex-direction: column; gap: var(--space-2); align-items: center;">
+          <a href="./index.html" style="font-size: var(--text-sm); color: var(--color-text-faint); text-decoration: none;">Startseite</a>
+          <a href="./betriebe.html" style="font-size: var(--text-sm); color: var(--color-accent); text-decoration: none;">Für Betriebe</a>
+          <a href="./downloads.html" style="font-size: var(--text-sm); color: var(--color-text-faint); text-decoration: none;">Downloads</a>
+          <a href="./soforthilfe.html" style="font-size: var(--text-sm); color: var(--color-text-faint); text-decoration: none;">Soforthilfe</a>
+          <a href="./impressum.html" style="font-size: var(--text-sm); color: var(--color-text-faint); text-decoration: none;">Impressum</a>
+          <a href="./datenschutz.html" style="font-size: var(--text-sm); color: var(--color-text-faint); text-decoration: none;">Datenschutz</a>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <p style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-3);">Kontakt</p>
+        <div style="display: flex; flex-direction: column; gap: var(--space-2); align-items: center;">
+          <a href="mailto:kevin.schlesier@culinaryapprenticeprojekt.net" style="font-size: var(--text-sm); color: var(--color-text-faint); text-decoration: none;">kevin.schlesier@<br>culinaryapprenticeprojekt.net</a>
+          <a href="tel:+4915204488587" style="font-size: var(--text-sm); color: var(--color-text-faint); text-decoration: none;">0152 04488587</a>
+          <a href="https://wa.me/4915204488587" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-sm); color: var(--color-text-faint); text-decoration: none;">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__links">
+      <a href="./index.html">Start</a>
+      <a href="./impressum.html">Impressum</a>
+      <a href="./datenschutz.html">Datenschutz</a>
+    </div>
+
+    <p class="footer__copy">
+      © 2026 Stay Human Shift · cAp – The Culinary Apprentice Project. Alle Rechte vorbehalten.<br>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/4915204488587?text=Hallo%20Kevin%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20cAp-Paket%20f%C3%BCr%20meinen%20Betrieb." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Über WhatsApp kontaktieren">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- App JS (shared) -->
+<script src="./app.js" defer></script>
+
+<script>
+// ===== Betriebe Form Handler =====
+function handleBetriebeForm(event) {
+  event.preventDefault();
+  const form = event.target;
+  const name    = form.name.value.trim();
+  const email   = form.email.value.trim();
+  const betrieb = form.betrieb.value.trim();
+  const azubis  = form.azubis.value;
+  const paket   = form.paket.value;
+  const nachricht = form.nachricht.value.trim();
+
+  const azubisLabel = {
+    '1-3':  '1–3 Azubis',
+    '4-10': '4–10 Azubis',
+    '11+':  '11 oder mehr Azubis'
+  };
+
+  const subject = encodeURIComponent(`cAp-Anfrage: ${paket} – ${betrieb}`);
+  const body = encodeURIComponent(
+    `Hallo Kevin,\n\n` +
+    `ich interessiere mich für das cAp-Paket "${paket}" für meinen Betrieb.\n\n` +
+    `Name: ${name}\n` +
+    `E-Mail: ${email}\n` +
+    `Betrieb: ${betrieb}\n` +
+    `Anzahl Azubis: ${azubisLabel[azubis] || azubis}\n` +
+    `Gewünschtes Paket: ${paket}\n` +
+    (nachricht ? `\nNachricht:\n${nachricht}\n` : '') +
+    `\nMit freundlichen Grüßen,\n${name}`
+  );
+
+  window.location.href = `mailto:kevin.schlesier@culinaryapprenticeprojekt.net?subject=${subject}&body=${body}`;
+}
+</script>
+
+</body>
+</html>
