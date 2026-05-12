@@ -1,74 +1,241 @@
 <!DOCTYPE html>
+<!-- Built with Perplexity Computer — https://www.perplexity.ai/computer -->
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stay Human Shift Shop – T-Shirts, Hoodies und Merchandise. Zeig Haltung." />
   <title>Shop – Stay Human Shift</title>
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="base.css" />
   <style>
     body { background: #2e2e2e; color: #e8e6e3; font-family: 'Satoshi', sans-serif; margin: 0; }
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 2rem; background: rgba(46,46,46,0.95); backdrop-filter: blur(14px); border-bottom: 1px solid #484848; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.85rem 2rem;
+      background: rgba(46,46,46,0.95);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #484848;
+    }
     .nav__brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
     .nav__logo { height: 40px; width: auto; }
     .nav__name { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; color: #e8e6e3; }
-    .nav__back { text-decoration: none; color: #a8a8a8; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; transition: color 180ms; }
-    .nav__back:hover { color: #e8e6e3; }
-    .page { padding: 8rem 2rem 5rem; max-width: 860px; margin: 0 auto; text-align: center; }
-    .eyebrow { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #C4813A; margin-bottom: 1rem; }
-    h1 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: clamp(2rem, 1rem + 3vw, 3.2rem); color: #e8e6e3; letter-spacing: -0.025em; margin-bottom: 1rem; }
-    .subtitle { font-size: 1.05rem; color: #a8a8a8; line-height: 1.7; margin-bottom: 2.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
-    .shop-cta {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      background: #C4813A; color: #fff;
-      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem;
-      padding: 1rem 2.25rem; border-radius: 10px; text-decoration: none;
-      transition: all 180ms; margin-bottom: 1rem;
+    .nav__back {
+      text-decoration: none; color: #a8a8a8; font-size: 0.85rem; font-weight: 600;
+      display: flex; align-items: center; gap: 0.4rem; transition: color 180ms;
     }
-    .shop-cta:hover { background: #a86b2e; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(196,129,58,0.3); }
-    .shop-note { font-size: 0.82rem; color: #787878; margin-top: 1rem; }
-    .shop-preview { margin-top: 3rem; background: #343434; border: 1px solid #484848; border-radius: 16px; padding: 2rem; }
-    .shop-preview h2 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 1.2rem; color: #e8e6e3; margin-bottom: 0.5rem; }
-    .shop-preview p { color: #a8a8a8; font-size: 0.92rem; line-height: 1.6; max-width: none; }
-    .footer { border-top: 1px solid #484848; padding: 2rem; text-align: center; margin-top: 4rem; }
-    .footer p { font-size: 0.78rem; color: #787878; }
-    .footer a { color: #a8a8a8; text-decoration: none; margin: 0 0.75rem; }
+    .nav__back:hover { color: #e8e6e3; }
+
+    /* HERO */
+    .hero {
+      padding: 10rem 2rem 6rem;
+      text-align: center;
+      border-bottom: 1px solid #484848;
+    }
+    .hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; color: #C4813A; margin-bottom: 1rem;
+    }
+    .hero__eyebrow::before { content: ''; width: 20px; height: 2px; background: #C4813A; border-radius: 2px; }
+    .hero__eyebrow::after  { content: ''; width: 20px; height: 2px; background: #C4813A; border-radius: 2px; }
+    h1 {
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800;
+      font-size: clamp(2.2rem, 1rem + 4vw, 4rem);
+      color: #e8e6e3; letter-spacing: -0.03em;
+      line-height: 1.05; margin-bottom: 1rem;
+    }
+    h1 span { color: #C4813A; }
+    .hero__sub {
+      font-size: 1.05rem; color: #a8a8a8; line-height: 1.7;
+      max-width: 500px; margin: 0 auto 2.5rem;
+    }
+
+    /* MAIN CTA */
+    .cta-block { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+    .btn-shop {
+      display: inline-flex; align-items: center; gap: 0.65rem;
+      background: #C4813A; color: #fff;
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem;
+      padding: 1.1rem 2.5rem; border-radius: 12px; text-decoration: none;
+      transition: all 200ms; letter-spacing: -0.01em;
+    }
+    .btn-shop:hover {
+      background: #a86b2e; transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(196,129,58,0.35);
+    }
+    .btn-note {
+      font-size: 0.78rem; color: #787878;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+
+    /* PRODUKTE INFO */
+    .produkte {
+      max-width: 860px; margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .produkte__label {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; color: #C4813A; margin-bottom: 0.6rem;
+    }
+    .produkte h2 {
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800;
+      font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem);
+      color: #e8e6e3; letter-spacing: -0.025em; margin-bottom: 0.6rem;
+    }
+    .produkte__sub { color: #a8a8a8; font-size: 0.95rem; line-height: 1.65; margin-bottom: 2.5rem; max-width: 540px; }
+
+    .produkte__grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 680px) { .produkte__grid { grid-template-columns: 1fr; } }
+
+    .produkt-card {
+      background: #343434; border: 1px solid #484848; border-radius: 14px;
+      padding: 1.6rem; display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .produkt-card__icon {
+      width: 40px; height: 40px;
+      background: rgba(196,129,58,0.12); border: 1px solid rgba(196,129,58,0.25);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      color: #C4813A;
+    }
+    .produkt-card__name {
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700;
+      font-size: 1rem; color: #e8e6e3;
+    }
+    .produkt-card__desc { font-size: 0.85rem; color: #a8a8a8; line-height: 1.55; max-width: none; flex: 1; }
+    .produkt-card__price { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; color: #C4813A; }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      text-align: center; padding: 4rem 2rem;
+      border-top: 1px solid #484848;
+      background: #343434;
+    }
+    .bottom-cta p { color: #a8a8a8; font-size: 0.95rem; margin-bottom: 1.5rem; max-width: none; }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid #484848; padding: 2rem;
+      text-align: center;
+    }
+    .footer p { font-size: 0.76rem; color: #787878; }
+    .footer a { color: #a8a8a8; text-decoration: none; margin: 0 0.6rem; transition: color 180ms; }
     .footer a:hover { color: #e8e6e3; }
+
+    @media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
   </style>
 </head>
 <body>
+
+<!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav__brand">
     <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift" class="nav__logo" />
     <span class="nav__name">Stay Human Shift</span>
   </a>
   <a href="index.html" class="nav__back">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
     Startseite
   </a>
 </nav>
 
-<div class="page">
-  <p class="eyebrow">Stay Human Shift · Merch & Merchandise</p>
-  <h1>Shop &amp; T-Shirts</h1>
-  <p class="subtitle">
-    Kleidung und Merchandise von Stay Human Shift — für alle, die Haltung zeigen wollen. Direkt im Spreadshirt-Shop bestellen.
-  </p>
-  <a href="https://stay-human-shift.myspreadshop.de/" target="_blank" rel="noopener noreferrer" class="shop-cta">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-    Zum Shop
-  </a>
-  <p class="shop-note">Du wirst zu Spreadshirt weitergeleitet — einem sicheren, externen Shopsystem.</p>
 
-  <div class="shop-preview">
-    <h2>Was dich erwartet</h2>
-    <p>T-Shirts, Hoodies und weitere Artikel im Stay Human Shift Design. Qualität, die zeigt wofür du stehst — in der Küche, im Service, in der Ausbildung und überall sonst.</p>
+<!-- HERO -->
+<section class="hero">
+  <p class="hero__eyebrow">Stay Human Shift · Merchandise</p>
+  <h1>Zeig <span>Haltung.</span><br>Trag sie.</h1>
+  <p class="hero__sub">
+    T-Shirts, Hoodies und mehr — im Stay Human Shift Design.
+    16 Produkte direkt im Shop verfügbar.
+  </p>
+  <div class="cta-block">
+    <a
+      href="https://stay-human-shift.myspreadshop.de/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-shop"
+      aria-label="Zum Stay Human Shift Shop auf Spreadshirt"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Zum Shop
+    </a>
+    <span class="btn-note">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Öffnet stay-human-shift.myspreadshop.de — sicher, von Spreadshirt betrieben
+    </span>
   </div>
+</section>
+
+
+<!-- PRODUKT-INFO -->
+<section class="produkte">
+  <p class="produkte__label">Was dich erwartet</p>
+  <h2>16 Produkte. Ein Statement.</h2>
+  <p class="produkte__sub">Qualität, die zeigt, wofür du stehst — in der Küche, im Service, in der Ausbildung und überall sonst.</p>
+
+  <div class="produkte__grid">
+    <div class="produkt-card">
+      <div class="produkt-card__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+      </div>
+      <div class="produkt-card__name">T-Shirts</div>
+      <p class="produkt-card__desc">Komfortabel, langlebig, mit Statement. In verschiedenen Farben und Schnitten.</p>
+      <div class="produkt-card__price">ab 15,99 €</div>
+    </div>
+
+    <div class="produkt-card">
+      <div class="produkt-card__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+      </div>
+      <div class="produkt-card__name">Hoodies & Sweater</div>
+      <p class="produkt-card__desc">Für lange Schichten und kurze Pausen. Warm, bequem, mit Haltung.</p>
+      <div class="produkt-card__price">ab 27,99 €</div>
+    </div>
+
+    <div class="produkt-card">
+      <div class="produkt-card__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <div class="produkt-card__name">Weitere Artikel</div>
+      <p class="produkt-card__desc">Taschen, Tassen und mehr — alles im Stay Human Shift Design.</p>
+      <div class="produkt-card__price">ab 22,99 €</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <p>Alle 16 Produkte direkt im Shop — einfach auswählen, bestellen, liefern lassen.</p>
+  <a
+    href="https://stay-human-shift.myspreadshop.de/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn-shop"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    Jetzt alle Produkte ansehen
+  </a>
 </div>
 
+
+<!-- FOOTER -->
 <footer class="footer">
-  <p>© 2025 Stay Human Shift · <a href="index.html">Startseite</a> <a href="impressum.html">Impressum</a> <a href="datenschutz.html">Datenschutz</a></p>
+  <p>
+    © 2025 Stay Human Shift ·
+    <a href="index.html">Startseite</a>
+    <a href="materialien.html">Materialien</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </p>
 </footer>
+
 </body>
 </html>
