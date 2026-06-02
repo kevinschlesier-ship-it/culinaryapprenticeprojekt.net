@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!-- Built with Perplexity Computer — https://www.perplexity.ai/computer -->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Klarer Kopf im Job – Das kostenlose Begleitprogramm für Auszubildende. 3 Talkrunden im Juni via Zoom. 100% kostenlos, 100% anonym." />
+  <title>Klarer Kopf im Job – Stay Human Shift</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <style>
+    /* ── RESET / BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--color-bg); color: var(--color-text); font-family: 'Satoshi', sans-serif; line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    p { max-width: none; }
+
+    /* ── NAV ──────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.85rem 2rem;
+      background: rgba(46,46,46,0.95);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav__brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav__logo { height: 40px; width: auto; }
+    .nav__name { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--color-text); }
+    .nav__right { display: flex; align-items: center; gap: 1rem; }
+    .nav__back { text-decoration: none; color: var(--color-text-muted); font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; transition: color 180ms; }
+    .nav__back:hover { color: var(--color-text); }
+    .btn-sofort {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: #cd7f32; color: #fff;
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.82rem;
+      padding: 0.55rem 1.1rem; border-radius: var(--radius-full);
+      text-decoration: none; transition: all 180ms;
+      animation: pulse-bronze 2.5s ease-in-out infinite;
+    }
+    .btn-sofort:hover { background: #b56c22; transform: translateY(-1px); animation: none; }
+    @keyframes pulse-bronze {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(205,127,50,0.5); }
+      50% { box-shadow: 0 0 0 7px rgba(205,127,50,0); }
+    }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
+      padding: 8rem 2rem 5rem;
+      background: linear-gradient(160deg, var(--color-surface-deep) 0%, var(--color-bg) 100%);
+      text-align: center;
+      border-bottom: 1px solid var(--color-border);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(205,127,50,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero__inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero__badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(205,127,50,0.12); border: 1px solid rgba(205,127,50,0.3);
+      color: #cd7f32; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; padding: 0.35rem 0.85rem; border-radius: var(--radius-full);
+      margin-bottom: 1.25rem;
+    }
+    .hero__badge::before { content: ''; width: 6px; height: 6px; background: #27ae60; border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .hero h1 {
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800;
+      font-size: clamp(2rem, 1rem + 4vw, 3.5rem);
+      color: var(--color-text); letter-spacing: -0.03em;
+      line-height: 1.1; margin-bottom: 1rem;
+    }
+    .hero h1 span { color: #cd7f32; }
+    .hero__sub {
+      font-size: clamp(1rem, 0.85rem + 0.8vw, 1.25rem);
+      color: var(--color-text-muted); margin-bottom: 2.5rem;
+      line-height: 1.7; max-width: 600px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ── VIDEO ────────────────────────────────────── */
+    .video-wrapper {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-lg);
+    }
+    .video-wrapper iframe,
+    .video-wrapper video {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: none;
+    }
+    .video-placeholder {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 1rem; background: var(--color-surface);
+    }
+    .video-placeholder__icon {
+      width: 64px; height: 64px;
+      background: rgba(205,127,50,0.15); border: 1px solid rgba(205,127,50,0.3);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: #cd7f32;
+    }
+    .video-placeholder p { color: var(--color-text-muted); font-size: 0.9rem; text-align: center; }
+
+    /* ── SECTIONS SHARED ──────────────────────────── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; color: #cd7f32; margin-bottom: 0.65rem;
+    }
+    .section-eyebrow::before { content: ''; width: 18px; height: 2px; background: #cd7f32; border-radius: 2px; }
+    .section-h2 {
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800;
+      font-size: clamp(1.7rem, 1rem + 2.2vw, 2.6rem);
+      color: var(--color-text); letter-spacing: -0.025em; margin-bottom: 0.65rem;
+    }
+    .section-sub { color: var(--color-text-muted); font-size: 0.98rem; line-height: 1.65; margin-bottom: 2.75rem; max-width: 580px; }
+
+    /* ── ÖKOSYSTEM ────────────────────────────────── */
+    .oeko { background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+    .oeko__grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    @media (min-width: 700px) { .oeko__grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .oeko__center {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(205,127,50,0.15) 0%, rgba(205,127,50,0.05) 100%);
+      border: 1.5px solid rgba(205,127,50,0.4); border-radius: var(--radius-xl);
+      padding: 1.75rem; text-align: center; margin-bottom: 0.5rem;
+    }
+    .oeko__center-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .oeko__center h3 {
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800;
+      font-size: 1.25rem; color: #cd7f32; margin-bottom: 0.35rem;
+    }
+    .oeko__center p { font-size: 0.88rem; color: var(--color-text-muted); max-width: none; }
+
+    .oeko__card {
+      background: var(--color-bg); border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl); padding: 1.4rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      position: relative; transition: border-color 180ms, transform 180ms;
+    }
+    .oeko__card:hover { border-color: #cd7f32; transform: translateY(-2px); }
+    .oeko__card::before {
+      content: '';
+      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+      width: 30px; height: 3px; background: var(--oeko-color, #cd7f32);
+      border-radius: 2px;
+    }
+    .oeko__card--betrieb  { --oeko-color: var(--color-accent); }
+    .oeko__card--schule   { --oeko-color: #27ae60; }
+    .oeko__card--traeger  { --oeko-color: #4A9FD4; }
+    .oeko__card--partner  { --oeko-color: #cd7f32; }
+
+    .oeko__card-label { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-faint); }
+    .oeko__card h4 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 1rem; color: var(--color-text); }
+    .oeko__card p { font-size: 0.84rem; color: var(--color-text-muted); max-width: none; }
+
+    .oeko__arrow {
+      grid-column: 1 / -1; text-align: center;
+      color: var(--color-text-faint); font-size: 1.5rem; line-height: 1;
+      padding: 0.25rem 0;
+    }
+
+    /* ── TERMINE / AGENDA ─────────────────────────── */
+    .agenda { background: var(--color-bg); }
+    .agenda__grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem; margin-top: 0;
+    }
+    .termin-card {
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl); padding: 2rem 1.75rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      position: relative; overflow: hidden;
+      transition: border-color 180ms, transform 180ms;
+    }
+    .termin-card:hover { border-color: #cd7f32; transform: translateY(-3px); }
+    .termin-card__num {
+      position: absolute; top: 1.25rem; right: 1.5rem;
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800;
+      font-size: 3.5rem; color: rgba(205,127,50,0.08); line-height: 1;
+      user-select: none; pointer-events: none;
+    }
+    .termin-card__date {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(205,127,50,0.1); border: 1px solid rgba(205,127,50,0.25);
+      color: #cd7f32; font-size: 0.8rem; font-weight: 700;
+      padding: 0.35rem 0.85rem; border-radius: var(--radius-full);
+      width: fit-content;
+    }
+    .termin-card__time {
+      font-size: 0.78rem; color: var(--color-text-faint); font-weight: 600;
+    }
+    .termin-card h3 {
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700;
+      font-size: 1.1rem; color: var(--color-text); line-height: 1.3;
+    }
+    .termin-card__tag {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: rgba(39,174,96,0.1); border: 1px solid rgba(39,174,96,0.25);
+      color: #27ae60; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.22rem 0.65rem; border-radius: var(--radius-full);
+      width: fit-content; margin-top: auto;
+    }
+
+    /* ── ANMELDUNG ────────────────────────────────── */
+    .anmeldung { background: var(--color-surface); border-top: 1px solid var(--color-border); }
+    .anmeldung__inner { max-width: 800px; margin: 0 auto; }
+    .anmeldung__info {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 600px) { .anmeldung__info { grid-template-columns: 1fr; } }
+    .info-pill {
+      background: var(--color-bg); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: 1rem;
+      display: flex; align-items: center; gap: 0.65rem;
+    }
+    .info-pill__icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(205,127,50,0.1); border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center; color: #cd7f32;
+    }
+    .info-pill__text { font-size: 0.85rem; color: var(--color-text-muted); max-width: none; }
+    .info-pill__text strong { color: var(--color-text); display: block; font-size: 0.9rem; }
+
+    .iframe-container {
+      background: var(--color-bg); border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl); padding: 0.5rem; overflow: hidden;
+    }
+    .iframe-container iframe {
+      width: 100%; min-height: 520px; border: none; border-radius: var(--radius-lg);
+      display: block;
+    }
+    .iframe-placeholder {
+      min-height: 200px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem; padding: 2.5rem;
+      text-align: center;
+    }
+    .iframe-placeholder p { color: var(--color-text-muted); font-size: 0.9rem; max-width: none; }
+    .iframe-placeholder a {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: #cd7f32; color: #fff;
+      font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 1.5rem; border-radius: var(--radius-lg); text-decoration: none;
+      transition: background 180ms;
+    }
+    .iframe-placeholder a:hover { background: #b56c22; }
+
+    /* ── FOOTER ───────────────────────────────────── */
+    .footer { background: var(--color-surface-deep); border-top: 1px solid var(--color-border); padding: 2.5rem 2rem; text-align: center; }
+    .footer p { font-size: 0.78rem; color: var(--color-text-faint); }
+    .footer a { color: var(--color-text-muted); text-decoration: none; margin: 0 0.6rem; transition: color 180ms; }
+    .footer a:hover { color: var(--color-text); }
+
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 1.25rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <nav class="nav" aria-label="Navigation">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift" class="nav__logo" />
+      <span class="nav__name">Stay Human Shift</span>
+    </a>
+    <div class="nav__right">
+      <a href="index.html" class="nav__back">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        Startseite
+      </a>
+      <a href="stress-check.html" class="btn-sofort" aria-label="Anonymer Stress-Check">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Sofort-Hilfe
+      </a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__badge">Kostenlos · Anonym · Via Zoom · Juni 2026</div>
+    <h1>Klarer Kopf<br><span>im Job.</span></h1>
+    <p class="hero__sub">
+      Das kostenlose Begleitprogramm für Auszubildende.<br>
+      3 Talkrunden im Juni gegen den unsichtbaren Druck.
+      100&nbsp;% kostenlos. 100&nbsp;% anonym via Zoom.
+    </p>
+
+    <!-- 16:9 Video-Container -->
+    <div class="video-wrapper" aria-label="Einführungsvideo Klarer Kopf im Job">
+      <div class="video-placeholder" id="video-placeholder">
+        <div class="video-placeholder__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <p>Video folgt in Kürze.<br><small>Trage dich jetzt für die Talkrunden ein.</small></p>
+      </div>
+      <!-- Sobald du eine YouTube/Vimeo-URL hast:
+           Ersetze den Placeholder durch:
+           <iframe src="https://www.youtube.com/embed/DEINE_VIDEO_ID?autoplay=0&rel=0"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+             allowfullscreen title="Klarer Kopf im Job – Einführung"></iframe>
+      -->
+    </div>
+
+    <div style="margin-top:2rem;">
+      <a href="#anmeldung" style="display:inline-flex;align-items:center;gap:0.5rem;background:#cd7f32;color:#fff;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1rem;padding:0.95rem 2rem;border-radius:var(--radius-lg);text-decoration:none;transition:background 180ms;">
+        Jetzt kostenlos anmelden
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ÖKOSYSTEM -->
+<section class="oeko" aria-labelledby="oeko-h2">
+  <div class="section-inner">
+    <p class="section-eyebrow">Das Stay Human Shift Ökosystem</p>
+    <h2 class="section-h2" id="oeko-h2">Wir vernetzen alle, die zählen.</h2>
+    <p class="section-sub">Auszubildende stehen im Mittelpunkt — verbunden mit Betrieben, Schulen, sozialen Trägern und Partnern, die echte Unterstützung bieten.</p>
+
+    <div class="oeko__grid">
+      <!-- Mitte: Azubis -->
+      <div class="oeko__center">
+        <div class="oeko__center-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cd7f32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-1a6 6 0 0 1 12 0v1"/></svg>
+        </div>
+        <h3>Auszubildende</h3>
+        <p>Im Mittelpunkt des Netzwerks — unterstützt, begleitet und gehört.</p>
+      </div>
+
+      <div class="oeko__arrow" aria-hidden="true">↕</div>
+
+      <!-- 4 Kacheln -->
+      <div class="oeko__card oeko__card--betrieb">
+        <span class="oeko__card-label">Verbunden mit</span>
+        <h4>Gastronomiebetriebe</h4>
+        <p>Strukturierte Ausbildungsbegleitung, 90-Tage-Programme und direkte Unterstützung für Ausbilder.</p>
+      </div>
+
+      <div class="oeko__card oeko__card--schule">
+        <span class="oeko__card-label">Verbunden mit</span>
+        <h4>Berufsschulen</h4>
+        <p>Aufklärungstage, Projekttage und Workshop-Formate für Schulklassen und Ausbildungsgruppen.</p>
+      </div>
+
+      <div class="oeko__card oeko__card--traeger">
+        <span class="oeko__card-label">Verbunden mit</span>
+        <h4>Soziale Träger</h4>
+        <p>Zusammenarbeit mit Kinderschutzbund, Caritas, Diakonie und weiteren Fachstellen bei Bedarf.</p>
+      </div>
+
+      <div class="oeko__card oeko__card--partner">
+        <span class="oeko__card-label">Verbunden mit</span>
+        <h4>Fachpartner & Netzwerke</h4>
+        <p>BioRegio Zwickau, Kinderschutzbund KV Zwickau, regionale Netzwerke für Ausbildung und Gesundheit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- AGENDA: 3 TERMINE -->
+<section class="agenda" id="agenda" aria-labelledby="agenda-h2">
+  <div class="section-inner">
+    <p class="section-eyebrow">Programm Juni 2026</p>
+    <h2 class="section-h2" id="agenda-h2">3 Talkrunden. 3 Themen. 0 Euro.</h2>
+    <p class="section-sub">Jede Runde dauert ca. 60–90 Minuten. Kein Gesicht zeigen nötig. Kein echter Name erforderlich.</p>
+
+    <div class="agenda__grid">
+      <!-- Karte 1 -->
+      <article class="termin-card">
+        <div class="termin-card__num">01</div>
+        <div class="termin-card__date">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          02. Juni 2026
+        </div>
+        <div class="termin-card__time">14:00 Uhr · Via Zoom · ca. 60–90 Min.</div>
+        <h3>Teil 1: Der unsichtbare Druck &amp; die Sucht danach</h3>
+        <p style="font-size:0.85rem;color:var(--color-text-muted);max-width:none;">Warum Stress in der Ausbildung so anders ist — und warum wir ihn oft nicht sehen, bis es zu spät ist.</p>
+        <span class="termin-card__tag">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Jetzt verfügbar
+        </span>
+      </article>
+
+      <!-- Karte 2 -->
+      <article class="termin-card">
+        <div class="termin-card__num">02</div>
+        <div class="termin-card__date">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          16. Juni 2026
+        </div>
+        <div class="termin-card__time">14:00 Uhr · Via Zoom · ca. 60–90 Min.</div>
+        <h3>Teil 2: Masken ab – Warnsignale richtig erkennen</h3>
+        <p style="font-size:0.85rem;color:var(--color-text-muted);max-width:none;">Was übersehen wir bei uns selbst? Was sehen andere in uns? Gemeinsam Muster erkennen, ohne Druck.</p>
+        <span class="termin-card__tag" style="background:rgba(74,159,212,0.1);border-color:rgba(74,159,212,0.25);color:#4A9FD4;">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          16. Juni
+        </span>
+      </article>
+
+      <!-- Karte 3 -->
+      <article class="termin-card">
+        <div class="termin-card__num">03</div>
+        <div class="termin-card__date">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          30. Juni 2026
+        </div>
+        <div class="termin-card__time">14:00 Uhr · Via Zoom · ca. 60–90 Min.</div>
+        <h3>Teil 3: Starke Strategien &amp; Hilfe</h3>
+        <p style="font-size:0.85rem;color:var(--color-text-muted);max-width:none;">Was wirklich hilft — nicht als Liste, sondern als echtes Gespräch. Und wo du weitergehst, wenn du mehr brauchst.</p>
+        <span class="termin-card__tag" style="background:rgba(74,159,212,0.1);border-color:rgba(74,159,212,0.25);color:#4A9FD4;">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          30. Juni
+        </span>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ANMELDUNG -->
+<section class="anmeldung" id="anmeldung" aria-labelledby="anmeldung-h2">
+  <div class="anmeldung__inner">
+    <p class="section-eyebrow">Kostenlose Anmeldung</p>
+    <h2 class="section-h2" id="anmeldung-h2">Jetzt Platz sichern.</h2>
+    <p class="section-sub" style="margin-bottom:2rem;">Kein echter Name nötig. Kein Gesicht zeigen. Nur deine E-Mail, damit du den Zoom-Link bekommst.</p>
+
+    <div class="anmeldung__info">
+      <div class="info-pill">
+        <div class="info-pill__icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="info-pill__text"><strong>100% anonym</strong>Kein echter Name nötig</div>
+      </div>
+      <div class="info-pill">
+        <div class="info-pill__icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="info-pill__text"><strong>Kostenlos</strong>Alle 3 Talkrunden gratis</div>
+      </div>
+      <div class="info-pill">
+        <div class="info-pill__icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="info-pill__text"><strong>Sicher</strong>Via Zoom, kein Konto nötig</div>
+      </div>
+    </div>
+
+    <!-- Google Forms Iframe -->
+    <div class="iframe-container" id="anmelde-form">
+      <div class="iframe-placeholder" id="form-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#cd7f32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <p><strong style="color:var(--color-text);">Anmeldeformular</strong><br>Füge hier den Link zu deinem Google-Formular ein.</p>
+        <a href="mailto:team@culinaryapprenticeprojekt.net?subject=Anmeldung%20Klarer%20Kopf%20im%20Job">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Jetzt per E-Mail anmelden
+        </a>
+        <p style="margin-top:0.5rem;font-size:0.78rem;">
+          <!-- Wenn dein Google Formular fertig ist, ersetze den Platzhalter durch: -->
+          <!-- <script>document.getElementById('form-placeholder').style.display='none'; document.getElementById('anmelde-form').innerHTML += '<iframe src="DEINE_GOOGLE_FORM_URL/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Wird geladen…</iframe>';</script> -->
+          Sobald das Google-Formular bereit ist, wird hier der direkte Einbettungscode eingefügt.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Stay Human Shift · <a href="index.html">Startseite</a> <a href="stress-check.html">Stress-Check</a> <a href="impressum.html">Impressum</a> <a href="datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<!-- Chat-Widget (global) -->
+<script src="chat-widget.js"></script>
+</body>
+</html>
