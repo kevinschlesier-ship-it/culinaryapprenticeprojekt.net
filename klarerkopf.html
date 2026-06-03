@@ -305,20 +305,19 @@
       100&nbsp;% kostenlos. 100&nbsp;% anonym via Zoom.
     </p>
 
-    <!-- 16:9 Video-Container -->
-    <div class="video-wrapper" aria-label="Einführungsvideo Klarer Kopf im Job">
-      <div class="video-placeholder" id="video-placeholder">
-        <div class="video-placeholder__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        </div>
-        <p><strong style="color:var(--color-text,#e8e6e3);">Willkommen beim Programm</strong><br>Trag dich jetzt für die kostenlosen Talkrunden im Juni ein — alle Infos findest du weiter unten.</p>
-      </div>
-      <!-- Sobald du eine YouTube/Vimeo-URL hast:
-           Ersetze den Placeholder durch:
-           <iframe src="https://www.youtube.com/embed/DEINE_VIDEO_ID?autoplay=0&rel=0"
-             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-             allowfullscreen title="Klarer Kopf im Job – Einführung"></iframe>
-      -->
+          <!-- Video -->
+    <div class="video-wrapper" aria-label="Klarer Kopf im Job – Einführungsvideo">
+      <video
+        controls
+        preload="metadata"
+        poster="assets/video-poster.jpg"
+        playsinline
+        aria-label="Klarer Kopf im Job – Einführungsvideo von Stay Human Shift"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;"
+      >
+        <source src="assets/intro-video.mp4" type="video/mp4" />
+        Dein Browser unterstützt keine eingebetteten Videos.
+      </video>
     </div>
 
     <div style="margin-top:2rem;">
