@@ -176,7 +176,7 @@
     /* ── TERMINE / AGENDA ─────────────────────────── */
     .agenda { background: var(--color-bg); }
     .agenda__grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); max-width: 800px; margin: 0 auto;
       gap: 1.25rem; margin-top: 0;
     }
     .termin-card {
@@ -385,128 +385,261 @@
     <p class="section-sub">Kein Gesicht zeigen nötig. Kein echter Name erforderlich. Kostenlos via Zoom.</p>
 
     <div class="agenda__grid">
-      <!-- Karte 1 -->
+      <!-- Karte 2 -->
       <article class="termin-card">
         <div class="termin-card__num">01</div>
         <div class="termin-card__date">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          02. Juni 2026
-        </div>
-        <div class="termin-card__time">14:00 Uhr · Via Zoom · ca. 60–90 Min.</div>
-        <h3>Teil 1: Der unsichtbare Druck &amp; die Sucht danach</h3>
-        <p style="font-size:0.85rem;color:var(--color-text-muted);max-width:none;">Warum Stress in der Ausbildung so anders ist — und warum wir ihn oft nicht sehen, bis es zu spät ist.</p>
-        <span class="termin-card__tag">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Jetzt verfügbar
-        </span>
-      </article>
-
-      <!-- Karte 2 -->
-      <article class="termin-card">
-        <div class="termin-card__num">02</div>
-        <div class="termin-card__date">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           16. Juni 2026
         </div>
-        <div class="termin-card__time">14:00 Uhr · Via Zoom · ca. 60–90 Min.</div>
+        <div class="termin-card__time">14:00 Uhr · Via Zoom · 40 Min.</div>
         <h3>Teil 2: Masken ab – Warnsignale richtig erkennen</h3>
         <p style="font-size:0.85rem;color:var(--color-text-muted);max-width:none;">Was übersehen wir bei uns selbst? Was sehen andere in uns? Gemeinsam Muster erkennen, ohne Druck.</p>
-        <span class="termin-card__tag" style="background:rgba(74,159,212,0.1);border-color:rgba(74,159,212,0.25);color:#4A9FD4;">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          16. Juni
-        </span>
+        <a href="#anmeldung" onclick="document.getElementById('termin-select').value='16juni'; return true;"
+           style="display:inline-flex;align-items:center;gap:0.45rem;margin-top:0.5rem;background:#cd7f32;color:#fff;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.84rem;padding:0.65rem 1.2rem;border-radius:9999px;text-decoration:none;transition:background 180ms;"
+           onmouseover="this.style.background='#b56c22'" onmouseout="this.style.background='#cd7f32'">
+          Jetzt anmelden
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </article>
 
       <!-- Karte 3 -->
       <article class="termin-card">
-        <div class="termin-card__num">03</div>
+        <div class="termin-card__num">02</div>
         <div class="termin-card__date">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           30. Juni 2026
         </div>
-        <div class="termin-card__time">14:00 Uhr · Via Zoom · ca. 60–90 Min.</div>
+        <div class="termin-card__time">14:00 Uhr · Via Zoom · 40 Min.</div>
         <h3>Teil 3: Starke Strategien &amp; Hilfe</h3>
         <p style="font-size:0.85rem;color:var(--color-text-muted);max-width:none;">Was wirklich hilft — nicht als Liste, sondern als echtes Gespräch. Und wo du weitergehst, wenn du mehr brauchst.</p>
-        <span class="termin-card__tag" style="background:rgba(74,159,212,0.1);border-color:rgba(74,159,212,0.25);color:#4A9FD4;">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          30. Juni
-        </span>
+        <a href="#anmeldung" onclick="document.getElementById('termin-select').value='30juni'; return true;"
+           style="display:inline-flex;align-items:center;gap:0.45rem;margin-top:0.5rem;background:#cd7f32;color:#fff;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.84rem;padding:0.65rem 1.2rem;border-radius:9999px;text-decoration:none;transition:background 180ms;"
+           onmouseover="this.style.background='#b56c22'" onmouseout="this.style.background='#cd7f32'">
+          Jetzt anmelden
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </article>
     </div>
+  </div>
+
+    <!-- Allgemeine Talkrunde -->
+    <div style="text-align:center; margin-top:2.5rem; padding:2rem; background:var(--color-surface); border:1px solid var(--color-border); border-radius:16px; max-width:600px; margin-left:auto; margin-right:auto;">
+      <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-faint);margin-bottom:0.5rem;">Für alle Branchen</p>
+      <h3 style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.2rem;color:var(--color-text);margin-bottom:0.5rem;">Allgemeine Talkrunde</h3>
+      <p style="font-size:0.88rem;color:var(--color-text-muted);margin-bottom:1.25rem;max-width:none;">Du willst einfach mal reden — egal ob Gastro, Handel, Büro oder irgendwas anderes? Meld dich. Kein Thema ist zu klein.</p>
+      <a href="#anmeldung" onclick="document.getElementById('termin-select').value='allgemein'; return true;"
+         style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#cd7f32;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.9rem;padding:0.75rem 1.5rem;border:1.5px solid rgba(205,127,50,0.4);border-radius:9999px;text-decoration:none;transition:all 180ms;"
+         onmouseover="this.style.background='rgba(205,127,50,0.08)';this.style.borderColor='#cd7f32'"
+         onmouseout="this.style.background='transparent';this.style.borderColor='rgba(205,127,50,0.4)'">
+        Zur Allgemeinen Talkrunde anmelden
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
   </div>
 </section>
 
 
-<!-- KONTAKT -->
+
+<!-- INHALTSKARTEN FÜR AZUBIS -->
+<section style="background:var(--color-bg);padding:5rem 2rem;border-top:1px solid var(--color-border);" aria-labelledby="inhalte-h2">
+  <div class="section-inner">
+    <p class="section-eyebrow">Was du hier findest</p>
+    <h2 class="section-h2" id="inhalte-h2">Sofort verfügbar — zum Lesen & Mitnehmen.</h2>
+    <p class="section-sub">Kein Anmelden. Kein Warten. Einfach lesen, herunterladen, anwenden.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2.5rem;">
+
+      <!-- Karte 1: Burnout -->
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-top:3px solid #cd7f32;border-radius:16px;padding:1.6rem;display:flex;flex-direction:column;gap:0.65rem;">
+        <div style="width:38px;height:38px;background:rgba(205,127,50,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#cd7f32;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C7 2 3 6 3 11c0 3 1.5 5.5 4 7v3h10v-3c2.5-1.5 4-4 4-7 0-5-4-9-9-9z"/><path d="M9 17v1M15 17v1"/></svg>
+        </div>
+        <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--color-text);">Burnout-Prävention</div>
+        <div style="font-size:0.85rem;color:var(--color-text-muted);line-height:1.6;">Wie erkennst du früh, dass der Druck zu viel wird? Was kannst du heute noch ändern — ohne alles hinzuschmeißen?</div>
+        <a href="assets/pdfs/mental-health-guide-azubis.pdf" download style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:700;color:#cd7f32;text-decoration:none;margin-top:auto;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          PDF herunterladen
+        </a>
+      </div>
+
+      <!-- Karte 2: Sucht & Prävention -->
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-top:3px solid #4A9FD4;border-radius:16px;padding:1.6rem;display:flex;flex-direction:column;gap:0.65rem;">
+        <div style="width:38px;height:38px;background:rgba(74,159,212,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#4A9FD4;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg>
+        </div>
+        <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--color-text);">Sucht & Prävention</div>
+        <div style="font-size:0.85rem;color:var(--color-text-muted);line-height:1.6;">Energy-Drinks, Alkohol, Vapes — wann wird aus Gewohnheit ein Problem? Ehrliche Antworten ohne Zeigefinger.</div>
+        <a href="assets/pdfs/poster_sucht.pdf" download style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:700;color:#4A9FD4;text-decoration:none;margin-top:auto;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Poster herunterladen
+        </a>
+      </div>
+
+      <!-- Karte 3: Mentale Hilfe zu Hause -->
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-top:3px solid #27ae60;border-radius:16px;padding:1.6rem;display:flex;flex-direction:column;gap:0.65rem;">
+        <div style="width:38px;height:38px;background:rgba(39,174,96,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#27ae60;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--color-text);">Mentale Hilfe zu Hause</div>
+        <div style="font-size:0.85rem;color:var(--color-text-muted);line-height:1.6;">Was hilft wirklich, wenn du nach der Schicht oder nach dem Betrieb einfach nicht abschalten kannst? Konkrete Methoden, keine Floskeln.</div>
+        <a href="assets/pdfs/mental-health-guide-azubis.pdf" download style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:700;color:#27ae60;text-decoration:none;margin-top:auto;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Leitfaden herunterladen
+        </a>
+      </div>
+
+      <!-- Karte 4: Checkliste -->
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-top:3px solid var(--color-accent);border-radius:16px;padding:1.6rem;display:flex;flex-direction:column;gap:0.65rem;">
+        <div style="width:38px;height:38px;background:rgba(232,168,56,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--color-accent);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--color-text);">Checkliste: Warnsignale erkennen</div>
+        <div style="font-size:0.85rem;color:var(--color-text-muted);line-height:1.6;">Wann solltest du dir Hilfe holen? Diese Checkliste hilft dir, Warnsignale bei dir selbst zu erkennen — ohne Drama.</div>
+        <a href="checkliste-mentale-gesundheit.html" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:700;color:var(--color-accent);text-decoration:none;margin-top:auto;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Zur Checkliste
+        </a>
+      </div>
+
+    </div>
+
+    <!-- WUNSCH-BUTTON -->
+    <div style="text-align:center;background:var(--color-surface);border:1px dashed var(--color-border);border-radius:16px;padding:2rem 1.5rem;max-width:580px;margin:0 auto;">
+      <p style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-faint);margin-bottom:0.5rem;">Dein Wunsch</p>
+      <h3 style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--color-text);margin-bottom:0.5rem;">Ein Thema das dich interessiert?</h3>
+      <p style="font-size:0.86rem;color:var(--color-text-muted);margin-bottom:1.25rem;">Sag uns, worüber du ein Video oder eine Talkrunde haben möchtest. Wir nehmen Vorschläge ernst.</p>
+      <a href="mailto:team@culinaryapprenticeprojekt.net?subject=Thema-Wunsch&body=Hallo%2C%20ich%20w%C3%BCnsche%20mir%20ein%20Video%20oder%20eine%20Talkrunde%20zum%20Thema%3A%0A%0A"
+         style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#cd7f32;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.9rem;padding:0.75rem 1.5rem;border:1.5px solid rgba(205,127,50,0.4);border-radius:9999px;text-decoration:none;transition:all 180ms;"
+         onmouseover="this.style.background='rgba(205,127,50,0.08)';this.style.borderColor='#cd7f32'"
+         onmouseout="this.style.background='transparent';this.style.borderColor='rgba(205,127,50,0.4)'">
+        Thema vorschlagen
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ANMELDUNG -->
 <section class="anmeldung" id="anmeldung" aria-labelledby="anmeldung-h2">
   <div class="anmeldung__inner">
-    <p class="section-eyebrow">Mitmachen &amp; Kontakt</p>
-    <h2 class="section-h2" id="anmeldung-h2">Immer für dich da.</h2>
+    <p class="section-eyebrow">Kostenlose Anmeldung</p>
+    <h2 class="section-h2" id="anmeldung-h2">Für die Talkrunden anmelden.</h2>
     <p class="section-sub" style="margin-bottom:2rem;">
-      Das Programm läuft 24/7 — du musst dich nirgends anmelden oder registrieren.
-      Meld dich einfach direkt, wenn du Unterstützung brauchst oder mitmachen willst.
+      Trag dich ein — du bekommst den Zoom-Link per E-Mail. Kein Konto, kein Passwort, keine App.
     </p>
 
-    <div class="anmeldung__info" style="margin-bottom:2.5rem;">
+    <div class="anmeldung__info" style="margin-bottom:2rem;">
       <div class="info-pill">
-        <div class="info-pill__icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
+        <div class="info-pill__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <div class="info-pill__text"><strong>100% anonym</strong>Kein echter Name nötig</div>
       </div>
       <div class="info-pill">
-        <div class="info-pill__icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="info-pill__text"><strong>24/7 verfügbar</strong>Immer, wenn du es brauchst</div>
+        <div class="info-pill__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="info-pill__text"><strong>40 Minuten</strong>Kompakt & intensiv</div>
       </div>
       <div class="info-pill">
-        <div class="info-pill__icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
+        <div class="info-pill__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
         <div class="info-pill__text"><strong>Kostenlos</strong>Für alle Azubis</div>
       </div>
     </div>
 
-    <!-- Direkte Kontaktmöglichkeiten -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; max-width:600px; margin:0 auto;">
-
-      <a href="mailto:team@culinaryapprenticeprojekt.net"
-         style="display:flex; align-items:center; gap:0.85rem; background:var(--color-bg); border:1px solid var(--color-border); border-radius:14px; padding:1.4rem 1.5rem; text-decoration:none; transition:border-color 180ms, transform 180ms;"
-         onmouseover="this.style.borderColor='#cd7f32';this.style.transform='translateY(-2px)'"
-         onmouseout="this.style.borderColor='';this.style.transform=''">
-        <div style="width:40px;height:40px;flex-shrink:0;background:rgba(205,127,50,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#cd7f32;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <!-- Formular -->
+    <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:20px;padding:2rem 1.75rem;max-width:680px;margin:0 auto;">
+      <div id="azubi-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;margin-bottom:0.85rem;">
+          <div style="display:flex;flex-direction:column;gap:0.32rem;">
+            <label for="az-name" style="font-size:0.76rem;font-weight:600;color:var(--color-text-muted);">Name <span style="font-weight:400;color:var(--color-text-faint);">(optional)</span></label>
+            <input type="text" id="az-name" placeholder="Dein Name oder Spitzname" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:10px;padding:0.72rem 0.95rem;color:var(--color-text);font-size:0.92rem;font-family:'Satoshi',sans-serif;width:100%;transition:border-color 180ms;" onfocus="this.style.borderColor='#cd7f32'" onblur="this.style.borderColor=''"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.32rem;">
+            <label for="az-email" style="font-size:0.76rem;font-weight:600;color:var(--color-text-muted);">E-Mail *</label>
+            <input type="email" id="az-email" placeholder="deine@email.de" required style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:10px;padding:0.72rem 0.95rem;color:var(--color-text);font-size:0.92rem;font-family:'Satoshi',sans-serif;width:100%;transition:border-color 180ms;" onfocus="this.style.borderColor='#cd7f32'" onblur="this.style.borderColor=''"/>
+          </div>
         </div>
-        <div>
-          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.95rem;color:var(--color-text);">Per E-Mail</div>
-          <div style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.15rem;">team@culinaryapprenticeprojekt.net</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;margin-bottom:0.85rem;">
+          <div style="display:flex;flex-direction:column;gap:0.32rem;">
+            <label for="az-betrieb" style="font-size:0.76rem;font-weight:600;color:var(--color-text-muted);">Betrieb / Schule <span style="font-weight:400;color:var(--color-text-faint);">(optional)</span></label>
+            <input type="text" id="az-betrieb" placeholder="Dein Betrieb oder deine Schule" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:10px;padding:0.72rem 0.95rem;color:var(--color-text);font-size:0.92rem;font-family:'Satoshi',sans-serif;width:100%;transition:border-color 180ms;" onfocus="this.style.borderColor='#cd7f32'" onblur="this.style.borderColor=''"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.32rem;">
+            <label for="az-ausbildung" style="font-size:0.76rem;font-weight:600;color:var(--color-text-muted);">Ausbildungsberuf / Bereich <span style="font-weight:400;color:var(--color-text-faint);">(optional)</span></label>
+            <input type="text" id="az-ausbildung" placeholder="z.B. Koch, Hotelfachfrau, Verkäufer …" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:10px;padding:0.72rem 0.95rem;color:var(--color-text);font-size:0.92rem;font-family:'Satoshi',sans-serif;width:100%;transition:border-color 180ms;" onfocus="this.style.borderColor='#cd7f32'" onblur="this.style.borderColor=''"/>
+          </div>
         </div>
-      </a>
-
-      <a href="https://wa.me/4915204488587"
-         target="_blank" rel="noopener noreferrer"
-         style="display:flex; align-items:center; gap:0.85rem; background:var(--color-bg); border:1px solid var(--color-border); border-radius:14px; padding:1.4rem 1.5rem; text-decoration:none; transition:border-color 180ms, transform 180ms;"
-         onmouseover="this.style.borderColor='#25D366';this.style.transform='translateY(-2px)'"
-         onmouseout="this.style.borderColor='';this.style.transform=''">
-        <div style="width:40px;height:40px;flex-shrink:0;background:rgba(37,211,102,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#25D366;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <div style="display:flex;flex-direction:column;gap:0.32rem;margin-bottom:0.85rem;">
+          <label for="az-termin" style="font-size:0.76rem;font-weight:600;color:var(--color-text-muted);">Talkrunde *</label>
+          <select id="termin-select" name="termin" required style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:10px;padding:0.72rem 0.95rem;color:var(--color-text);font-size:0.92rem;font-family:'Satoshi',sans-serif;width:100%;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8a8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.9rem center;transition:border-color 180ms;" onfocus="this.style.borderColor='#cd7f32'" onblur="this.style.borderColor=''">
+            <option value="">Bitte wählen …</option>
+            <option value="16juni">16. Juni 2026 – Teil 1: Masken ab</option>
+            <option value="30juni">30. Juni 2026 – Teil 2: Starke Strategien</option>
+            <option value="allgemein">Allgemeine Talkrunde (alle Branchen)</option>
+          </select>
         </div>
-        <div>
-          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.95rem;color:var(--color-text);">WhatsApp</div>
-          <div style="font-size:0.78rem;color:var(--color-text-muted);margin-top:0.15rem;">Direkt schreiben — anonym möglich</div>
-        </div>
-      </a>
-
+        <button type="button" onclick="sendAzubiAnmeldung()" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;background:#cd7f32;color:#fff;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1rem;padding:0.95rem;border-radius:12px;border:none;cursor:pointer;width:100%;transition:background 180ms;" onmouseover="this.style.background='#b56c22'" onmouseout="this.style.background='#cd7f32'">
+          Anmeldung absenden
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <p style="font-size:0.74rem;color:var(--color-text-faint);text-align:center;margin-top:0.75rem;">
+          Geht direkt an <a href="mailto:team@culinaryapprenticeprojekt.net" style="color:#cd7f32;text-decoration:none;">team@culinaryapprenticeprojekt.net</a> — wir melden uns innerhalb von 24 Stunden.
+        </p>
+      </div>
+      <div id="azubi-success" style="display:none;text-align:center;padding:2rem;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1rem;" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3 style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.3rem;color:#27ae60;margin-bottom:0.5rem;">Anmeldung gesendet!</h3>
+        <p style="color:var(--color-text-muted);font-size:0.92rem;">Wir melden uns innerhalb von 24 Stunden mit dem Zoom-Link.</p>
+      </div>
     </div>
 
-    <p style="text-align:center;font-size:0.78rem;color:var(--color-text-faint);margin-top:1.5rem;">
-      Oder nutze direkt den
-      <a href="stress-check.html" style="color:#cd7f32;text-decoration:none;font-weight:600;">anonymen Stress-Check →</a>
-    </p>
+    <!-- Direkte Kontaktmöglichkeiten -->
+    <div style="margin-top:2rem;text-align:center;">
+      <p style="font-size:0.82rem;color:var(--color-text-faint);margin-bottom:1rem;">Oder direkt Kontakt aufnehmen:</p>
+      <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+        <a href="mailto:team@culinaryapprenticeprojekt.net" style="display:flex;align-items:center;gap:0.6rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:0.85rem 1.25rem;text-decoration:none;font-size:0.85rem;font-weight:600;color:var(--color-text-muted);transition:border-color 180ms;" onmouseover="this.style.borderColor='#cd7f32'" onmouseout="this.style.borderColor=''">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cd7f32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Per E-Mail schreiben
+        </a>
+        <a href="https://wa.me/4915204488587" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.6rem;background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:0.85rem 1.25rem;text-decoration:none;font-size:0.85rem;font-weight:600;color:var(--color-text-muted);transition:border-color 180ms;" onmouseover="this.style.borderColor='#25D366'" onmouseout="this.style.borderColor=''">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Per WhatsApp
+        </a>
+      </div>
+      <p style="font-size:0.76rem;color:var(--color-text-faint);margin-top:1rem;">
+        Auch anonymes Schreiben möglich — einfach keinen echten Namen angeben.
+      </p>
+    </div>
 
   </div>
 </section>
+
+<script>
+function sendAzubiAnmeldung() {
+  const email     = document.getElementById('az-email').value.trim();
+  const name      = document.getElementById('az-name').value.trim();
+  const betrieb   = document.getElementById('az-betrieb').value.trim();
+  const ausbildung= document.getElementById('az-ausbildung').value.trim();
+  const sel       = document.getElementById('termin-select');
+  const terminTxt = sel.options[sel.selectedIndex]?.text || '';
+  if (!email) { alert('Bitte E-Mail-Adresse angeben.'); return; }
+  const subject = encodeURIComponent('Talkrunden-Anmeldung: ' + terminTxt);
+  const body = encodeURIComponent(
+    (name        ? 'Name: '        + name        + '
+' : '') +
+    'E-Mail: '   + email + '
+' +
+    (betrieb     ? 'Betrieb/Schule: '  + betrieb     + '
+' : '') +
+    (ausbildung  ? 'Ausbildung: '  + ausbildung  + '
+' : '') +
+    'Talkrunde: '+ terminTxt
+  );
+  window.location.href = 'mailto:team@culinaryapprenticeprojekt.net?subject=' + subject + '&body=' + body;
+  document.getElementById('azubi-form').style.display = 'none';
+  document.getElementById('azubi-success').style.display = 'block';
+}
+</script>
 
 <!-- FOOTER<!-- FOOTER -->
 <footer class="footer">
