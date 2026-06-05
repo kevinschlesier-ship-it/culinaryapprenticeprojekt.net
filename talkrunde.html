@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- Built with Perplexity Computer — https://www.perplexity.ai/computer -->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Die Stay Human Shift Talkrunde — für alle, die reden, hören und mitreden wollen. Gastronomen, Ärzte, Psychologen, alle Branchen. 40 Minuten. Kostenlos. Live oder aufgezeichnet." />
+  <title>Talkrunde – Stay Human Shift</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--color-bg); color: var(--color-text); font-family: 'Satoshi', sans-serif; }
+    p { max-width: none; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 2rem; background: rgba(46,46,46,0.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--color-border); }
+    .nav__brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav__logo { height: 38px; width: auto; }
+    .nav__name { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--color-text); }
+    .nav__right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav__link { text-decoration: none; color: var(--color-text-muted); font-size: 0.82rem; font-weight: 600; transition: color 180ms; }
+    .nav__link:hover { color: var(--color-text); }
+    .btn-sofort { display: inline-flex; align-items: center; gap: 0.4rem; background: #cd7f32; color: #fff; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.8rem; padding: 0.55rem 1rem; border-radius: 9999px; text-decoration: none; animation: pulse-b 2.5s ease-in-out infinite; }
+    .btn-sofort:hover { background: #b56c22; animation: none; }
+    @keyframes pulse-b { 0%,100% { box-shadow: 0 0 0 0 rgba(205,127,50,0.5); } 50% { box-shadow: 0 0 0 7px rgba(205,127,50,0); } }
+
+    /* HERO */
+    .hero { padding: 8rem 2rem 5rem; background: var(--color-surface); border-bottom: 1px solid var(--color-border); text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(205,127,50,0.07), transparent 70%); pointer-events: none; }
+    .hero__inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero__badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(205,127,50,0.1); border: 1px solid rgba(205,127,50,0.3); color: #cd7f32; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.35rem 0.85rem; border-radius: 9999px; margin-bottom: 1.25rem; }
+    .hero__badge::before { content: ''; width: 6px; height: 6px; background: #27ae60; border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
+    @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+    h1 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: clamp(2rem, 1rem + 4vw, 3.5rem); color: var(--color-text); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; }
+    h1 span { color: #cd7f32; }
+    .hero__sub { font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1rem; }
+    .hero__tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; }
+    .tag { font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 9999px; border: 1px solid; }
+    .tag--green { color: #27ae60; border-color: rgba(39,174,96,0.3); background: rgba(39,174,96,0.08); }
+    .tag--blue  { color: #4A9FD4; border-color: rgba(74,159,212,0.3); background: rgba(74,159,212,0.08); }
+    .tag--amber { color: var(--color-accent); border-color: rgba(232,168,56,0.3); background: rgba(232,168,56,0.08); }
+    .hero__ctas { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #cd7f32; color: #fff; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 0.9rem 1.75rem; border-radius: var(--radius-lg); text-decoration: none; transition: background 180ms; }
+    .btn-primary:hover { background: #b56c22; }
+    .btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--color-text-muted); font-family: 'Cabinet Grotesk', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 0.9rem 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-decoration: none; transition: all 180ms; }
+    .btn-outline:hover { border-color: var(--color-text-muted); color: var(--color-text); }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .inner { max-width: 960px; margin: 0 auto; }
+    .eyebrow { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #cd7f32; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem; }
+    .eyebrow::before { content: ''; width: 18px; height: 2px; background: #cd7f32; border-radius: 2px; display: inline-block; }
+    h2 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 1rem + 2.2vw, 2.5rem); color: var(--color-text); letter-spacing: -0.025em; margin-bottom: 0.65rem; }
+    .sub { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 2.5rem; max-width: 580px; }
+
+    /* FORMAT CARDS */
+    .format-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .format-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 16px; padding: 1.6rem; display: flex; flex-direction: column; gap: 0.65rem; }
+    .format-card__icon { width: 40px; height: 40px; background: rgba(205,127,50,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #cd7f32; }
+    .format-card__title { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 1rem; color: var(--color-text); }
+    .format-card__desc { font-size: 0.86rem; color: var(--color-text-muted); line-height: 1.55; }
+
+    /* WOFÜR */
+    .wofor { background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+    .wofor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+    .wofor-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.25rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+    .wofor-card__dot { width: 8px; height: 8px; background: #cd7f32; border-radius: 50%; margin-top: 0.35rem; flex-shrink: 0; }
+    .wofor-card__text { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; }
+    .wofor-card__text strong { color: var(--color-text); display: block; margin-bottom: 0.2rem; font-family: 'Cabinet Grotesk', sans-serif; font-size: 0.95rem; }
+
+    /* ANMELDEFORMULAR */
+    .anmeldung { background: var(--color-bg); }
+    .form-wrap { max-width: 640px; margin: 0 auto; }
+    .form-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 20px; padding: 2.25rem 2rem; }
+    @media (max-width: 480px) { .form-card { padding: 1.5rem 1.25rem; } }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 0.85rem; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .form-field { display: flex; flex-direction: column; gap: 0.32rem; margin-bottom: 0; }
+    .form-field label { font-size: 0.76rem; font-weight: 600; color: var(--color-text-muted); }
+    .form-field label .opt { font-weight: 400; color: var(--color-text-faint); }
+    .form-field input, .form-field select, .form-field textarea {
+      background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 10px;
+      padding: 0.72rem 0.95rem; color: var(--color-text); font-size: 0.92rem; font-family: 'Satoshi', sans-serif;
+      transition: border-color 180ms; width: 100%;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: #cd7f32; }
+    .form-field textarea { resize: vertical; min-height: 100px; }
+    .form-field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8a8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.9rem center; }
+    .form-submit { display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: #cd7f32; color: #fff; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 1rem; padding: 0.95rem; border-radius: 12px; border: none; cursor: pointer; width: 100%; transition: background 180ms; margin-top: 1.25rem; }
+    .form-submit:hover { background: #b56c22; }
+    .form-note { font-size: 0.76rem; color: var(--color-text-faint); text-align: center; margin-top: 0.75rem; }
+    .form-note a { color: #cd7f32; text-decoration: none; }
+    .form-success { display: none; text-align: center; padding: 2rem; }
+    .form-success h3 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: 1.3rem; color: #27ae60; margin-bottom: 0.5rem; }
+    .form-success p { color: var(--color-text-muted); font-size: 0.92rem; }
+
+    /* FOOTER */
+    .footer { background: var(--color-surface-deep); border-top: 1px solid var(--color-border); padding: 2.5rem 2rem; text-align: center; }
+    .footer p { font-size: 0.76rem; color: var(--color-text-faint); }
+    .footer a { color: var(--color-text-muted); text-decoration: none; margin: 0 0.6rem; transition: color 180ms; }
+    .footer a:hover { color: var(--color-text); }
+
+    @media (max-width: 600px) { section { padding: 3.5rem 1.25rem; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Navigation">
+  <a href="index.html" class="nav__brand">
+    <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift" class="nav__logo" />
+    <span class="nav__name">Stay Human Shift</span>
+  </a>
+  <div class="nav__right">
+    <a href="klarerkopf.html" class="nav__link">Klarer Kopf</a>
+    <a href="index.html" class="nav__link">Startseite</a>
+    <a href="stress-check.html" class="btn-sofort" aria-label="Anonymer Stress-Check">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Sofort-Hilfe
+    </a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__badge">Für alle Branchen · Offen · Ehrlich · 40 Min.</div>
+    <h1>Die <span>Talkrunde.</span></h1>
+    <p class="hero__sub">Kein Podcast. Kein Seminar. Einfach reden — über das, was uns bewegt.<br>Konstruktiv, meinungsstark, manchmal unbequem.</p>
+    <div class="hero__tags">
+      <span class="tag tag--green">Kostenlos</span>
+      <span class="tag tag--blue">Gastronomen · Ärzte · Psychologen · Alle Branchen</span>
+      <span class="tag tag--amber">40 Minuten · Nachmittags</span>
+      <span class="tag tag--green">Live oder aufgezeichnet</span>
+    </div>
+    <div class="hero__ctas">
+      <a href="#anmeldung" class="btn-primary">
+        Jetzt anmelden
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="klarerkopf.html" class="btn-outline">Azubi-Begleitprogramm →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- WAS IST DIE TALKRUNDE -->
+<section aria-labelledby="format-h2">
+  <div class="inner">
+    <p class="eyebrow">Das Format</p>
+    <h2 id="format-h2">40 Minuten. Kein Skript. Echter Austausch.</h2>
+    <p class="sub">Kevin, Susanne und Daniela — manchmal alle drei, manchmal einer allein. Immer nachmittags. Immer direkt.</p>
+    <div class="format-grid">
+      <div class="format-card">
+        <div class="format-card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="format-card__title">Echte Gespräche</div>
+        <div class="format-card__desc">Keine vorbereiteten Antworten, kein Teleprompter. Meinungsverschiedenheiten willkommen.</div>
+      </div>
+      <div class="format-card">
+        <div class="format-card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="format-card__title">Live oder aufgezeichnet</div>
+        <div class="format-card__desc">Wird live geteilt oder im Nachhinein auf den Social-Media-Kanälen veröffentlicht.</div>
+      </div>
+      <div class="format-card">
+        <div class="format-card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="format-card__title">Ideen & Feedback</div>
+        <div class="format-card__desc">Wir sammeln Ideen, nehmen konstruktive Kritik an und geben auch mal unseren Senf dazu.</div>
+      </div>
+      <div class="format-card">
+        <div class="format-card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="format-card__title">Regelmäßige Termine</div>
+        <div class="format-card__desc">Immer nachmittags — Termine werden hier auf der Website immer aktuell gehalten.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FÜR WEN -->
+<section class="wofor" aria-labelledby="wofor-h2">
+  <div class="inner">
+    <p class="eyebrow">Für wen ist die Talkrunde?</p>
+    <h2 id="wofor-h2">Für alle, die was zu sagen haben.</h2>
+    <p class="sub" style="margin-bottom:2rem;">Du musst kein Experte sein. Du musst nur Lust haben, ehrlich zu reden.</p>
+    <div class="wofor-grid">
+      <div class="wofor-card"><div class="wofor-card__dot"></div><div class="wofor-card__text"><strong>Gastronomen & Ausbilder</strong>Wer täglich mit dem Druck in der Branche lebt.</div></div>
+      <div class="wofor-card"><div class="wofor-card__dot"></div><div class="wofor-card__text"><strong>Ärzte & Psychologen</strong>Fachliche Perspektiven willkommen.</div></div>
+      <div class="wofor-card"><div class="wofor-card__dot"></div><div class="wofor-card__text"><strong>Pädagogen & Sozialarbeiter</strong>Die täglich mit jungen Menschen arbeiten.</div></div>
+      <div class="wofor-card"><div class="wofor-card__dot"></div><div class="wofor-card__text"><strong>Alle anderen Branchen</strong>Stress, Druck und Menschlichkeit kennt keine Branche.</div></div>
+      <div class="wofor-card"><div class="wofor-card__dot"></div><div class="wofor-card__text"><strong>Interessierte & Neugierige</strong>Wer zuhören oder mitreden will — einfach melden.</div></div>
+      <div class="wofor-card"><div class="wofor-card__dot"></div><div class="wofor-card__text"><strong>Unternehmer & Führungskräfte</strong>Die Verantwortung für andere tragen.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ANMELDEFORMULAR -->
+<section class="anmeldung" id="anmeldung" aria-labelledby="anmeldung-h2">
+  <div class="inner">
+    <p class="eyebrow" style="justify-content:center;">Anmeldung</p>
+    <h2 id="anmeldung-h2" style="text-align:center;">Jetzt anmelden.</h2>
+    <p class="sub" style="margin:0 auto 2rem;text-align:center;">Trag dich ein — wir melden uns mit dem Zoom-Link. Kein Konto nötig.</p>
+
+    <div class="form-wrap">
+      <div class="form-card">
+        <div id="talkrunde-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="tr-name">Name <span class="opt">(optional)</span></label>
+              <input type="text" id="tr-name" name="name" placeholder="Dein Name oder Pseudonym" />
+            </div>
+            <div class="form-field">
+              <label for="tr-email">E-Mail *</label>
+              <input type="email" id="tr-email" name="email" placeholder="deine@email.de" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="tr-beruf">Beruf / Branche <span class="opt">(optional)</span></label>
+              <input type="text" id="tr-beruf" name="beruf" placeholder="z.B. Koch, Ärztin, Lehrer …" />
+            </div>
+            <div class="form-field">
+              <label for="tr-termin">Ich melde mich an für *</label>
+              <select id="tr-termin" name="termin" required>
+                <option value="">Bitte wählen …</option>
+                <option value="naechster">Den nächsten verfügbaren Termin</option>
+                <option value="info">Ich möchte erst informiert werden</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field" style="margin-bottom:0.85rem;">
+            <label for="tr-thema">Was beschäftigt dich gerade? <span class="opt">(optional)</span></label>
+            <textarea id="tr-thema" name="thema" placeholder="Thema, Idee oder einfach Lust mitzumachen — alles ist willkommen."></textarea>
+          </div>
+          <button type="button" class="form-submit" onclick="sendTalkrunde()">
+            Anmeldung absenden
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="form-note">
+            Alle Angaben freiwillig außer E-Mail. Geht direkt an
+            <a href="mailto:team@culinaryapprenticeprojekt.net">team@culinaryapprenticeprojekt.net</a>.<br>
+            Wir melden uns innerhalb von 24 Stunden.
+          </p>
+        </div>
+        <div class="form-success" id="talkrunde-success">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1rem;" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>Anmeldung gesendet!</h3>
+          <p>Wir melden uns innerhalb von 24 Stunden mit dem Zoom-Link bei dir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Stay Human Shift · <a href="index.html">Startseite</a> <a href="klarerkopf.html">Klarer Kopf</a> <a href="stress-check.html">Stress-Check</a> <a href="impressum.html">Impressum</a> <a href="datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<script src="chat-widget.js"></script>
+<script>
+function sendTalkrunde() {
+  const email  = document.getElementById('tr-email').value.trim();
+  const name   = document.getElementById('tr-name').value.trim();
+  const beruf  = document.getElementById('tr-beruf').value.trim();
+  const termin = document.getElementById('tr-termin');
+  const terminText = termin.options[termin.selectedIndex]?.text || '';
+  const thema  = document.getElementById('tr-thema').value.trim();
+  if (!email) { alert('Bitte E-Mail-Adresse angeben.'); return; }
+  const subject = encodeURIComponent('Talkrunde-Anmeldung' + (name ? ': ' + name : ''));
+  const body = encodeURIComponent(
+    (name   ? 'Name: '   + name   + '\n' : '') +
+    'E-Mail: ' + email + '\n' +
+    (beruf  ? 'Beruf/Branche: ' + beruf + '\n' : '') +
+    'Termin: ' + terminText + '\n' +
+    (thema  ? '\nThema/Idee:\n' + thema : '')
+  );
+  window.location.href = 'mailto:team@culinaryapprenticeprojekt.net?subject=' + subject + '&body=' + body;
+  document.getElementById('talkrunde-form').style.display = 'none';
+  document.getElementById('talkrunde-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
