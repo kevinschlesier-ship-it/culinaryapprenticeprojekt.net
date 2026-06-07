@@ -11,8 +11,6 @@
         Created with Perplexity Computer
         https://www.perplexity.ai/computer
 -->
-
-<!-- Perplexity Computer Attribution — SEO Meta Tags -->
 <meta name="generator" content="Perplexity Computer">
 <meta name="author" content="Perplexity Computer">
 <meta property="og:see_also" content="https://www.perplexity.ai/computer">
@@ -20,12 +18,12 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neuigkeiten & Veröffentlichungen – Culinary Apprentice Project</title>
-<meta name="description" content="Aktuelle Veröffentlichungen, Podcast-Folgen und Workshop-Termine vom Culinary Apprentice Project. Azubi-Kompass, Mental Health und neue Tools für Azubis und Betriebe.">
-<meta property="og:title" content="Neuigkeiten & Veröffentlichungen – cAp">
-<meta property="og:description" content="Aktuelle Veröffentlichungen, Podcast-Folgen und Workshop-Termine vom Culinary Apprentice Project.">
+<title>Neuigkeiten &amp; Updates – Stay Human Shift / cAp</title>
+<meta name="description" content="Was bei Stay Human Shift und cAp gerade passiert — transparent, ehrlich, direkt. Netzwerk, Kooperationen, Analysen und Hintergründe.">
+<meta property="og:title" content="Neuigkeiten &amp; Updates – Stay Human Shift">
+<meta property="og:description" content="Was bei Stay Human Shift gerade passiert — transparent, ehrlich, direkt.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.culinaryapprenticeprojekt.net/neuigkeiten">
+<meta property="og:url" content="https://www.culinaryapprenticeprojekt.net/neuigkeiten.html">
 
 <!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -36,333 +34,526 @@
 <link rel="stylesheet" href="./style.css">
 
 <style>
-  /* Page-specific styles for neuigkeiten.html */
+  /* ── SOFORT-HILFE BUTTON ─────────────────────────── */
+  .btn-sofort {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: #C4813A; color: #fff !important;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-weight: 700; font-size: 0.8rem;
+    padding: 0.55rem 1rem; border-radius: 9999px;
+    text-decoration: none !important; transition: background 180ms, box-shadow 180ms;
+    animation: sofort-pulse 2.5s ease-in-out infinite;
+    white-space: nowrap;
+  }
+  .btn-sofort:hover { background: #a36830 !important; animation: none; box-shadow: 0 4px 16px rgba(196,129,58,0.4); }
+  @keyframes sofort-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(196,129,58,0.5); }
+    50%       { box-shadow: 0 0 0 7px rgba(196,129,58,0); }
+  }
+
+  /* ── PAGE HERO ────────────────────────────────────── */
   .page-hero {
-    padding: calc(var(--space-32) + var(--space-8)) var(--space-6) var(--space-16);
+    padding: calc(var(--nav-h, 64px) + 4rem) var(--space-6, 1.5rem) 3.5rem;
     text-align: center;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg, #2e2e2e);
+    border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.08));
   }
-
-  .page-hero__back {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    text-decoration: none;
-    margin-bottom: var(--space-8);
-    transition: color var(--transition-interactive);
-  }
-
-  .page-hero__back:hover {
-    color: var(--color-accent);
-  }
-
-  .page-hero__back svg {
-    transition: transform var(--transition-interactive);
-  }
-
-  .page-hero__back:hover svg {
-    transform: translateX(-3px);
-  }
-
   .page-hero__label {
-    font-size: var(--text-xs);
+    font-size: 0.72rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: var(--space-4);
-    font-weight: 500;
+    color: #C4813A;
+    margin-bottom: 0.85rem;
+    font-weight: 600;
   }
-
   .page-hero__title {
-    font-family: var(--font-display);
+    font-family: 'Cabinet Grotesk', sans-serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     color: #ffffff;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    margin-bottom: var(--space-5);
+    margin-bottom: 1.1rem;
   }
-
-  .page-hero__subtitle {
-    font-size: var(--text-lg);
-    color: var(--color-text-muted);
-    max-width: 600px;
+  .page-hero__sub {
+    font-size: 1.05rem;
+    color: var(--color-text-muted, #a0a0a0);
+    max-width: 620px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
-  /* News card with hover effect */
-  .news-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: var(--space-7);
+  /* ── ARTICLES ─────────────────────────────────────── */
+  .articles-section {
+    padding: 4rem 1.5rem 5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .article-card {
+    background: var(--color-surface, #363636);
+    border: 1px solid var(--color-border, rgba(255,255,255,0.08));
+    border-radius: 16px;
+    padding: 2.5rem 2.25rem;
+    margin-bottom: 3rem;
+    scroll-margin-top: 90px;
+  }
+
+  .article-meta {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
   }
 
-  .news-card:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-  }
-
-  .news-card__date {
-    font-size: var(--text-xs);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    font-weight: 500;
-  }
-
-  .news-card__category {
-    display: inline-block;
-    font-size: var(--text-xs);
+  .article-date {
+    font-size: 0.76rem;
     font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #C4813A;
+  }
+
+  .article-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 100px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-muted);
-    margin-top: var(--space-1);
-    align-self: flex-start;
+    padding: 0.22rem 0.65rem;
+    border-radius: 9999px;
+    background: rgba(196,129,58,0.12);
+    border: 1px solid rgba(196,129,58,0.3);
+    color: #C4813A;
   }
 
-  .news-card__title {
-    font-family: var(--font-display);
-    font-size: var(--text-xl);
-    font-weight: 700;
+  .article-title {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 800;
     color: #ffffff;
-    margin: 0;
-    line-height: 1.25;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
   }
 
-  .news-card__body {
-    font-size: var(--text-base);
-    color: var(--color-text-muted);
+  .article-body {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.97rem;
+    color: var(--color-text-muted, #a0a0a0);
+    line-height: 1.8;
+  }
+
+  .article-body p {
+    margin-bottom: 1.15rem;
+  }
+
+  .article-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .article-body blockquote {
+    border-left: 3px solid #C4813A;
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    background: rgba(196,129,58,0.07);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--color-text, #e0e0e0);
+  }
+
+  .article-body h3 {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 1.75rem 0 0.65rem;
+    letter-spacing: -0.01em;
+  }
+
+  .article-divider {
+    height: 1px;
+    background: var(--color-border, rgba(255,255,255,0.08));
+    margin: 3rem 0;
+  }
+
+  /* ── NEWSLETTER SECTION ───────────────────────────── */
+  .newsletter-section {
+    background: var(--color-surface, #363636);
+    border-top: 1px solid var(--color-border, rgba(255,255,255,0.08));
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+  .newsletter-section__inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .newsletter-section__label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #C4813A;
+    margin-bottom: 0.85rem;
+  }
+  .newsletter-section__title {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .newsletter-section__text {
+    font-size: 0.95rem;
+    color: var(--color-text-muted, #a0a0a0);
     line-height: 1.7;
-    margin: 0;
-    flex-grow: 1;
+    margin-bottom: 1.75rem;
+  }
+  .btn--newsletter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #C4813A;
+    color: #fff;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background 180ms, box-shadow 180ms;
+  }
+  .btn--newsletter:hover {
+    background: #a36830;
+    box-shadow: 0 4px 16px rgba(196,129,58,0.3);
   }
 
-  .news-card__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    margin-top: var(--space-2);
-  }
-
-  .news-card__tag {
-    font-size: var(--text-xs);
-    color: var(--color-text-faint);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    padding: 2px 8px;
+  @media (max-width: 640px) {
+    .article-card { padding: 1.5rem 1.25rem; }
+    .articles-section { padding: 2.5rem 1rem 3.5rem; }
   }
 </style>
 </head>
 
 <body>
 
-<!-- ==================== NAV ==================== -->
-<nav class="nav" role="navigation" aria-label="Hauptnavigation">
-  <div class="nav__inner">
-    <a href="./index.html" class="nav__logo" aria-label="cAp — Culinary Apprentice Projekt">
-      <img class="nav__logo-img" src="./assets/cap-logo.png" alt="cAp Logo" width="40" height="40">
-      <span class="nav__logo-text">Culinary Apprentice Projekt</span>
-    </a>
+<!-- ==================== HEADER / NAV ==================== -->
+<header class="header" role="banner">
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav__inner">
 
-    <ul class="nav__links" role="list">
-      <li><a href="./index.html#leistungen">Leistungen</a></li>
-      <li><a href="./index.html#preise">Preise</a></li>
-      <li><a href="./downloads.html">Downloads</a></li>
-      <li><a href="./soforthilfe.html">Soforthilfe</a></li>
-      <li><a href="./index.html#kontakt">Kontakt</a></li>
-    </ul>
+      <!-- Brand -->
+      <a class="nav__brand" href="index.html" aria-label="Stay Human Shift – Startseite">
+        <img class="nav__logo" src="assets/stay-human-shift-logo.png" alt="Stay Human Shift Logo" />
+        <div class="nav__brand-text">
+          <span class="nav__brand-name">Stay Human Shift</span>
+          <span class="nav__brand-sub">cAp · culinaryapprenticeprojekt.net</span>
+        </div>
+      </a>
 
-    <a href="./index.html#kontakt" class="nav__cta">Erstgespräch buchen</a>
+      <!-- Desktop links -->
+      <ul class="nav__links" role="list">
+        <li><a href="index.html#zielgruppen">Für wen?</a></li>
+        <li><a href="angebote.html">Angebote</a></li>
+        <li><a href="materialien.html">Materialien</a></li>
+        <li><a href="klarerkopf.html" style="color:#C4813A;font-weight:700;">Klarer Kopf ↗</a></li>
+        <li><a href="talkrunde.html">Talkrunde</a></li>
+        <li><a href="neuigkeiten.html" style="color:#C4813A;font-weight:700;">Neuigkeiten</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
 
-    <!-- Mobile Toggle -->
-    <button class="nav__toggle" aria-label="Menü öffnen">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</nav>
+      <!-- Desktop CTA -->
+      <div class="nav__cta">
+        <a href="soforthilfe.html" class="btn-sofort" aria-label="Sofort-Hilfe">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Sofort-Hilfe
+        </a>
+      </div>
 
-<!-- Mobile Menu Overlay -->
-<div class="nav__mobile" role="dialog" aria-label="Mobile Navigation">
-  <a href="./index.html#leistungen">Leistungen</a>
-  <a href="./index.html#preise">Preise</a>
-  <a href="./downloads.html">Downloads</a>
-  <a href="./soforthilfe.html">Soforthilfe</a>
-  <a href="./index.html#ueber-uns">Über uns</a>
-  <a href="./index.html#kontakt">Kontakt</a>
-  <a href="./index.html#kontakt" class="btn btn--primary btn--small">Erstgespräch buchen</a>
-</div>
+      <!-- Hamburger -->
+      <button class="nav__hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu" id="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
 
-<!-- ==================== PAGE HERO ==================== -->
-<header class="page-hero">
-  <a href="./index.html" class="page-hero__back">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    Zurück zur Startseite
-  </a>
-  <p class="page-hero__label">Culinary Apprentice Project</p>
-  <h1 class="page-hero__title">Neuigkeiten &amp; Veröffentlichungen</h1>
-  <p class="page-hero__subtitle">Neue Tools, Podcast-Folgen und Workshop-Termine – alles rund um den Azubi-Kompass und das CAP-Programm.</p>
+  <!-- Mobile menu -->
+  <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html#zielgruppen" onclick="closeMobile()">Für wen?</a>
+    <a href="angebote.html" onclick="closeMobile()">Angebote</a>
+    <a href="materialien.html" onclick="closeMobile()">Materialien</a>
+    <a href="klarerkopf.html" onclick="closeMobile()" style="color:#C4813A;font-weight:700;">Klarer Kopf – Kostenloses Programm ↗</a>
+    <a href="talkrunde.html" onclick="closeMobile()">Talkrunde – für alle Branchen</a>
+    <a href="neuigkeiten.html" onclick="closeMobile()" style="color:#C4813A;font-weight:700;">Neuigkeiten &amp; Updates</a>
+    <a href="index.html#kontakt" onclick="closeMobile()">Kontakt</a>
+    <div class="nav__mobile-cta">
+      <a href="soforthilfe.html" onclick="closeMobile()" class="btn-sofort">Sofort-Hilfe</a>
+    </div>
+  </nav>
 </header>
 
-<!-- ==================== NEWS-CARDS ==================== -->
-<section class="section" id="neuigkeiten">
-  <div class="section__inner">
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero" aria-label="Seiteneinleitung">
+  <p class="page-hero__label">Stay Human Shift / cAp</p>
+  <h1 class="page-hero__title">Neuigkeiten &amp; Updates</h1>
+  <p class="page-hero__sub">Was bei Stay Human Shift gerade passiert — transparent, ehrlich, direkt.</p>
+</section>
 
-    <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+<!-- ==================== ARTIKEL ==================== -->
+<main>
+<div class="articles-section">
 
-      <!-- Karte 1: Azubi-Kompass Teil 1 -->
-      <article class="news-card reveal">
-        <span class="news-card__date">April 2026</span>
-        <span class="news-card__category">Podcast</span>
-        <h2 class="news-card__title">Zu Gast bei Mark Fischer – cAp und Ausbildung in der Gastronomie</h2>
-        <p class="news-card__text">Wir waren eingeladen im Podcast von Mark Fischer, der regelmäßig über Ausbildung in Deutschland spricht – quer durch alle Branchen und Berufsfelder. In dieser Folge haben wir über das Culinary Apprentice Project, die Realität in der Gastro-Ausbildung und unsere Ansätze für bessere Begleitung von Azubis gesprochen.</p>
-        <div class="news-card__tags">
-          <span class="news-card__tag">Podcast</span>
-          <span class="news-card__tag">Ausbildung</span>
-          <span class="news-card__tag">Gastronomie</span>
-        </div>
-        <a href="./neuigkeiten.html" class="news-card__cta">Zur Podcast-Folge →</a>
-      </article>
+  <!-- ── BEITRAG 1 ─────────────────────────────────── -->
+  <article class="article-card" id="beitrag-1" aria-labelledby="beitrag-1-title">
+    <div class="article-meta">
+      <span class="article-date">15. Mai 2026</span>
+      <span class="article-badge">Netzwerk</span>
+    </div>
+    <h2 class="article-title" id="beitrag-1-title">Netzwerkerweiterung: STAY HUMAN SHIFT kooperiert mit dem Bundesverband Mobile Beratung</h2>
 
-      <!-- Karte 4: Workshop-Termine -->
-      <article class="news-card reveal">
-        <span class="news-card__date">April 2026</span>
-        <span class="news-card__category">Workshop</span>
-        <h2 class="news-card__title">Workshop-Termine</h2>
-        <p class="news-card__body">Neue Präsenz- und Online-Workshop-Termine für Betriebe und Ausbilder*innen sind jetzt buchbar. Themen: Ausbildungsstruktur mit dem 90-Tage-Einstiegsplan, Mentorenmodelle im Küchenalltag und Mental-Health-Konzepte für die Ausbildung. Für Teams ab 2 Personen – flexibel in Ort und Zeit.</p>
-        <div class="news-card__tags">
-          <span class="news-card__tag">Workshop</span>
-          <span class="news-card__tag">Betriebe</span>
-          <span class="news-card__tag">Ausbilder*innen</span>
-        </div>
-        <a href="./index.html#kontakt" class="btn btn--outline" style="margin-top: var(--space-4); align-self: flex-start;">Termin anfragen</a>
-      </article>
+    <div class="article-body">
+
+      <p>Die Gastronomie war schon immer ein globales Gewerbe. In den Küchen Deutschlands arbeiten Menschen aus über 50 Nationen Seite an Seite — verbunden durch Hitze, Druck und den gemeinsamen Anspruch, Gäste zu begeistern. Diese Vielfalt ist keine Schwäche. Sie ist das Fundament der Branche.</p>
+
+      <p>Umso ernster nehmen wir es, wenn diese Vielfalt zur Zielscheibe wird.</p>
+
+      <p>In den vergangenen Monaten haben wir verstärkt Berichte aus Ausbildungsbetrieben erhalten — von Azubis und Ausbildenden gleichermaßen. Berichte über Ausgrenzung, über abwertende Sprache, über Situationen, in denen die Herkunft eines Menschen plötzlich mehr Gewicht hatte als seine Arbeit, seine Haltung oder sein Können. Solche Berichte fordern eine Antwort. Und sie fordern Partner, die wissen, was zu tun ist.</p>
+
+      <h3>Was der Bundesverband Mobile Beratung macht</h3>
+
+      <p>Der Bundesverband Mobile Beratung koordiniert ein bundesweites Netzwerk von Beratungsstellen, die Menschen, Betriebe, Institutionen und Kommunen unterstützen, wenn sie mit Rassismus, Diskriminierung oder rechtsextremen Vorfällen konfrontiert sind. Mobile Beratung agiert dort, wo Hilfe tatsächlich gebraucht wird — nicht in Behördengebäuden, sondern direkt in den betroffenen Lebenswelten.</p>
+
+      <p>Die Beratung ist kostenlos, vertraulich und unabhängig. Sie richtet sich nicht nur an die Betroffenen, sondern auch an die Menschen im Umfeld: Kollegen, Ausbilder, Betriebsinhaber, die unsicher sind, wie sie in einer konkreten Situation reagieren sollen. Dieser Ansatz macht Mobile Beratung zu einem Netzwerkpartner, der nicht nur Einzelpersonen hilft, sondern Strukturen verändert.</p>
+
+      <h3>Warum diese Kooperation für uns selbstverständlich ist</h3>
+
+      <p>Stay Human Shift und das Culinary Apprentice Project stehen für ein Ausbildungswesen, das Menschen ernst nimmt — alle Menschen. Mentale Gesundheit, Würde im Arbeitsalltag und das Recht auf eine Ausbildung ohne Angst sind keine Luxusgüter. Sie sind Grundvoraussetzungen dafür, dass eine Ausbildung überhaupt gelingen kann.</p>
+
+      <p>Wir haben in den vergangenen Jahren erlebt, wie eng psychische Belastung und erlebte Diskriminierung zusammenhängen. Wer täglich Ausgrenzung erlebt, kann seine Ausbildung nicht mit ganzer Kraft angehen. Wer sich in der Küche nicht sicher fühlt, lernt schlechter, bricht häufiger ab und verlässt die Branche frühzeitig. Das ist kein individuelles Versagen — das ist ein strukturelles Problem, das strukturelle Antworten braucht.</p>
+
+      <p>Die Kooperation mit dem Bundesverband Mobile Beratung ist für uns ein konsequenter Schritt. Sie verbindet unsere Arbeit im Bereich mentale Gesundheit mit der spezialisierten Kompetenz einer Organisation, die weiß, wie man in schwierigen Situationen konkret und wirksam handelt.</p>
+
+      <blockquote>
+        "Wir sprechen täglich über Resilienz, über Stärke und über die Fähigkeit, schwierige Situationen zu überstehen. Aber Resilienz kann kein Ersatz für Schutz sein. Niemand sollte allein damit fertigwerden müssen, diskriminiert worden zu sein. Diese Kooperation gibt uns und unseren Azubis Rückendeckung, die wirklich zählt."
+        <br><br>— Kevin Schlesier, Stay Human Shift
+      </blockquote>
+
+      <h3>Gastronomie und Vielfalt: eine untrennbare Geschichte</h3>
+
+      <p>Die internationale Küche, die wir heute als selbstverständlich betrachten, ist das Ergebnis jahrhundertelanger Migration, kultureller Überschneidung und gegenseitiger Inspiration. Sushi in Berlin, Tapas in Hamburg, Currywurst mit internationalem Team dahinter — die Branche hat immer von der Begegnung verschiedener Kulturen profitiert. Azubis, die heute einsteigen, treten in eine Tradition ein, die Offenheit als Kernkompetenz kennt.</p>
+
+      <p>Es wäre deshalb nicht nur ein moralisches, sondern auch ein fachliches Problem, wenn diese Offenheit in einzelnen Betrieben zunehmend unter Druck gerät. Eine Küche, die Teile ihres Teams ausgrenzt, funktioniert schlechter. Punkt.</p>
+
+      <h3>Was die Kooperation konkret bedeutet</h3>
+
+      <p>In einem ersten Schritt werden wir gemeinsam mit dem Bundesverband Mobile Beratung Informationsmaterial entwickeln, das direkt für Azubis und Ausbilder in der Gastronomie und Hotellerie nutzbar ist. Dieses Material wird erklären, was Betroffene tun können, wen sie kontaktieren können und welche Rechte sie haben.</p>
+
+      <p>Darüber hinaus planen wir gemeinsame Veranstaltungsformate — Talkrunden und Workshops —, in denen konkrete Handlungsoptionen für Betriebe und Berufsschulen erarbeitet werden. Nicht als Pflichtprogramm, sondern als echtes Werkzeug für alle, die Verantwortung übernehmen wollen.</p>
+
+      <p>Alle weiterführenden Informationen zum Bundesverband Mobile Beratung und zum regionalen Beratungsangebot sind über die offizielle Website erreichbar. Das Material, das wir gemeinsam erarbeiten, wird auf dieser Seite sowie auf unseren Downloadseiten kostenlos verfügbar sein.</p>
+
+      <p>Diese Zusammenarbeit ist ein Anfang. Wir freuen uns auf alles, was daraus entstehen wird.</p>
 
     </div>
+  </article>
 
-    <!-- Zurück-Link -->
-    <div class="reveal" style="text-align: center; margin-top: var(--space-16);">
-      <a href="./downloads.html" class="btn btn--primary" style="margin-right: var(--space-3);">Alle Downloads ansehen</a>
-      <a href="./index.html#kontakt" class="btn btn--outline">Kontakt aufnehmen</a>
+  <div class="article-divider" role="separator"></div>
+
+  <!-- ── BEITRAG 2 ─────────────────────────────────── -->
+  <article class="article-card" id="beitrag-2" aria-labelledby="beitrag-2-title">
+    <div class="article-meta">
+      <span class="article-date">28. Mai 2026</span>
+      <span class="article-badge">Meinung &amp; Analyse</span>
     </div>
+    <h2 class="article-title" id="beitrag-2-title">Kulturwandel in der Spitzenhotellerie: Warum das traditionelle "Hölle-Durchstehen" ausgedient hat</h2>
 
+    <div class="article-body">
+
+      <p>Es gibt einen Satz, den vermutlich jeder kennt, der jemals in einer Profiküche gearbeitet hat: "Wer's nicht aushält, ist falsch hier." Er kommt in verschiedenen Varianten. Als ehrliche Warnung. Als Test. Als Stolz. Manchmal als Waffe.</p>
+
+      <p>Dieser Satz hat in der Gastronomie eine lange Tradition. Er spiegelt eine Arbeitskultur wider, die Belastungsfähigkeit mit Eignung gleichsetzt, die Durchhalten mit Charakter und Schwäche zeigen mit Versagen. Für Generationen von Köchen und Hotelfachleuten war er Teil der Berufsidentität.</p>
+
+      <p>Er ist aus der Zeit gefallen. Und er kostet die Branche jeden Tag qualifizierte Fachkräfte.</p>
+
+      <h3>Die Zahlen lügen nicht</h3>
+
+      <p>Der Fachkräftemangel in Gastronomie und Hotellerie ist keine neue Schlagzeile, aber er hat sich verschärft. Schätzungen zufolge fehlen in Deutschland aktuell zwischen 60.000 und 80.000 Fachkräfte allein im Gastgewerbe. Die Ausbildungsquoten sinken. Abbruchquoten in Ausbildungsberufen der Gastronomie liegen teilweise bei über 40 Prozent — deutlich über dem Durchschnitt anderer Berufsfelder.</p>
+
+      <p>Die Menschen fehlen nicht, weil zu wenige Interesse haben. Sie fehlen, weil zu viele gehen. In der Ausbildung, im ersten Job, nach dem zweiten Sommer. Die Frage ist nicht mehr, ob die Branche ein Problem hat. Die Frage ist, ob sie bereit ist, ehrlich hinzuschauen, wo dieses Problem entsteht.</p>
+
+      <h3>Was "Durchstehen" wirklich bedeutet</h3>
+
+      <p>Das alte Narrativ hat einen Kern, der nicht falsch ist: Profis in der Gastronomie brauchen echte Belastungsfähigkeit. Der Job ist anspruchsvoll, körperlich und psychisch. Standfestigkeit, die Fähigkeit, unter Druck zu funktionieren, und die Ausdauer, auch schwierige Schichten durchzuhalten — das sind echte berufliche Kompetenzen.</p>
+
+      <p>Das Problem ist nicht die Anforderung. Das Problem ist, wie die Branche diese Anforderung traditionell ausgebildet hat: durch Exposition ohne Begleitung, durch Eskalation ohne Erklärung, durch Druck ohne Werkzeuge. Man wirft jemanden ins Wasser und nennt es Schwimmunterricht.</p>
+
+      <p>Wer auf diese Weise "durchhält", hat nicht gelernt, mit Belastung umzugehen. Er hat gelernt, die eigenen Signale zu ignorieren. Das ist kein Zeichen von Stärke. Es ist ein Zeichen von erlernter Hilflosigkeit — und langfristig ein direkter Weg in Burnout, Sucht oder Abbruch.</p>
+
+      <h3>Moderne Resilienz: nicht härter, sondern gesünder</h3>
+
+      <p>Wirkliche Resilienz entsteht nicht durch Abhärtung. Sie entsteht durch Kompetenzaufbau. Durch das Wissen, was in einem vorgeht. Durch die Fähigkeit, eigene Grenzen zu benennen, bevor sie überschritten werden. Durch eine Arbeitsumgebung, die Feedback zulässt, Fehler als Lernmaterial betrachtet und Hilfe suchen nicht mit Schwäche gleichsetzt.</p>
+
+      <p>Das klingt weich. Es ist es nicht. Eine Person, die ihre eigenen Belastungsgrenzen kennt und aktiv mit ihnen umgeht, ist langfristig belastbarer als jemand, der nur gelernt hat, die Zähne zusammenzubeißen. Sie macht weniger Fehler in kritischen Momenten. Sie ist zuverlässiger. Sie bleibt länger.</p>
+
+      <h3>Was fortschrittliche Betriebe bereits tun</h3>
+
+      <p>Es gibt sie bereits, die Betriebe und Ausbilder, die einen anderen Weg gehen. Hotels und Restaurants, die strukturierte Einarbeitungsprogramme entwickelt haben, in denen Azubis von Anfang an wissen, was auf sie zukommt. Küchenchefs, die regelmäßige Einzelgespräche führen — nicht als Kontrolle, sondern als echtes Interesse. Teams, die Fehlerkultur aktiv vorleben, weil sie verstanden haben, dass psychologische Sicherheit die Voraussetzung für Spitzenleistung ist, nicht ihr Feind.</p>
+
+      <p>Diese Betriebe berichten übereinstimmend: Azubis, die von Anfang an das Gefühl haben, dass ihre Entwicklung ernstgenommen wird, bleiben länger, lernen schneller und entwickeln echte Loyalität zur Branche. Die Investition in Ausbildungsqualität zahlt sich aus — nicht als Sozialleistung, sondern als ökonomische Entscheidung.</p>
+
+      <h3>Warum das kein Weichspülen ist</h3>
+
+      <p>Wer bei diesem Thema "Weichspülen" sagt, vermischt zwei Dinge: Anspruch und Methode. Es geht nicht darum, den Job weniger anspruchsvoll zu machen. Es geht darum, Azubis so auszubilden, dass sie den Ansprüchen des Jobs tatsächlich gewachsen sind — nachhaltig, nicht nur für eine Saison.</p>
+
+      <p>Psychische Gesundheit ist der einzige echte Hebel gegen Fachkräftemangel. Nicht attraktivere Arbeitszeitmodelle allein. Nicht Gehaltserhöhungen allein. Wenn Menschen sich in ihrem Beruf nicht gut fühlen — wenn sie das Gefühl haben, dass ihre Gesundheit der Branche egal ist —, verlassen sie die Branche. Das ist kein Trend, das ist menschliches Verhalten.</p>
+
+      <h3>Was Stay Human Shift und cAp konkret beitragen</h3>
+
+      <p>Unser Ansatz bei Stay Human Shift und dem Culinary Apprentice Project ist nicht theoretisch. Wir arbeiten direkt mit Betrieben, Ausbildern und Azubis — mit konkreten Materialien, Workshops und Begleitprogrammen, die im Alltag funktionieren. Unser 90-Tage-Einstiegsplan gibt Betrieben und Azubis gleichermaßen Struktur. Unsere Talkrunden schaffen Raum für ehrliche Gespräche über das, was wirklich passiert. Unsere kostenlosen Materialien erreichen Azubis direkt — ohne Umwege, ohne Kosten, ohne Hürden.</p>
+
+      <p>Wir glauben nicht, dass Kulturwandel durch einen einzelnen Workshop entsteht. Aber wir glauben, dass er durch viele kleine, konsequente Entscheidungen entsteht — von Ausbildern, die anfangen, anders zu führen. Von Betrieben, die anfangen, anders einzustellen. Von Azubis, die anfangen zu verstehen, dass ihre Gesundheit kein Verhandlungsgegenstand ist.</p>
+
+      <h3>Ein Aufruf an die Branche</h3>
+
+      <p>Wenn du Ausbilder bist: Frag dich, welche Botschaft dein Verhalten täglich sendet. Nicht deine Worte — dein Verhalten. Wie reagierst du, wenn jemand Fehler macht? Was passiert, wenn jemand "ich brauche Hilfe" sagt? Was lernen Azubis in deinem Betrieb darüber, wie man im Leben mit Druck umgeht?</p>
+
+      <p>Wenn du Betriebsinhaber bist: Der Fachkräftemangel ist kein Schicksal. Er ist das Ergebnis von Entscheidungen — vieler kleiner, oft unbewusster Entscheidungen über Jahrzehnte. Du hast heute die Möglichkeit, andere Entscheidungen zu treffen.</p>
+
+      <p>Wenn du Azubi bist: Dein Wohlbefinden ist keine Schwäche. Es ist deine wichtigste Ressource. Schütze sie. Und such dir Unterstützung, wenn du sie brauchst — das Angebot auf dieser Seite ist kostenlos und ohne Umwege erreichbar.</p>
+
+      <p>Die Branche, die wir lieben, verdient eine bessere Version von sich selbst. Wir bauen sie mit.</p>
+
+    </div>
+  </article>
+
+</div>
+
+<!-- ==================== NEWSLETTER / BENACHRICHTIGUNG ==================== -->
+<section class="newsletter-section" aria-labelledby="newsletter-title">
+  <div class="newsletter-section__inner">
+    <p class="newsletter-section__label">Auf dem Laufenden bleiben</p>
+    <h2 class="newsletter-section__title" id="newsletter-title">Bleib auf dem Laufenden</h2>
+    <p class="newsletter-section__text">
+      Keine Newsletter-Pflicht. Schreib uns einfach eine E-Mail mit "Neuigkeiten" im Betreff an
+      <a href="mailto:team@culinaryapprenticeprojekt.net" style="color:#C4813A;text-decoration:none;font-weight:600;">team@culinaryapprenticeprojekt.net</a>
+      — wir benachrichtigen dich, wenn neue Beiträge erscheinen.
+    </p>
+    <a href="mailto:team@culinaryapprenticeprojekt.net?subject=Neuigkeiten&body=Hallo%2C%20bitte%20benachrichtigt%20mich%20%C3%BCber%20neue%20Beitr%C3%A4ge%20auf%20culinaryapprenticeprojekt.net.%0A%0AViele%20Gr%C3%BC%C3%9Fe" class="btn--newsletter">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      E-Mail schreiben
+    </a>
   </div>
 </section>
+
+</main>
 
 <!-- ==================== FOOTER ==================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
 
-<!-- ==================== VERÖFFENTLICHUNGEN ==================== -->
-<section style="background: var(--color-surface); padding: var(--space-16) 0; border-top: 1px solid var(--color-border);">
-  <div class="section__inner">
-    <div class="reveal" style="text-align: center; margin-bottom: var(--space-10);">
-      <p class="section__label">Bücher & Materialien</p>
-      <h2 class="section__title" style="margin: 0 auto var(--space-4);">Veröffentlichungen</h2>
-      <p class="section__subtitle" style="margin: 0 auto; max-width: 600px;">Alle Veröffentlichungen sind auf Amazon erhältlich. Der Erlös fließt direkt in das Culinary Apprentice Project und trägt zur Finanzierung des Projekts bei.</p>
-    </div>
+    <div class="footer__top">
 
-    <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-5);">
-
-      <!-- Azubi-Kompass 1 -->
-      <div style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
-        <span style="font-size: var(--text-xs); font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">eBook</span>
-        <h3 style="font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; color: var(--color-text); line-height: 1.3;">Azubi-Kompass Teil 1</h3>
-        <p style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.7; flex: 1;">Orientierung für die ersten 90 Tage in der Gastro-Ausbildung – als eBook auf Amazon erhältlich.</p>
-        <a href="https://amzn.to/427IteI" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="text-align: center; font-size: var(--text-sm);">
-          Auf Amazon ansehen →
-        </a>
+      <!-- Brand -->
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift Logo" height="34" loading="lazy" />
+          <span class="footer__brand-logo-name">Stay Human Shift</span>
+        </div>
+        <p class="footer__tagline">
+          Menschlichkeit · Veränderung · Zukunft.<br />
+          cAp — culinaryapprenticeprojekt.net
+        </p>
+        <nav class="footer__social" aria-label="Social Media">
+          <a class="footer__social-link" href="#" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="footer__social-link" href="#" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="footer__social-link" href="#" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </nav>
       </div>
 
-      <!-- Azubi-Kompass 2 -->
-      <div style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
-        <span style="font-size: var(--text-xs); font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">eBook</span>
-        <h3 style="font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; color: var(--color-text); line-height: 1.3;">Azubi-Kompass Teil 2</h3>
-        <p style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.7; flex: 1;">Vertiefung zu Mental Health, Sucht, Grenzen setzen und dem zweiten Ausbildungsjahr – als eBook auf Amazon.</p>
-        <a href="https://amzn.to/41y4B1O" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="text-align: center; font-size: var(--text-sm);">
-          Auf Amazon ansehen →
-        </a>
-      </div>
+      <!-- Col 1: Zielgruppen -->
+      <nav aria-label="Zielgruppen">
+        <p class="footer__col-title">Zielgruppen</p>
+        <ul class="footer__col-links" role="list">
+          <li><a href="betriebe.html">Für Betriebe</a></li>
+          <li><a href="ausbilder.html">Für Ausbilder/innen</a></li>
+          <li><a href="berufsschulen.html">Für Berufsschulen</a></li>
+          <li><a href="azubis.html">Für Azubis</a></li>
+        </ul>
+      </nav>
 
-      <!-- Azubi-Kompass Notizheft -->
-      <div style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
-        <span style="font-size: var(--text-xs); font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">Notizheft</span>
-        <h3 style="font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; color: var(--color-text); line-height: 1.3;">Azubi-Kompass Notizheft</h3>
-        <p style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.7; flex: 1;">Begleitendes Notizheft zum Azubi-Kompass – für Reflexion, Notizen und die eigene Ausbildungsbegleitung.</p>
-        <a href="https://amzn.to/4vzRGKw" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="text-align: center; font-size: var(--text-sm);">
-          Auf Amazon ansehen →
-        </a>
-      </div>
+      <!-- Col 2: Angebote -->
+      <nav aria-label="Angebote">
+        <p class="footer__col-title">Angebote</p>
+        <ul class="footer__col-links" role="list">
+          <li><a href="angebote.html">Alle Angebote</a></li>
+          <li><a href="betriebe.html">90-Tage-Paket</a></li>
+          <li><a href="ausbilder.html">Workshops</a></li>
+          <li><a href="berufsschulen.html">Projekttage</a></li>
+        </ul>
+      </nav>
 
-      <!-- Aus dem Feuer geboren -->
-      <div style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
-        <span style="font-size: var(--text-xs); font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em;">Buch</span>
-        <h3 style="font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; color: var(--color-text); line-height: 1.3;">Aus dem Feuer geboren</h3>
-        <p style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.7; flex: 1;">Hommage an Neapel – ein persönliches Buch von Kevin Schlesier. Der Erlös unterstützt das Culinary Apprentice Project.</p>
-        <a href="https://amzn.to/4vu0HVl" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="text-align: center; font-size: var(--text-sm);">
-          Auf Amazon ansehen →
-        </a>
-      </div>
+      <!-- Col 3: Materialien -->
+      <nav aria-label="Materialien">
+        <p class="footer__col-title">Materialien</p>
+        <ul class="footer__col-links" role="list">
+          <li><a href="klarerkopf.html">Klarer Kopf (kostenlos)</a></li>
+          <li><a href="materialien.html">Alle Materialien</a></li>
+          <li><a href="materialien.html">Poster-Downloads</a></li>
+          <li><a href="materialien.html">PDF-Guides</a></li>
+          <li><a href="shop.html">Shop / Merch</a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 4: Rechtliches -->
+      <nav aria-label="Rechtliches">
+        <p class="footer__col-title">Rechtliches</p>
+        <ul class="footer__col-links" role="list">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="neuigkeiten.html">Neuigkeiten</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
 
     </div>
 
-    <p class="reveal" style="text-align: center; color: var(--color-text-faint); font-size: var(--text-sm); margin-top: var(--space-8);">Der Erlös aus allen Veröffentlichungen fließt direkt in das Culinary Apprentice Project.</p>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <a href="./index.html" class="footer__logo" aria-label="cAp">
-      <img src="./assets/cap-logo.png" alt="cAp Logo" width="48" height="48" style="border-radius: 50%;">
-    </a>
-
-    <div class="footer__socials">
-      <a href="https://www.facebook.com/share/1DcP7cQSTD/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/kitchenkev6?igsh=MmNvZGZuZGRhdnRs" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/kevin-schlesier-b54a902b3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        &copy; 2026 Stay Human Shift · cAp — culinaryapprenticeprojekt.net ·
+        <a href="mailto:team@culinaryapprenticeprojekt.net">team@culinaryapprenticeprojekt.net</a>
+      </p>
     </div>
 
-    <div class="footer__links">
-      <a href="./impressum.html">Impressum</a>
-      <a href="./datenschutz.html">Datenschutz</a>
-      <a href="./downloads.html">Downloads</a>
-      <a href="./soforthilfe.html">Soforthilfe</a>
-    </div>
-
-    <p class="footer__copy">
-      © 2026 Culinary Apprentice Projekt. Alle Rechte vorbehalten.<br>
-      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
-    </p>
   </div>
 </footer>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/4915204488587?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20Culinary%20Apprentice%20Projekt." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Über WhatsApp kontaktieren">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
 <!-- App JS -->
 <script src="./app.js" defer></script>
-
+<script>
+  // Mobile menu
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu   = document.getElementById('mobile-menu');
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('is-open');
+      hamburgerBtn.setAttribute('aria-expanded', open);
+    });
+  }
+  function closeMobile() {
+    if (mobileMenu) mobileMenu.classList.remove('is-open');
+    if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }
+</script>
+<script src="chat-widget.js"></script>
 </body>
 </html>
