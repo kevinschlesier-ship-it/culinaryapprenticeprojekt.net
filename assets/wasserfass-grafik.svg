@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 480" width="500" height="480" font-family="'Cabinet Grotesk', 'Helvetica Neue', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="500" height="480" fill="#2a2a2a" rx="16"/>
+
+  <!-- Title -->
+  <text x="250" y="42" text-anchor="middle" fill="#e8e6e3" font-size="17" font-weight="700" letter-spacing="-0.3">Dein persönliches Stressempfinden</text>
+  <text x="250" y="64" text-anchor="middle" fill="#C4813A" font-size="15" font-weight="700" letter-spacing="-0.2">ist wie ein Wasserfass</text>
+
+  <!-- Decorative line under title -->
+  <line x1="160" y1="74" x2="340" y2="74" stroke="#C4813A" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- ── FASS BODY ──────────────────────────────────────────── -->
+  <!-- Barrel shadow -->
+  <ellipse cx="252" cy="362" rx="82" ry="14" fill="#1a1a1a" opacity="0.5"/>
+  <!-- Barrel body -->
+  <rect x="170" y="230" width="160" height="135" rx="8" fill="#1e1e1e" stroke="#484848" stroke-width="2"/>
+  <!-- Barrel wood grain lines -->
+  <line x1="170" y1="268" x2="330" y2="268" stroke="#333" stroke-width="1"/>
+  <line x1="170" y1="306" x2="330" y2="306" stroke="#333" stroke-width="1"/>
+  <!-- Barrel straps / Ringe -->
+  <rect x="164" y="248" width="172" height="10" rx="3" fill="none" stroke="#C4813A" stroke-width="2.5"/>
+  <rect x="164" y="316" width="172" height="10" rx="3" fill="none" stroke="#C4813A" stroke-width="2.5"/>
+  <!-- Barrel top ellipse -->
+  <ellipse cx="250" cy="230" rx="82" ry="14" fill="#252525" stroke="#484848" stroke-width="2"/>
+  <!-- Water level inside barrel -->
+  <clipPath id="barrel-clip">
+    <rect x="170" y="230" width="160" height="135" rx="8"/>
+  </clipPath>
+  <rect x="170" y="280" width="160" height="85" fill="#C4813A" opacity="0.18" clip-path="url(#barrel-clip)"/>
+  <ellipse cx="250" cy="280" rx="80" ry="8" fill="#C4813A" opacity="0.25" clip-path="url(#barrel-clip)"/>
+  <!-- Overflowing water on right side -->
+  <path d="M 330 290 Q 345 295 340 315 Q 335 330 345 340" stroke="#4A9FD4" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <ellipse cx="343" cy="345" rx="10" ry="4" fill="#4A9FD4" opacity="0.4"/>
+
+  <!-- Label inside barrel -->
+  <rect x="200" y="295" width="100" height="30" rx="6" fill="#1a1a1a" stroke="#484848" stroke-width="1.5"/>
+  <text x="250" y="316" text-anchor="middle" fill="#9a9a9a" font-size="12" font-weight="600">innerer Füllstand</text>
+
+  <!-- Overflow arrow + label -->
+  <text x="352" y="308" fill="#4A9FD4" font-size="11" font-weight="700">läuft über!</text>
+
+  <!-- ── TROPFEN + LABELS ──────────────────────────────────── -->
+  <!-- Drop 1: Zu lange Schicht -->
+  <g transform="translate(90, 120)">
+    <path d="M 12 0 Q 20 8 20 16 A 8 8 0 0 1 4 16 Q 4 8 12 0 Z" fill="#C4813A" opacity="0.75"/>
+    <line x1="20" y1="24" x2="160" y2="100" stroke="#484848" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="0" y="-6" text-anchor="middle" fill="#a8a8a8" font-size="12" font-weight="600">Zu lange</text>
+    <text x="0" y="8" text-anchor="middle" fill="#a8a8a8" font-size="12" font-weight="600">Schicht</text>
+  </g>
+
+  <!-- Drop 2: Kein Feedback -->
+  <g transform="translate(175, 90)">
+    <path d="M 12 0 Q 20 8 20 16 A 8 8 0 0 1 4 16 Q 4 8 12 0 Z" fill="#C4813A" opacity="0.75"/>
+    <line x1="12" y1="20" x2="80" y2="130" stroke="#484848" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="12" y="-6" text-anchor="middle" fill="#a8a8a8" font-size="12" font-weight="600">Kein</text>
+    <text x="12" y="8" text-anchor="middle" fill="#a8a8a8" font-size="12" font-weight="600">Feedback</text>
+  </g>
+
+  <!-- Drop 3: Schreien im Betrieb -->
+  <g transform="translate(265, 85)">
+    <path d="M 12 0 Q 20 8 20 16 A 8 8 0 0 1 4 16 Q 4 8 12 0 Z" fill="#C4813A" opacity="0.75"/>
+    <line x1="12" y1="20" x2="0" y2="130" stroke="#484848" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="12" y="-6" text-anchor="middle" fill="#a8a8a8" font-size="12" font-weight="600">Anschnauz</text>
+    <text x="12" y="8" text-anchor="middle" fill="#a8a8a8" font-size="12" font-weight="600">vorm Team</text>
+  </g>
+
+  <!-- Drop 4: Schlafmangel -->
+  <g transform="translate(358, 115)">
+    <path d="M 12 0 Q 20 8 20 16 A 8 8 0 0 1 4 16 Q 4 8 12 0 Z" fill="#C4813A" opacity="0.75"/>
+    <line x1="4" y1="20" x2="-110" y2="110" stroke="#484848" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="18" y="-6" text-anchor="middle" fill="#a8a8a8" font-size="12" font-weight="600">Schlaf-</text>
+    <text x="18" y="8" text-anchor="middle" fill="#a8a8a8" font-size="12" font-weight="600">mangel</text>
+  </g>
+
+  <!-- Side labels (already in the barrel) -->
+  <!-- Left: Private Sorgen -->
+  <text x="100" y="275" text-anchor="end" fill="#787878" font-size="11.5" font-weight="600">Private</text>
+  <text x="100" y="290" text-anchor="end" fill="#787878" font-size="11.5" font-weight="600">Sorgen</text>
+  <line x1="105" y1="282" x2="168" y2="290" stroke="#484848" stroke-width="1" stroke-dasharray="2,3"/>
+
+  <!-- Right: Keine Anerkennung -->
+  <text x="400" y="265" text-anchor="start" fill="#787878" font-size="11.5" font-weight="600">Keine</text>
+  <text x="400" y="280" text-anchor="start" fill="#787878" font-size="11.5" font-weight="600">Anerkennung</text>
+  <line x1="332" y1="278" x2="397" y2="272" stroke="#484848" stroke-width="1" stroke-dasharray="2,3"/>
+
+  <!-- ── 3 SOLUTIONS ────────────────────────────────────────── -->
+  <rect x="30" y="390" width="440" height="72" rx="10" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="250" y="412" text-anchor="middle" fill="#9a9a9a" font-size="11" font-weight="700" text-transform="uppercase" letter-spacing="1">Was du tun kannst</text>
+
+  <!-- Solution 1 -->
+  <circle cx="95" cy="445" r="14" fill="rgba(196,129,58,0.15)" stroke="#C4813A" stroke-width="1.5"/>
+  <text x="95" y="450" text-anchor="middle" fill="#C4813A" font-size="13" font-weight="800">1</text>
+  <text x="95" y="466" text-anchor="middle" fill="#787878" font-size="10.5" font-weight="600">Fass</text>
+  <text x="95" y="479" text-anchor="middle" fill="#787878" font-size="10.5" font-weight="600">größer machen</text>
+
+  <!-- Divider -->
+  <line x1="190" y1="425" x2="190" y2="462" stroke="#3a3a3a" stroke-width="1"/>
+
+  <!-- Solution 2 -->
+  <circle cx="252" cy="445" r="14" fill="rgba(196,129,58,0.15)" stroke="#C4813A" stroke-width="1.5"/>
+  <text x="252" y="450" text-anchor="middle" fill="#C4813A" font-size="13" font-weight="800">2</text>
+  <text x="252" y="466" text-anchor="middle" fill="#787878" font-size="10.5" font-weight="600">Regelmäßig</text>
+  <text x="252" y="479" text-anchor="middle" fill="#787878" font-size="10.5" font-weight="600">leeren</text>
+
+  <!-- Divider -->
+  <line x1="310" y1="425" x2="310" y2="462" stroke="#3a3a3a" stroke-width="1"/>
+
+  <!-- Solution 3 -->
+  <circle cx="405" cy="445" r="14" fill="rgba(196,129,58,0.15)" stroke="#C4813A" stroke-width="1.5"/>
+  <text x="405" y="450" text-anchor="middle" fill="#C4813A" font-size="13" font-weight="800">3</text>
+  <text x="405" y="466" text-anchor="middle" fill="#787878" font-size="10.5" font-weight="600">Weniger</text>
+  <text x="405" y="479" text-anchor="middle" fill="#787878" font-size="10.5" font-weight="600">reinfließen lassen</text>
+
+  <!-- Brand footer -->
+  <text x="250" y="471" text-anchor="middle" fill="#3a3a3a" font-size="9" letter-spacing="1">STAY HUMAN SHIFT · culinaryapprenticeprojekt.net</text>
+
+</svg>
