@@ -1,3 +1,9 @@
+// Safety: ensure body scroll is never permanently locked
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.style.overflow = '';
+  document.body.style.overflowY = '';
+});
+
 /* app.js — cAp Interactivity */
 
 (function() {
@@ -99,25 +105,26 @@
 
       const name = form.querySelector('#name').value.trim();
       const email = form.querySelector('#email').value.trim();
-      const company = form.querySelector('#company').value.trim();
+      const organisation = (form.querySelector('#organisation') || {value:''}).value.trim();
       const type = form.querySelector('#type').value;
       const message = form.querySelector('#message').value.trim();
 
       const typeLabels = {
-        'einzelbetrieb': 'Einzelbetrieb',
-        'kette': 'Hotelkette / Gruppe',
-        'verband': 'Verband / IHK / DEHOGA',
+        'ausbilder': 'Ausbilder/in',
+        'lehrkraft': 'Lehrkraft',
+        'schulleitung': 'Schulleitung',
+        'betriebsinhaber': 'Betriebsinhaber/in',
         'sonstiges': 'Sonstiges'
       };
 
       const subject = encodeURIComponent('Erstgespräch-Anfrage von ' + name);
       let body = 'Name: ' + name + '\n';
       body += 'E-Mail: ' + email + '\n';
-      if (company) body += 'Unternehmen: ' + company + '\n';
-      if (type) body += 'Typ: ' + (typeLabels[type] || type) + '\n';
+      if (organisation) body += 'Organisation: ' + organisation + '\n';
+      if (type) body += 'Ich bin: ' + (typeLabels[type] || type) + '\n';
       if (message) body += '\nNachricht:\n' + message;
 
-      const mailtoLink = 'mailto:kevinschlesier@culinaryapprenticeprojekt.net'
+      const mailtoLink = 'mailto:kevin.schlesier@culinaryapprenticeprojekt.net'
         + '?subject=' + subject
         + '&body=' + encodeURIComponent(body);
 
