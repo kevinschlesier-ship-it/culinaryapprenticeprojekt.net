@@ -220,12 +220,12 @@
 
     .pakete__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-6);
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
       align-items: start;
     }
     @media (max-width: 900px) {
-      .pakete__grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .pakete__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
     }
 
     .paket-card {
@@ -650,11 +650,59 @@
 
       <div class="pakete__head reveal">
         <p class="section__label">Ausbildungsbegleitung</p>
-        <h2 class="section__title" id="paketeTitle">Die 3 Pakete</h2>
-        <p class="section__subtitle">Wählen Sie das Paket, das zu Ihrem Betrieb passt — skalierbar von digital bis persönlich.</p>
+        <h2 class="section__title" id="paketeTitle">4 Pakete. Einer führt zum nächsten.</h2>
+        <p class="section__subtitle">Starten Sie kostenlos und entscheiden Sie dann, wie weit Sie gehen wollen. Jedes Paket baut auf dem vorherigen auf.</p>
       </div>
 
-      <div class="pakete__grid reveal-stagger">
+      <!-- Funnel-Visualisierung -->
+      <div class="reveal" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.3);border-radius:9999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:700;color:#27ae60;">Basis &mdash; Kostenlos</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#484848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div style="display:flex;align-items:center;gap:0.5rem;background:rgba(232,168,56,0.08);border:1px solid rgba(232,168,56,0.25);border-radius:9999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:700;color:var(--color-accent);">Starter &mdash; 500 €</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#484848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div style="display:flex;align-items:center;gap:0.5rem;background:rgba(232,168,56,0.12);border:1.5px solid rgba(232,168,56,0.5);border-radius:9999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:700;color:var(--color-accent);">Standard &mdash; 1.200 €</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#484848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div style="display:flex;align-items:center;gap:0.5rem;background:rgba(196,129,58,0.08);border:1px solid rgba(196,129,58,0.3);border-radius:9999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:700;color:#C4813A;">Premium &mdash; 2.000 €</div>
+      </div>
+
+      <div class="pakete__grid reveal-stagger" style="grid-template-columns:repeat(4,1fr);">
+
+        <!-- ── BASIS (KOSTENLOS) ── -->
+        <article class="paket-card" aria-labelledby="basisTitle" style="border-color:rgba(39,174,96,0.35);">
+          <div style="position:absolute;top:-0.7rem;left:50%;transform:translateX(-50%);background:#27ae60;color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.9rem;border-radius:9999px;white-space:nowrap;">Kostenlos starten</div>
+          <p class="paket__name" id="basisTitle" style="color:#27ae60;">Basis</p>
+          <div class="paket__price" style="color:#27ae60;">0 €<span>kostenlos</span></div>
+          <div class="paket__divider" aria-hidden="true" style="background:rgba(39,174,96,0.2);"></div>
+
+          <ul class="paket__features" role="list">
+            <li>
+              <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Orientierungsguide für Betriebe (PDF)
+            </li>
+            <li>
+              <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Checkliste Frühwarnzeichen (PDF)
+            </li>
+            <li>
+              <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Mental-Health-Guide für Azubis (PDF)
+            </li>
+            <li>
+              <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              72h-Krisenprotokoll (PDF)
+            </li>
+            <li>
+              <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Zugang zu kostenlosen Talkrunden
+            </li>
+          </ul>
+
+          <a href="materialien.html" class="btn-paket" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;background:rgba(39,174,96,0.12);color:#27ae60;border:1.5px solid rgba(39,174,96,0.4);padding:0.85rem 1.25rem;border-radius:10px;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:0.9rem;transition:all 180ms;">
+            Jetzt kostenlos herunterladen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <p style="font-size:0.72rem;color:var(--color-text-faint);text-align:center;margin-top:0.5rem;">Kein Formular. Sofort verfügbar.</p>
+        </article>
 
         <!-- ── STARTER ── -->
         <article class="paket-card" aria-labelledby="starterTitle">
