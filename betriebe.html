@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="cAp – 90-Tage-Programme für Gastronomie- und Hotelleriebetriebe. Strukturierte Ausbildungsbegleitung von digital bis persönlich vor Ort. Starter ab 500 €, Standard 1.200 €, Premium 2.000 € netto." />
-  <title>90-Tage-Programme für Betriebe – cAp | Culinary Apprentice Project</title>
+  <meta name="description" content="Individuelles 90-Tage-Programm für Betriebe in Gastronomie & Hotellerie. Ausbildungsstruktur verbessern, Ausbilder entlasten, Azubis halten. Jetzt Erstgespräch anfragen." />
+  <title>90-Tage-Programm für Gastronomiebetriebe – cAp Culinary Apprentice Project</title>
 
   <!-- Open Graph -->
   <meta property="og:title" content="90-Tage-Programme für Betriebe – cAp" />
@@ -211,6 +211,70 @@
       width: 18px; height: 18px;
       color: var(--color-accent);
       margin-top: 2px;
+    }
+
+    /* ─── ABLAUF (TIMELINE) */
+    .ablauf { background: var(--color-bg); }
+    .ablauf__head { max-width: 640px; margin-bottom: clamp(var(--space-12), 5vw, var(--space-16)); }
+
+    .ablauf__timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      max-width: 780px;
+    }
+    .ablauf__step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-6);
+      position: relative;
+      padding-bottom: clamp(var(--space-8), 4vw, var(--space-12));
+    }
+    .ablauf__step:last-child { padding-bottom: 0; }
+
+    .ablauf__marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .ablauf__num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(232,168,56,0.12);
+      border: 1.5px solid var(--color-accent);
+      color: var(--color-accent);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 800; font-size: 1.05rem;
+      flex-shrink: 0;
+      z-index: 1;
+      background-color: var(--color-bg);
+    }
+    .ablauf__line {
+      width: 2px; flex: 1;
+      background: linear-gradient(to bottom, rgba(232,168,56,0.4), rgba(232,168,56,0.1));
+      margin-top: 4px;
+    }
+    .ablauf__step:last-child .ablauf__line { display: none; }
+
+    .ablauf__content { padding-top: 0.35rem; }
+    .ablauf__step-title {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: var(--text-lg); color: var(--color-text);
+      letter-spacing: -0.02em; margin-bottom: var(--space-1);
+    }
+    .ablauf__step-week {
+      display: inline-block;
+      font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--color-accent);
+      margin-bottom: var(--space-2);
+    }
+    .ablauf__step-text {
+      font-family: var(--font-body); font-size: var(--text-base);
+      color: var(--color-text-muted); line-height: 1.65;
+      max-width: 56ch;
     }
 
     /* ─── PAKETE */
@@ -567,11 +631,14 @@
       </p>
 
       <h1 class="hero__title" id="heroTitle">
-        90-Tage-Programme<br>für Betriebe
+        Ihr Betrieb. Ihr Programm.<br>90 Tage.
       </h1>
 
       <p class="hero__subtitle">
         Strukturierte Ausbildungsbegleitung — von digital bis persönlich vor Ort.
+      </p>
+      <p class="hero__subtitle">
+        Jeder Betrieb ist anders. Deshalb entwickeln wir gemeinsam mit Ihnen einen individuellen Plan — kein Standardprogramm, kein Copy-Paste.
       </p>
 
       <a href="#kontakt" class="btn-submit" style="display:inline-flex;">
@@ -640,6 +707,83 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════ ABLAUF ═══════════════════════ -->
+  <section class="ablauf" aria-labelledby="ablaufTitle">
+    <div class="container">
+
+      <div class="ablauf__head reveal">
+        <p class="section__label">Ablauf</p>
+        <h2 class="section__title" id="ablaufTitle">So läuft das 90-Tage-Programm ab</h2>
+        <p class="section__subtitle">Wir kommen nicht mit fertigen Antworten. Wir kommen mit den richtigen Fragen.</p>
+      </div>
+
+      <div class="ablauf__timeline reveal">
+
+        <div class="ablauf__step">
+          <div class="ablauf__marker">
+            <div class="ablauf__num">1</div>
+            <div class="ablauf__line" aria-hidden="true"></div>
+          </div>
+          <div class="ablauf__content">
+            <span class="ablauf__step-week">Woche 1</span>
+            <h3 class="ablauf__step-title">Kennenlernen</h3>
+            <p class="ablauf__step-text">Ein kostenfreies Erstgespräch. Kein Verkaufsgespräch. Wir hören zu und verstehen, wo der Betrieb steht.</p>
+          </div>
+        </div>
+
+        <div class="ablauf__step">
+          <div class="ablauf__marker">
+            <div class="ablauf__num">2</div>
+            <div class="ablauf__line" aria-hidden="true"></div>
+          </div>
+          <div class="ablauf__content">
+            <span class="ablauf__step-week">Woche 2–3</span>
+            <h3 class="ablauf__step-title">Analyse</h3>
+            <p class="ablauf__step-text">Betriebsstruktur, Teamstruktur, Kommunikation, Ausbildungssituation, Probleme und Potenziale. Ehrlich und vertraulich.</p>
+          </div>
+        </div>
+
+        <div class="ablauf__step">
+          <div class="ablauf__marker">
+            <div class="ablauf__num">3</div>
+            <div class="ablauf__line" aria-hidden="true"></div>
+          </div>
+          <div class="ablauf__content">
+            <span class="ablauf__step-week">Woche 3–4</span>
+            <h3 class="ablauf__step-title">Individueller Plan</h3>
+            <p class="ablauf__step-text">Gemeinsam entwickeln wir einen Plan, der zu Ihrem Betrieb passt. Nicht zu irgendeinem Betrieb.</p>
+          </div>
+        </div>
+
+        <div class="ablauf__step">
+          <div class="ablauf__marker">
+            <div class="ablauf__num">4</div>
+            <div class="ablauf__line" aria-hidden="true"></div>
+          </div>
+          <div class="ablauf__content">
+            <span class="ablauf__step-week">Woche 4–12</span>
+            <h3 class="ablauf__step-title">Umsetzung begleiten</h3>
+            <p class="ablauf__step-text">Begleitung, Workshops, Gespräche, Materialien — so wie es gebraucht wird. Nicht mehr, nicht weniger.</p>
+          </div>
+        </div>
+
+        <div class="ablauf__step">
+          <div class="ablauf__marker">
+            <div class="ablauf__num">5</div>
+          </div>
+          <div class="ablauf__content">
+            <span class="ablauf__step-week">Nach Woche 12</span>
+            <h3 class="ablauf__step-title">Nachbereitung &amp; Netzwerk</h3>
+            <p class="ablauf__step-text">Was hat funktioniert? Was braucht mehr Zeit? Und wie geht es weiter? Wir bleiben in Kontakt.</p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -827,6 +971,10 @@
         Alle Preise netto, zzgl. 19 % MwSt. · Ratenzahlung möglich
       </p>
 
+      <p class="pakete__hinweis" style="max-width:640px;margin-left:auto;margin-right:auto;margin-top:1rem;">
+        Alle Programme werden individuell angepasst. Die hier gezeigten Pakete sind Orientierungspunkte — kein starres System. Im Erstgespräch klären wir gemeinsam, was Ihr Betrieb wirklich braucht.
+      </p>
+
     </div>
   </section>
 
@@ -857,6 +1005,16 @@
   <!-- ═══════════════════════ KONTAKT ═══════════════════════ -->
   <section class="kontakt" id="kontakt" aria-labelledby="kontaktTitle">
     <div class="container">
+
+      <div class="reveal" style="background:linear-gradient(135deg, rgba(232,168,56,0.14), rgba(232,168,56,0.05));border:1.5px solid rgba(232,168,56,0.4);border-radius:var(--radius-2xl);padding:clamp(1.75rem, 4vw, 2.75rem);margin-bottom:clamp(var(--space-10), 5vw, var(--space-14));text-align:center;">
+        <h2 style="font-family:var(--font-display);font-weight:800;font-size:var(--text-lg);color:var(--color-text);letter-spacing:-0.02em;margin-bottom:0.75rem;">Erstgespräch — kostenlos &amp; unverbindlich</h2>
+        <p style="font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text-muted);line-height:1.6;max-width:52ch;margin:0 auto 1.5rem;">Nehmen Sie einfach Kontakt auf. Kein Verkaufsgespräch. Kein Druck. Wir hören zu.</p>
+        <a href="#kontakt" class="btn-submit" style="display:inline-flex;font-size:1rem;padding:1rem 2.25rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Jetzt Erstgespräch anfragen
+        </a>
+      </div>
+
       <div class="kontakt__grid">
 
         <!-- Info -->
