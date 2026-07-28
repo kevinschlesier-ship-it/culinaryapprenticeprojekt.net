@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- Built with Perplexity Computer — https://www.perplexity.ai/computer -->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Erzähl uns deine Geschichte – cAp Culinary Apprentice Project. Anonym möglich." />
+  <title>Deine Geschichte – cAp</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--color-bg); color: var(--color-text); font-family: 'Satoshi', sans-serif; }
+    p { max-width: none; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 2rem; background: rgba(46,46,46,0.95); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--color-border); }
+    .nav__brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav__logo { height: 38px; width: auto; }
+    .nav__name { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--color-text); }
+    .nav__right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav__link { text-decoration: none; color: var(--color-text-muted); font-size: 0.82rem; font-weight: 600; transition: color 180ms; }
+    .nav__link:hover { color: var(--color-text); }
+    .btn-sofort { display: inline-flex; align-items: center; gap: 0.4rem; background: #cd7f32; color: #fff; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.8rem; padding: 0.55rem 1rem; border-radius: 9999px; text-decoration: none; animation: pulse-b 2.5s ease-in-out infinite; white-space: nowrap; }
+    .btn-sofort:hover { background: #b56c22; animation: none; }
+    @keyframes pulse-b { 0%,100% { box-shadow: 0 0 0 0 rgba(205,127,50,0.5); } 50% { box-shadow: 0 0 0 7px rgba(205,127,50,0); } }
+
+    /* HERO */
+    .hero { padding: 8rem 2rem 5rem; background: var(--color-surface); border-bottom: 1px solid var(--color-border); text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(196,129,58,0.09), transparent 70%); pointer-events: none; }
+    .hero__inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+    h1 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: clamp(2rem, 1rem + 4vw, 3.5rem); color: var(--color-text); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; }
+    .hero__sub { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.05rem, 0.8rem + 0.9vw, 1.3rem); color: #C4813A; margin-bottom: 1.1rem; }
+    .hero__desc { font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.7; max-width: 640px; margin: 0 auto 2rem; }
+    .hero__ctas { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #C4813A; color: #fff; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 0.9rem 1.75rem; border-radius: var(--radius-lg); text-decoration: none; transition: background 180ms; }
+    .btn-primary:hover { background: #A86A28; }
+    .btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--color-text-muted); font-family: 'Cabinet Grotesk', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 0.9rem 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-decoration: none; transition: all 180ms; }
+    .btn-outline:hover { border-color: var(--color-text-muted); color: var(--color-text); }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .inner { max-width: 1040px; margin: 0 auto; }
+    .eyebrow { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #C4813A; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem; justify-content: center; }
+    .eyebrow::before { content: ''; width: 18px; height: 2px; background: #C4813A; border-radius: 2px; display: inline-block; }
+    h2 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 1rem + 2.2vw, 2.5rem); color: var(--color-text); letter-spacing: -0.025em; margin-bottom: 0.65rem; text-align: center; }
+    .sub { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.65; margin: 0 auto 2.5rem; max-width: 640px; text-align: center; }
+
+    /* CARDS GRID */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 16px; padding: 1.6rem; display: flex; flex-direction: column; gap: 0.65rem; }
+    .card__icon { width: 40px; height: 40px; background: rgba(196,129,58,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #C4813A; }
+    .card__title { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 1rem; color: var(--color-text); }
+    .card__desc { font-size: 0.86rem; color: var(--color-text-muted); line-height: 1.55; }
+
+    /* VERTRAULICHKEITS-BOX */
+    .confidential { background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+    .confidential-box { max-width: 780px; margin: 0 auto; background: rgba(39,174,96,0.08); border: 1px solid rgba(39,174,96,0.35); border-radius: 16px; padding: 1.75rem 2rem; display: flex; align-items: flex-start; gap: 1rem; }
+    .confidential-box__icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(39,174,96,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #27ae60; }
+    .confidential-box__text { font-size: 0.95rem; color: var(--color-text); line-height: 1.65; }
+    .confidential-box__text strong { color: #27ae60; font-family: 'Cabinet Grotesk', sans-serif; }
+
+    /* FORM */
+    .story-form { background: var(--color-bg); }
+    .form-wrap { max-width: 680px; margin: 0 auto; }
+    .form-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 20px; padding: 2.25rem 2rem; }
+    @media (max-width: 480px) { .form-card { padding: 1.5rem 1.25rem; } }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 0.85rem; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .form-field { display: flex; flex-direction: column; gap: 0.32rem; margin-bottom: 0.85rem; }
+    .form-field.no-mb { margin-bottom: 0; }
+    .form-field label { font-size: 0.76rem; font-weight: 600; color: var(--color-text-muted); }
+    .form-field label .opt { font-weight: 400; color: var(--color-text-faint); }
+    .form-field input, .form-field select, .form-field textarea {
+      background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 10px;
+      padding: 0.72rem 0.95rem; color: var(--color-text); font-size: 0.92rem; font-family: 'Satoshi', sans-serif;
+      transition: border-color 180ms; width: 100%;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: #C4813A; }
+    .form-field textarea { resize: vertical; min-height: 200px; }
+    .form-field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8a8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.9rem center; }
+    .form-field input[type="file"] { padding: 0.55rem 0.75rem; cursor: pointer; }
+    .form-hint { font-size: 0.74rem; color: var(--color-text-faint); margin-top: 0.15rem; }
+    .radio-group { display: flex; gap: 1.5rem; align-items: center; }
+    .radio-option { display: flex; align-items: center; gap: 0.4rem; }
+    .radio-option input { width: 17px; height: 17px; accent-color: #C4813A; }
+    .radio-option label { font-size: 0.9rem; color: var(--color-text); font-weight: 500; }
+    .form-checkbox { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 1.25rem; }
+    .form-checkbox input { width: 18px; height: 18px; margin-top: 0.15rem; accent-color: #C4813A; flex-shrink: 0; }
+    .form-checkbox label { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5; }
+    .form-submit { display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: #C4813A; color: #fff; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 1rem; padding: 0.95rem; border-radius: 12px; border: none; cursor: pointer; width: 100%; transition: background 180ms; }
+    .form-submit:hover { background: #A86A28; }
+    .form-note { font-size: 0.76rem; color: var(--color-text-faint); text-align: center; margin-top: 0.9rem; }
+    .form-note a { color: #C4813A; text-decoration: none; }
+    .form-success { display: none; text-align: center; padding: 2rem; }
+    .form-success h3 { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: 1.3rem; color: #27ae60; margin-bottom: 0.5rem; }
+    .form-success p { color: var(--color-text-muted); font-size: 0.92rem; }
+
+    /* FOOTER */
+    .footer { background: var(--color-surface-deep); border-top: 1px solid var(--color-border); padding: 2.5rem 2rem; text-align: center; }
+    .footer p { font-size: 0.76rem; color: var(--color-text-faint); }
+    .footer a { color: var(--color-text-muted); text-decoration: none; margin: 0 0.6rem; transition: color 180ms; }
+    .footer a:hover { color: var(--color-text); }
+
+    @media (max-width: 600px) { section { padding: 3.5rem 1.25rem; } .confidential-box { flex-direction: column; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Navigation">
+  <a href="index.html" class="nav__brand">
+    <img src="assets/stay-human-shift-logo.png" alt="Stay Human Shift" class="nav__logo" />
+    <span class="nav__name">cAp Culinary Apprentice Project</span>
+  </a>
+  <div class="nav__right">
+    <a href="index.html" class="nav__link">← Startseite</a>
+    <a href="stress-check.html" class="btn-sofort" aria-label="Anonymer Stress-Check">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Sofort-Hilfe
+    </a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <h1>Erzähl uns deine Geschichte.</h1>
+    <p class="hero__sub">Wir möchten zuhören. Anonym möglich.</p>
+    <p class="hero__desc">Deine Geschichte hilft uns, unsere Arbeit weiterzuentwickeln. Sie hilft, Probleme sichtbar zu machen — und anderen zu zeigen: Sie sind nicht allein.</p>
+    <div class="hero__ctas">
+      <a href="#geschichte-formular" class="btn-primary">
+        Geschichte teilen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="stress-check.html" class="btn-outline">Sofort-Hilfe holen →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- WESSEN GESCHICHTEN WIR SUCHEN -->
+<section aria-labelledby="wessen-h2">
+  <div class="inner">
+    <p class="eyebrow">Für alle Stimmen</p>
+    <h2 id="wessen-h2">Wessen Geschichten wir suchen</h2>
+    <p class="sub">Jede Perspektive zählt — egal wie lange du schon dabei bist oder in welcher Rolle.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="card__title">Azubis</div>
+        <div class="card__desc">Was hast du in der Ausbildung erlebt?</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div class="card__title">Köche & Service</div>
+        <div class="card__desc">Was macht euren Alltag aus — was wünscht ihr euch anders?</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        </div>
+        <div class="card__title">Hotellerie</div>
+        <div class="card__desc">Euer Blick auf Ausbildung und Arbeitskultur.</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.1v-2a4 4 0 0 1 4-4h14"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.9v2a4 4 0 0 1-4 4H3"/></svg>
+        </div>
+        <div class="card__title">Quereinsteiger</div>
+        <div class="card__desc">Wie war der Einstieg? Was hat geholfen, was nicht?</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><circle cx="12" cy="9" r="2"/></svg>
+        </div>
+        <div class="card__title">Ausbilder</div>
+        <div class="card__desc">Was wollt ihr verändern? Wo stoßt ihr an Grenzen?</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>
+        </div>
+        <div class="card__title">Betriebe</div>
+        <div class="card__desc">Was funktioniert bei euch gut? Was möchtet ihr teilen?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- VERTRAULICHKEITSHINWEIS -->
+<section class="confidential" aria-labelledby="vertraulich-h2">
+  <div class="inner">
+    <div class="confidential-box" role="note">
+      <div class="confidential-box__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <p class="confidential-box__text" id="vertraulich-h2">
+        <strong>Wichtiger Hinweis:</strong> Alle Geschichten werden vertraulich behandelt. Wir veröffentlichen nichts ohne dein ausdrückliches Einverständnis.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FORMULAR -->
+<section class="story-form" id="geschichte-formular" aria-labelledby="formular-h2">
+  <div class="inner">
+    <p class="eyebrow">Deine Geschichte</p>
+    <h2 id="formular-h2">Erzähl es uns</h2>
+    <p class="sub">Nimm dir die Zeit, die du brauchst. Es gibt kein richtig oder falsch.</p>
+
+    <div class="form-wrap">
+      <div class="form-card">
+        <div id="storyForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="gs-name">Name <span class="opt">(optional)</span></label>
+              <input type="text" id="gs-name" name="name" placeholder="Dein Name oder Pseudonym" />
+            </div>
+            <div class="form-field">
+              <label for="gs-email">E-Mail <span class="opt">(optional — nur für Rückfragen)</span></label>
+              <input type="email" id="gs-email" name="email" placeholder="deine@email.de" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>Anonym?</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="gs-anonym-ja" name="anonym" value="Ja" checked />
+                <label for="gs-anonym-ja">Ja</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="gs-anonym-nein" name="anonym" value="Nein" />
+                <label for="gs-anonym-nein">Nein</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="gs-rolle">Ich bin... *</label>
+            <select id="gs-rolle" name="rolle" required>
+              <option value="">Bitte wählen …</option>
+              <option value="Azubi">Azubi</option>
+              <option value="Koch/Köchin">Koch/Köchin</option>
+              <option value="Service">Service</option>
+              <option value="Hotellerie">Hotellerie</option>
+              <option value="Quereinsteiger">Quereinsteiger</option>
+              <option value="Ausbilder">Ausbilder</option>
+              <option value="Betrieb">Betrieb</option>
+              <option value="Sonstiges">Sonstiges</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="gs-geschichte">Meine Geschichte *</label>
+            <textarea id="gs-geschichte" name="geschichte" placeholder="Erzähl uns, was du erlebt hast …" required></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="gs-datei">Datei hochladen <span class="opt">(optional)</span></label>
+            <input type="file" id="gs-datei" name="datei" accept=".jpg,.png,.pdf" />
+            <p class="form-hint">optional, max. 5 MB</p>
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="gs-einverstanden" name="einverstanden" required />
+            <label for="gs-einverstanden">Ich bin einverstanden, dass meine Geschichte intern gespeichert wird. *</label>
+          </div>
+
+          <button type="button" class="form-submit" onclick="sendGeschichte()">
+            Geschichte senden
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="form-note">
+            Geht direkt an <a href="mailto:team@culinaryapprenticeprojekt.net">team@culinaryapprenticeprojekt.net</a>. Datei-Uploads bitte im E-Mail-Programm anhängen.
+          </p>
+        </div>
+        <div class="form-success" id="storySuccess">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1rem;" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>Danke, dass du deine Geschichte teilst.</h3>
+          <p>Wir haben großen Respekt vor deinem Vertrauen. Deine Geschichte hilft, Dinge zu verändern.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 cAp Culinary Apprentice Project · <a href="index.html">Startseite</a> <a href="fuer-betriebe.html">Für Betriebe</a> <a href="soforthilfe.html">Soforthilfe</a> <a href="impressum.html">Impressum</a> <a href="datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<script src="chat-widget.js"></script>
+<script>
+function sendGeschichte() {
+  const name = document.getElementById('gs-name').value.trim();
+  const anonymJa = document.getElementById('gs-anonym-ja').checked;
+  const email = document.getElementById('gs-email').value.trim();
+  const rolleSelect = document.getElementById('gs-rolle');
+  const rolle = rolleSelect.options[rolleSelect.selectedIndex]?.text || '';
+  const geschichte = document.getElementById('gs-geschichte').value.trim();
+  const einverstanden = document.getElementById('gs-einverstanden').checked;
+
+  if (!rolleSelect.value || !geschichte) {
+    alert('Bitte gib an, wer du bist, und teile deine Geschichte.');
+    return;
+  }
+  if (!einverstanden) {
+    alert('Bitte bestätige, dass deine Geschichte intern gespeichert werden darf.');
+    return;
+  }
+
+  const subject = encodeURIComponent('Geschichte: ' + rolle);
+  const body = encodeURIComponent(
+    (name ? 'Name: ' + name + '\n' : 'Name: (anonym)\n') +
+    'Anonym: ' + (anonymJa ? 'Ja' : 'Nein') + '\n' +
+    (email ? 'E-Mail: ' + email + '\n' : '') +
+    'Ich bin: ' + rolle + '\n\n' +
+    'Geschichte:\n' + geschichte
+  );
+  window.location.href = 'mailto:team@culinaryapprenticeprojekt.net?subject=' + subject + '&body=' + body;
+
+  document.getElementById('storyForm').style.display = 'none';
+  document.getElementById('storySuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
