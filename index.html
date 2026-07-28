@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Stay Human Shift – Menschlichkeit, Veränderung, Zukunft. Mentale Gesundheit, Aufklärung und Prävention für Gastronomie, Ausbilder, Schulen und Azubis." />
-  <title>Stay Human Shift – Menschlichkeit · Veränderung · Zukunft</title>
+  <meta name="description" content="Das Culinary Apprentice Project (cAp) verbessert Ausbildung und Arbeitskultur in Gastronomie und Hotellerie. Für Betriebe, Ausbilder und Azubis." />
+  <title>cAp – Culinary Apprentice Project | Ausbildung &amp; Arbeitskultur in der Gastronomie</title>
 
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
@@ -891,7 +891,7 @@
 
     .footer__top {
       display: grid;
-      grid-template-columns: 1.4fr repeat(4, 1fr);
+      grid-template-columns: 1.4fr repeat(6, 1fr);
       gap: 2rem;
       padding-bottom: 2.5rem;
       border-bottom: 1px solid var(--color-border);
@@ -983,6 +983,10 @@
     }
     .footer__copy a:hover { color: var(--color-copper); }
 
+    @media (max-width: 1100px) {
+      .footer__top { grid-template-columns: repeat(3, 1fr); }
+      .footer__brand { grid-column: 1 / -1; }
+    }
     @media (max-width: 900px) {
       .footer__top { grid-template-columns: repeat(2, 1fr); }
       .footer__brand { grid-column: 1 / -1; }
@@ -1059,12 +1063,11 @@
 
         <!-- Desktop links -->
         <ul class="nav__links" role="list">
-          <li><a href="#zielgruppen">Für wen?</a></li>
-          <li><a href="angebote.html">Angebote</a></li>
-          <li><a href="materialien.html">Materialien</a></li>
-          <li><a href="klarerkopf.html" style="color:#cd7f32;font-weight:700;">Klarer Kopf ↗</a></li>
-          <li><a href="talkrunde.html">Talkrunde</a></li>
-          <li><a href="neuigkeiten.html">Neuigkeiten</a></li>
+          <li><a href="#mission">Über cAp</a></li>
+          <li><a href="betriebe.html">90-Tage-Programm</a></li>
+          <li><a href="azubis.html">Für Azubis</a></li>
+          <li><a href="partner-werden.html" style="color:var(--color-copper);font-weight:700;">Partner werden</a></li>
+          <li><a href="neuigkeiten.html">News</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
 
@@ -1084,12 +1087,11 @@
 
     <!-- Mobile menu -->
     <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
-      <a href="#zielgruppen">Für wen?</a>
-      <a href="angebote.html">Angebote</a>
-      <a href="materialien.html">Materialien</a>
-      <a href="klarerkopf.html" style="color:#cd7f32;font-weight:700;">Klarer Kopf – Kostenloses Programm ↗</a>
-      <a href="talkrunde.html">Talkrunde – für alle Branchen</a>
-      <a href="neuigkeiten.html" onclick="closeMobile()">Neuigkeiten &amp; Updates</a>
+      <a href="#mission">Über cAp</a>
+      <a href="betriebe.html">90-Tage-Programm</a>
+      <a href="azubis.html">Für Azubis</a>
+      <a href="partner-werden.html" style="color:var(--color-copper);font-weight:700;">Partner werden</a>
+      <a href="neuigkeiten.html">News</a>
       <a href="#kontakt">Kontakt</a>
       <div class="nav__mobile-cta">
         <a href="#kontakt" class="btn btn--copper">Kontakt aufnehmen</a>
@@ -1105,18 +1107,63 @@
       <div class="hero__overlay"></div>
       <div class="hero__content">
         <span class="hero__eyebrow">Für Gastronomie · Ausbildung · Azubis</span>
-        <h1 class="hero__h1">Stay Human Shift.</h1>
-        <p class="hero__tagline">Menschlichkeit · Veränderung · Zukunft</p>
+        <h1 class="hero__h1">Ausbildung darf kein Lückenfüller-System sein.</h1>
+        <p class="hero__tagline">Das Culinary Apprentice Project – cAp</p>
         <p class="hero__text">
-          Wir stehen für mentale Gesundheit, Aufklärung und Prävention —
-          für alle, die ausbilden, führen oder lernen.
+          Wir unterstützen Gastronomie und Hotellerie dabei, Ausbildung, Arbeitskultur und Zusammenarbeit nachhaltig zu verbessern. Nicht durch Vorwürfe. Sondern durch Lösungen.
         </p>
         <div class="hero__ctas">
-          <a href="#zielgruppen" class="btn btn--copper btn--lg">
-            Wo gehöre ich hin?
+          <a href="geschichten.html" class="btn btn--copper btn--lg">
+            Geschichte erzählen
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#kontakt" class="btn btn--outline btn--lg">Kontakt aufnehmen</a>
+          <a href="partner-werden.html" class="btn btn--outline btn--lg">Partner werden</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MISSION ─────────────────────────────────────────── -->
+    <section class="section" id="mission" style="background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 4rem 2rem;" aria-labelledby="mission-heading">
+      <div class="container" style="max-width: 900px; margin: 0 auto;">
+        <div class="fade-in">
+          <p class="section-label">Unsere Mission</p>
+          <h2 class="section-title" id="mission-heading">Warum cAp?</h2>
+          <p style="font-family: var(--font-display); font-weight: 600; color: var(--color-copper); font-size: var(--text-base); margin-bottom: 1.5rem;">
+            Wir kommen aus der Gastronomie. Wir wissen wovon wir sprechen.
+          </p>
+          <p style="color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.7; margin-bottom: 1.1rem; max-width: none;">
+            cAp wurde gegründet, weil wir seit über 30 Jahren erleben, wie wunderschön Gastronomie sein kann — und wie viel dabei noch nicht stimmt. Ausbildungsabbrüche, Personalmangel, fehlende Strukturen, Überforderung, Azubis als Lückenfüller.
+          </p>
+          <p style="color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.7; margin-bottom: 2rem; max-width: none;">
+            Wir möchten junge Menschen stärken, Betriebe unterstützen und Ausbildung nachhaltig verbessern. Nicht als Beratungsstelle — sondern als Netzwerk, das gemeinsam mit der Branche Lösungen entwickelt.
+          </p>
+
+          <ul role="list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem 1.5rem; list-style: none; padding: 0; margin: 0;">
+            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
+              Erstgespräch kostenlos
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
+              90-Tage-Programm individuell
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
+              Workshops &amp; Aufklärung
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
+              Kostenlose Materialien für Azubis
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
+              Ausbilder entlasten
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
+              Netzwerk &amp; Partner
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1614,32 +1661,8 @@
 
           </div>
 
-          <!-- Partner + Testimonials -->
+          <!-- Testimonials -->
           <div class="trust__right">
-
-            <!-- Partner-Logos -->
-            <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem;">
-
-              <div class="partner-badge fade-in">
-                <img src="assets/partner-kinderschutzbund.png" alt="Kinderschutzbund Kreisverband Zwickau" loading="lazy" style="height:44px;width:auto;" />
-                <div>
-                  <p class="partner-badge__name">Kinderschutzbund Kreisverband Zwickau</p>
-                  <p class="partner-badge__text">Unser erster und stärkster Partner &mdash; für den Schutz junger Menschen in Ausbildung und Beruf.</p>
-                </div>
-              </div>
-
-              <div class="partner-badge fade-in">
-                <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
-                  <img src="assets/partner-bioregio.png" alt="BioRegio Modellregion Landkreis Zwickau" loading="lazy" style="height:42px;width:auto;" />
-                  <img src="assets/partner-eu-kofinanziert.jpg" alt="EU-kofinanziert" loading="lazy" style="height:26px;width:auto;opacity:0.8;" />
-                </div>
-                <div style="margin-top:0.35rem;">
-                  <p class="partner-badge__name">BioRegio Modellregion Zwickau</p>
-                  <p class="partner-badge__text">Regionale Nachhaltigkeit &mdash; EU-kofinanziert &mdash; <a href="neuigkeiten.html#beitrag-bioregio" style="color:var(--color-accent);text-decoration:none;">Mehr erfahren &rarr;</a></p>
-                </div>
-              </div>
-
-            </div>
 
             <div class="testimonials fade-in">
 
@@ -1671,6 +1694,44 @@
 
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- === UNSERE PARTNER === -->
+    <section class="section" style="background: var(--color-bg); border-top: 1px solid var(--color-border);" aria-labelledby="partner-heading">
+      <div class="container">
+        <div class="fade-in" style="margin-bottom: 2.5rem; text-align: center;">
+          <p class="section-label">Netzwerk</p>
+          <h2 class="section-title" id="partner-heading">Unsere Partner</h2>
+          <p class="section-sub" style="margin-inline: auto;">Gemeinsam stärker als allein.</p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1rem;max-width:760px;margin:0 auto;">
+
+          <a href="https://www.dksb.de" target="_blank" rel="noopener noreferrer" class="partner-badge fade-in" style="text-decoration:none;">
+            <img src="assets/partner-kinderschutzbund.png" alt="Kinderschutzbund Kreisverband Zwickau" loading="lazy" style="height:44px;width:auto;" />
+            <div>
+              <p class="partner-badge__name">Kinderschutzbund Kreisverband Zwickau</p>
+              <p class="partner-badge__text">Unser erster und stärkster Partner &mdash; für den Schutz junger Menschen in Ausbildung und Beruf.</p>
+            </div>
+          </a>
+
+          <a href="neuigkeiten.html#beitrag-bioregio" class="partner-badge fade-in" style="text-decoration:none;">
+            <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+              <img src="assets/partner-bioregio.png" alt="BioRegio Modellregion Landkreis Zwickau" loading="lazy" style="height:42px;width:auto;" />
+              <img src="assets/partner-eu-kofinanziert.jpg" alt="EU-kofinanziert" loading="lazy" style="height:26px;width:auto;opacity:0.8;" />
+            </div>
+            <div style="margin-top:0.35rem;">
+              <p class="partner-badge__name">BioRegio Modellregion Zwickau</p>
+              <p class="partner-badge__text">Regionale Nachhaltigkeit &mdash; EU-kofinanziert &mdash; <span style="color:var(--color-copper);">Mehr erfahren &rarr;</span></p>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="fade-in" style="text-align:center; margin-top:2.5rem;">
+          <a href="partner-werden.html" class="btn btn--outline btn--lg" style="border-color: var(--color-copper); color: var(--color-copper);">Partner werden</a>
         </div>
       </div>
     </section>
@@ -1886,15 +1947,32 @@
         <nav aria-label="Materialien">
           <p class="footer__col-title">Materialien</p>
           <ul class="footer__col-links" role="list">
-            <li><a href="klarerkopf.html">Klarer Kopf (kostenlos)</a></li>
             <li><a href="materialien.html">Alle Materialien</a></li>
             <li><a href="materialien.html">Poster-Downloads</a></li>
             <li><a href="materialien.html">PDF-Guides</a></li>
-            <li><a href="shop.html">Shop / Merch</a></li>
           </ul>
         </nav>
 
-        <!-- Col 4: Rechtliches -->
+        <!-- Col 4: Mitmachen -->
+        <nav aria-label="Mitmachen">
+          <p class="footer__col-title">Mitmachen</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="partner-werden.html">Partner werden</a></li>
+            <li><a href="geschichten.html">Geschichte erzählen</a></li>
+            <li><a href="shop.html">Shop (Unterstützen)</a></li>
+          </ul>
+        </nav>
+
+        <!-- Col 5: Programme -->
+        <nav aria-label="Programme">
+          <p class="footer__col-title">Programme</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="klarerkopf.html">Klarer Kopf</a></li>
+            <li><a href="talkrunde.html">Talkrunde</a></li>
+          </ul>
+        </nav>
+
+        <!-- Col 6: Rechtliches -->
         <nav aria-label="Rechtliches">
           <p class="footer__col-title">Rechtliches</p>
           <ul class="footer__col-links" role="list">
