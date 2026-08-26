@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Alte/interne Seiten nicht indexieren
+Disallow: /abbruch.html
+Disallow: /danke.html
+Disallow: /danke-bundle.html
+Disallow: /danke-checkin.html
+Disallow: /danke-krisenprotokoll.html
+Disallow: /danke-leitfaden.html
+Disallow: /fuer-betriebe.html
+Disallow: /azubi-hilfe.html
+Disallow: /angebote.html
+Disallow: /downloads.html
+Disallow: /krisenprotokoll.html
+
+Sitemap: https://culinaryapprenticeprojekt.net/sitemap.xml
