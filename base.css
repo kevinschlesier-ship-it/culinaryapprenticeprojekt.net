@@ -1,4 +1,4 @@
-/* base.css — Resets & Design Tokens for Stay Human Shift / cAp */
+/* base.css — Resets & Design Tokens for cAp – Culinary Apprentice Project */
 /* Built with Perplexity Computer — https://www.perplexity.ai/computer */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -106,13 +106,13 @@ a, button, [role="button"], [role="link"], input, textarea, select {
   --color-text-muted:    #a8a8a8;
   --color-text-faint:    #787878;
 
-  /* Amber — Stay Human Shift primary CTA / cAp brand accent */
+  /* Amber — cAp primary CTA / brand accent */
   --color-accent:        #E8A838;
   --color-accent-hover:  #F0B84D;
   --color-accent-dark:   #C48A20;
   --color-accent-glow:   rgba(232, 168, 56, 0.15);
 
-  /* Copper/Bronze — Stay Human Shift section accent */
+  /* Copper/Bronze — cAp section accent (Stay Human Shift Dachmarke) */
   --color-copper:        #C4813A;
   --color-copper-hover:  #D4914A;
   --color-copper-dark:   #A86A28;
