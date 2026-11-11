@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<!-- Built with Perplexity Computer — https://www.perplexity.ai/computer -->
-<html lang="de" data-theme="dark">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Das Culinary Apprentice Project verbessert Ausbildung und Arbeitskultur in Gastronomie und Hotellerie. Für Betriebe, Ausbilder und Azubis. Kostenlos und auf Honorarbasis." />
-  <title>cAp – Culinary Apprentice Project | Ausbildung &amp; Arbeitskultur in der Gastronomie</title>
-
-  <link rel="preconnect" href="https://api.fontshare.com" />
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="cAp setzt sich für menschliche und strukturierte Ausbildung in Gastronomie und Hotellerie ein. Team, Partner und vier Unterstützungsangebote für Betriebe." name="description"/>
+<title>cAp – Menschliche und strukturierte Ausbildung</title>
+<link href="https://culinaryapprenticeprojekt.net/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="de_DE" property="og:locale"/>
+<meta content="cAp – Culinary Apprentice Project" property="og:site_name"/>
+<meta content="cAp – Menschliche und strukturierte Ausbildung" property="og:title"/>
+<meta content="cAp setzt sich für menschliche und strukturierte Ausbildung in Gastronomie und Hotellerie ein. Team, Partner und vier Unterstützungsangebote für Betriebe." property="og:description"/>
+<meta content="https://culinaryapprenticeprojekt.net/" property="og:url"/>
+<meta content="https://culinaryapprenticeprojekt.net/assets/cap-logo.png" property="og:image"/>
+<link href="fonts.css" rel="stylesheet"/>
+<style>
     /* ─────────────────────────────────────────────
        DESIGN TOKENS
     ───────────────────────────────────────────── */
@@ -1108,1170 +1112,175 @@
     }
   
     /* ── SOFORT-HILFE BUTTON (global) ──────────────── */
-    .btn-sofort {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: #cd7f32; color: #fff !important;
-      font-family: var(--font-display, 'Cabinet Grotesk', sans-serif);
-      font-weight: 700; font-size: 0.8rem;
-      padding: 0.55rem 1rem; border-radius: var(--radius-full, 9999px);
-      text-decoration: none !important; transition: background 180ms, box-shadow 180ms;
-      animation: sofort-pulse 2.5s ease-in-out infinite;
-      white-space: nowrap;
-    }
+    
     .btn-sofort:hover { background: #b56c22 !important; animation: none; box-shadow: 0 4px 16px rgba(205,127,50,0.4); }
     @keyframes sofort-pulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(205,127,50,0.5); }
       50%       { box-shadow: 0 0 0 7px rgba(205,127,50,0); }
     }
   </style>
-</head>
-<body>
 
-  <!-- ─── NAV ─────────────────────────────────────────────── -->
-  <header>
-    <nav class="nav" role="navigation" aria-label="Hauptnavigation">
-      <div class="nav__inner">
-
-        <!-- Brand -->
-        <a class="nav__brand" href="index.html" aria-label="cAp – Culinary Apprentice Project – Startseite">
-          <img class="nav__logo" src="assets/stay-human-shift-logo.png" alt="cAp Logo" />
-          <div class="nav__brand-text">
-            <span class="nav__brand-name">cAp – Culinary Apprentice Project</span>
-            <span class="nav__brand-sub">culinaryapprenticeprojekt.net</span>
-          </div>
-        </a>
-
-        <!-- Desktop links -->
-        <ul class="nav__links" role="list">
-          <li><a href="#mission">Über cAp</a></li>
-          <li><a href="betriebe.html">90-Tage-Programm</a></li>
-          <li><a href="azubis.html">Für Azubis</a></li>
-          <li><a href="partner-werden.html" style="color:var(--color-copper);font-weight:700;">Partner werden</a></li>
-          <li><a href="neuigkeiten.html">News</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-
-        <!-- Desktop CTA -->
-        <div class="nav__cta">
-          <a href="#kontakt" class="btn btn--copper btn--sm">Kontakt aufnehmen</a>
-        </div>
-
-        <!-- Hamburger -->
-        <button class="nav__hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu" id="hamburger-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+<style id="mobile-fixes">@media (max-width:600px){input:not([type=checkbox]):not([type=radio]),select,textarea{font-size:16px !important;}}</style>
+<meta name="robots" content="index, follow"/><link href="reduction.css" rel="stylesheet"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://culinaryapprenticeprojekt.net/#website", "url": "https://culinaryapprenticeprojekt.net/", "name": "cAp – Culinary Apprentice Project", "inLanguage": "de", "publisher": {"@id": "https://culinaryapprenticeprojekt.net/#cap"}}, {"@type": "Organization", "@id": "https://culinaryapprenticeprojekt.net/#cap", "name": "Culinary Apprentice Project", "alternateName": "cAp", "url": "https://culinaryapprenticeprojekt.net/", "email": "team@culinaryapprenticeprojekt.net", "founder": {"@type": "Person", "name": "Kevin Schlesier"}}]}</script></head>
+<body class="cap-site">
+<a class="cap-skip" href="#inhalt">Zum Inhalt</a>
+<header class="cap-header">
+ <nav class="cap-nav" aria-label="Hauptnavigation">
+  <a class="cap-brand" href="index.html" aria-label="cAp – Startseite">
+   <img src="assets/stay-human-shift-logo.png" alt="STAY HUMAN SHIFT" width="38" height="42">
+   <span><strong>cAp – Culinary Apprentice Project</strong><small>Eine Initiative von Stay Human Shift</small></span>
+  </a>
+  <div class="cap-nav-links"><a href="#ueber-cap">Über cAp</a><a href="betriebe.html">Betriebe</a><a href="#partner">Partner</a><a href="#news">News</a><a href="#kontakt">Kontakt</a></div>
+  <button class="cap-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="cap-mobile-menu">
+   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+ </nav>
+ <nav class="cap-mobile" id="cap-mobile-menu" aria-label="Mobile Navigation" hidden><a href="#ueber-cap">Über cAp</a><a href="betriebe.html">Betriebe</a><a href="#partner">Partner</a><a href="#news">News</a><a href="#kontakt">Kontakt</a></nav>
+</header><main id="inhalt">
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__bg" role="img" aria-label="Küche im Gastronomiebetrieb"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <span class="hero__eyebrow">cAp · Gastronomie &amp; Hotellerie</span>
+      <h1 class="hero__h1" id="hero-heading">Ausbildung darf kein Lückenfüller-System sein.</h1>
+      <p class="hero__tagline">Culinary Apprentice Project</p>
+      <p class="hero__text">Wir setzen uns für eine menschliche und strukturierte Ausbildung ein. Gemeinsam mit Betrieben möchten wir Ausbildung und Zusammenarbeit im Alltag weiterentwickeln.</p>
+      <div class="hero__ctas">
+        <a href="betriebe.html" class="btn btn--copper btn--lg">Angebote für Betriebe</a>
+        <a href="#kontakt" class="btn btn--outline btn--lg">Kontakt aufnehmen</a>
       </div>
-    </nav>
-
-    <!-- Mobile menu -->
-    <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
-      <a href="#mission">Über cAp</a>
-      <a href="betriebe.html">90-Tage-Programm</a>
-      <a href="azubis.html">Für Azubis</a>
-      <a href="partner-werden.html" style="color:var(--color-copper);font-weight:700;">Partner werden</a>
-      <a href="neuigkeiten.html">News</a>
-      <a href="#kontakt">Kontakt</a>
-      <div class="nav__mobile-cta">
-        <a href="#kontakt" class="btn btn--copper">Kontakt aufnehmen</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- ─── HERO ──────────────────────────────────────────── -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero__bg" role="img" aria-label="Küche im Gastronomie-Betrieb"></div>
-      <div class="hero__overlay"></div>
-      <div class="hero__content">
-        <span class="hero__eyebrow">Für Gastronomie · Ausbildung · Azubis</span>
-        <h1 class="hero__h1">Ausbildung darf kein Lückenfüller-System sein.</h1>
-        <p class="hero__tagline">Das Culinary Apprentice Project – cAp</p>
-        <p class="hero__text">
-          Wir unterstützen Gastronomie und Hotellerie dabei, Ausbildung, Arbeitskultur und Zusammenarbeit nachhaltig zu verbessern. Nicht durch Vorwürfe. Sondern durch Lösungen.
-        </p>
-        <div class="hero__ctas">
-          <a href="geschichten.html" class="btn btn--copper btn--lg">
-            Geschichte erzählen
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="partner-werden.html" class="btn btn--outline btn--lg">Partner werden</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── MISSION ─────────────────────────────────────────── -->
-    <section class="section" id="mission" style="background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 4rem 2rem;" aria-labelledby="mission-heading">
-      <div class="container" style="max-width: 900px; margin: 0 auto;">
-        <div class="fade-in">
-          <p class="section-label">Unsere Mission</p>
-          <h2 class="section-title" id="mission-heading">Warum cAp?</h2>
-          <p style="font-family: var(--font-display); font-weight: 600; color: var(--color-copper); font-size: var(--text-base); margin-bottom: 1.5rem;">
-            Wir kommen aus der Gastronomie. Wir wissen wovon wir sprechen.
-          </p>
-          <p style="color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.7; margin-bottom: 1.1rem; max-width: none;">
-            cAp wurde gegründet, weil wir seit über 30 Jahren erleben, wie wunderschön Gastronomie sein kann — und wie viel dabei noch nicht stimmt. Ausbildungsabbrüche, Personalmangel, fehlende Strukturen, Überforderung, Azubis als Lückenfüller.
-          </p>
-          <p style="color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.7; margin-bottom: 2rem; max-width: none;">
-            Wir möchten junge Menschen stärken, Betriebe unterstützen und Ausbildung nachhaltig verbessern. Nicht als Beratungsstelle — sondern als Netzwerk, das gemeinsam mit der Branche Lösungen entwickelt.
-          </p>
-
-          <ul role="list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem 1.5rem; list-style: none; padding: 0; margin: 0;">
-            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
-              Erstgespräch kostenlos
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
-              90-Tage-Programm individuell
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
-              Workshops &amp; Aufklärung
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
-              Kostenlose Materialien für Azubis
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
-              Ausbilder entlasten
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: var(--text-sm); color: var(--color-text);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-copper)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-top: 0.15em;"><polyline points="20 6 9 17 4 12"/></svg>
-              Netzwerk &amp; Partner
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section style="padding:3.5rem 2rem;background:var(--color-surface);border-top:1px solid var(--color-border);">
-  <div style="max-width:780px;margin:0 auto;text-align:center;">
-    <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#C4813A;margin-bottom:0.6rem;">Unsere Haltung</p>
-    <h2 style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:clamp(1.5rem,1rem+2vw,2.2rem);color:var(--color-text);letter-spacing:-0.025em;margin-bottom:1rem;">Unsere Arbeit soll nicht am Budget scheitern.</h2>
-    <p style="color:var(--color-text-muted);font-size:1rem;line-height:1.75;margin-bottom:1.25rem;max-width:none;">Vorträge, Workshops, Gesprächsrunden und Betriebsbegleitungen finden individuell statt. Je nach Einrichtung können diese kostenlos, auf Honorarbasis oder durch Förderpartner finanziert werden.</p>
-    <p style="color:var(--color-text-muted);font-size:1rem;line-height:1.75;max-width:none;">Viele Schulen und Einrichtungen verfügen über Budgets für externe Referenten. Ist ein Honorar möglich, freuen wir uns darüber. Ist keins möglich, suchen wir gemeinsam nach einer Lösung.</p>
-  </div>
-</section>
-
-    <!-- ─── ZIELGRUPPEN ───────────────────────────────────── -->
-    <section class="targets section" id="zielgruppen">
-      <div class="container">
-        <div class="targets__header fade-in">
-          <p class="section-label">Herzstück</p>
-          <h2 class="section-title">Wo gehörst du hin?</h2>
-          <p class="section-sub">Wähle deinen Bereich — du wirst direkt weitergeleitet.</p>
-        </div>
-
-        <div class="targets__grid">
-
-          <!-- Karte 1: Betriebe -->
-          <a href="betriebe.html" class="target-card fade-in" style="--card-accent: #E8A838;" aria-label="Für Betriebe – 90-Tage-Ausbildungspakete">
-            <div class="target-card__head">
-              <h3 class="target-card__title">Ich bin Betrieb</h3>
-              <div class="target-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
-            </div>
-            <p class="target-card__desc">
-              90-Tage-Ausbildungspakete für Gastronomie &amp; Hotellerie — strukturierte Begleitung, die wirkt.
-            </p>
-            <div class="target-card__footer">
-              <span class="target-card__price">Kostenlos oder auf Honorarbasis</span>
-              <span class="target-card__arrow">
-                Mehr erfahren
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <!-- Karte 2: Ausbilder -->
-          <a href="ausbilder.html" class="target-card fade-in" style="--card-accent: #C4813A;" aria-label="Für Ausbilder – Workshops und Materialien">
-            <div class="target-card__head">
-              <h3 class="target-card__title">Ich bin Ausbilder/in</h3>
-              <div class="target-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-            </div>
-            <p class="target-card__desc">
-              Workshops und PDF-Materialien für den Ausbildungsalltag — direkt einsetzbar, praxisnah.
-            </p>
-            <div class="target-card__footer">
-
-              <span class="target-card__arrow">
-                Mehr erfahren
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <!-- Karte 3: Berufsschule -->
-          <a href="berufsschulen.html" class="target-card fade-in" style="--card-accent: #6BBF8A;" aria-label="Für Berufsschulen – Aufklärungstage">
-            <div class="target-card__head">
-              <h3 class="target-card__title">Ich bin Berufsschule / Schule</h3>
-              <div class="target-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              </div>
-            </div>
-            <p class="target-card__desc">
-              Impulstage zu Ausbildung &amp; Arbeitskultur — online oder vor Ort.
-            </p>
-            <div class="target-card__footer">
-              <span class="target-card__price">Kostenlos oder auf Honorarbasis</span>
-              <span class="target-card__arrow">
-                Mehr erfahren
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <!-- Karte 4: Azubis -->
-          <a href="azubis.html" class="target-card fade-in" style="--card-accent: #4A9FD4;" aria-label="Für Azubis – kostenlose Hilfe">
-            <div class="target-card__head">
-              <h3 class="target-card__title">Ich bin Azubi / Schüler</h3>
-              <div class="target-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              </div>
-            </div>
-            <p class="target-card__desc">
-              Kostenlose Hilfe, Poster, Guides und Orientierung — alles, was du in der Ausbildung brauchst.
-            </p>
-            <div class="target-card__footer">
-              <span class="target-card__price">100 % kostenlos</span>
-              <span class="target-card__arrow">
-                Mehr erfahren
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <!-- Karte 5: Materialien -->
-          <a href="materialien.html" class="target-card fade-in" style="--card-accent: #C4813A;" aria-label="Materialien und PDFs herunterladen">
-            <div class="target-card__head">
-              <h3 class="target-card__title">Materialien / PDFs</h3>
-              <div class="target-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              </div>
-            </div>
-            <p class="target-card__desc">
-              Poster zum Download und PDF-Materialien für Profis — direkt nutzbar im Ausbildungsalltag.
-            </p>
-            <div class="target-card__footer">
-              <span class="target-card__price">Kostenlose Poster &amp; Guides</span>
-              <span class="target-card__arrow">
-                Zur Übersicht
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <!-- Karte 6: Shop / Merch -->
-          <a href="shop.html" class="target-card fade-in" style="--card-accent: #cd7f32;" aria-label="Shop – cAp Merchandise">
-            <div class="target-card__head">
-              <h3 class="target-card__title">Shop / Merch</h3>
-              <div class="target-card__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-              </div>
-            </div>
-            <p class="target-card__desc">
-              Mit jedem Einkauf unterstützt du kostenlose Projekte von cAp.
-            </p>
-            <div class="target-card__footer">
-              
-              <span class="target-card__arrow">
-                Zum Shop
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
-          <!-- Karte 7: Klarer Kopf -->
-          <a href="klarerkopf.html" class="target-card fade-in" style="--card-accent: #cd7f32; grid-column: 1 / -1; border: 1.5px solid rgba(205,127,50,0.5); background: rgba(205,127,50,0.05);" aria-label="Klarer Kopf – Das kostenlose Begleitprogramm für Azubis">
-            <div class="target-card__head">
-              <h3 class="target-card__title" style="color:#cd7f32;">Klarer Kopf im Job</h3>
-              <div class="target-card__icon" style="color:#cd7f32;" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C7 2 3 6 3 11c0 3 1.5 5.5 4 7v3h10v-3c2.5-1.5 4-4 4-7 0-5-4-9-9-9z"/><path d="M9 17v1M15 17v1"/></svg>
-              </div>
-            </div>
-            <p class="target-card__desc">
-              Das kostenlose Begleitprogramm für Auszubildende — kostenlos, anonym und jederzeit nutzbar.
-            </p>
-            <div class="target-card__footer">
-              <span class="target-card__price" style="color:#27ae60;">100 % kostenlos</span>
-              <span class="target-card__arrow" style="color:#cd7f32;">
-                Mehr erfahren
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
-
-        </div>
-
-
-      </div>
-    </section>
-    <!-- ─── STRESS-CHECK BANNER ─────────────────────────── -->
-    <section style="background:linear-gradient(135deg,rgba(205,127,50,0.1) 0%,rgba(205,127,50,0.03) 100%);border-top:1px solid rgba(205,127,50,0.2);border-bottom:1px solid rgba(205,127,50,0.2);padding:2rem 2rem;" aria-label="Anonymer Stress-Check">
-      <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:1rem;">
-          <div style="width:44px;height:44px;background:rgba(205,127,50,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#cd7f32;flex-shrink:0;animation:pulse-b 2.5s ease-in-out infinite;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <div>
-            <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1rem;color:var(--color-text);">Anonymer Stress-Check</div>
-            <div style="font-size:0.84rem;color:var(--color-text-muted);">4 Fragen. Sofortige Auswertung. Kein Name, kein Login.</div>
-          </div>
-        </div>
-        <a href="stress-check.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:#cd7f32;color:#fff;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.9rem;padding:0.8rem 1.5rem;border-radius:9999px;text-decoration:none;white-space:nowrap;animation:pulse-b 2.5s ease-in-out infinite;" onmouseover="this.style.background='#b56c22';this.style.animation='none'" onmouseout="this.style.background='#cd7f32';this.style.animation='pulse-b 2.5s ease-in-out infinite'">
-          Jetzt testen
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </section>
-    <style>@keyframes pulse-b{0%,100%{box-shadow:0 0 0 0 rgba(205,127,50,0.5)}50%{box-shadow:0 0 0 7px rgba(205,127,50,0)}}</style>
-
-
-    <!-- ─── KLARER KOPF: VIDEO + ÖKOSYSTEM ─────────────── -->
-    <section class="section" style="background: var(--color-surface); border-top: 1px solid var(--color-border); padding: 5rem 2rem;" aria-labelledby="klarerkopf-heading">
-      <div class="container" style="max-width: 1100px; margin: 0 auto;">
-
-        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;" class="video-oeko-grid">
-          <!-- Video -->
-          <div>
-            <p class="section-label" style="color:#cd7f32; font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; margin-bottom:0.6rem; display:flex; align-items:center; gap:0.4rem;">
-              <span style="width:18px;height:2px;background:#cd7f32;border-radius:2px;display:inline-block;"></span>
-              Klarer Kopf im Job · Für Azubis
-            </p>
-            <h2 id="klarerkopf-heading" style="font-family:'Cabinet Grotesk',sans-serif; font-weight:800; font-size:clamp(1.5rem,1rem+2vw,2.4rem); color:var(--color-text); letter-spacing:-0.025em; margin-bottom:0.75rem; line-height:1.1;">
-              Kostenloses Begleitprogramm<br>für Auszubildende.
-            </h2>
-            <p style="color:var(--color-text-muted); font-size:0.95rem; line-height:1.65; margin-bottom:1.5rem; max-width:none;">
-              Kostenlos und anonym. Für alle Azubis in Gastronomie, Hotellerie und darüber hinaus.
-            </p>
-            <a href="klarerkopf.html" style="display:inline-flex; align-items:center; gap:0.5rem; background:#cd7f32; color:#fff; font-family:'Cabinet Grotesk',sans-serif; font-weight:700; font-size:0.9rem; padding:0.8rem 1.6rem; border-radius:9999px; text-decoration:none; transition:background 180ms;">
-              Zum Begleitprogramm
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <!-- Video Player -->
-          <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:14px; border:1px solid var(--color-border); background:var(--color-surface-deep);">
-            <video
-              controls
-              preload="metadata"
-              poster="assets/video-poster.jpg"
-              playsinline
-              style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; border-radius:inherit;"
-              aria-label="Klarer Kopf im Job – Einführungsvideo"
-            >
-              <source src="assets/intro-video.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-
-        <!-- Ökosystem -->
-        <div style="margin-top:4rem; border-top:1px solid var(--color-border); padding-top:3.5rem;">
-          <p style="font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:#cd7f32; margin-bottom:0.6rem; display:flex; align-items:center; gap:0.4rem;">
-            <span style="width:18px;height:2px;background:#cd7f32;border-radius:2px;display:inline-block;"></span>
-            Das cAp-Ökosystem
-          </p>
-          <h3 style="font-family:'Cabinet Grotesk',sans-serif; font-weight:800; font-size:clamp(1.4rem,1rem+1.8vw,2.2rem); color:var(--color-text); letter-spacing:-0.025em; margin-bottom:0.6rem;">Wir vernetzen alle, die zählen.</h3>
-          <p style="color:var(--color-text-muted); font-size:0.95rem; max-width:580px; margin-bottom:2.25rem; line-height:1.65;">Auszubildende stehen im Mittelpunkt — verbunden mit Betrieben, Schulen, sozialen Trägern und Partnern.</p>
-
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem;">
-
-            <div style="background:rgba(205,127,50,0.08); border:1.5px solid rgba(205,127,50,0.3); border-radius:14px; padding:1.5rem; text-align:center;">
-              <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#cd7f32; margin-bottom:0.5rem;">Im Mittelpunkt</div>
-              <div style="font-family:'Cabinet Grotesk',sans-serif; font-weight:800; font-size:1.15rem; color:#cd7f32;">Auszubildende</div>
-              <div style="font-size:0.82rem; color:var(--color-text-muted); margin-top:0.4rem;">Unterstützt, begleitet und gehört.</div>
-            </div>
-
-            <div style="background:var(--color-bg); border:1px solid var(--color-border); border-top:3px solid #E8A838; border-radius:14px; padding:1.5rem;">
-              <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-faint); margin-bottom:0.35rem;">Verbunden mit</div>
-              <div style="font-family:'Cabinet Grotesk',sans-serif; font-weight:700; font-size:1rem; color:var(--color-text); margin-bottom:0.35rem;">Gastronomiebetriebe</div>
-              <div style="font-size:0.82rem; color:var(--color-text-muted);">Strukturierte Ausbildungsbegleitung & 90-Tage-Programme.</div>
-            </div>
-
-            <div style="background:var(--color-bg); border:1px solid var(--color-border); border-top:3px solid #27ae60; border-radius:14px; padding:1.5rem;">
-              <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-faint); margin-bottom:0.35rem;">Verbunden mit</div>
-              <div style="font-family:'Cabinet Grotesk',sans-serif; font-weight:700; font-size:1rem; color:var(--color-text); margin-bottom:0.35rem;">Berufsschulen</div>
-              <div style="font-size:0.82rem; color:var(--color-text-muted);">Aufklärungstage & Projekttage direkt im Unterricht.</div>
-            </div>
-
-            <div style="background:var(--color-bg); border:1px solid var(--color-border); border-top:3px solid #4A9FD4; border-radius:14px; padding:1.5rem;">
-              <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-faint); margin-bottom:0.35rem;">Verbunden mit</div>
-              <div style="font-family:'Cabinet Grotesk',sans-serif; font-weight:700; font-size:1rem; color:var(--color-text); margin-bottom:0.35rem;">Soziale Träger & Partner</div>
-              <div style="font-size:0.82rem; color:var(--color-text-muted);">Kinderschutzbund, BioRegio, Caritas, Diakonie und weitere.</div>
-            </div>
-
-          </div>
-          <div style="text-align:center; margin-top:1.75rem;">
-            <a href="klarerkopf.html#oeko-h2" style="font-size:0.85rem; color:#cd7f32; text-decoration:none; font-weight:600;">Mehr zum Ökosystem ansehen →</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <style>
-    @media (max-width: 768px) {
-      .video-oeko-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
-    }
-    </style>
-
-
-
-    <!-- ─── KERNWERTE ─────────────────────────────────────── -->
-    <section class="values section" aria-labelledby="values-heading">
-      <div class="container">
-        <div class="fade-in" style="margin-bottom: 2.5rem;">
-          <p class="section-label">Unsere Grundlage</p>
-          <h2 class="section-title" id="values-heading">Wofür wir stehen</h2>
-          <div class="rule"></div>
-        </div>
-
-        <div class="values__grid">
-
-          <!-- Mentale Gesundheit -->
-          <div class="value-card fade-in">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-            <h3 class="value-card__title">Wohlbefinden</h3>
-            <p class="value-card__text">Wohlbefinden im Betrieb ist kein Luxus — wir machen es zur Selbstverständlichkeit in der Gastronomie.</p>
-          </div>
-
-          <!-- Ausbildung -->
-          <div class="value-card fade-in">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-            </svg>
-            <h3 class="value-card__title">Ausbildung</h3>
-            <p class="value-card__text">Gute Ausbildung verändert Leben — wir begleiten Betriebe und Ausbilder dabei, Azubis wirklich zu fördern.</p>
-          </div>
-
-          <!-- Aufklärung -->
-          <div class="value-card fade-in">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-            <h3 class="value-card__title">Aufklärung</h3>
-            <p class="value-card__text">Wissen schützt. Wir klären über Rechte, Grenzen und Möglichkeiten auf — ohne Tabus, ohne Beschönigung.</p>
-          </div>
-
-          <!-- Prävention -->
-          <div class="value-card fade-in">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-            <h3 class="value-card__title">Prävention</h3>
-            <p class="value-card__text">Probleme erkennen, bevor sie entstehen — präventive Maßnahmen schützen Menschen und Betriebe gleichermaßen.</p>
-          </div>
-
-          <!-- Support -->
-          <div class="value-card fade-in">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            <h3 class="value-card__title">Support</h3>
-            <p class="value-card__text">Niemand soll allein dastehen. Wir bieten echte Unterstützung — für Azubis, Ausbilder und Führungskräfte.</p>
-          </div>
-
-          <!-- Gesundheit -->
-          <div class="value-card fade-in">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-            <h3 class="value-card__title">Gesundheit</h3>
-            <p class="value-card__text">Ein gesundes Arbeitsumfeld ist die Basis für alles andere — körperlich wie psychisch, für alle Beteiligten.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── SO HELFEN WIR ─────────────────────────────────── -->
-    <section class="help section" aria-labelledby="help-heading">
-      <div class="container">
-        <div class="fade-in" style="margin-bottom: 2.5rem;">
-          <p class="section-label">Unser Ansatz</p>
-          <h2 class="section-title" id="help-heading">So helfen wir</h2>
-          <div class="rule"></div>
-        </div>
-
-        <div class="help__grid">
-
-          <div class="fade-in">
-            <p class="help-col__label">Betriebe &amp; Ausbilder</p>
-            <h3 class="help-col__title">Pakete, Workshops &amp; Begleitung</h3>
-            <ul class="help-col__list" role="list">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                90-Tage-Ausbildungspakete für Gastronomie &amp; Hotellerie
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Interaktive Workshops für den Ausbildungsalltag
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                PDF-Materialien und Checklisten für Ausbilder
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Individuelle Beratung und Begleitung
-              </li>
-            </ul>
-          </div>
-
-          <div class="fade-in">
-            <p class="help-col__label">Schulen &amp; Bildung</p>
-            <h3 class="help-col__title">Aufklärungstage &amp; Projekttage</h3>
-            <ul class="help-col__list" role="list">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Aufklärungsimpulse zu Ausbildung und Arbeitskultur
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Online oder vor Ort — flexibel buchbar
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Kostenlose Projekttage für Schulen
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Praxisnahe Formate für Schulen mit Gastro-Ausbildung
-              </li>
-            </ul>
-          </div>
-
-          <div class="fade-in">
-            <p class="help-col__label">Azubis &amp; Junge Menschen</p>
-            <h3 class="help-col__title">Materialien, Orientierung &amp; Gespräche</h3>
-            <ul class="help-col__list" role="list">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Kostenlose Poster und Guides zum Download
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Orientierung in schwierigen Ausbildungssituationen
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Sofortige digitale Selbsthilfe-Tools und klarer Wegweiser
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Alles zu 100 % kostenlos und anonym zugänglich
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── VERTRAUEN / TEAM ───────────────────────────────── -->
-    <section class="trust section" aria-labelledby="trust-heading">
-      <div class="container">
-        <div class="fade-in" style="margin-bottom: 2.5rem;">
-          <p class="section-label">Wer wir sind</p>
-          <h2 class="section-title" id="trust-heading">Menschen hinter cAp</h2>
-          <div class="rule"></div>
-        </div>
-
-        <div class="trust__grid">
-
-          <!-- Personen -->
-          <div class="trust__people">
-
-            <div class="person-card fade-in">
-              <img
-                class="person-card__img"
-                src="assets/kevin-photo-1.png"
-                alt="Kevin Schlesier"
-                loading="lazy"
-              />
-              <div>
-                <p class="person-card__name">Kevin Schlesier</p>
-                <p class="person-card__role">Gründer &amp; Initiator</p>
-                <p class="person-card__bio">
-                  Seit 1996 in der Gastronomie — über 30 Jahre Branchenerfahrung. Autor von zwei eBooks
-                  zu Ausbildung und mentaler Gesundheit. Er weiß aus eigener Erfahrung, was junge Menschen
-                  in der Ausbildung wirklich brauchen.
-                </p>
-              </div>
-            </div>
-
-            <div class="person-card fade-in">
-              <img
-                class="person-card__img"
-                src="assets/susanne-portrait.jpg"
-                alt="Susanne G. Meier"
-                loading="lazy"
-              />
-              <div>
-                <p class="person-card__name">Susanne G. Meier</p>
-                <p class="person-card__role">CEO Region S&uuml;d</p>
-                <p class="person-card__bio">
-                  Seit 2014 in der Gastronomie, gelernte Fachkraft für Systemgastronomie. Seit 2024 begleitet sie als Business- &amp; Management-Coach gezielt Frauen in der Gastronomie &mdash; damit Ausbildung und Führung menschlich bleiben.
-                </p>
-              </div>
-            </div>
-
-            <div class="person-card fade-in">
-              <img
-                class="person-card__img"
-                src="assets/daniela-portrait.jpg"
-                alt="Daniela Neuberger"
-                loading="lazy"
-                style="filter:grayscale(100%);"
-              />
-              <div>
-                <p class="person-card__name">Daniela Neuberger</p>
-                <p class="person-card__role">CEO Region Nord</p>
-                <p class="person-card__bio">
-                  Gastronomin aus Leidenschaft, aktuell im Hotel Gut Immenhof. Daniela setzt sich besonders für Quereinsteiger und ältere Azubis ein &mdash; die, die oft übersehen werden. Sie ist Teil unseres anonymen Sorgentelefons und erste Ansprechpartnerin für alle, die einfach mal reden möchten.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Testimonials -->
-          <div class="trust__right">
-
-            <div class="testimonials fade-in">
-
-              <blockquote class="testimonial">
-                <p class="testimonial__quote">
-                  "Die Workshops haben unser Team komplett verändert. Endlich spricht jemand offen über
-                  mentale Gesundheit in der Küche — ohne Tabus."
-                </p>
-                <cite class="testimonial__author">Maike, Restaurantleiterin</cite>
-              </blockquote>
-
-              <blockquote class="testimonial">
-                <p class="testimonial__quote">
-                  "Als Azubi wusste ich oft nicht, an wen ich mich wenden soll. cAp hat mir gezeigt, dass es Hilfe gibt — und wie ich sie bekomme."
-                </p>
-                <cite class="testimonial__author">Finn W., Auszubildender</cite>
-              </blockquote>
-
-              <blockquote class="testimonial">
-                <p class="testimonial__quote">
-                  "Das 90-Tage-Paket ist das Beste, was wir für unsere Ausbildungsqualität
-                  getan haben. Klare Empfehlung für jeden Gastro-Betrieb."
-                </p>
-                <cite class="testimonial__author">Johannes M., Hotelier</cite>
-              </blockquote>
-
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- === MEILENSTEINE & ENGAGEMENT === -->
-    <section class="section" id="meilensteine" style="background: var(--color-bg); border-top: 1px solid var(--color-border);" aria-labelledby="meilensteine-heading">
-      <div class="container">
-        <div class="fade-in" style="margin-bottom: 2.5rem; text-align: center;">
-          <p class="section-label">Engagement</p>
-          <h2 class="section-title" id="meilensteine-heading">Meilensteine &amp; Engagement</h2>
-          <p class="section-sub" style="margin-inline: auto; max-width: 720px;">Wir sprechen nicht nur dar&uuml;ber, was sich in der Ausbildung &auml;ndern muss. Wir setzen uns daf&uuml;r ein &mdash; mit Unterst&uuml;tzung im Alltag, &ouml;ffentlicher Aufkl&auml;rung und Menschen, die diesen Weg mit uns gehen. Hier zeigen wir ausgew&auml;hlte Meilensteine unserer Arbeit.</p>
-        </div>
-
-        <div class="milestones__grid">
-
-          <!-- A) SINN Innovationspreis -->
-          <div class="milestone-card fade-in">
-            <div class="milestone-card__head">
-              <svg class="milestone-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="8" r="6"/>
-                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
-                <path d="m9 8 2 2 4-4"/>
-              </svg>
-              <span class="milestone-card__badge">Anerkennung</span>
-            </div>
-            <h3 class="milestone-card__title">Finale beim SINN Innovationspreis 2026</h3>
-            <p class="milestone-card__text">Mit dem Culinary Apprentice Project haben wir das Finale des SINN Innovationspreises 2026 erreicht und geh&ouml;ren damit zu den Finalisten-Projekten. Der Preis w&uuml;rdigt soziale Innovationen in Sachsen &mdash; Ideen, die Probleme praktisch angehen. Eine Finalteilnahme, kein gewonnener Preis.</p>
-            <a class="milestone-card__link" href="https://sinn-sachsen.de/stay-human-shift" target="_blank" rel="noopener noreferrer">Finalisten-Profil beim SINN Forum ansehen &rarr;</a>
-          </div>
-
-          <!-- B) Fachmagazin KÜCHE -->
-          <div class="milestone-card fade-in">
-            <div class="milestone-card__head">
-              <svg class="milestone-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
-                <path d="M18 14h-8M18 8h-8M18 20h-8"/>
-                <path d="M8 2v20"/>
-              </svg>
-              <span class="milestone-card__badge">Medien</span>
-            </div>
-            <h3 class="milestone-card__title">Bericht im Fachmagazin K&Uuml;CHE</h3>
-            <p class="milestone-card__text">&Uuml;ber unsere Arbeit ist ein Beitrag im Fachmagazin K&Uuml;CHE erschienen (Ausgabe 8&ndash;9/2026): &bdquo;F&ouml;rdern statt verheizen &mdash; zeitgem&auml;&szlig;e Ausbildungskultur im Gastgewerbe&ldquo;. Darin geht es um die Frage, wie Betriebe Azubis besser begleiten und langfristig f&uuml;r den Beruf begeistern.</p>
-            <p class="milestone-card__text">Und der Artikel wirkt: Eine Auszubildende hat durch ihn den Mut gefunden, sich bei uns zu melden. Wir begleiten sie derzeit.</p>
-            <a class="milestone-card__link" href="https://www.magazin-kueche.de/news/aktuelles/kueche-ausgabe-8-9-2026-warum-qualitaet-in-der-kochausbildung-entscheidet/" target="_blank" rel="noopener noreferrer">Beitrag beim Magazin ansehen &rarr;</a>
-          </div>
-
-          <!-- C) The Burnt Chef Project -->
-          <div class="milestone-card fade-in">
-            <img class="milestone-card__img" src="assets/burnt-chef-ambassador.png" alt="Kevin Schlesier ist Ambassador f&uuml;r The Burnt Chef Project" loading="lazy" />
-            <div class="milestone-card__head">
-              <svg class="milestone-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
-              </svg>
-              <span class="milestone-card__badge">Pers&ouml;nliches Engagement</span>
-            </div>
-            <h3 class="milestone-card__title">Ambassador f&uuml;r The Burnt Chef Project</h3>
-            <p class="milestone-card__text">Kevin Schlesier engagiert sich pers&ouml;nlich als Botschafter f&uuml;r The Burnt Chef Project &mdash; eine internationale Initiative f&uuml;r psychische Gesundheit in der Gastronomie. Es geht darum, Belastungen offen anzusprechen und das Schweigen dar&uuml;ber zu durchbrechen.</p>
-            <a class="milestone-card__link" href="https://www.theburntchefproject.com" target="_blank" rel="noopener noreferrer">Mehr &uuml;ber The Burnt Chef Project &rarr;</a>
-            <a class="milestone-card__link" href="https://lnkd.in/p/dFqkByvk" target="_blank" rel="noopener noreferrer" style="margin-top:0;">Zur Ankunft auf LinkedIn &rarr;</a>
-            <p class="milestone-card__note">Hinweis: Dieses Amt ist ein pers&ouml;nliches Engagement von Kevin Schlesier &mdash; keine organisatorische Partnerschaft von cAp.</p>
-          </div>
-
-          <!-- D) Unterstützung im Azubi-Alltag -->
-          <div class="milestone-card fade-in">
-            <div class="milestone-card__head">
-              <svg class="milestone-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
-              </svg>
-              <span class="milestone-card__badge">Konkrete Unterst&uuml;tzung</span>
-            </div>
-            <h3 class="milestone-card__title">Unterst&uuml;tzung im Azubi-Alltag</h3>
-            <p class="milestone-card__text">Auf LinkedIn haben wir einen Einblick in einen konkreten Fall unserer Arbeit gegeben &mdash; wie Begleitung im Azubi-Alltag aussehen kann. Ehrlich und ungesch&ouml;nt, ohne Show. Denn Unterst&uuml;tzung findet nicht in der Theorie statt, sondern mitten im Betriebsalltag.</p>
-            <a class="milestone-card__link" href="https://www.linkedin.com/in/kevin-schlesier-b54a902b3" target="_blank" rel="noopener noreferrer">Zum LinkedIn-Profil von Kevin Schlesier &rarr;</a>
-          </div>
-
-          <!-- E) Kampagne mit dem Kinderschutzbund -->
-          <div class="milestone-card fade-in">
-            <div class="milestone-card__head">
-              <svg class="milestone-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="m3 11 18-5v12L3 14v-3z"/>
-                <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
-              </svg>
-              <span class="milestone-card__badge">Gemeinsame Kampagne</span>
-            </div>
-            <h3 class="milestone-card__title">&bdquo;Nicht &uuml;ber die Jugend reden &mdash; mit der Jugend reden.&ldquo;</h3>
-            <p class="milestone-card__text">Gemeinsam mit dem Kinderschutzbund Kreisverband Zwickau setzen wir uns daf&uuml;r ein, dass junge Menschen in der Ausbildung selbst zu Wort kommen. Nicht wir erz&auml;hlen, wie es ihnen geht &mdash; sie sagen es selbst. Ihre Erfahrungen, ihre Fragen und ihre Perspektive stehen im Mittelpunkt der Kampagne.</p>
-            <a class="milestone-card__link" href="https://www.kinderschutzbund-zwickau.de" target="_blank" rel="noopener noreferrer">Mehr &uuml;ber den Kinderschutzbund &rarr;</a>
-          </div>
-
-          <!-- F) Interview Radio Zwickau -->
-          <div class="milestone-card fade-in">
-            <div class="milestone-card__head">
-              <svg class="milestone-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                <line x1="12" x2="12" y1="19" y2="22"/>
-              </svg>
-              <span class="milestone-card__badge">Medien</span>
-            </div>
-            <h3 class="milestone-card__title">Interview bei Radio Zwickau</h3>
-            <p class="milestone-card__text">In einem Interview mit Radio Zwickau haben wir &uuml;ber unsere Arbeit gesprochen &mdash; &uuml;ber die Situation von Auszubildenden in der Region, &uuml;ber den Druck hinter dem Pass und dar&uuml;ber, warum sich etwas &auml;ndern muss.</p>
-          </div>
-
-        </div>
-
-        <!-- Anonymitäts-Hinweis -->
-        <div class="fade-in" style="margin-top: 2rem; background: rgba(107,191,138,0.07); border: 1px solid rgba(107,191,138,0.3); border-radius: var(--radius-xl); padding: 1.25rem 1.5rem; text-align: center;">
-          <p style="font-size: var(--text-sm); color: var(--color-text); line-height: 1.65; max-width: 640px; margin: 0 auto;">Nicht jede Unterst&uuml;tzung wird &ouml;ffentlich. Weitere F&auml;lle und die Menschen dahinter bleiben bewusst anonym. Vertrauen und der Schutz der Betroffenen stehen f&uuml;r uns an erster Stelle.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- === UNSERE PARTNER === -->
-    <section class="section" style="background: var(--color-bg); border-top: 1px solid var(--color-border);" aria-labelledby="partner-heading">
-      <div class="container">
-        <div class="fade-in" style="margin-bottom: 2.5rem; text-align: center;">
-          <p class="section-label">Netzwerk</p>
-          <h2 class="section-title" id="partner-heading">Unsere Partner</h2>
-          <p class="section-sub" style="margin-inline: auto;">Gemeinsam stärker als allein.</p>
-        </div>
-
-        <div style="display:flex;flex-direction:column;gap:1rem;max-width:760px;margin:0 auto;">
-
-          <a href="https://www.kinderschutzbund-zwickau.de" target="_blank" rel="noopener noreferrer" class="partner-badge fade-in" style="text-decoration:none;">
-            <img src="assets/partner-kinderschutzbund.png" alt="Kinderschutzbund Kreisverband Zwickau" loading="lazy" style="height:44px;width:auto;" />
-            <div>
-              <p class="partner-badge__name">Kinderschutzbund Kreisverband Zwickau</p>
-              <p class="partner-badge__text">Unser erster und stärkster Partner &mdash; für den Schutz junger Menschen in Ausbildung und Beruf.</p>
-            </div>
-          </a>
-
-          <a href="neuigkeiten.html#beitrag-bioregio" class="partner-badge fade-in" style="text-decoration:none;">
-            <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
-              <img src="assets/partner-bioregio.png" alt="BioRegio Modellregion Landkreis Zwickau" loading="lazy" style="height:42px;width:auto;" />
-              <img src="assets/partner-eu-kofinanziert.jpg" alt="EU-kofinanziert" loading="lazy" style="height:26px;width:auto;opacity:0.8;" />
-            </div>
-            <div style="margin-top:0.35rem;">
-              <p class="partner-badge__name">BioRegio Modellregion Zwickau</p>
-              <p class="partner-badge__text">Regionale Nachhaltigkeit &mdash; EU-kofinanziert &mdash; <span style="color:var(--color-copper);">Mehr erfahren &rarr;</span></p>
-            </div>
-          </a>
-
-          <a href="https://hospitality-insideout.com" target="_blank" rel="noopener noreferrer" class="partner-badge fade-in" style="text-decoration:none;">
-            <img src="assets/partner-hospitality-inside-out.png" alt="Hospitality Inside Out &ndash; Schweiz" loading="lazy" style="height:52px;width:auto;border-radius:10px;border:1px solid var(--color-border);flex-shrink:0;" />
-            <div>
-              <p class="partner-badge__name">Hospitality Inside Out</p>
-              <p class="partner-badge__text">Partner aus der Schweiz f&uuml;r nachhaltige Arbeitskultur im Gastgewerbe &mdash; damit Menschen in der Branche bleiben k&ouml;nnen. <span style="color:var(--color-copper);">Website besuchen &rarr;</span></p>
-            </div>
-          </a>
-
-          <a href="https://mindmobil.de" target="_blank" rel="noopener noreferrer" class="partner-badge fade-in" style="text-decoration:none;">
-            <img src="assets/partner-mindmobil.png" alt="MindMobil &ndash; Julia Kopera" loading="lazy" style="height:52px;width:auto;border-radius:50%;border:1px solid var(--color-border);flex-shrink:0;" />
-            <div>
-              <p class="partner-badge__name">MindMobil</p>
-              <p class="partner-badge__text">Mobile psychologische Beratung &amp; Coaching von Julia Kopera. Wir sind keine Therapeuten &mdash; deshalb binden wir bei Bedarf Fachexpertise wie MindMobil extern hinzu. Gemeinsamer Podcast in Planung. <span style="color:var(--color-copper);">Website besuchen &rarr;</span></p>
-            </div>
-          </a>
-
-        </div>
-
-        <div class="fade-in" style="text-align:center; margin-top:2.5rem;">
-          <a href="partner-werden.html" class="btn btn--outline btn--lg" style="border-color: var(--color-copper); color: var(--color-copper);">Partner werden</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── KONTAKT ────────────────────────────────────────── -->
-    <section class="contact section" id="kontakt" aria-labelledby="contact-heading">
-      <div class="container">
-        <div class="fade-in" style="margin-bottom: 2.5rem;">
-          <p class="section-label">Schreib uns</p>
-          <h2 class="section-title" id="contact-heading">Kontakt aufnehmen</h2>
-          <div class="rule"></div>
-        </div>
-
-        <div class="contact__grid">
-
-          <!-- Info -->
-          <div class="contact__info fade-in">
-            <p class="section-sub" style="margin-bottom: 0;">
-              Egal ob du Betrieb, Ausbilder, Schule oder Azubi bist — wir sind für dich da.
-              Melde dich einfach.
-            </p>
-
-            <div class="contact__direct">
-
-              <div class="contact__direct-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <div>
-                  <span>E-Mail: </span>
-                  <a href="mailto:team@culinaryapprenticeprojekt.net">
-                    team@culinaryapprenticeprojekt.net
-                  </a>
-                </div>
-              </div>
-
-              <div class="contact__direct-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.99-1.99a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <div>
-                  <span>Telefon: </span>
-                  
-                </div>
-              </div>
-
-              <div class="contact__direct-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                <div>
-                  <span>WhatsApp: </span>
-                  
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Form -->
-          <div class="fade-in">
-            <form
-              class="form"
-              action="mailto:team@culinaryapprenticeprojekt.net"
-              method="post"
-              enctype="text/plain"
-              novalidate
-              aria-label="Kontaktformular"
-            >
-
-              <div class="form__row">
-                <div class="form__field">
-                  <label class="form__label" for="f-name">Name</label>
-                  <input
-                    class="form__input"
-                    type="text"
-                    id="f-name"
-                    name="name"
-                    placeholder="Dein Name"
-                    autocomplete="name"
-                    required
-                  />
-                </div>
-                <div class="form__field">
-                  <label class="form__label" for="f-email">E-Mail</label>
-                  <input
-                    class="form__input"
-                    type="email"
-                    id="f-email"
-                    name="email"
-                    placeholder="deine@email.de"
-                    autocomplete="email"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="form__field">
-                <label class="form__label" for="f-betrieb">Betrieb / Schule (optional)</label>
-                <input
-                  class="form__input"
-                  type="text"
-                  id="f-betrieb"
-                  name="betrieb"
-                  placeholder="Name deines Betriebs oder deiner Schule"
-                  autocomplete="organization"
-                />
-              </div>
-
-              <div class="form__field">
-                <label class="form__label" for="f-ich-bin">Ich bin…</label>
-                <div class="form__select-wrap">
-                  <select class="form__select" id="f-ich-bin" name="ich_bin" required>
-                    <option value="" disabled selected>Bitte wählen</option>
-                    <option value="betrieb">Betrieb / Unternehmen</option>
-                    <option value="ausbilder">Ausbilder/in</option>
-                    <option value="schule">Schule / Berufsschule</option>
-                    <option value="azubi">Azubi / Schüler/in</option>
-                    <option value="sonstiges">Sonstiges</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form__field">
-                <label class="form__label" for="f-nachricht">Nachricht</label>
-                <textarea
-                  class="form__textarea"
-                  id="f-nachricht"
-                  name="nachricht"
-                  placeholder="Wie können wir dir helfen?"
-                  required
-                ></textarea>
-              </div>
-
-              <p class="form__note">
-                Mit dem Absenden stimmst du zu, dass deine Daten zur Bearbeitung deiner Anfrage genutzt werden.
-              </p>
-
-              <div style="background:rgba(231,76,60,0.08);border:1.5px solid rgba(231,76,60,0.3);border-radius:12px;padding:1.25rem 1.25rem 1rem;margin-bottom:1rem;">
-  <p style="font-size:0.82rem;font-weight:700;color:#e74c3c;margin-bottom:0.65rem;max-width:none;">Wichtiger Hinweis für Azubis in Krisensituationen</p>
-  <p style="font-size:0.79rem;color:#c0392b;line-height:1.6;margin-bottom:0.65rem;max-width:none;">Dieses Kontaktformular ist keine Akut-Hilfe oder Krisenberatung. Bei akuter psychischer Notlage, Angst- oder Panikattacken wende dich bitte direkt an:</p>
-  <ul style="list-style:none;display:flex;flex-direction:column;gap:0.3rem;padding:0;margin:0;">
-    <li style="font-size:0.79rem;color:#c0392b;max-width:none;"><strong>Telefonseelsorge (24/7, anonym):</strong> 0800 111 0 111 oder 0800 111 0 222</li>
-    <li style="font-size:0.79rem;color:#c0392b;max-width:none;"><strong>Hilfetelefon Gewalt gegen Frauen (24/7):</strong> 116 016</li>
-    <li style="font-size:0.79rem;color:#c0392b;max-width:none;"><strong>Sucht- &amp; Drogenhotline:</strong> 01806 313 031</li>
-    <li style="font-size:0.79rem;color:#c0392b;max-width:none;"><strong>Lebensbedrohlicher Notfall:</strong> 112</li>
-  </ul>
-</div>
-
-              <button type="submit" class="btn btn--copper btn--lg" style="align-self: flex-start;">
-                Nachricht senden
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              </button>
-
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ─── FOOTER ────────────────────────────────────────────── -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-
-      <div class="footer__top">
-
-        <!-- Brand -->
-        <div class="footer__brand">
-          <div class="footer__brand-logo">
-            <img src="assets/stay-human-shift-logo.png" alt="cAp Logo" height="34" loading="lazy" />
-            <span class="footer__brand-logo-name">cAp – Culinary Apprentice Project</span>
-          </div>
-          <p class="footer__tagline">
-            Ausbildung. Arbeitskultur. Gastronomie.<br />
-            culinaryapprenticeprojekt.net
-          </p>
-          <nav class="footer__social" aria-label="Social Media">
-            <!-- Instagram -->
-            <a class="footer__social-link" href="#" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <!-- LinkedIn -->
-            <a class="footer__social-link" href="#" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <!-- Facebook -->
-            <a class="footer__social-link" href="#" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-          </nav>
-        </div>
-
-        <!-- Col 1: Zielgruppen -->
-        <nav aria-label="Zielgruppen">
-          <p class="footer__col-title">Zielgruppen</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="betriebe.html">Für Betriebe</a></li>
-            <li><a href="ausbilder.html">Für Ausbilder/innen</a></li>
-            <li><a href="berufsschulen.html">Für Berufsschulen</a></li>
-            <li><a href="azubis.html">Für Azubis</a></li>
-          </ul>
-        </nav>
-
-        <!-- Col 2: Angebote -->
-        <nav aria-label="Angebote">
-          <p class="footer__col-title">Angebote</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="angebote.html">Alle Angebote</a></li>
-            <li><a href="betriebe.html">90-Tage-Paket</a></li>
-            <li><a href="ausbilder.html">Workshops</a></li>
-            <li><a href="berufsschulen.html">Projekttage</a></li>
-          </ul>
-        </nav>
-
-        <!-- Col 3: Materialien -->
-        <nav aria-label="Materialien">
-          <p class="footer__col-title">Materialien</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="materialien.html">Alle Materialien</a></li>
-            <li><a href="materialien.html">Poster-Downloads</a></li>
-            <li><a href="materialien.html">PDF-Guides</a></li>
-          </ul>
-        </nav>
-
-        <!-- Col 4: Mitmachen -->
-        <nav aria-label="Mitmachen">
-          <p class="footer__col-title">Mitmachen</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="partner-werden.html">Partner werden</a></li>
-            <li><a href="geschichten.html">Geschichte erzählen</a></li>
-            <li><a href="shop.html">Shop (Unterstützen)</a></li>
-          </ul>
-        </nav>
-
-        <!-- Col 5: Programme -->
-        <nav aria-label="Programme">
-          <p class="footer__col-title">Programme</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="klarerkopf.html">Klarer Kopf</a></li>
-            <li><a href="talkrunde.html">Talkrunde</a></li>
-          </ul>
-        </nav>
-
-        <!-- Col 6: Rechtliches -->
-        <nav aria-label="Rechtliches">
-          <p class="footer__col-title">Rechtliches</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="neuigkeiten.html">Neuigkeiten</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-          </ul>
-        </nav>
-
-      </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copy">
-          &copy; 2025 cAp – Culinary Apprentice Project · culinaryapprenticeprojekt.net ·
-          <a href="mailto:team@culinaryapprenticeprojekt.net">team@culinaryapprenticeprojekt.net</a>
-        </p>
-        <p class="footer__copy">Eine Initiative von Stay Human SHIFT · cAp verfolgt keine gewinnorientierte Ausrichtung. Alle Einnahmen dienen ausschließlich dazu, kostenlose Materialien zu entwickeln, Schulprojekte zu ermöglichen und Azubis zu unterstützen.</p>
-      </div>
-
     </div>
-  </footer>
+  </section>
 
-  <!-- ─── JAVASCRIPT ─────────────────────────────────────────── -->
-  <script>
-    // Hamburger menu
-    (function () {
-      const btn = document.getElementById('hamburger-btn');
-      const menu = document.getElementById('mobile-menu');
-      if (!btn || !menu) return;
+  <section class="section" id="ueber-cap" aria-labelledby="ueber-heading">
+    <div class="container">
+      <p class="section-label">Wer wir sind</p>
+      <h2 class="section-title" id="ueber-heading">cAp. Eine Initiative von Stay Human Shift.</h2>
+      <div class="cap-about-grid">
+        <div>
+          <p>Das Culinary Apprentice Project, kurz cAp, arbeitet an einer menschlichen und strukturierten Ausbildung in Gastronomie und Hotellerie.</p>
+          <p>STAY HUMAN SHIFT ist die übergeordnete Initiative für menschliche und sichere Ausbildung. Gründer und Initiator ist Kevin Schlesier.</p>
+        </div>
+        <div>
+          <h3>Was wir machen</h3>
+          <p>Wir beschäftigen uns mit Ausbildungsstrukturen, der Begleitung von Auszubildenden und respektvoller Zusammenarbeit. Dabei suchen wir nach Entwicklungsschritten, die zum jeweiligen Betrieb passen.</p>
+        </div>
+      </div>
+      <div class="cap-attitude">
+        <h3>Unsere Haltung</h3>
+        <p><strong>Menschlichkeit steht für uns vor Öffentlichkeit.</strong> Ein wichtiger Teil unserer Arbeit findet im vertraulichen Austausch statt. Über schwierige Erfahrungen, Sorgen und persönliche Anliegen zu sprechen, fällt nicht immer leicht. Manchmal sind diese Gespräche mit Scham oder der Angst verbunden, nicht ernst genommen zu werden.</p>
+        <p>Wir möchten zuhören, Anliegen ernst nehmen und gemeinsam schauen, welche Unterstützung im Rahmen unserer Möglichkeiten sinnvoll ist. Niemand muss seine Geschichte für unsere Öffentlichkeitsarbeit zur Verfügung stellen. Persönliche Anliegen sind keine Gegenleistung für Unterstützung.</p>
+        <p>Deshalb bleibt vieles von dem, was wir tun, bewusst unsichtbar. Unser Anliegen ist nicht Ruhm, sondern eine Ausbildung und Arbeitswelt, in der Menschlichkeit ihren Platz hat. cAp bietet keine Therapie, kein Coaching und keine Krisenberatung.</p>
+      </div>
+      <div class="cap-team-grid" aria-label="Das Team">
+        <article class="person-card">
+          <img class="person-card__img" src="assets/kevin-photo-1.png" alt="Kevin Schlesier" width="60" height="60" loading="lazy">
+          <div><h3 class="person-card__name">Kevin Schlesier</h3><p class="person-card__role">Gründer &amp; Initiator</p></div>
+        </article>
+        <article class="person-card">
+          <img class="person-card__img" src="assets/susanne-portrait.jpg" alt="Susanne G. Meier" width="60" height="60" loading="lazy">
+          <div><h3 class="person-card__name">Susanne G. Meier</h3><p class="person-card__role">CEO Region Süd</p></div>
+        </article>
+        <article class="person-card">
+          <img class="person-card__img" src="assets/daniela-portrait.jpg" alt="Daniela Neuberger" width="60" height="60" loading="lazy">
+          <div><h3 class="person-card__name">Daniela Neuberger</h3><p class="person-card__role">CEO Region Nord</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      btn.addEventListener('click', function () {
-        const isOpen = menu.classList.toggle('is-open');
-        btn.classList.toggle('is-open', isOpen);
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        btn.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-      });
+  <section class="section cap-alt" id="programm" aria-labelledby="programm-heading">
+    <div class="container cap-program-grid">
+      <div>
+        <p class="section-label">Für Betriebe</p>
+        <h2 class="section-title" id="programm-heading">Angebote für Betriebe</h2>
+      </div>
+      <div>
+        <p>Ihr möchtet Ausbildung und Zusammenarbeit in eurem Gastronomie- oder Hotelbetrieb stärken? Wir unterstützen euch mit einem kostenlosen Erstgespräch (0 €), dem cAp Praxis- &amp; Teamcheck ONLINE (150 €), dem cAp Betriebsbesuch KOMPAKT (250 € zuzüglich Fahrtkosten) und dem cAp 90-Tage-Programm zum Ausbildungsstart (individuelles Angebot).</p>
+        <a href="betriebe.html" class="btn btn--copper">Angebote für Betriebe</a>
+      </div>
+    </div>
+  </section>
 
-      // Close on link click
-      menu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          menu.classList.remove('is-open');
-          btn.classList.remove('is-open');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.setAttribute('aria-label', 'Menü öffnen');
-          document.body.style.overflow = '';
-        });
-      });
-    })();
+  <section class="section" id="partner" aria-labelledby="partner-heading">
+    <div class="container">
+      <p class="section-label">Partner &amp; Engagement</p>
+      <h2 class="section-title" id="partner-heading">Gemeinsam und persönlich engagiert</h2>
+      <div class="cap-partners">
+        <a href="https://hospitality-insideout.com" class="partner-badge" target="_blank" rel="noopener noreferrer">
+          <img src="assets/partner-hospitality-inside-out.png" alt="Hospitality Inside Out" width="72" height="72" loading="lazy">
+          <div><h3 class="partner-badge__name">Hospitality Inside Out</h3><p class="partner-badge__text">Offizieller Partner aus der Schweiz.</p><span class="cap-link">Website besuchen</span></div>
+        </a>
+        <a href="https://mindmobil.de" class="partner-badge" target="_blank" rel="noopener noreferrer">
+          <img src="assets/partner-mindmobil.png" alt="MindMobil" width="72" height="72" loading="lazy">
+          <div><h3 class="partner-badge__name">MindMobil</h3><p class="partner-badge__text">Julia Kopera · Partner im Netzwerk von cAp.</p><span class="cap-link">Website besuchen</span></div>
+        </a>
+      </div>
+      <article class="cap-engagement">
+        <img src="assets/burnt-chef-ambassador.png" alt="Kevin Schlesiers Engagement als Botschafter für The Burnt Chef Project" width="160" loading="lazy">
+        <div>
+          <p class="section-label">Persönliches Engagement</p>
+          <h3>Kevin und The Burnt Chef Project</h3>
+          <p>Kevin Schlesier ist Teil des globalen Botschafterteams von The Burnt Chef Project. Dieses persönliche Engagement ergänzt seinen Einsatz für eine menschliche Ausbildungskultur und einen offenen Umgang mit psychischer Belastung in der Gastronomie.</p>
+          <a href="https://lnkd.in/p/dFqkByvk" class="cap-link" target="_blank" rel="noopener noreferrer">Botschafter-Beitrag auf LinkedIn</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
-    // Scroll fade-in
-    (function () {
-      const els = document.querySelectorAll('.fade-in');
-      if (!els.length) return;
+  <section class="section cap-alt" id="meilensteine" aria-labelledby="meilensteine-heading">
+    <div class="container">
+      <p class="section-label">Belegte Stationen</p>
+      <h2 class="section-title" id="meilensteine-heading">Öffentliche Meilensteine &amp; Medien</h2>
+      <div class="cap-milestones">
+        <article class="milestone-card">
+          <span class="milestone-card__badge">SINN Innovationspreis 2026</span>
+          <h3 class="milestone-card__title">Als Finalist gelistet</h3>
+          <p class="milestone-card__text">Das „Culinary Apprentice Projekt – Stay Human Shift“ gehörte zu den Finalistinnen und Finalisten des SINN Innovationspreises 2026.</p>
+          <div class="cap-milestone-links">
+            <a class="milestone-card__link" href="https://sinn-sachsen.de/sinn-innovationspreis-2026" target="_blank" rel="noopener noreferrer">Zum SINN Innovationspreis</a>
+            <a class="milestone-card__link" href="https://sinn-sachsen.de/abstimmung2026" target="_blank" rel="noopener noreferrer">Offizieller Finalnachweis</a>
+          </div>
+        </article>
+        <article class="milestone-card">
+          <span class="milestone-card__badge">Radio Zwickau</span>
+          <h3 class="milestone-card__title">Im Gespräch über cAp und Ausbildung</h3>
+          <p class="milestone-card__text">Kevin Schlesier sprach mit Radio Zwickau über das Culinary Apprentice Project, unsere Arbeit für eine menschliche Ausbildungskultur und die Teilnahme am SINN Innovationspreis. Auch Ausbildung allgemein und sein persönlicher Weg waren Themen des Gesprächs.</p>
+        </article>
+        <article class="milestone-card">
+          <span class="milestone-card__badge">Fachmagazin KÜCHE</span>
+          <h3 class="milestone-card__title">„Fördern statt verheizen“</h3>
+          <p class="milestone-card__text">Die Ausgabe 8–9/2026 berichtet über Kevin Schlesier und das Culinary Apprentice Project im Beitrag „Fördern statt verheizen – zeitgemäße Ausbildungskultur im Gastgewerbe“.</p>
+          <a class="milestone-card__link" href="https://www.magazin-kueche.de/news/aktuelles/kueche-ausgabe-8-9-2026-warum-qualitaet-in-der-kochausbildung-entscheidet/" target="_blank" rel="noopener noreferrer">Beitrag beim Magazin ansehen</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      const io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-      );
+  <section class="section" id="news" aria-labelledby="news-heading">
+    <div class="container">
+      <p class="section-label">Ausgewählte Meldung</p>
+      <h2 class="section-title" id="news-heading">News</h2>
+      <p>cAp in KÜCHE 8–9/2026: <a class="cap-link" href="#meilensteine">Zum Medienhinweis „Fördern statt verheizen“</a>.</p>
+    </div>
+  </section>
 
-      els.forEach(function (el) { io.observe(el); });
-    })();
-
-    // Nav background intensity on scroll
-    (function () {
-      const nav = document.querySelector('.nav');
-      if (!nav) return;
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 40) {
-          nav.style.background = 'rgba(40,40,40,0.98)';
-        } else {
-          nav.style.background = 'rgba(46,46,46,0.92)';
-        }
-      }, { passive: true });
-    })();
-  </script>
-
-
-<script src="chat-widget.js"></script>
-</body>
-</html>
+  <section class="section cap-alt" id="kontakt" aria-labelledby="kontakt-heading">
+    <div class="container">
+      <p class="section-label">Kontakt &amp; Mitmachen</p>
+      <h2 class="section-title" id="kontakt-heading">Lasst uns ins Gespräch kommen</h2>
+      <p>Ihr habt eine Frage zu cAp oder möchtet euch einbringen? Schreibt uns an <a class="cap-link" href="mailto:team@culinaryapprenticeprojekt.net">team@culinaryapprenticeprojekt.net</a>.</p>
+      <div class="cap-actions">
+        <a href="team.html" class="btn btn--copper">Werde Teil des Teams</a>
+        <a href="partner-werden.html" class="btn btn--outline">Partnerschaft anfragen</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="cap-footer"><div class="cap-footer-inner">
+<p>© 2026 cAp – Culinary Apprentice Project<br>Eine Initiative von Stay Human Shift</p>
+<nav aria-label="Weitere Seiten">
+<a href="team.html">Teaminteresse</a><a href="partner-werden.html">Partnerschaft</a>
+<a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+</nav></div></footer><script src="contact.js" defer></script>
+</body></html>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>cAp Team – Gemeinsam für Ausbildung ohne Angst.</title>
-<meta name="description" content="Werde Teil des cAp Teams. Mach Ausbildung sichtbar – lade Poster und Logo herunter, teile sie auf Instagram und Facebook.">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Werde Teil des Teams | cAp</title>
+<link href="https://culinaryapprenticeprojekt.net/team.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="de_DE" property="og:locale"/>
+<meta content="cAp – Culinary Apprentice Project" property="og:site_name"/>
+<meta content="Werde Teil des Teams | cAp" property="og:title"/>
+<meta content="Interesse am cAp-Team mitteilen. Gemeinsam klären, ob und wie eine Mitarbeit möglich ist." property="og:description"/>
+<meta content="https://culinaryapprenticeprojekt.net/team.html" property="og:url"/>
+<meta content="https://culinaryapprenticeprojekt.net/assets/cap-logo.png" property="og:image"/>
+<meta content="Interesse am cAp-Team mitteilen. Gemeinsam klären, ob und wie eine Mitarbeit möglich ist." name="description"/>
 <!-- Open Graph für Social Media Preview -->
-<meta property="og:title" content="cAp Team – Gemeinsam für Ausbildung ohne Angst.">
-<meta property="og:description" content="Werde Teil des cAp Teams. Kostenlose Poster & Logos zum Download.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="./assets/cap-logo.png">
-
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
-
+<link href="fonts.css" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -389,280 +389,73 @@
   }
 
     /* ── SOFORT-HILFE BUTTON (global) ──────────────── */
-    .btn-sofort {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: #cd7f32; color: #fff !important;
-      font-family: var(--font-display, 'Cabinet Grotesk', sans-serif);
-      font-weight: 700; font-size: 0.8rem;
-      padding: 0.55rem 1rem; border-radius: var(--radius-full, 9999px);
-      text-decoration: none !important; transition: background 180ms, box-shadow 180ms;
-      animation: sofort-pulse 2.5s ease-in-out infinite;
-      white-space: nowrap;
-    }
+    
     .btn-sofort:hover { background: #b56c22 !important; animation: none; box-shadow: 0 4px 16px rgba(205,127,50,0.4); }
     @keyframes sofort-pulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(205,127,50,0.5); }
       50%       { box-shadow: 0 0 0 7px rgba(205,127,50,0); }
     }
   </style>
-</head>
-<body>
-
-<!-- HEADER -->
-<header class="header">
-  <a href="#" class="header__logo">
-    <img src="./assets/cap-logo.png" alt="cAp Logo">
-    <span class="header__name">c<span>A</span>p Team</span>
+<style id="mobile-fixes">@media (max-width:600px){input:not([type=checkbox]):not([type=radio]),select,textarea{font-size:16px !important;}}</style>
+<meta name="robots" content="index, follow"/><link href="reduction.css" rel="stylesheet"/></head>
+<body class="cap-team">
+<a class="cap-skip" href="#inhalt">Zum Inhalt</a>
+<header class="cap-header">
+ <nav class="cap-nav" aria-label="Hauptnavigation">
+  <a class="cap-brand" href="index.html" aria-label="cAp – Startseite">
+   <img src="assets/stay-human-shift-logo.png" alt="STAY HUMAN SHIFT" width="38" height="42">
+   <span><strong>cAp – Culinary Apprentice Project</strong><small>Eine Initiative von Stay Human Shift</small></span>
   </a>
-  <a href="#anmeldung" class="header__btn">Jetzt mitmachen</a>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero__tag">Community · Prävention · Gastro</div>
-  <img src="./assets/cap-logo.png" alt="cAp Logo" class="hero__logo">
-  <h1 class="hero__title">Werde Teil des <span>cAp Teams.</span></h1>
-  <p class="hero__text">Mach Ausbildung sichtbar. Lade dir unser cAp Team Material herunter, nutze Poster und Logo in deinen Beiträgen und markiere uns auf Instagram oder Facebook.</p>
-  <div class="hero__btns">
-    <a href="#anmeldung" class="btn btn--primary">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      Zum Team anmelden
-    </a>
-    <a href="#downloads" class="btn btn--outline">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Poster & Logo herunterladen
-    </a>
+  <div class="cap-nav-links"><a href="index.html#ueber-cap">Über cAp</a><a href="betriebe.html">Betriebe</a><a href="index.html#partner">Partner</a><a href="index.html#news">News</a><a href="index.html#kontakt">Kontakt</a></div>
+  <button class="cap-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="cap-mobile-menu">
+   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+ </nav>
+ <nav class="cap-mobile" id="cap-mobile-menu" aria-label="Mobile Navigation" hidden><a href="index.html#ueber-cap">Über cAp</a><a href="betriebe.html">Betriebe</a><a href="index.html#partner">Partner</a><a href="index.html#news">News</a><a href="index.html#kontakt">Kontakt</a></nav>
+</header><main id="inhalt">
+  <section class="hero">
+    <p class="hero__eyebrow">Mitmachen bei cAp</p>
+    <h1>Werde Teil des Teams</h1>
+    <p class="hero__sub">Ihr möchtet euch für eine menschliche und strukturierte Ausbildung einsetzen? Erzählt uns, was euch interessiert und wie ihr euch einbringen möchtet.</p>
+    <a href="#anmeldung" class="btn btn--primary">Teaminteresse mitteilen</a>
+  </section>
+  <div class="section--alt" id="anmeldung">
+    <section class="section" aria-labelledby="team-form-title">
+      <p class="section__label">Zuerst kennenlernen</p>
+      <h2 class="section__title" id="team-form-title">Was möchtet ihr beitragen?</h2>
+      <p class="section__text">Mit eurer Nachricht bekundet ihr Interesse. Ob und wie eine Mitarbeit möglich ist, klären wir anschließend gemeinsam. Die Anfrage ist kein automatischer Teambeitritt und keine Erlaubnis, euren Namen oder euer Bild zu veröffentlichen.</p>
+      <form class="form" data-email-subject="Teaminteresse bei cAp">
+        <div class="form__row">
+          <div class="form__group">
+            <label class="form__label" for="team-name">Name *</label>
+            <input class="form__input" id="team-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="team-email">E-Mail *</label>
+            <input class="form__input" id="team-email" name="email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="team-message">Euer Interesse *</label>
+          <textarea class="form__textarea" id="team-message" name="interesse" rows="5" placeholder="Was beschäftigt euch, und wie möchtet ihr euch einbringen?" required></textarea>
+        </div>
+        <p class="cap-form-note">Das Formular öffnet euer E-Mail-Programm mit einer vorbereiteten Nachricht. Die Nachricht wird erst versendet, wenn ihr sie dort abschickt.</p>
+        <button class="form__submit" type="submit">E-Mail vorbereiten</button>
+        <p class="cap-form-note">Alternativ direkt schreiben: <a href="mailto:team@culinaryapprenticeprojekt.net?subject=Teaminteresse%20bei%20cAp">team@culinaryapprenticeprojekt.net</a>. Hinweise zur Verarbeitung eurer Anfrage stehen in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        <div class="cap-email-preview" hidden>
+          <p role="status" aria-live="polite"></p>
+          <label for="team-mail-copy">Vorbereitete Nachricht zum Kopieren</label>
+          <textarea id="team-mail-copy" readonly></textarea>
+          <a data-open-email>E-Mail-Programm erneut öffnen</a>
+        </div>
+      </form>
+    </section>
   </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ANMELDUNG -->
-<div class="section--alt" id="anmeldung">
-<div class="section">
-  <p class="section__label">Team-Anmeldung</p>
-  <h2 class="section__title">Mach mit. Werde sichtbar.</h2>
-  <p class="section__text">Trag dich ein und wir melden uns bei dir. Als Teil des cAp Teams kannst du Poster teilen, andere aufmerksam machen und gemeinsam Ausbildung verändern.</p>
-
-  <div class="form__success" id="formSuccess">
-    <h3>Danke für deine Anmeldung! <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01M22 8h.01M15 2h.01M22 20h.01"/><path d="m9 12 8 8"/></svg></h3>
-    <p>Du bist jetzt Teil des cAp Teams. Lade dir unten Poster und Team-Logo herunter und teile sie auf Social Media.</p>
-    <a href="#downloads" class="btn btn--primary" style="margin-top:16px; display:inline-flex;">Zu den Downloads ↓</a>
-  </div>
-
-  <form class="form" id="teamForm">
-    <div class="form__row">
-      <div class="form__group">
-        <label class="form__label" for="name">Name *</label>
-        <input class="form__input" type="text" id="name" name="name" placeholder="Dein Name" required>
-      </div>
-      <div class="form__group">
-        <label class="form__label" for="email">E-Mail *</label>
-        <input class="form__input" type="email" id="email" name="email" placeholder="deine@mail.de" required>
-      </div>
-    </div>
-    <div class="form__row">
-      <div class="form__group">
-        <label class="form__label" for="ort">Ort / Region *</label>
-        <input class="form__input" type="text" id="ort" name="ort" placeholder="z.B. Zwickau, Berlin..." required>
-      </div>
-      <div class="form__group">
-        <label class="form__label" for="rolle">Rolle *</label>
-        <select class="form__select" id="rolle" name="rolle" required>
-          <option value="">Bitte auswählen</option>
-          <option value="azubi">Azubi</option>
-          <option value="koch">Koch / Köchin</option>
-          <option value="service">Service</option>
-          <option value="ausbilder">Ausbilder/in</option>
-          <option value="unterstuetzer">Unterstützer/in</option>
-          <option value="sonstiges">Sonstiges</option>
-        </select>
-      </div>
-    </div>
-    <div class="form__row">
-      <div class="form__group">
-        <label class="form__label" for="instagram">Instagram-Name <span>(optional)</span></label>
-        <input class="form__input" type="text" id="instagram" name="instagram" placeholder="@deinname">
-      </div>
-      <div class="form__group">
-        <label class="form__label" for="facebook">Facebook-Name <span>(optional)</span></label>
-        <input class="form__input" type="text" id="facebook" name="facebook" placeholder="Dein Name auf Facebook">
-      </div>
-    </div>
-    <div class="form__group">
-      <label class="form__label" for="nachricht">Warum möchtest du Teil des cAp Teams werden? <span>(optional)</span></label>
-      <textarea class="form__textarea" id="nachricht" name="nachricht" placeholder="Erzähl uns kurz von dir..."></textarea>
-    </div>
-    <div class="form__group">
-      <label class="form__label" for="foto">Foto von dir <span>(optional – nur wenn du möchtest)</span></label>
-      <p style="font-size:14px; color:var(--text-muted); line-height:1.6; background:var(--accent-light); border-radius:10px; padding:14px 16px;">Schick dein Foto direkt per E-Mail an <a href="mailto:team@culinaryapprenticeprojekt.net" style="color:var(--accent); font-weight:700;">team@culinaryapprenticeprojekt.net</a> oder als DM auf Instagram <strong>@culinaryapprenticeprojekt</strong> – wir kümmern uns darum.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:14px; margin-top:4px;">
-      <label class="form__check">
-        <input type="checkbox" name="datenschutz" required>
-        <span class="form__check-label">Ich bin einverstanden, dass cAp meine Angaben zur Kontaktaufnahme und Team-Anmeldung verarbeitet. *</span>
-      </label>
-      <label class="form__check">
-        <input type="checkbox" name="newsletter">
-        <span class="form__check-label">Ich möchte über cAp Aktionen und Community-News informiert werden.</span>
-      </label>
-      <label class="form__check">
-        <input type="checkbox" name="erwaehnung">
-        <span class="form__check-label">Ich bin einverstanden, dass cAp mich optional mit Bild/Name auf Instagram oder Facebook erwähnen darf.</span>
-      </label>
-    </div>
-    <button type="submit" class="form__submit">Jetzt dem cAp Team beitreten →</button>
-  </form>
-</div>
-</div>
-
-<div class="divider"></div>
-
-<!-- DOWNLOADS -->
-<div id="downloads">
-<div class="section">
-  <p class="section__label">Kostenlos für alle</p>
-  <h2 class="section__title">cAp Team Material herunterladen</h2>
-  <p class="section__text">Speichere die Dateien auf deinem Handy oder Computer. Du kannst sie für Beiträge, Stories, Ausdrucke oder Sticker nutzen.</p>
-
-  <div class="downloads-grid">
-    <!-- Poster 1 -->
-    <div class="download-card">
-      <img src="./assets/poster-team.png" alt="cAp Team Poster" class="download-card__img">
-      <div class="download-card__body">
-        <div class="download-card__tag">Poster · A4</div>
-        <div class="download-card__title">cAp Team Poster</div>
-        <a href="./assets/poster-team.png" class="download-card__btn" download="cap-team-poster.png">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Herunterladen
-        </a>
-      </div>
-    </div>
-
-    <!-- Poster 2 -->
-    <div class="download-card">
-      <img src="./assets/poster-story.png" alt="cAp Story Poster" class="download-card__img">
-      <div class="download-card__body">
-        <div class="download-card__tag">Story · A4</div>
-        <div class="download-card__title">cAp Story-Poster</div>
-        <a href="./assets/poster-story.png" class="download-card__btn" download="cap-story-poster.png">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Herunterladen
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Logo Download -->
-  <div class="logo-card" style="margin-top:20px;">
-    <img src="./assets/cap-logo.png" alt="cAp Logo">
-    <div class="download-card__tag">Logo · PNG</div>
-    <div class="download-card__title" style="margin-bottom:16px;">cAp Team Logo / Sticker</div>
-    <a href="./assets/cap-logo.png" class="btn btn--primary" download="cap-team-logo.png" style="display:inline-flex;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Logo herunterladen
-    </a>
-  </div>
-</div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SOCIAL MEDIA -->
-<div class="section--alt">
-<div class="section">
-  <p class="section__label">Community</p>
-  <h2 class="section__title">So erwähnst du cAp</h2>
-  <p class="section__text">Wenn du cAp in Videos, Stories oder Beiträgen erwähnst, können wir dich und dein Engagement leichter finden und ebenfalls sichtbar machen.</p>
-
-  <div class="social-grid">
-    <a href="https://www.instagram.com/culinaryapprenticeprojekt" target="_blank" rel="noopener noreferrer" class="social-card">
-      <div class="social-card__icon social-card__icon--ig">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      </div>
-      <div>
-        <div class="social-card__handle">@culinaryapprenticeprojekt</div>
-        <div class="social-card__label">Instagram · Folgen & markieren</div>
-      </div>
-    </a>
-    <a href="https://www.facebook.com/share/1DcP7cQSTD/" target="_blank" rel="noopener noreferrer" class="social-card">
-      <div class="social-card__icon social-card__icon--fb">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </div>
-      <div>
-        <div class="social-card__handle">Kevin Schlesier</div>
-        <div class="social-card__label">Facebook · Folgen & markieren</div>
-      </div>
-    </a>
-  </div>
-
-  <p style="font-size:15px; font-weight:700; color:var(--text); margin-bottom:12px;">Hashtags kopieren und nutzen:</p>
-  <div class="hashtags">
-    <span class="hashtag">#capteam</span>
-    <span class="hashtag">#culinaryapprentice</span>
-    <span class="hashtag">#azubikompass</span>
-    <span class="hashtag">#gastroliebe</span>
-    <span class="hashtag">#ausbildung</span>
-    <span class="hashtag">#gastroazubi</span>
-  </div>
-</div>
-</div>
-
-<div class="divider"></div>
-
-<!-- KONTAKT -->
-<div class="section" style="text-align:center;">
-  <p class="section__label">Kontakt</p>
-  <h2 class="section__title">Fragen zum cAp Team?</h2>
-  <p class="section__text" style="margin-bottom:20px;">Wir freuen uns über jede Nachricht.</p>
-  <a href="mailto:team@culinaryapprenticeprojekt.net" class="btn btn--primary" style="display:inline-flex;">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-    team@culinaryapprenticeprojekt.net
-  </a>
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p><strong>cAp Team</strong> · Gemeinsam für Ausbildung ohne Angst.</p>
-  <p style="margin-top:8px;"><a href="https://culinaryapprenticeprojekt.net">culinaryapprenticeprojekt.net</a> · <a href="./impressum.html">Impressum</a> · <a href="./datenschutz.html">Datenschutz</a> · <a href="./neuigkeiten.html">Neuigkeiten</a></p>
-</footer>
-
-<script>
-document.getElementById('teamForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const f = e.target;
-  const name = f.querySelector('#name').value;
-  const email = f.querySelector('#email').value;
-  const ort = f.querySelector('#ort').value;
-  const rolle = f.querySelector('#rolle').value;
-  const instagram = f.querySelector('#instagram').value;
-  const facebook = f.querySelector('#facebook').value;
-  const nachricht = f.querySelector('#nachricht').value;
-  const newsletter = f.querySelector('[name="newsletter"]').checked ? 'Ja' : 'Nein';
-  const erwaehnung = f.querySelector('[name="erwaehnung"]').checked ? 'Ja' : 'Nein';
-
-  let body = `Neue cAp Team-Anmeldung\n\n`;
-  body += `Name: ${name}\n`;
-  body += `E-Mail: ${email}\n`;
-  body += `Ort/Region: ${ort}\n`;
-  body += `Rolle: ${rolle}\n`;
-  if (instagram) body += `Instagram: ${instagram}\n`;
-  if (facebook) body += `Facebook: ${facebook}\n`;
-  body += `Newsletter: ${newsletter}\n`;
-  body += `Erwähnung erlaubt: ${erwaehnung}\n`;
-  if (nachricht) body += `\nNachricht:\n${nachricht}`;
-
-  const subject = encodeURIComponent(`cAp Team-Anmeldung: ${name}`);
-  window.location.href = `mailto:team@culinaryapprenticeprojekt.net?subject=${subject}&body=${encodeURIComponent(body)}`;
-
-  // Show success
-  f.style.display = 'none';
-  document.getElementById('formSuccess').classList.add('visible');
-  document.getElementById('formSuccess').scrollIntoView({behavior:'smooth', block:'center'});
-});
-</script>
-
-
-<script src="chat-widget.js"></script>
-</body>
-</html>
+</main>
+<footer class="cap-footer"><div class="cap-footer-inner">
+<p>© 2026 cAp – Culinary Apprentice Project<br>Eine Initiative von Stay Human Shift</p>
+<nav aria-label="Weitere Seiten">
+<a href="team.html">Teaminteresse</a><a href="partner-werden.html">Partnerschaft</a>
+<a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+</nav></div></footer><script src="contact.js" defer></script>
+</body></html>

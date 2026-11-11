@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="de"><head>
+<base href="/">
+<script>
+/* Relative Verweise funktionieren sowohl unter GitHub Pages als auch im privaten App-Proxy. */
+const previewRoot = location.pathname.match(/^(.*\/cap-website-staging\/)/);
+if (previewRoot) document.querySelector('base').href = location.origin + previewRoot[1];
+document.addEventListener('DOMContentLoaded', () => {
+  const skip = document.querySelector('.cap-skip');
+  if (skip) skip.href = location.href.split('#')[0] + '#inhalt';
+});
+</script>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta content="Perplexity Computer" name="generator"/>
+<meta content="Perplexity Computer" name="author"/>
+<meta content="https://www.perplexity.ai/computer" property="og:see_also"/>
+<link href="https://www.perplexity.ai/computer" rel="author"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Seite nicht gefunden | cAp</title>
+
+<!-- Fonts -->
+<link href="fonts.css" rel="stylesheet"/>
+<link href="base.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+  .legal {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--space-20) var(--space-6) var(--space-16);
+  }
+  .legal h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-8);
+    color: var(--color-text);
+  }
+  .legal h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+  .legal p, .legal li {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+  }
+  .legal a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .legal a:hover {
+    text-decoration: underline;
+  }
+  .legal__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-bottom: var(--space-8);
+  }
+  .legal__back:hover {
+    color: var(--color-accent);
+  }
+
+    /* ── SOFORT-HILFE BUTTON (global) ──────────────── */
+    
+    .btn-sofort:hover { background: #b56c22 !important; animation: none; box-shadow: 0 4px 16px rgba(205,127,50,0.4); }
+    @keyframes sofort-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(205,127,50,0.5); }
+      50%       { box-shadow: 0 0 0 7px rgba(205,127,50,0); }
+    }
+  </style>
+<meta content="noindex, nofollow" name="robots"/><link href="reduction.css" rel="stylesheet"/></head><body class="cap-legal"><a class="cap-skip" href="#inhalt">Zum Inhalt</a>
+<header class="cap-header">
+ <nav class="cap-nav" aria-label="Hauptnavigation">
+  <a class="cap-brand" href="index.html" aria-label="cAp – Startseite">
+   <img src="assets/stay-human-shift-logo.png" alt="STAY HUMAN SHIFT" width="38" height="42">
+   <span><strong>cAp – Culinary Apprentice Project</strong><small>Eine Initiative von Stay Human Shift</small></span>
+  </a>
+  <div class="cap-nav-links"><a href="index.html#ueber-cap">Über cAp</a><a href="betriebe.html">Betriebe</a><a href="index.html#partner">Partner</a><a href="index.html#news">News</a><a href="index.html#kontakt">Kontakt</a></div>
+  <button class="cap-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="cap-mobile-menu">
+   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+ </nav>
+ <nav class="cap-mobile" id="cap-mobile-menu" aria-label="Mobile Navigation" hidden><a href="index.html#ueber-cap">Über cAp</a><a href="betriebe.html">Betriebe</a><a href="index.html#partner">Partner</a><a href="index.html#news">News</a><a href="index.html#kontakt">Kontakt</a></nav>
+</header><main class="legal" id="inhalt">
+  <p class="section-label">Fehler 404</p>
+  <h1>Diese Seite gibt es hier nicht mehr.</h1>
+  <p>Wir haben die Website verkleinert. Frühere Angebote und Downloads sind teilweise nicht mehr verfügbar.</p>
+  <p>Ihr findet unsere aktuellen Angebote auf der Seite für Betriebe. Bei anderen Fragen könnt ihr uns schreiben.</p>
+  <div class="cap-actions">
+    <a class="btn btn--copper" href="betriebe.html">Angebote für Betriebe</a>
+    <a class="btn btn--outline" href="index.html">Zur Startseite</a>
+  </div>
+  <p style="margin-top:24px"><a class="cap-link" href="mailto:team@culinaryapprenticeprojekt.net">team@culinaryapprenticeprojekt.net</a></p>
+</main>
+<footer class="cap-footer"><div class="cap-footer-inner">
+<p>© 2026 cAp – Culinary Apprentice Project<br>Eine Initiative von Stay Human Shift</p>
+<nav aria-label="Weitere Seiten">
+<a href="team.html">Teaminteresse</a><a href="partner-werden.html">Partnerschaft</a>
+<a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+</nav></div></footer><script src="contact.js" defer></script></body></html>
